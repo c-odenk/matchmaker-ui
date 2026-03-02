@@ -20,9 +20,9 @@
 
 <script>
 import Header from '@/components/header/Header.vue'
-import LandingHero from '@/components/landing/V2/Landing-Hero-V2.vue'
+import LandingHero from '@/components/landing/V3/Landing-Hero-V3.vue'
 import LandingBenefits from '@/components/landing/V2/Landing-Benefits-V2.vue'
-import LandingProduct from '@/components/landing/V2//Landing-Product-V2.vue'
+import LandingProduct from '@/components/landing/V3//Landing-Product-V3.vue'
 // import LandingWorkflow from '@/components/landing/Landing-Workflow.vue'
 import LandingTestimonials from '@/components/landing/V2/Landing-Testimonials-V2.vue'
 import LandingCta from '@/components/landing/V2/Landing-CTA-V2.vue'
