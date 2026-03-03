@@ -1,18 +1,22 @@
 <template>
-  <section class="py-12 md:py-0 bg-white">
+  <section class="py-12 md:py-16 lg:pt-6 lg:pb-16 2xl:pt-6 2xl:pb-16 bg-white">
     <div class="mx-auto max-w-container-lg 2xl:max-w-container px-container-h">
-      <div class="relative overflow-hidden rounded-2xl bg-blue px-8 py-20 text-center">
+      <div
+        class="relative overflow-hidden rounded-2xl px-8 py-20 text-center"
+        style="background: linear-gradient(135deg, #0f1e35 0%, #172b4d 50%, #1a3560 100%);"
+      >
 
-        <!-- Radial gradient -->
+        <!-- Blauer Glow links -->
         <div
-          class="pointer-events-none absolute inset-0"
-          aria-hidden="true"
-          style="background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(255,255,255,0.07) 0%, transparent 70%);"
+          class="pointer-events-none absolute rounded-full"
+          style="width: 55%; height: 120%; top: -10%; left: -15%; background: radial-gradient(ellipse, rgba(41,118,214,0.25) 0%, transparent 70%); filter: blur(60px);"
         ></div>
 
-        <!-- Decorative blurred circles -->
-        <div class="pointer-events-none absolute -top-16 -left-16 w-64 h-64 rounded-full bg-white/5 blur-3xl" aria-hidden="true"></div>
-        <div class="pointer-events-none absolute -bottom-16 -right-16 w-64 h-64 rounded-full bg-white/5 blur-3xl" aria-hidden="true"></div>
+        <!-- Blauer Glow rechts -->
+        <div
+          class="pointer-events-none absolute rounded-full"
+          style="width: 45%; height: 120%; top: -10%; right: -10%; background: radial-gradient(ellipse, rgba(23,43,77,0.5) 0%, transparent 70%); filter: blur(60px);"
+        ></div>
 
         <!-- Content -->
         <div class="relative z-10 flex flex-col items-center gap-6 px-4">

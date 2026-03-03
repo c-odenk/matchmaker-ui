@@ -1,7 +1,7 @@
 <template>
   <section class="py-20 md:py-28 lg:py-20 bg-white overflow-hidden">
     <div class="mx-auto max-w-container-lg 2xl:max-w-container px-container-h">
-      <div class="flex flex-col lg:flex-row items-stretch gap-12 lg:gap-16">
+      <div class="flex flex-col lg:flex-row items-start gap-12 lg:gap-16">
 
         <!-- Left: Text -->
         <div class="lg:w-1/2 flex flex-col gap-6 justify-center">
@@ -58,7 +58,7 @@
         <!-- Right: Screenshot Panel -->
         <div class="lg:w-1/2 w-full">
           <div
-            class="relative w-full h-full rounded-2xl flex items-center justify-center py-10 px-8"
+            class="relative w-full rounded-2xl p-6 md:p-8"
             style="background: linear-gradient(135deg, #172b4d 0%, #0f1e35 100%);"
           >
 
@@ -98,17 +98,16 @@
                   </div>
                 </div>
 
-                <!-- Screenshot oder Placeholder -->
+                <!-- Screenshot -->
                 <div v-if="currentImage">
                   <div
                     class="relative group cursor-zoom-in overflow-hidden"
-                    style="aspect-ratio: 1512/795;"
                     @click="openLightbox(currentImage, currentFeature.title)"
                   >
                     <img
                       :src="currentImage"
                       :alt="currentFeature.title"
-                      class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
+                      class="w-full h-auto block transition-transform duration-500 group-hover:scale-[1.02]"
                     />
                     <div class="absolute inset-0 bg-blue/0 group-hover:bg-blue/10 transition-colors duration-300 flex items-center justify-center">
                       <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/90 backdrop-blur-sm rounded-xl px-4 py-2 flex items-center gap-2 shadow-lg">

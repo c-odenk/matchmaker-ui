@@ -1,5 +1,5 @@
 <template>
-  <section class="py-20 md:py-28 2xl:pt-28 2xl:pb-16 bg-white">
+  <section class="py-20 md:py-28 lg:py-20 lg:pb-4 2xl:pt-28 2xl:pb-4 bg-white">
     <div class="mx-auto max-w-container-lg 2xl:max-w-container px-container-h">
 
       <!-- Header -->
@@ -26,7 +26,7 @@
           </div>
           <ul class="flex flex-col gap-3 flex-1">
             <li v-for="feature in starter.features" :key="feature.label" class="flex items-center gap-3 text-p-small-sm md:text-p-small-md lg:text-p-small-lg 2xl:text-p-small-2xl text-black">
-              <div class="flex-shrink-0 w-5 h-5 flex items-center justify-center text-deep-blue">
+              <div class="flex-shrink-0 w-5 h-5 flex items-center justify-center text-black">
                 <component :is="feature.icon" class="w-4 h-4" :stroke-width="1.75" />
               </div>
               {{ feature.label }}
@@ -36,27 +36,31 @@
 
         <!-- Pro (Featured) -->
         <div
-          class="bg-blue rounded-2xl p-10 flex flex-col relative self-stretch"
-          style="border: 1px solid rgba(0,0,0,0.07); border-radius: 15px; box-shadow: rgba(0,0,0,0.1) 0px 0px 20px 0px;"
+          class="rounded-2xl p-10 flex flex-col relative self-stretch overflow-hidden"
+          style="border-radius: 15px; box-shadow: rgba(0,0,0,0.2) 0px 0px 40px 0px; background: linear-gradient(135deg, #0f1e35 0%, #172b4d 50%, #1a3560 100%); border: 1px solid rgba(255,255,255,0.1);"
         >
-          <div class="pointer-events-none absolute inset-0 rounded-2xl" aria-hidden="true" style="background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(255,255,255,0.07) 0%, transparent 70%); overflow: hidden;"></div>
+
+          <!-- Blauer Glow -->
+          <div
+            class="pointer-events-none absolute rounded-full"
+            style="width: 80%; height: 60%; top: -20%; left: -10%; background: radial-gradient(ellipse, rgba(41,118,214,0.3) 0%, transparent 70%); filter: blur(40px);"
+          ></div>
 
           <div class="relative z-10 mb-6 flex flex-col min-h-[120px]">
             <h3 class="text-h3-sm md:text-h3-md lg:text-h3-lg 2xl:text-h3-2xl text-white mb-2">{{ pro.name }}</h3>
-            <p class="text-p-sm md:text-p-md lg:text-p-lg 2xl:text-p-2xl text-white">{{ pro.description }}</p>
+            <p class="text-p-sm md:text-p-md lg:text-p-lg 2xl:text-p-2xl text-white/70">{{ pro.description }}</p>
           </div>
 
           <!-- Dynamic Price -->
           <div class="relative z-10 mb-6 flex items-baseline gap-1">
             <span class="text-h3-sm md:text-h3-md lg:text-h3-lg 2xl:text-h3-2xl font-bold text-white">{{ selectedTier.price }}</span>
-            <span class="text-p-sm md:text-p-md lg:text-p-lg 2xl:text-p-2xl text-white">{{ selectedTier.priceSuffix }}</span>
+            <span class="text-p-sm md:text-p-md lg:text-p-lg 2xl:text-p-2xl text-white/70">{{ selectedTier.priceSuffix }}</span>
           </div>
 
           <!-- Custom Talent Pool Selector -->
           <div class="relative z-20 mb-4">
             <label class="block text-white/70 text-xs font-medium mb-2 uppercase tracking-wide">Talent-Pool Größe</label>
             <div class="relative">
-              <!-- Trigger -->
               <button
                 @click="dropdownOpen = !dropdownOpen"
                 class="w-full flex items-center justify-between gap-3 bg-white/10 hover:bg-white/15 border border-white/20 hover:border-white/35 text-white text-sm rounded-xl px-4 py-3 transition-all duration-200 focus:outline-none"
@@ -74,7 +78,6 @@
                 </svg>
               </button>
 
-              <!-- Dropdown Panel -->
               <transition
                 enter-active-class="transition ease-out duration-150"
                 enter-from-class="opacity-0 translate-y-1"
@@ -107,7 +110,7 @@
             </div>
           </div>
 
-          <!-- Button direkt unter Selector -->
+          <!-- Button -->
           <div class="relative z-10 mb-10">
             <ButtonSecondary href="#" class="w-full">
               Jetzt loslegen
@@ -115,8 +118,8 @@
           </div>
 
           <ul class="relative z-10 flex flex-col gap-3 flex-1">
-            <li v-for="feature in pro.features" :key="feature.label" class="flex items-center gap-3 text-p-small-sm md:text-p-small-md lg:text-p-small-lg 2xl:text-p-small-2xl text-white">
-              <div class="flex-shrink-0 w-5 h-5 flex items-center justify-center text-white/80">
+            <li v-for="feature in pro.features" :key="feature.label" class="flex items-center gap-3 text-p-small-sm md:text-p-small-md lg:text-p-small-lg 2xl:text-p-small-2xl text-white/80">
+              <div class="flex-shrink-0 w-5 h-5 flex items-center justify-center" style="color: rgb(40, 167, 69);">
                 <component :is="feature.icon" class="w-4 h-4" :stroke-width="1.75" />
               </div>
               {{ feature.label }}
@@ -139,7 +142,7 @@
           </div>
           <ul class="flex flex-col gap-3 flex-1">
             <li v-for="feature in addon.features" :key="feature.label" class="flex items-center gap-3 text-p-small-sm md:text-p-small-md lg:text-p-small-lg 2xl:text-p-small-2xl text-black">
-              <div class="flex-shrink-0 w-5 h-5 flex items-center justify-center text-deep-blue">
+              <div class="flex-shrink-0 w-5 h-5 flex items-center justify-center text-black">
                 <component :is="feature.icon" class="w-4 h-4" :stroke-width="1.75" />
               </div>
               {{ feature.label }}

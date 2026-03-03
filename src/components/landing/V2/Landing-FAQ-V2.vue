@@ -5,7 +5,7 @@
 
         <!-- Col 1: Header -->
         <div class="lg:w-1/2 flex flex-col lg:sticky lg:top-28 lg:self-start">
-          
+
           <h2 class="text-h2-sm md:text-h2-md lg:text-h2-lg 2xl:text-h2-2xl text-black mb-4">
             Häufig gestellte Fragen
           </h2>
@@ -21,30 +21,39 @@
           <div
             v-for="(faq, index) in faqs"
             :key="index"
-            class="border-t border-gray-200 py-5 cursor-pointer group"
-            :class="{ 'border-b': index === faqs.length - 1 }"
+            class="border-t py-5 cursor-pointer group"
+            :class="[
+              { 'border-b': index === faqs.length - 1 },
+              activeIndex === index ? 'border-gray-300' : 'border-gray-200'
+            ]"
             @click="toggleFAQ(index)"
           >
             <!-- Question -->
             <div class="flex items-center justify-between gap-6">
-              
+
               <h3
-                class="text-p-sm md:text-p-md lg:text-p-lg 2xl:text-p-2xl font-medium text-black m-0 transition-colors duration-150"
+                class="text-p-sm md:text-p-md lg:text-p-lg 2xl:text-p-2xl font-medium m-0 transition-colors duration-150"
+                :class="activeIndex === index ? 'text-blue' : 'text-black'"
               >
                 {{ faq.question }}
               </h3>
 
-              <span
-                class="text-xl font-light flex-shrink-0 transition-colors duration-150 text-black"
+              <div
+                class="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center transition-all duration-200"
+                :class="activeIndex === index
+                  ? 'bg-blue text-white'
+                  : 'bg-gray-100 text-black group-hover:bg-gray-200'"
               >
-                {{ activeIndex === index ? '−' : '+' }}
-              </span>
+                <svg class="w-3.5 h-3.5 transition-transform duration-200" :class="activeIndex === index ? 'rotate-45' : ''" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+                </svg>
+              </div>
 
             </div>
 
             <!-- Answer -->
-            <div v-show="activeIndex === index" class="mt-4">
-              <p class="text-p-sm md:text-p-md lg:text-p-lg 2xl:text-p-2xl text-black m-0">
+            <div v-show="activeIndex === index" class="mt-4 pr-10">
+              <p class="text-p-sm md:text-p-md lg:text-p-lg 2xl:text-p-2xl text-black/70 m-0">
                 {{ faq.answer }}
               </p>
             </div>
