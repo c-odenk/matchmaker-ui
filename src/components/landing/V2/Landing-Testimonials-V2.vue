@@ -23,8 +23,8 @@
           v-for="(testimonial, index) in testimonials"
           :key="index"
           :ref="el => { if (el) cardRefs[index] = el }"
-          class="flex flex-col rounded-2xl p-5 relative overflow-hidden snap-start shrink-0 w-[80vw]"
-          style="background: linear-gradient(135deg, #0f1e35 0%, #172b4d 50%, #1a3560 100%); border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 8px 32px rgba(0,0,0,0.15);"
+          class="flex flex-col rounded-2xl p-5 relative overflow-hidden snap-start shrink-0 w-[calc(100vw-3rem)]"
+          style="background: linear-gradient(135deg, #0f1e35 0%, #172b4d 50%, #1a3560 100%); border: 1px solid rgba(255,255,255,0.08);"
         >
           <!-- Blauer Glow -->
           <div
@@ -86,7 +86,7 @@
           v-for="(testimonial, index) in testimonials"
           :key="index"
           class="flex flex-col rounded-2xl p-6 relative overflow-hidden"
-          style="background: linear-gradient(135deg, #0f1e35 0%, #172b4d 50%, #1a3560 100%); border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 8px 32px rgba(0,0,0,0.15);"
+          style="background: linear-gradient(135deg, #0f1e35 0%, #172b4d 50%, #1a3560 100%); border: 1px solid rgba(255,255,255,0.08);"
         >
           <!-- Blauer Glow -->
           <div
