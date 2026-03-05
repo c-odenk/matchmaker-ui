@@ -13,11 +13,17 @@
           matchmaker.hr übernimmt die zeitintensiven Schritte im Vermittlungsprozess – von der Marktanalyse bis zum Outreach – und schafft so Kapazität für das Wesentliche: die Beratung.
         </p>
         <!-- 3. Horizontal Scroll Cards -->
-        <div class="-mx-container-h">
-          <div class="benefits-scroll flex flex-row gap-3 overflow-x-auto px-container-h pb-3 snap-x snap-mandatory">
+        <div class="relative left-1/2 -translate-x-1/2 w-screen">
+          <div
+            ref="scrollContainer"
+            class="benefits-scroll flex flex-row gap-3 overflow-x-auto pb-3 snap-x snap-mandatory"
+            style="padding-left: 1.5rem; padding-right: 1.5rem;"
+            @scroll="onScroll"
+          >
             <div
-              v-for="benefit in benefits"
+              v-for="(benefit, index) in benefits"
               :key="benefit.title"
+              :ref="el => { if (el) cardRefs[index] = el }"
               class="flex flex-col gap-4 bg-gray-50 border border-gray-200 rounded-2xl p-5 snap-start shrink-0 w-[72vw]"
             >
               <div class="w-9 h-9 flex items-center justify-center rounded-xl bg-blue text-white">
@@ -32,7 +38,21 @@
                 </p>
               </div>
             </div>
+            <!-- Spacer: erzwingt padding-right beim Scrollen -->
+            <div class="shrink-0 w-px" aria-hidden="true" />
           </div>
+        </div>
+        <!-- Scroll Dots -->
+        <div class="flex items-center gap-2">
+          <button
+            v-for="(benefit, index) in benefits"
+            :key="index"
+            @click="scrollToCard(index)"
+            class="transition-all duration-500 rounded-full"
+            :class="activeCardIndex === index
+              ? 'w-8 h-2.5 bg-blue'
+              : 'w-2.5 h-2.5 bg-gray-200'"
+          />
         </div>
         <!-- 4. Button -->
         <div class="self-start">
@@ -138,6 +158,8 @@ export default {
   data() {
     return {
       ArrowRight,
+      activeCardIndex: 0,
+      cardRefs: [],
       benefits: [
         {
           title: 'Automatisierte Marktanalyse',
@@ -161,17 +183,48 @@ export default {
         }
       ]
     }
+  },
+  mounted() {
+    this.cardRefs = []
+  },
+  methods: {
+    onScroll() {
+      const container = this.$refs.scrollContainer
+      if (!container) return
+      const containerLeft = container.getBoundingClientRect().left
+      let closest = 0
+      let minDistance = Infinity
+      this.cardRefs.forEach((card, index) => {
+        if (!card) return
+        const cardLeft = card.getBoundingClientRect().left - containerLeft
+        const distance = Math.abs(cardLeft)
+        if (distance < minDistance) {
+          minDistance = distance
+          closest = index
+        }
+      })
+      this.activeCardIndex = closest
+    },
+    scrollToCard(index) {
+      const card = this.cardRefs[index]
+      const container = this.$refs.scrollContainer
+      if (!card || !container) return
+      const containerPadding = parseInt(getComputedStyle(container).paddingLeft)
+      container.scrollTo({
+        left: card.offsetLeft - containerPadding,
+        behavior: 'smooth'
+      })
+    }
   }
 }
 </script>
 
 <style scoped>
-.benefits-scroll::-webkit-scrollbar {
-  display: none;
-}
-
 .benefits-scroll {
   scrollbar-width: none;
   -ms-overflow-style: none;
+}
+.benefits-scroll::-webkit-scrollbar {
+  display: none;
 }
 </style>
