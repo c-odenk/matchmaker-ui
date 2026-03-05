@@ -15,54 +15,52 @@
     <div class="sm:hidden mt-6">
       <div
         ref="scrollContainer"
-        class="testimonials-scroll flex flex-row overflow-x-auto pb-3 snap-x snap-mandatory"
-        style="scroll-padding-left: 1.5rem;"
+        class="testimonials-scroll flex flex-row overflow-x-auto snap-x snap-mandatory"
         @scroll="onScroll"
       >
-        <!-- Spacer links -->
-        <div class="shrink-0 w-6" aria-hidden="true" />
         <div
           v-for="(testimonial, index) in testimonials"
           :key="index"
           :ref="el => { if (el) cardRefs[index] = el }"
-          class="flex flex-col rounded-2xl p-5 relative overflow-hidden snap-start shrink-0 w-[calc(100vw-3rem)] mr-3"
-          style="background: linear-gradient(135deg, #0f1e35 0%, #172b4d 50%, #1a3560 100%); border: 1px solid rgba(255,255,255,0.08);"
+          class="shrink-0 w-screen snap-start px-container-h pb-3"
         >
-          <!-- Blauer Glow -->
           <div
-            class="pointer-events-none absolute rounded-full"
-            style="width: 80%; height: 60%; top: -30%; left: -10%; background: radial-gradient(ellipse, rgba(41,118,214,0.2) 0%, transparent 70%); filter: blur(30px);"
-          ></div>
+            class="flex flex-col rounded-2xl p-5 relative overflow-hidden h-full"
+            style="background: linear-gradient(135deg, #0f1e35 0%, #172b4d 50%, #1a3560 100%); border: 1px solid rgba(255,255,255,0.08);"
+          >
+            <!-- Blauer Glow -->
+            <div
+              class="pointer-events-none absolute rounded-full"
+              style="width: 80%; height: 60%; top: -30%; left: -10%; background: radial-gradient(ellipse, rgba(41,118,214,0.2) 0%, transparent 70%); filter: blur(30px);"
+            ></div>
 
-          <!-- Stars + quote mark -->
-          <div class="relative z-10 flex items-center justify-between mb-4">
-            <div class="flex gap-0.5">
-              <span v-for="n in 5" :key="n" class="text-amber-400 text-base">★</span>
+            <!-- Stars + quote mark -->
+            <div class="relative z-10 flex items-center justify-between mb-4">
+              <div class="flex gap-0.5">
+                <span v-for="n in 5" :key="n" class="text-amber-400 text-base">★</span>
+              </div>
+              <span class="text-3xl font-serif leading-none select-none" style="color: rgba(255,255,255,0.15);">"</span>
             </div>
-            <span class="text-3xl font-serif leading-none select-none" style="color: rgba(255,255,255,0.15);">"</span>
-          </div>
 
-          <!-- Quote -->
-          <div class="relative z-10 flex-1">
-            <p class="text-p-small-sm text-white text-center m-0">
-              {{ testimonial.quote }}
-            </p>
-          </div>
-
-          <!-- Author -->
-          <div class="relative z-10 flex items-center gap-3 pt-4 mt-4" style="border-top: 1px solid rgba(255,255,255,0.1);">
-            <div class="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold tracking-wider" style="background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.9);">
-              {{ testimonial.initials }}
+            <!-- Quote -->
+            <div class="relative z-10 flex-1">
+              <p class="text-p-small-sm text-white text-center m-0">
+                {{ testimonial.quote }}
+              </p>
             </div>
-            <div class="flex flex-col gap-0.5">
-              <span class="text-sm font-semibold text-white">{{ testimonial.name }}</span>
-              <span class="text-xs" style="color: rgba(255,255,255,0.5);">{{ testimonial.role }}</span>
+
+            <!-- Author -->
+            <div class="relative z-10 flex items-center gap-3 pt-4 mt-4" style="border-top: 1px solid rgba(255,255,255,0.1);">
+              <div class="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold tracking-wider" style="background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.9);">
+                {{ testimonial.initials }}
+              </div>
+              <div class="flex flex-col gap-0.5">
+                <span class="text-sm font-semibold text-white">{{ testimonial.name }}</span>
+                <span class="text-xs" style="color: rgba(255,255,255,0.5);">{{ testimonial.role }}</span>
+              </div>
             </div>
           </div>
         </div>
-
-        <!-- Spacer rechts -->
-        <div class="shrink-0 w-6" aria-hidden="true" />
       </div>
 
       <!-- Scroll Dots -->
@@ -88,7 +86,7 @@
           v-for="(testimonial, index) in testimonials"
           :key="index"
           class="flex flex-col rounded-2xl p-6 relative overflow-hidden"
-          style="background: linear-gradient(135deg, #0f1e35 0%, #172b4d 50%, #1a3560 100%); border: 1px solid rgba(255,255,255,0.08);"
+          style="background: linear-gradient(135deg, #0f1e35 0%, #172b4d 50%, #1a3560 100%); border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 8px 32px rgba(0,0,0,0.15);"
         >
           <!-- Blauer Glow -->
           <div
@@ -173,27 +171,15 @@ export default {
     onScroll() {
       const container = this.$refs.scrollContainer
       if (!container) return
-      const containerLeft = container.getBoundingClientRect().left
-      let closest = 0
-      let minDistance = Infinity
-      this.cardRefs.forEach((card, index) => {
-        if (!card) return
-        const cardLeft = card.getBoundingClientRect().left - containerLeft
-        const distance = Math.abs(cardLeft)
-        if (distance < minDistance) {
-          minDistance = distance
-          closest = index
-        }
-      })
-      this.activeCardIndex = closest
+      const scrollLeft = container.scrollLeft
+      const width = container.offsetWidth
+      this.activeCardIndex = Math.round(scrollLeft / width)
     },
     scrollToCard(index) {
-      const card = this.cardRefs[index]
       const container = this.$refs.scrollContainer
-      if (!card || !container) return
-      // 24px = w-6 left spacer (matches container-h from tailwind.config)
+      if (!container) return
       container.scrollTo({
-        left: card.offsetLeft - 24,
+        left: index * container.offsetWidth,
         behavior: 'smooth'
       })
     }
