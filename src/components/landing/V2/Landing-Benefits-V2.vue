@@ -221,6 +221,7 @@ export default {
 </script>
 
 <style scoped>
+
 .benefits-scroll {
   scrollbar-width: none;
   -ms-overflow-style: none;
