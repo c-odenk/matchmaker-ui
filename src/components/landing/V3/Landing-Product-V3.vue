@@ -1,316 +1,227 @@
 <template>
-  <section class="py-20 md:py-28 lg:py-20 bg-white overflow-hidden">
+  <section class="py-20 md:py-28 lg:pt-44 lg:pb-36 bg-white">
     <div class="mx-auto max-w-container-lg 2xl:max-w-container px-container-h">
-      <div class="flex flex-col lg:flex-row items-start gap-12 lg:gap-16">
 
-        <!-- Left: Text -->
-        <div class="lg:w-1/2 flex flex-col gap-6 justify-center">
-          <div class="overflow-hidden min-h-[280px] lg:min-h-[320px]">
-            <div :key="currentIndex" class="flex flex-col gap-5">
-
-              <!-- Title with inline icon -->
-              <div class="flex items-center gap-3">
-                <div class="flex-shrink-0 w-9 h-9 flex items-center justify-center rounded-xl bg-blue text-white transition-colors duration-300">
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" :d="currentFeature.icon"/>
-                  </svg>
-                </div>
-                <h3 class="text-h3-sm md:text-h3-md lg:text-h3-lg 2xl:text-h3-2xl text-black leading-snug">
-                  {{ currentFeature.title }}
-                </h3>
+      <!-- Mobile: stacked layout with horizontal scroll cards -->
+      <div class="flex flex-col sm:hidden gap-6">
+        <!-- 1. Überschrift -->
+        <h2 class="text-h3-sm text-black">
+          KI-gestützte Automatisierung für modernes Recruiting.
+        </h2>
+        <!-- 2. Text -->
+        <p class="text-p-sm text-black">
+          matchmaker.hr übernimmt die zeitintensiven Schritte im Vermittlungsprozess – von der Marktanalyse bis zum Outreach – und schafft so Kapazität für das Wesentliche: die Beratung.
+        </p>
+        <!-- 3. Horizontal Scroll Cards -->
+        <div class="-mx-container-h">
+          <div
+            ref="scrollContainer"
+            class="benefits-scroll flex flex-row gap-3 overflow-x-auto px-container-h pb-3 snap-x snap-mandatory"
+            @scroll="onScroll"
+          >
+            <div
+              v-for="(benefit, index) in benefits"
+              :key="benefit.title"
+              :ref="el => { if (el) cardRefs[index] = el }"
+              class="flex flex-col gap-4 bg-gray-50 border border-gray-200 rounded-2xl p-5 snap-start shrink-0 w-[72vw]"
+            >
+              <div class="w-9 h-9 flex items-center justify-center rounded-xl bg-blue text-white">
+                <component :is="benefit.icon" class="w-4 h-4" :stroke-width="1.5" />
               </div>
-
-              <p class="text-p-sm md:text-p-md lg:text-p-lg 2xl:text-p-2xl text-black">
-                {{ currentFeature.description }}
-              </p>
-
-              <ul class="flex flex-col gap-2.5 mt-1">
-                <li
-                  v-for="point in currentFeature.points"
-                  :key="point"
-                  class="flex items-center gap-3 text-p-small-sm md:text-p-small-md lg:text-p-small-lg 2xl:text-p-small-2xl text-black"
-                >
-                  <div class="flex-shrink-0 w-5 h-5 rounded-full bg-blue flex items-center justify-center">
-                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-                    </svg>
-                  </div>
-                  {{ point }}
-                </li>
-              </ul>
+              <div>
+                <h3 class="text-p-small-sm font-bold text-black mb-2">
+                  {{ benefit.title }}
+                </h3>
+                <p class="text-p-small-sm text-black">
+                  {{ benefit.solution }}
+                </p>
+              </div>
             </div>
           </div>
-
-          <!-- Dots -->
-          <div class="flex items-center gap-2">
-            <button
-              v-for="(feature, index) in features"
-              :key="index"
-              @click="goTo(index)"
-              class="transition-all duration-500 rounded-full"
-              :class="currentIndex === index
-                ? 'w-8 h-2.5 bg-blue'
-                : 'w-2.5 h-2.5 bg-gray-200 hover:bg-gray-300'"
-            />
-          </div>
         </div>
+        <!-- Scroll Dots -->
+        <div class="flex items-center gap-2">
+          <button
+            v-for="(benefit, index) in benefits"
+            :key="index"
+            @click="scrollToCard(index)"
+            class="transition-all duration-500 rounded-full"
+            :class="activeCardIndex === index
+              ? 'w-8 h-2.5 bg-blue'
+              : 'w-2.5 h-2.5 bg-gray-200'"
+          />
+        </div>
+        <!-- 4. Button -->
+        <div class="self-start">
+          <ButtonPrimary href="#" :icon="ArrowRight">
+            Jetzt anmelden
+          </ButtonPrimary>
+        </div>
+      </div>
 
-        <!-- Right: Screenshot Panel -->
-        <div class="lg:w-1/2 w-full">
+      <!-- Tablet: stacked layout with 2x2 grid -->
+      <div class="hidden sm:flex lg:hidden flex-col gap-6">
+        <!-- 1. Überschrift -->
+        <h2 class="text-h3-sm md:text-h3-md text-black">
+          KI-gestützte Automatisierung für modernes Recruiting.
+        </h2>
+        <!-- 2. Text -->
+        <p class="text-p-sm md:text-p-md text-black">
+          matchmaker.hr übernimmt die zeitintensiven Schritte im Vermittlungsprozess – von der Marktanalyse bis zum Outreach – und schafft so Kapazität für das Wesentliche: die Beratung.
+        </p>
+        <!-- 3. Feature Grid -->
+        <div class="grid grid-cols-2 gap-4">
           <div
-            class="relative w-full rounded-2xl p-6 md:p-8"
-            style="background: linear-gradient(135deg, #172b4d 0%, #0f1e35 100%);"
+            v-for="benefit in benefits"
+            :key="benefit.title"
+            class="flex flex-col gap-4 bg-gray-50 border border-gray-200 rounded-2xl p-6"
           >
-
-            <!-- Dezente Dot-Pattern Textur -->
-            <div
-              class="pointer-events-none absolute inset-0 rounded-2xl opacity-20"
-              style="background-image: radial-gradient(circle, rgba(255,255,255,0.35) 1px, transparent 1px); background-size: 24px 24px;"
-            ></div>
-
-            <!-- Leuchtender Blur im Hintergrund -->
-            <div
-              class="pointer-events-none absolute rounded-full"
-              style="width: 60%; height: 40%; top: 10%; left: 20%; background: radial-gradient(ellipse, rgba(41,118,214,0.35) 0%, transparent 70%); filter: blur(32px);"
-            ></div>
-
-            <!-- Browser-Chrome Mockup -->
-            <transition name="fade-right" mode="out-in">
-              <div
-                :key="currentIndex"
-                class="relative w-full rounded-xl overflow-hidden"
-                style="box-shadow: 0 32px 80px rgba(0,0,0,0.5), 0 8px 24px rgba(0,0,0,0.3);"
-              >
-
-                <!-- Browser Topbar -->
-                <div
-                  class="flex items-center gap-1.5 px-3 py-2"
-                  style="background: #1e2d42; border-bottom: 1px solid rgba(255,255,255,0.08);"
-                >
-                  <div class="w-2 h-2 rounded-full" style="background: #ff5f57;"></div>
-                  <div class="w-2 h-2 rounded-full" style="background: #febc2e;"></div>
-                  <div class="w-2 h-2 rounded-full" style="background: #28c840;"></div>
-                  <div
-                    class="ml-2 flex-1 rounded px-2 py-0.5 text-xs"
-                    style="background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.35); max-width: 160px; font-size: 0.65rem;"
-                  >
-                    matchmaker.hr
-                  </div>
-                </div>
-
-                <!-- Screenshot -->
-                <div v-if="currentImage">
-                  <div
-                    class="relative group cursor-zoom-in overflow-hidden"
-                    @click="openLightbox(currentImage, currentFeature.title)"
-                  >
-                    <img
-                      :src="currentImage"
-                      :alt="currentFeature.title"
-                      class="w-full h-auto block transition-transform duration-500 group-hover:scale-[1.02]"
-                    />
-                    <div class="absolute inset-0 bg-blue/0 group-hover:bg-blue/10 transition-colors duration-300 flex items-center justify-center">
-                      <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/90 backdrop-blur-sm rounded-xl px-4 py-2 flex items-center gap-2 shadow-lg">
-                        <svg class="w-4 h-4 text-deep-blue" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803a7.5 7.5 0 0010.607 0zM10.5 7.5v6m3-3h-6"/>
-                        </svg>
-                        <span class="text-p-small-sm md:text-p-small-md lg:text-p-small-lg 2xl:text-p-small-2xl font-medium text-deep-blue">Vergrößern</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Placeholder -->
-                <div
-                  v-else
-                  class="flex flex-col items-center justify-center gap-4"
-                  style="aspect-ratio: 1512/795; background: #1a2a3f;"
-                >
-                  <div class="w-14 h-14 rounded-2xl flex items-center justify-center" style="background: rgba(255,255,255,0.08);">
-                    <svg class="w-7 h-7" style="color: rgba(255,255,255,0.4);" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" :d="currentFeature.icon"/>
-                    </svg>
-                  </div>
-                  <p class="text-p-small-sm md:text-p-small-md lg:text-p-small-lg 2xl:text-p-small-2xl font-medium" style="color: rgba(255,255,255,0.3);">Screenshot folgt</p>
-                </div>
-
-              </div>
-            </transition>
-
+            <div class="w-9 h-9 flex items-center justify-center rounded-xl bg-blue text-white">
+              <component :is="benefit.icon" class="w-4 h-4" :stroke-width="1.5" />
+            </div>
+            <div>
+              <h3 class="text-p-small-sm md:text-p-small-md font-bold text-black mb-2">
+                {{ benefit.title }}
+              </h3>
+              <p class="text-p-small-sm md:text-p-small-md text-black">
+                {{ benefit.solution }}
+              </p>
+            </div>
           </div>
         </div>
-
+        <!-- 4. Button -->
+        <div class="self-start">
+          <ButtonPrimary href="#" :icon="ArrowRight">
+            Jetzt anmelden
+          </ButtonPrimary>
+        </div>
       </div>
+
+      <!-- Desktop (lg+): side-by-side layout -->
+      <div class="hidden lg:flex flex-row gap-16 items-center">
+        <!-- Left: 2x2 Feature Grid -->
+        <div class="lg:w-1/2 grid grid-cols-2 gap-4">
+          <div
+            v-for="benefit in benefits"
+            :key="benefit.title"
+            class="flex flex-col gap-4 bg-gray-50 border border-gray-200 rounded-2xl p-4"
+          >
+            <div class="w-9 h-9 flex items-center justify-center rounded-xl bg-blue text-white">
+              <component :is="benefit.icon" class="w-4 h-4" :stroke-width="1.5" />
+            </div>
+            <div>
+              <h3 class="text-p-small-lg 2xl:text-p-small-2xl font-bold text-black mb-2">
+                {{ benefit.title }}
+              </h3>
+              <p class="text-p-small-lg 2xl:text-p-small-2xl text-black">
+                {{ benefit.solution }}
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Right: Header text -->
+        <div class="lg:w-1/2 flex flex-col gap-6">
+          <h2 class="text-h3-lg 2xl:text-h3-2xl text-black">
+            KI-gestützte Automatisierung für modernes Recruiting.
+          </h2>
+          <p class="text-p-lg 2xl:text-p-2xl text-black">
+            matchmaker.hr übernimmt die zeitintensiven Schritte im Vermittlungsprozess – von der Marktanalyse bis zum Outreach – und schafft so Kapazität für das Wesentliche: die Beratung.
+          </p>
+          <div class="self-start">
+            <ButtonPrimary href="#" :icon="ArrowRight">
+              Jetzt anmelden
+            </ButtonPrimary>
+          </div>
+        </div>
+      </div>
+
     </div>
-
-    <!-- Lightbox -->
-    <transition name="lightbox">
-      <div
-        v-if="lightbox.open"
-        class="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-8"
-        @click.self="closeLightbox"
-      >
-        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" @click="closeLightbox"></div>
-        <div class="relative z-10 max-w-6xl w-full max-h-[90vh] flex flex-col gap-3">
-          <div class="flex items-center justify-between px-1">
-            <span class="text-p-small-sm md:text-p-small-md lg:text-p-small-lg 2xl:text-p-small-2xl text-white/60">{{ lightbox.title }}</span>
-            <button
-              @click="closeLightbox"
-              class="w-9 h-9 rounded-xl bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors duration-200"
-            >
-              <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
-              </svg>
-            </button>
-          </div>
-          <div class="overflow-hidden rounded-2xl shadow-2xl bg-white border border-black">
-            <img
-              :src="lightbox.src"
-              :alt="lightbox.title"
-              class="w-full h-auto max-h-[80vh] object-contain"
-            />
-          </div>
-        </div>
-      </div>
-    </transition>
-
   </section>
 </template>
 
 <script>
-import imgSuchkriterien from '@/assets/Suchkriterien-Mockup.png'
-import imgNachrichten from '@/assets/Nachrichten-Mockup.png'
-
-const screenshots = {
-  'Suchkriterien-Mockup.png': imgSuchkriterien,
-  'Nachrichten-Mockup.png': imgNachrichten,
-}
+import { Search, Zap, Target, ShieldCheck, ArrowRight } from 'lucide-vue-next'
+import ButtonPrimary from '@/components/common/ButtonPrimary.vue'
 
 export default {
-  name: 'LandingProduct',
+  name: 'LandingBenefits',
+  components: {
+    Search,
+    Zap,
+    Target,
+    ShieldCheck,
+    ButtonPrimary
+  },
   data() {
     return {
-      currentIndex: 0,
-      lightbox: {
-        open: false,
-        src: null,
-        title: ''
-      },
-      features: [
+      ArrowRight,
+      activeCardIndex: 0,
+      cardRefs: [],
+      benefits: [
         {
-          title: 'Profiling Agent – Bedarfsanalyse & Profiling',
-          description: 'Strukturierte Erfassung des Suchauftrags – der Agent leitet präzise Anforderungsprofile und Suchkriterien für alle nachgelagerten Agenten ab.',
-          points: [
-            'Strukturierte Erfassung von Anforderungen und Rahmenbedingungen',
-            'Automatische Ableitung von Such- und Matching-Kriterien',
-            'Einheitliche Profilbasis für alle nachgelagerten Agenten',
-          ],
-          color: '#172b4d',
-          icon: 'M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z',
-          screenshot: null,
+          title: 'Automatisierte Marktanalyse',
+          solution: 'Kontinuierliches Scanning relevanter Quellen und automatisches abgleichen mit ihrem Kandidatenpool.',
+          icon: Search
         },
         {
-          title: 'Market Agent – Vakanzidentifikation',
-          description: 'Kontinuierliches Scanning des Stellenmarkts – neue Vakanzen werden automatisch erfasst, aufbereitet und mit dem Kandidatenpool abgeglichen.',
-          points: [
-            'Kontinuierliches Scanning von Jobboards und Unternehmenswebsites',
-            'Automatischer Abgleich mit bestehenden Kandidatenprofilen',
-            'Vollständige Quellenhistorie für jede identifizierte Vakanz',
-          ],
-          color: '#172b4d',
-          icon: 'M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803a7.5 7.5 0 0010.607 0z',
-          screenshot: null,
+          title: 'Intelligentes Matching',
+          solution: 'Semantisches Scoring auf Basis von Qualifikation und Erfahrung – mit transparenter Begründung.',
+          icon: Target
         },
         {
-          title: 'Matching Agent – Intelligentes Scoring',
-          description: 'Semantisches Scoring auf Basis von Qualifikation, Karriereverlauf und implizitem Kontext – mit nachvollziehbarer Begründung je Empfehlung.',
-          points: [
-            'Semantisches Scoring auf Basis der Kandidaten-DNA',
-            'Nachvollziehbare KI-Begründung je Empfehlung',
-            'Priorisierte Shortlist auf Anforderung',
-          ],
-          color: '#172b4d',
-          icon: 'M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z',
-          screenshot: 'Suchkriterien-Mockup.png',
+          title: 'Skalierbarer Outreach',
+          solution: 'Automatische Identifikation von Entscheidern und Erstellung versandfertiger Anschreiben.',
+          icon: Zap
         },
         {
-          title: 'Outreach Agent – Kontaktierung & Engagement',
-          description: 'Automatische Recherche des zuständigen Ansprechpartners, individualisiertes Anschreiben und Bereitstellung zur Freigabe – in Minuten statt Stunden.',
-          points: [
-            'Automatische Identifikation von Entscheidern via API',
-            'Hochgradig personalisierte Anschreiben je Kontakt',
-            'Freigabe per Klick – kein manueller Aufwand',
-          ],
-          color: '#172b4d',
-          icon: 'M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5',
-          screenshot: 'Nachrichten-Mockup.png',
-        },
-        {
-          title: 'Human-in-the-Loop',
-          description: 'Alle Agenten arbeiten im Hintergrund – die finale Entscheidung liegt beim Berater. Jede Aktion durchläuft einen definierten menschlichen Freigabe-Schritt.',
-          points: [
-            'Kein automatischer Versand ohne Beratergenehmigung',
-            'Transparente Nachvollziehbarkeit jeder Entscheidung',
-            'Jederzeit steuerbar, konfigurierbar und anpassbar',
-          ],
-          color: '#10b981',
-          icon: 'M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z',
-          screenshot: null,
+          title: 'Volle Kontrolle behalten',
+          solution: 'Alle Aktionen durchlaufen einen menschlichen Freigabe-Schritt. Die KI bereitet vor – der Berater entscheidet.',
+          icon: ShieldCheck
         }
       ]
     }
   },
-  computed: {
-    currentFeature() {
-      return this.features[this.currentIndex]
-    },
-    currentImage() {
-      const name = this.features[this.currentIndex].screenshot
-      return name ? screenshots[name] : null
-    }
+  mounted() {
+    this.cardRefs = []
   },
   methods: {
-    goTo(index) {
-      this.currentIndex = index
+    onScroll() {
+      const container = this.$refs.scrollContainer
+      if (!container) return
+      const containerLeft = container.getBoundingClientRect().left
+      let closest = 0
+      let minDistance = Infinity
+      this.cardRefs.forEach((card, index) => {
+        if (!card) return
+        const cardLeft = card.getBoundingClientRect().left - containerLeft
+        const distance = Math.abs(cardLeft)
+        if (distance < minDistance) {
+          minDistance = distance
+          closest = index
+        }
+      })
+      this.activeCardIndex = closest
     },
-    openLightbox(src, title) {
-      this.lightbox = { open: true, src, title }
-      document.body.style.overflow = 'hidden'
-    },
-    closeLightbox() {
-      this.lightbox.open = false
-      document.body.style.overflow = ''
+    scrollToCard(index) {
+      const card = this.cardRefs[index]
+      const container = this.$refs.scrollContainer
+      if (!card || !container) return
+      const containerPadding = parseInt(getComputedStyle(container).paddingLeft)
+      container.scrollTo({
+        left: card.offsetLeft - containerPadding,
+        behavior: 'smooth'
+      })
     }
   }
 }
 </script>
 
 <style scoped>
-.fade-right-enter-active {
-  transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+.benefits-scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
-.fade-right-leave-active {
-  transition: opacity 0.3s cubic-bezier(0.55, 0, 1, 0.45),
-              transform 0.3s cubic-bezier(0.55, 0, 1, 0.45);
-}
-.fade-right-enter-from {
-  opacity: 0;
-  transform: translateX(48px);
-}
-.fade-right-leave-to {
-  opacity: 0;
-  transform: translateX(-32px);
-}
-
-.lightbox-enter-active {
-  transition: opacity 0.25s ease;
-}
-.lightbox-leave-active {
-  transition: opacity 0.2s ease;
-}
-.lightbox-enter-from,
-.lightbox-leave-to {
-  opacity: 0;
+.benefits-scroll::-webkit-scrollbar {
+  display: none;
 }
 </style>
