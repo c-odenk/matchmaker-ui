@@ -15,15 +15,17 @@
     <div class="sm:hidden mt-6">
       <div
         ref="scrollContainer"
-        class="testimonials-scroll flex flex-row gap-3 overflow-x-auto pb-3 snap-x snap-mandatory"
-        style="padding-left: 1.5rem; scroll-padding-left: 1.5rem;"
+        class="testimonials-scroll flex flex-row overflow-x-auto pb-3 snap-x snap-mandatory"
+        style="scroll-padding-left: 1.5rem;"
         @scroll="onScroll"
       >
+        <!-- Spacer links -->
+        <div class="shrink-0 w-6" aria-hidden="true" />
         <div
           v-for="(testimonial, index) in testimonials"
           :key="index"
           :ref="el => { if (el) cardRefs[index] = el }"
-          class="flex flex-col rounded-2xl p-5 relative overflow-hidden snap-start shrink-0 w-[calc(100vw-3rem)]"
+          class="flex flex-col rounded-2xl p-5 relative overflow-hidden snap-start shrink-0 w-[calc(100vw-3rem)] mr-3"
           style="background: linear-gradient(135deg, #0f1e35 0%, #172b4d 50%, #1a3560 100%); border: 1px solid rgba(255,255,255,0.08);"
         >
           <!-- Blauer Glow -->
@@ -189,9 +191,9 @@ export default {
       const card = this.cardRefs[index]
       const container = this.$refs.scrollContainer
       if (!card || !container) return
-      const containerPadding = parseInt(getComputedStyle(container).paddingLeft)
+      // 24px = w-6 left spacer (matches container-h from tailwind.config)
       container.scrollTo({
-        left: card.offsetLeft - containerPadding,
+        left: card.offsetLeft - 24,
         behavior: 'smooth'
       })
     }
