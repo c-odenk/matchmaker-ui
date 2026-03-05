@@ -1,5 +1,5 @@
 <template>
-  <section class="py-20 md:py-28 lg:pt-44 lg:pb-36 bg-white overflow-hidden">
+  <section class="py-20 md:py-28 lg:pt-44 lg:pb-36 bg-white">
 
     <!-- Mobile: stacked layout -->
     <div class="sm:hidden">
@@ -15,19 +15,18 @@
       </div>
 
       <!-- 3. Horizontal Scroll Cards -->
-      <div class="mt-6">
+      <div
+        ref="scrollContainer"
+        class="benefits-scroll mt-6 flex flex-row overflow-x-auto snap-x snap-mandatory"
+        @scroll="onScroll"
+      >
         <div
-          ref="scrollContainer"
-          class="benefits-scroll flex flex-row gap-3 overflow-x-auto pb-3 snap-x snap-mandatory"
-          style="padding-left: 1.5rem; scroll-padding-left: 1.5rem;"
-          @scroll="onScroll"
+          v-for="(benefit, index) in benefits"
+          :key="benefit.title"
+          :ref="el => { if (el) cardRefs[index] = el }"
+          class="shrink-0 w-screen snap-start px-container-h pb-3"
         >
-          <div
-            v-for="(benefit, index) in benefits"
-            :key="benefit.title"
-            :ref="el => { if (el) cardRefs[index] = el }"
-            class="flex flex-col gap-4 bg-gray-50 border border-gray-200 rounded-2xl p-5 snap-start shrink-0 w-[72vw]"
-          >
+          <div class="flex flex-col gap-4 bg-gray-50 border border-gray-200 rounded-2xl p-5 h-full">
             <div class="w-9 h-9 flex items-center justify-center rounded-xl bg-blue text-white">
               <component :is="benefit.icon" class="w-4 h-4" :stroke-width="1.5" />
             </div>
@@ -40,8 +39,6 @@
               </p>
             </div>
           </div>
-          <!-- Spacer rechts -->
-          <div class="shrink-0 w-6" aria-hidden="true" />
         </div>
       </div>
 
@@ -192,27 +189,13 @@ export default {
     onScroll() {
       const container = this.$refs.scrollContainer
       if (!container) return
-      const containerLeft = container.getBoundingClientRect().left
-      let closest = 0
-      let minDistance = Infinity
-      this.cardRefs.forEach((card, index) => {
-        if (!card) return
-        const cardLeft = card.getBoundingClientRect().left - containerLeft
-        const distance = Math.abs(cardLeft)
-        if (distance < minDistance) {
-          minDistance = distance
-          closest = index
-        }
-      })
-      this.activeCardIndex = closest
+      this.activeCardIndex = Math.round(container.scrollLeft / container.offsetWidth)
     },
     scrollToCard(index) {
-      const card = this.cardRefs[index]
       const container = this.$refs.scrollContainer
-      if (!card || !container) return
-      const containerPadding = parseInt(getComputedStyle(container).paddingLeft)
+      if (!container) return
       container.scrollTo({
-        left: card.offsetLeft - containerPadding,
+        left: index * container.offsetWidth,
         behavior: 'smooth'
       })
     }
@@ -221,7 +204,6 @@ export default {
 </script>
 
 <style scoped>
-
 .benefits-scroll {
   scrollbar-width: none;
   -ms-overflow-style: none;
