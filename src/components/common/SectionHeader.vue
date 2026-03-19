@@ -1,11 +1,4 @@
-<style scoped>
-.ornament {
-  color: #2976d6;
-  margin-right: 0.35em;
-  font-weight: 300;
-  opacity: 0.7;
-}
-</style><template>
+<template>
   <div :class="[alignClass, marginClass]">
 
     <!-- Optional Label -->
@@ -19,7 +12,7 @@
     </div>
 
     <h2 class="text-h2-sm md:text-h2-md lg:text-h2-lg 2xl:text-h2-2xl text-black mb-3 leading-tight">
-      <span class="ornament" aria-hidden="true">—</span>{{ title }}
+      {{ title }}
     </h2>
     <p class="text-p-lead-sm md:text-p-lead-md lg:text-p-lead-lg 2xl:text-p-lead-2xl max-w-2xl text-black/60" :class="paragraphClass">
       {{ description }}

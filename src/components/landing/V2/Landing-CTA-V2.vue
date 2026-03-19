@@ -3,7 +3,7 @@
     <div class="mx-auto max-w-container-lg 2xl:max-w-container px-container-h">
       <div
         class="relative overflow-hidden rounded-2xl px-8 py-20 text-center"
-        style="background: linear-gradient(135deg, #0f1e35 0%, #172b4d 50%, #1a3560 100%);"
+        style="background: linear-gradient(135deg, #172b4d 0%, #0f1e35 100%);"
       >
 
         <!-- Blauer Glow links -->
@@ -25,7 +25,7 @@
           </h2>
 
           <p class="max-w-3xl text-p-lead-sm md:text-p-lead-md lg:text-p-lead-lg 2xl:text-p-lead-2xl text-white">
-            matchmaker.hr verbindet KI-gestützte Automatisierung mit menschlichem Urteilsvermögen – für Personalberater, die mehr leisten wollen.
+            matchmaker.hr verbindet KI-gestützte Automatisierung mit menschlichem Urteilsvermögen.
           </p>
 
           <div class="mt-2">

@@ -36,15 +36,16 @@
 
         <!-- Pro (Featured) -->
         <div
-          class="rounded-2xl p-10 flex flex-col relative self-stretch overflow-hidden"
-          style="border-radius: 15px; box-shadow: rgba(0,0,0,0.2) 0px 0px 40px 0px; background: linear-gradient(135deg, #0f1e35 0%, #172b4d 50%, #1a3560 100%); border: 1px solid rgba(255,255,255,0.1);"
+          class="rounded-2xl p-10 flex flex-col relative self-stretch"
+          style="border-radius: 15px; box-shadow: rgba(0,0,0,0.2) 0px 0px 40px 0px; background: linear-gradient(135deg, #172b4d 0%, #0f1e35 100%); border: 1px solid rgba(255,255,255,0.1);"
         >
 
-          <!-- Blauer Glow -->
-          <div
-            class="pointer-events-none absolute rounded-full"
-            style="width: 80%; height: 60%; top: -20%; left: -10%; background: radial-gradient(ellipse, rgba(41,118,214,0.3) 0%, transparent 70%); filter: blur(40px);"
-          ></div>
+          <!-- Blauer Glow (overflow via clip) -->
+          <div class="pointer-events-none absolute inset-0 rounded-2xl overflow-hidden">
+            <div
+              style="position: absolute; width: 80%; height: 60%; top: -20%; left: -10%; background: radial-gradient(ellipse, rgba(41,118,214,0.3) 0%, transparent 70%); filter: blur(40px); border-radius: 9999px;"
+            ></div>
+          </div>
 
           <div class="relative z-10 mb-6 flex flex-col min-h-[120px]">
             <h3 class="text-h3-sm md:text-h3-md lg:text-h3-lg 2xl:text-h3-2xl text-white mb-2">{{ pro.name }}</h3>
@@ -56,6 +57,15 @@
             <span class="text-h3-sm md:text-h3-md lg:text-h3-lg 2xl:text-h3-2xl font-bold text-white">{{ selectedTier.price }}</span>
             <span class="text-p-sm md:text-p-md lg:text-p-lg 2xl:text-p-2xl text-white/70">{{ selectedTier.priceSuffix }}</span>
           </div>
+
+          <ul class="relative z-10 flex flex-col gap-3 mb-8">
+            <li v-for="feature in pro.features" :key="feature.label" class="flex items-center gap-3 text-p-small-sm md:text-p-small-md lg:text-p-small-lg 2xl:text-p-small-2xl text-white/80">
+              <div class="flex-shrink-0 w-5 h-5 flex items-center justify-center" style="color: rgb(40, 167, 69);">
+                <component :is="feature.icon" class="w-4 h-4" :stroke-width="1.75" />
+              </div>
+              {{ feature.label }}
+            </li>
+          </ul>
 
           <!-- Custom Talent Pool Selector -->
           <div class="relative z-20 mb-4">
@@ -117,14 +127,6 @@
             </ButtonSecondary>
           </div>
 
-          <ul class="relative z-10 flex flex-col gap-3 flex-1">
-            <li v-for="feature in pro.features" :key="feature.label" class="flex items-center gap-3 text-p-small-sm md:text-p-small-md lg:text-p-small-lg 2xl:text-p-small-2xl text-white/80">
-              <div class="flex-shrink-0 w-5 h-5 flex items-center justify-center" style="color: rgb(40, 167, 69);">
-                <component :is="feature.icon" class="w-4 h-4" :stroke-width="1.75" />
-              </div>
-              {{ feature.label }}
-            </li>
-          </ul>
         </div>
 
         <!-- Addon -->

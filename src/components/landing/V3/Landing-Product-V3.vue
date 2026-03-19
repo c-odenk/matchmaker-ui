@@ -6,6 +6,7 @@
         <!-- Left: Text -->
         <div class="lg:w-1/2 flex flex-col gap-6 justify-center">
           <div class="overflow-hidden min-h-[280px] lg:min-h-[320px]">
+            <transition name="fade-right" mode="out-in">
             <div :key="currentIndex" class="flex flex-col gap-5">
 
               <!-- Title with inline icon -->
@@ -28,7 +29,7 @@
                 <li
                   v-for="point in currentFeature.points"
                   :key="point"
-                  class="flex items-center gap-3 text-p-small-sm md:text-p-small-md lg:text-p-small-lg 2xl:text-p-small-2xl text-black"
+                  class="flex items-center gap-3 text-p-sm md:text-md lg:text-p-lg 2xl:text-p-2xl text-black"
                 >
                   <div class="flex-shrink-0 w-5 h-5 rounded-full bg-blue flex items-center justify-center">
                     <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
@@ -39,6 +40,7 @@
                 </li>
               </ul>
             </div>
+            </transition>
           </div>
 
           <!-- Dots -->
@@ -58,15 +60,9 @@
         <!-- Right: Screenshot Panel -->
         <div class="lg:w-1/2 w-full">
           <div
-            class="relative w-full rounded-2xl p-6 md:p-8"
+            class="relative w-full rounded-2xl p-8 md:p-10"
             style="background: linear-gradient(135deg, #172b4d 0%, #0f1e35 100%);"
           >
-
-            <!-- Dezente Dot-Pattern Textur -->
-            <div
-              class="pointer-events-none absolute inset-0 rounded-2xl opacity-20"
-              style="background-image: radial-gradient(circle, rgba(255,255,255,0.35) 1px, transparent 1px); background-size: 24px 24px;"
-            ></div>
 
             <!-- Leuchtender Blur im Hintergrund -->
             <div
@@ -75,6 +71,7 @@
             ></div>
 
             <!-- Browser-Chrome Mockup -->
+            <div style="min-height: 300px;">
             <transition name="fade-right" mode="out-in">
               <div
                 :key="currentIndex"
@@ -136,6 +133,7 @@
 
               </div>
             </transition>
+            </div>
 
           </div>
         </div>

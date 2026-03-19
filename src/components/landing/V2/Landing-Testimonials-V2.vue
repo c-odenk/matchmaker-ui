@@ -44,13 +44,13 @@
 
             <!-- Quote -->
             <div class="relative z-10 flex-1">
-              <p class="text-p-small-sm text-white text-center m-0">
+              <p class="text-p-small-sm text-white text-left m-0">
                 {{ testimonial.quote }}
               </p>
             </div>
 
             <!-- Author -->
-            <div class="relative z-10 flex items-center gap-3 pt-4 mt-4" style="border-top: 1px solid rgba(255,255,255,0.1);">
+            <div class="relative z-10 flex items-center gap-3 pt-1.5 mt-1.5" style="border-top: 1px solid rgba(255,255,255,0.1);">
               <div class="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold tracking-wider" style="background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.9);">
                 {{ testimonial.initials }}
               </div>
@@ -81,7 +81,7 @@
 
     <!-- Tablet + Desktop: Grid -->
     <div class="hidden sm:block mx-auto max-w-container-lg 2xl:max-w-container px-container-h mt-6">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 items-stretch">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-stretch">
         <div
           v-for="(testimonial, index) in testimonials"
           :key="index"
@@ -103,14 +103,14 @@
           </div>
 
           <!-- Quote -->
-          <div class="relative z-10 flex-1 min-h-[96px]">
-            <p class="text-p-small-sm md:text-p-small-md lg:text-p-small-lg 2xl:text-p-small-2xl text-white text-center m-0">
+          <div class="relative z-10 flex-1 min-h-[96px] mb-0">
+            <p class="text-p-small-sm md:text-p-small-md lg:text-p-small-lg 2xl:text-p-small-2xl text-white text-left m-0">
               {{ testimonial.quote }}
             </p>
           </div>
 
           <!-- Author -->
-          <div class="relative z-10 flex items-center gap-3 pt-4 mt-4" style="border-top: 1px solid rgba(255,255,255,0.1);">
+          <div class="relative z-10 flex items-center gap-3 pt-1.5 mt-1.5" style="border-top: 1px solid rgba(255,255,255,0.1);">
             <div class="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold tracking-wider" style="background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.9);">
               {{ testimonial.initials }}
             </div>
@@ -154,12 +154,6 @@ export default {
           name: 'Jonas Hartmann',
           role: 'MD, Neo Executive Search',
           initials: 'JH'
-        },
-        {
-          quote: 'Volle Automatisierung wäre im Executive Search undenkbar. Mit matchmaker.hr behalten wir die Kontrolle – ohne auf Effizienz zu verzichten.',
-          name: 'Christina Vogt',
-          role: 'Partner, Vogt & Associates',
-          initials: 'CV'
         }
       ]
     }
@@ -171,9 +165,7 @@ export default {
     onScroll() {
       const container = this.$refs.scrollContainer
       if (!container) return
-      const scrollLeft = container.scrollLeft
-      const width = container.offsetWidth
-      this.activeCardIndex = Math.round(scrollLeft / width)
+      this.activeCardIndex = Math.round(container.scrollLeft / container.offsetWidth)
     },
     scrollToCard(index) {
       const container = this.$refs.scrollContainer

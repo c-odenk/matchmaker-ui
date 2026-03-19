@@ -56,7 +56,7 @@ module.exports = {
         'p-lead-sm':   ['1.0625rem', { lineHeight: '1.65' }],   // Smartphone
         'p-lead-md':   ['1.125rem',  { lineHeight: '1.65' }],   // Tablet
         'p-lead-lg':   ['1.15rem',   { lineHeight: '1.4'  }],   // Laptop
-        'p-lead-2xl':  ['1.15rem',  { lineHeight: '1.6'  }],    // Desktop 
+        'p-lead-2xl':  ['1.1rem',  { lineHeight: '1.6'  }],    // Desktop 
 
         // ── P (Standard-Fließtext für Absätze) ──────────────────────────────
         

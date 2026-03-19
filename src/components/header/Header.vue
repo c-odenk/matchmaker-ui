@@ -1,6 +1,6 @@
 <template>
   <header>
-    <nav class="w-full bg-gray-100">
+    <nav class="w-full bg-white">
       <div
         class="mx-auto max-w-container-lg 2xl:max-w-container px-container-h"
       >
