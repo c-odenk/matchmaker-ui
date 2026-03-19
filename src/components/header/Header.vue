@@ -67,8 +67,8 @@
               >{{ item.name }}</router-link>
             </li>
           </ul>
-          <div class="mt-6">
-            <ButtonPrimary href="/#/waitlist" :icon="ArrowRight" iconPosition="trailing">
+          <div class="mt-6 w-full">
+            <ButtonPrimary href="/#/waitlist" :icon="ArrowRight" iconPosition="trailing" class="w-full">
               Anmelden
             </ButtonPrimary>
           </div>
