@@ -1,5 +1,5 @@
 <template>
-  <section class="py-20 md:py-28 lg:pt-40 lg:pb-20 bg-white">
+  <section class="py-10 md:py-28 lg:pt-40 lg:pb-20 bg-white">
 
     <!-- Mobile: stacked layout -->
     <div class="sm:hidden">
