@@ -4,6 +4,14 @@
     <!-- Mobile: stacked layout -->
     <div class="sm:hidden">
       <div class="mx-auto max-w-container-lg 2xl:max-w-container px-container-h flex flex-col gap-6">
+        <!-- Trust Bullets -->
+        <div class="flex flex-wrap items-center gap-x-5 gap-y-2 mb-[-16px]">
+          <span v-for="item in ['DSGVO-konform', 'EU-Hosting', 'Human-in-the-Loop']" :key="item"
+            class="flex items-center gap-1.5 text-p-small-sm text-black">
+            <span class="w-2 h-2 rounded-full flex-shrink-0" style="background: #22c55e;"></span>
+            {{ item }}
+          </span>
+        </div>
         <!-- 1. Überschrift -->
         <h2 class="text-h3-sm text-black">
           KI-gestützte Automatisierung für modernes Recruiting.
@@ -57,7 +65,7 @@
         </div>
         <!-- 4. Button -->
         <div class="self-start">
-          <ButtonPrimary href="#" :icon="ArrowRight">
+          <ButtonPrimary href="#" :icon="ArrowRight" iconPosition="trailing">
             Jetzt anmelden
           </ButtonPrimary>
         </div>
@@ -68,6 +76,14 @@
 
       <!-- Tablet: stacked layout with 2x2 grid -->
       <div class="hidden sm:flex lg:hidden flex-col gap-6">
+        <!-- Trust Bullets -->
+        <div class="flex flex-wrap items-center gap-x-5 gap-y-2 mb-[-16px]">
+          <span v-for="item in ['DSGVO-konform', 'EU-Hosting', 'Human-in-the-Loop']" :key="item"
+            class="flex items-center gap-1.5 text-p-small-sm text-black">
+            <span class="w-2 h-2 rounded-full flex-shrink-0" style="background: #22c55e;"></span>
+            {{ item }}
+          </span>
+        </div>
         <h2 class="text-h3-sm md:text-h3-md text-black">
           KI-gestützte Automatisierung für modernes Recruiting.
         </h2>
@@ -94,7 +110,7 @@
           </div>
         </div>
         <div class="self-start">
-          <ButtonPrimary href="#" :icon="ArrowRight">
+          <ButtonPrimary href="#" :icon="ArrowRight" iconPosition="trailing">
             Jetzt anmelden
           </ButtonPrimary>
         </div>
@@ -122,6 +138,14 @@
           </div>
         </div>
         <div class="lg:w-1/2 flex flex-col gap-6">
+        <!-- Trust Bullets -->
+        <div class="flex flex-wrap items-center gap-x-5 gap-y-2 mb-[-16px]">
+          <span v-for="item in ['DSGVO-konform', 'EU-Hosting', 'Human-in-the-Loop']" :key="item"
+            class="flex items-center gap-1.5 text-p-small-lg 2xl:text-p-small-2xl text-black">
+            <span class="w-2 h-2 rounded-full flex-shrink-0" style="background: #22c55e;"></span>
+            {{ item }}
+          </span>
+        </div>
           <h2 class="text-h3-lg 2xl:text-h3-2xl text-black">
             KI-gestützte Automatisierung für modernes Recruiting.
           </h2>
@@ -129,7 +153,7 @@
             matchmaker.hr übernimmt die zeitintensiven Schritte im Vermittlungsprozess – von der Marktanalyse bis zum Outreach – und schafft so Kapazität für das Wesentliche: die Beratung.
           </p>
           <div class="self-start">
-            <ButtonPrimary href="#" :icon="ArrowRight">
+            <ButtonPrimary href="#" :icon="ArrowRight" iconPosition="trailing">
               Jetzt anmelden
             </ButtonPrimary>
           </div>

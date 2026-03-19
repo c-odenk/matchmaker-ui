@@ -17,7 +17,7 @@ module.exports = {
         sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
       },
       spacing: {
-        'container-h': '1.5rem', // 24px horizontal padding
+        // 'container-h': '1.5rem', // 24px horizontal padding
       },
       maxWidth: {
         'container-sm': '100%',   // sm  = Smartphone  (< 768 px)   → keine Prefix nötig (Basis-Klasse)

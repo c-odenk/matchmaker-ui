@@ -77,7 +77,7 @@
           <div class="mb-6 text-center">
             <h1 class="text-h3-sm md:text-h3-md text-black mb-2">Jetzt vormerken lassen</h1>
             <p class="text-p-small-sm md:text-p-small-md text-gray-500">
-              Sichern Sie sich frühzeitigen Zugang zu matchmaker.hr und seien Sie unter den Ersten.
+              Sichern Sie sich frühzeitigen ihren Zugang.
             </p>
           </div>
 

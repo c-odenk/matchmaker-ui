@@ -9,10 +9,11 @@
       'md:min-w-[160px] lg:min-w-[160px] xl:min-w-[175px]'
     ]"
   >
-    <component v-if="icon" :is="icon" class="w-4 h-4" :stroke-width="1.75" />
+    <component v-if="icon && iconPosition === 'leading'" :is="icon" class="w-4 h-4" :stroke-width="1.75" />
     <span class="text-nowrap">
       <slot />
     </span>
+    <component v-if="icon && iconPosition === 'trailing'" :is="icon" class="w-4 h-4" :stroke-width="1.75" />
   </a>
 </template>
 
@@ -27,6 +28,11 @@ export default {
     icon: {
       type: [Object, String],
       default: null
+    },
+    iconPosition: {
+      type: String,
+      default: 'leading',
+      validator: (v) => ['leading', 'trailing'].includes(v)
     }
   }
 }

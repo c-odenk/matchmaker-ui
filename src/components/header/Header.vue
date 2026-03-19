@@ -32,7 +32,7 @@
 
           <!-- Right: CTA (Desktop) -->
           <div class="hidden lg:flex items-center">
-            <ButtonPrimary href="/register">
+            <ButtonPrimary href="/#/waitlist" :icon="ArrowRight" iconPosition="trailing">
               Anmelden
             </ButtonPrimary>
           </div>
@@ -68,7 +68,7 @@
             </li>
           </ul>
           <div class="mt-6">
-            <ButtonPrimary href="/register" class="w-full">
+            <ButtonPrimary href="/#/waitlist" :icon="ArrowRight" iconPosition="trailing">
               Anmelden
             </ButtonPrimary>
           </div>
@@ -79,6 +79,7 @@
 </template>
 
 <script>
+import { ArrowRight } from 'lucide-vue-next'
 import ButtonPrimary from '@/components/common/ButtonPrimary.vue'
 
 export default {
@@ -87,6 +88,7 @@ export default {
 
   data() {
     return {
+      ArrowRight,
       isMenuOpen: false,
       navItems: [
         { name: 'Home',    href: '/' },
