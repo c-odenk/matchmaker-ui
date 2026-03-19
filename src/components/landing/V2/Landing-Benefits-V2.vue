@@ -64,7 +64,7 @@
           />
         </div>
         <!-- 4. Button -->
-        <div class="self-start">
+        <div class="self-start hidden">
           <ButtonPrimary href="#" :icon="ArrowRight" iconPosition="trailing">
             Jetzt anmelden
           </ButtonPrimary>
