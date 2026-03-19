@@ -34,10 +34,20 @@
           </svg>
         </div>
 
-        <div class="relative z-20 pt-28 md:pt-36 pb-0">
+        <div class="relative z-20 pt-28 md:pt-36 pb-28 md:pb-0">
 
           <!-- Hero Text -->
           <div class="mx-auto w-full px-container-h text-center">
+
+            <!-- Badge -->
+            <div class="hero-animate-item flex justify-center mb-6" style="animation-delay: 0s">
+              <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-p-small-sm font-medium"
+                style="background: rgba(41,118,214,0.15); color: rgba(255,255,255,0.9); border: 1px solid rgba(41,118,214,0.35);">
+                <span class="w-1.5 h-1.5 rounded-full animate-pulse" style="background: #2976d6;"></span>
+                KI-gestütztes Recruiting – jetzt verfügbar
+              </span>
+            </div>
+
             <div class="hero-animate-item" style="animation-delay: 0.1s">
               <h1 class="max-w-4xl mx-auto text-h1-sm md:text-h1-md lg:text-h1-lg 2xl:text-h1-2xl tracking-tight text-white">
                 {{ hero.heading }}
@@ -56,8 +66,8 @@
             </div>
           </div>
 
-          <!-- Dashboard Mockup -->
-          <div class="hero-animate-item relative mt-28 mx-auto max-w-5xl px-4 sm:px-8" style="animation-delay: 0.4s">
+          <!-- Dashboard Mockup – nur ab sm sichtbar -->
+          <div class="hero-animate-item hidden sm:block relative mt-28 mx-auto max-w-5xl px-4 sm:px-8" style="animation-delay: 0.4s">
             <div
               class="relative w-full overflow-hidden"
               style="border-radius: 12px 12px 0 0; box-shadow: 0 32px 80px rgba(0,0,0,0.5), 0 8px 24px rgba(0,0,0,0.3);"

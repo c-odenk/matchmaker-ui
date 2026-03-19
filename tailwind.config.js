@@ -34,7 +34,7 @@ module.exports = {
         
         'h1-sm':  ['2.25rem',  { lineHeight: '1.15', fontWeight: '700' }],  // Smartphone   
         'h1-md':  ['3rem',     { lineHeight: '1.1',  fontWeight: '700' }],  // Tablet  
-        'h1-lg':  ['3rem',     { lineHeight: '1.05',  fontWeight: '700' }], // Laptop 
+        'h1-lg':  ['2.4rem',     { lineHeight: '1.05',  fontWeight: '700' }], // Laptop 
         'h1-2xl': ['3.5rem',  { lineHeight: '1.1', fontWeight: '700' }],  // Desktop  
 
         // ── H2 ──────────────────────────────────────────────────────────────

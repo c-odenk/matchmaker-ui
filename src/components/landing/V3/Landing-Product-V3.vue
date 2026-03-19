@@ -1,11 +1,11 @@
 <template>
   <section class="py-20 md:py-28 lg:py-20 bg-white overflow-hidden">
     <div class="mx-auto max-w-container-lg 2xl:max-w-container px-container-h">
-      <div class="flex flex-col lg:flex-row items-start gap-12 lg:gap-16">
+      <div class="flex flex-col lg:flex-row items-start lg:items-center gap-12 lg:gap-16">
 
         <!-- Left: Text -->
-        <div class="lg:w-1/2 flex flex-col gap-6 justify-center">
-          <div class="overflow-hidden min-h-[280px] lg:min-h-[320px]">
+        <div class="lg:w-1/2 flex flex-col gap-8 justify-center">
+          <div class="overflow-hidden min-h-[280px] lg:min-h-[220px]">
             <transition name="fade-right" mode="out-in">
             <div :key="currentIndex" class="flex flex-col gap-5">
 
@@ -60,7 +60,7 @@
         <!-- Right: Screenshot Panel -->
         <div class="lg:w-1/2 w-full">
           <div
-            class="relative w-full rounded-2xl p-8 md:p-10"
+            class="relative w-full rounded-2xl p-8 md:p-12"
             style="background: linear-gradient(135deg, #172b4d 0%, #0f1e35 100%);"
           >
 
@@ -71,7 +71,7 @@
             ></div>
 
             <!-- Browser-Chrome Mockup -->
-            <div style="min-height: 300px;">
+            <div style="min-height: 350px; display: flex; align-items: center; justify-content: center;">
             <transition name="fade-right" mode="out-in">
               <div
                 :key="currentIndex"
