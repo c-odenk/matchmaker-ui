@@ -5,7 +5,7 @@
     <div class="sm:hidden">
       <div class="mx-auto max-w-container-lg 2xl:max-w-container px-container-h flex flex-col gap-6">
         <!-- Trust Bullets -->
-        <div class="flex flex-wrap items-center gap-x-5 gap-y-2 mb-[-16px]">
+        <div class="hidden flex flex-wrap items-center gap-x-5 gap-y-2 mb-[-16px]">
           <span v-for="item in ['DSGVO-konform', 'EU-Hosting', 'Human-in-the-Loop']" :key="item"
             class="flex items-center gap-1.5 text-p-small-sm text-black">
             <span class="w-2 h-2 rounded-full flex-shrink-0" style="background: #22c55e;"></span>
@@ -90,6 +90,11 @@
         <p class="text-p-sm md:text-p-md text-black">
           matchmaker.hr übernimmt die zeitintensiven Schritte im Vermittlungsprozess – von der Marktanalyse bis zum Outreach – und schafft so Kapazität für das Wesentliche: die Beratung.
         </p>
+        <div class="self-start">
+          <ButtonPrimary href="#" :icon="ArrowRight" iconPosition="trailing">
+            Jetzt anmelden
+          </ButtonPrimary>
+        </div>
         <div class="grid grid-cols-2 gap-4">
           <div
             v-for="benefit in benefits"
@@ -108,11 +113,6 @@
               </p>
             </div>
           </div>
-        </div>
-        <div class="self-start">
-          <ButtonPrimary href="#" :icon="ArrowRight" iconPosition="trailing">
-            Jetzt anmelden
-          </ButtonPrimary>
         </div>
       </div>
 
