@@ -50,7 +50,7 @@
         </div>
       </div>
 
-      <div class="mx-auto max-w-container-lg 2xl:max-w-container px-container-h flex flex-col gap-6 mt-6">
+      <div class="mx-auto max-w-container-lg 2xl:max-w-container px-container-h flex flex-col gap-6 mt-2">
         <!-- Scroll Dots -->
         <div class="flex items-center gap-2">
           <button
