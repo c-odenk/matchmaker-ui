@@ -6,24 +6,24 @@
 
         <div class="lg:w-1/2 flex flex-col w-full">
           
-          <div class="order-1 mb-6 lg:mb-8">
-            <transition name="image-fade" mode="out-in">
-              <div v-if="currentFeature" :key="'header-' + currentIndex" class="flex flex-col gap-4">
-                <div class="flex items-center gap-3">
-                  <div class="flex-shrink-0 w-9 h-9 flex items-center justify-center rounded-xl bg-blue text-white shadow-sm">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" :d="currentFeature.icon"/>
-                    </svg>
-                  </div>
-                  <h3 class="text-h3-sm md:text-h3-md lg:text-h3-lg 2xl:text-h3-2xl text-black leading-snug font-bold">
-                    {{ currentFeature.title }}
-                  </h3>
+          <div v-if="currentFeature" class="order-1 mb-6 lg:mb-8">
+            <div class="flex flex-col gap-4">
+              <div class="flex items-center gap-3">
+                <div class="flex-shrink-0 w-9 h-9 flex items-center justify-center rounded-xl bg-blue text-white shadow-sm">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" :d="currentFeature.icon"/>
+                  </svg>
                 </div>
-                <p class="text-p-sm md:text-p-md lg:text-p-lg 2xl:text-p-2xl text-black leading-relaxed">
-                  {{ currentFeature.description }}
-                </p>
+                
+                <h3 class="text-h3-sm md:text-h3-md lg:text-h3-lg 2xl:text-h3-2xl text-black leading-snug font-bold">
+                  <span class="lg:hidden">{{ mobileTitle }}</span>
+                  <span class="hidden lg:inline">{{ currentFeature.title }}</span>
+                </h3>
               </div>
-            </transition>
+              <p class="text-p-sm md:text-p-md lg:text-p-lg 2xl:text-p-2xl text-black leading-relaxed">
+                {{ currentFeature.description }}
+              </p>
+            </div>
           </div>
 
           <div class="order-2 lg:hidden w-full mb-8">
@@ -48,24 +48,20 @@
             </div>
           </div>
 
-          <div class="order-3 flex flex-col gap-10">
+          <div class="order-3 flex flex-col gap-6 lg:gap-10">
             
-            <div class="mt-6 lg:mt-2">
-              <transition name="image-fade" mode="out-in">
-                <div v-if="currentFeature" :key="'list-' + currentIndex">
-                  <ul class="flex flex-col gap-4">
-                    <li v-for="(point, pIdx) in currentFeature.points" :key="'p-' + currentIndex + '-' + pIdx"
-                      class="flex items-start gap-3 text-p-sm md:text-p-md lg:text-p-lg 2xl:text-p-2xl text-black">
-                      <div class="flex-shrink-0 mt-1">
-                        <svg class="w-5 h-5 text-blue" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-                        </svg>
-                      </div>
-                      <span class="flex-1 leading-snug">{{ point }}</span>
-                    </li>
-                  </ul>
-                </div>
-              </transition>
+            <div v-if="currentFeature" class="mt-4 lg:mt-2">
+              <ul class="flex flex-col gap-3 lg:gap-4">
+                <li v-for="(point, pIdx) in currentFeature.points" :key="'p-' + currentIndex + '-' + pIdx"
+                  class="flex items-start gap-3 text-p-sm md:text-p-md lg:text-p-lg 2xl:text-p-2xl text-black">
+                  <div class="flex-shrink-0 mt-1">
+                    <svg class="w-5 h-5 text-blue" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                    </svg>
+                  </div>
+                  <span class="flex-1 leading-snug">{{ point }}</span>
+                </li>
+              </ul>
             </div>
 
             <div class="flex items-center gap-2.5">
@@ -91,11 +87,6 @@
                   <img v-if="currentImage" :src="currentImage" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]" />
                   <div v-else class="placeholder-box">
                     <p class="opacity-20 text-[10px] font-bold uppercase tracking-widest">Screenshot folgt</p>
-                  </div>
-                  <div v-if="currentImage" class="absolute inset-0 bg-blue/0 group-hover:bg-blue/5 transition-colors duration-300 flex items-center justify-center">
-                    <div class="opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0 bg-white/95 backdrop-blur-sm rounded-xl px-5 py-2.5 shadow-xl border border-gray-100">
-                      <span class="text-p-small-sm font-bold text-blue">Vergrößern</span>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -199,6 +190,11 @@ export default {
     currentImage() {
       if (!this.currentFeature?.screenshot) return null;
       return screenshots[this.currentFeature.screenshot] || null;
+    },
+    mobileTitle() {
+      if (!this.currentFeature?.title) return '';
+      const parts = this.currentFeature.title.split(' – ');
+      return parts.length > 1 ? parts[1] : this.currentFeature.title;
     }
   },
   methods: {
@@ -227,7 +223,6 @@ export default {
 .placeholder-box {
   @apply h-full w-full flex flex-col items-center justify-center bg-[#1a2a3f] text-white/40;
 }
-/* Sanfte Animationen */
 .image-fade-enter-active, .image-fade-leave-active {
   transition: opacity 0.3s ease;
 }
