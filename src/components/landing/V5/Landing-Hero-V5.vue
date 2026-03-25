@@ -1,19 +1,7 @@
 <template>
   <div>
     <main class="overflow-hidden">
-      <section class="relative overflow-hidden" style="background: linear-gradient(135deg, #0f1e35 0%, #172b4d 50%, #1a3560 100%);">
-
-        <!-- Blauer Glow oben links -->
-        <div
-          class="pointer-events-none absolute rounded-full"
-          style="width: 55%; height: 70%; top: -30%; left: -15%; background: radial-gradient(ellipse, rgba(41,118,214,0.3) 0%, transparent 70%); filter: blur(60px);"
-        ></div>
-
-        <!-- Blauer Glow oben rechts -->
-        <div
-          class="pointer-events-none absolute rounded-full"
-          style="width: 45%; height: 55%; top: -20%; right: -10%; background: radial-gradient(ellipse, rgba(23,43,77,0.6) 0%, transparent 70%); filter: blur(60px);"
-        ></div>
+      <section class="bg-blue relative overflow-hidden">
 
         <!-- Grid overlay with fade-out at edges -->
         <div class="pointer-events-none absolute inset-0 z-10" aria-hidden="true">
@@ -34,17 +22,17 @@
           </svg>
         </div>
 
-        <div class="relative z-20 pt-28 md:pt-36 pb-28 md:pb-0">
+        <div class="relative z-20 pt-28 md:pt-34 pb-28 md:pb-0">
 
           <!-- Hero Text -->
           <div class="mx-auto w-full px-container-h text-center">
 
             <!-- Badge -->
             <div class="hero-animate-item flex justify-center mb-6" style="animation-delay: 0s">
-              <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-p-small-sm font-medium"
-                style="background: rgba(41,118,214,0.15); color: rgba(255,255,255,0.9); border: 1px solid rgba(41,118,214,0.35);">
-                <span class="w-1.5 h-1.5 rounded-full animate-pulse" style="background: #2976d6;"></span>
-                KI-gestütztes Talentpool management
+              <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-p-small-sm"
+                style="background: rgba(255,255,255,0.12); color: #ffffff; border: 1px solid rgba(255,255,255,0.3); backdrop-filter: blur(8px);">
+                <span class="w-2 h-2 rounded-full animate-pulse flex-shrink-0" style="background: #22c55e;"></span>
+                {{ hero.badge }}
               </span>
             </div>
 
@@ -52,7 +40,7 @@
               <h1 class="max-w-4xl mx-auto text-h1-sm md:text-h1-md lg:text-h1-lg 2xl:text-h1-2xl tracking-tight text-white">
                 {{ hero.heading }}
               </h1>
-              <p class="mt-6 max-w-2xl mx-auto text-base md:text-lg text-white/80">
+              <p class="mt-6 max-w-2xl mx-auto text-base md:text-lg text-white">
                 {{ hero.subheading }}
               </p>
             </div>
@@ -123,6 +111,7 @@ export default {
       LogIn,
       CalendarDays,
       hero: {
+        badge: 'KI-gestütztes Talentpool management',
         heading: 'Recruiting-Automatisierung, die Ihrem Urteil vertraut.',
         subheading: 'KI übernimmt die zeitintensiven Schritte – Marktanalyse, Matching, Anschreiben. Der Berater entscheidet. Immer.'
       }

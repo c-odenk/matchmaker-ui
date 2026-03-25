@@ -19,14 +19,14 @@
 
 <script>
 import Header from '@/components/header/Header.vue'
-import LandingHero from '@/components/landing/V3/Landing-Hero-V3.vue'
-import LandingBenefits from '@/components/landing/V2/Landing-Benefits-V2.vue'
-import LandingProduct from '@/components/landing/V3//Landing-Product-V3.vue'
+import LandingHero from '@/components/landing/V5/Landing-Hero-V5.vue'
+import LandingBenefits from '@/components/landing/V5/Landing-Benefits-V5.vue'
+import LandingProduct from '@/components/landing/V5//Landing-Product-V5.vue'
 // import LandingWorkflow from '@/components/landing/Landing-Workflow.vue'
-import LandingTestimonials from '@/components/landing/V2/Landing-Testimonials-V2.vue'
-import LandingCta from '@/components/landing/V2/Landing-CTA-V2.vue'
-import LandingPricing from '@/components/landing/V2/Landing-Pricing-V2.vue'
-import LandingFaq from '@/components/landing/V2/Landing-FAQ-V2.vue'
+import LandingTestimonials from '@/components/landing/V5/Landing-Testimonials-V5.vue'
+import LandingCta from '@/components/landing/V5/Landing-CTA-V5.vue'
+import LandingPricing from '@/components/landing/V5/Landing-Pricing-V5.vue'
+import LandingFaq from '@/components/landing/V5/Landing-FAQ-V5.vue'
 import Footer from '@/components/footer/Footer.vue'
 
 export default {
