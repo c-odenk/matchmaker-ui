@@ -32,7 +32,7 @@
 
           <!-- Right: CTA (Desktop) -->
           <div class="hidden lg:flex items-center">
-            <ButtonPrimary href="/#/waitlist" :icon="ArrowRight" iconPosition="trailing">
+            <ButtonPrimary href="/waitlist" :icon="ArrowRight" iconPosition="trailing">
               Anmelden
             </ButtonPrimary>
           </div>
