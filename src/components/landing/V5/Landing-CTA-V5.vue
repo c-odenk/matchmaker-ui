@@ -3,7 +3,7 @@
     <div class="mx-auto max-w-container-lg 2xl:max-w-container px-container-h">
       
       <div 
-        class="relative bg-blue rounded-3xl px-8 py-16 md:py-20 text-center overflow-hidden shadow-xl border border-white/10"
+        class="relative bg-dark-blue rounded-3xl px-8 py-16 md:py-20 text-center overflow-hidden shadow-xl border border-white/10"
       >
         <div class="relative z-10 flex flex-col items-center max-w-full mx-auto gap-10">
           

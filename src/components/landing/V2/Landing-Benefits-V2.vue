@@ -35,7 +35,7 @@
           class="shrink-0 w-screen snap-start px-container-h pb-3"
         >
           <div class="flex flex-col gap-4 bg-gray-50 border border-gray-200 rounded-2xl p-5 h-full">
-            <div class="w-9 h-9 flex items-center justify-center rounded-xl bg-blue text-white">
+            <div class="w-9 h-9 flex items-center justify-center rounded-xl bg-dark-blue text-white">
               <component :is="benefit.icon" class="w-4 h-4" :stroke-width="1.5" />
             </div>
             <div>
@@ -59,7 +59,7 @@
             @click="scrollToCard(index)"
             class="transition-all duration-500 rounded-full"
             :class="activeCardIndex === index
-              ? 'w-8 h-2.5 bg-blue'
+              ? 'w-8 h-2.5 bg-dark-blue'
               : 'w-2.5 h-2.5 bg-gray-200'"
           />
         </div>
@@ -101,7 +101,7 @@
             :key="benefit.title"
             class="flex flex-col gap-4 bg-gray-50 border border-gray-200 rounded-2xl p-6"
           >
-            <div class="w-9 h-9 flex items-center justify-center rounded-xl bg-blue text-white">
+            <div class="w-9 h-9 flex items-center justify-center rounded-xl bg-dark-blue text-white">
               <component :is="benefit.icon" class="w-4 h-4" :stroke-width="1.5" />
             </div>
             <div>
@@ -124,7 +124,7 @@
             :key="benefit.title"
             class="flex flex-col gap-4 bg-gray-50 border border-gray-200 rounded-2xl p-4"
           >
-            <div class="w-9 h-9 flex items-center justify-center rounded-xl bg-blue text-white">
+            <div class="w-9 h-9 flex items-center justify-center rounded-xl bg-dark-blue text-white">
               <component :is="benefit.icon" class="w-4 h-4" :stroke-width="1.5" />
             </div>
             <div>

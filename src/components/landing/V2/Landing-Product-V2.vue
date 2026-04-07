@@ -23,7 +23,7 @@
 
             <!-- Dekoratives Hintergrund-Rechteck (gespiegelt zu LandingProduct) -->
             <div
-              class="absolute rounded-2xl bg-blue z-0"
+              class="absolute rounded-2xl bg-dark-blue z-0"
               style="top: -32px; left: -32px; bottom: 32px; right: 32px;"
             ></div>
 
@@ -46,7 +46,7 @@
 
                 <!-- Author -->
                 <div class="flex items-center gap-3 pt-4 border-t border-gray-100">
-                  <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold tracking-wider bg-deep-blue text-white">
+                  <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold tracking-wider bg-dark-blue text-white">
                     {{ testimonials[currentIndex].initials }}
                   </div>
                   <div class="flex flex-col gap-0.5">
@@ -68,7 +68,7 @@
               @click="goTo(index)"
               class="transition-all duration-500 rounded-full"
               :class="currentIndex === index
-                ? 'w-8 h-2.5 bg-blue'
+                ? 'w-8 h-2.5 bg-dark-blue'
                 : 'w-2.5 h-2.5 bg-gray-200 hover:bg-gray-300'"
             />
           </div>
@@ -106,7 +106,7 @@
               </div>
               <p class="text-p-small-sm text-gray-700 flex-1 mb-4 m-0">"{{ testimonial.quote }}"</p>
               <div class="flex items-center gap-3 pt-4 border-t border-gray-100">
-                <div class="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold bg-deep-blue text-white">
+                <div class="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold bg-dark-blue text-white">
                   {{ testimonial.initials }}
                 </div>
                 <div>
@@ -124,7 +124,7 @@
               :key="index"
               @click="scrollToCard(index)"
               class="transition-all duration-500 rounded-full"
-              :class="activeCardIndex === index ? 'w-8 h-2.5 bg-blue' : 'w-2.5 h-2.5 bg-gray-200'"
+              :class="activeCardIndex === index ? 'w-8 h-2.5 bg-dark-blue' : 'w-2.5 h-2.5 bg-gray-200'"
             />
           </div>
         </div>

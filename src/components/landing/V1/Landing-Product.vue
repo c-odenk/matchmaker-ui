@@ -24,7 +24,7 @@
                   <h3 class="text-h3-sm md:text-h3-md lg:text-h3-lg 2xl:text-h3-2xl text-gray-900 leading-snug">
                     {{ currentFeature.title }}
                   </h3>
-                  <div class="w-24 h-1 bg-deep-blue"></div>
+                  <div class="w-24 h-1 bg-dark-blue"></div>
                 </div>
                 <p class="paragraph-lg">
                   {{ currentFeature.description }}
@@ -35,7 +35,7 @@
                     :key="point"
                     class="flex items-center gap-3 paragraph-base"
                   >
-                    <div class="flex-shrink-0 w-5 h-5 rounded-full bg-deep-blue flex items-center justify-center">
+                    <div class="flex-shrink-0 w-5 h-5 rounded-full bg-dark-blue flex items-center justify-center">
                       <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
                       </svg>
@@ -63,8 +63,8 @@
                   class="w-full h-full object-contain object-center rounded-2xl"
                 />
                 <div v-else class="w-full h-full flex flex-col items-center justify-center gap-3">
-                  <div class="w-12 h-12 rounded-xl bg-deep-blue/10 flex items-center justify-center">
-                    <svg class="w-6 h-6 text-deep-blue" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                  <div class="w-12 h-12 rounded-xl bg-dark-blue/10 flex items-center justify-center">
+                    <svg class="w-6 h-6 text-dark-blue" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" :d="currentFeature.icon"/>
                     </svg>
                   </div>
@@ -85,7 +85,7 @@
           @click="goTo(index)"
           class="transition-all duration-300 rounded-full"
           :class="currentIndex === index
-            ? 'w-8 h-3 bg-deep-blue'
+            ? 'w-8 h-3 bg-dark-blue'
             : 'w-3 h-3 bg-gray-200 hover:bg-gray-300'"
         />
       </div>

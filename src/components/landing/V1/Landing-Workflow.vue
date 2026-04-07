@@ -21,7 +21,7 @@
 
           <ul class="flex flex-col gap-6">
             <li v-for="item in workflowItems" :key="item.text" class="flex items-start gap-4">
-              <div class="flex-shrink-0 w-6 h-6 rounded-full bg-deep-blue flex items-center justify-center mt-0.5">
+              <div class="flex-shrink-0 w-6 h-6 rounded-full bg-dark-blue flex items-center justify-center mt-0.5">
                 <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
                 </svg>

@@ -72,7 +72,7 @@
             @click="scrollToCard(index)"
             class="transition-all duration-500 rounded-full"
             :class="activeCardIndex === index
-              ? 'w-8 h-2.5 bg-blue'
+              ? 'w-8 h-2.5 bg-dark-blue'
               : 'w-2.5 h-2.5 bg-gray-200'"
           />
         </div>

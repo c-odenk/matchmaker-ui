@@ -32,7 +32,7 @@
               <div class="flex gap-0.5">
                 <span v-for="n in 5" :key="n" class="text-amber-400 text-base">★</span>
               </div>
-              <span class="text-3xl font-serif leading-none select-none" style="color: rgba(0,0,0,0.12);">"</span>
+              <span class="text-3xl font-serif leading-none select-none text-deep-blue">"</span>
             </div>
 
             <!-- Quote -->
@@ -44,7 +44,7 @@
 
             <!-- Author -->
             <div class="relative z-10 flex items-center gap-3 pt-1.5 mt-1.5 border-t border-gray-200">
-              <div class="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold tracking-wider bg-blue text-white">
+              <div class="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold tracking-wider bg-dark-blue text-white">
                 {{ testimonial.initials }}
               </div>
               <div class="flex flex-col gap-0.5">
@@ -65,7 +65,7 @@
             @click="scrollToCard(index)"
             class="transition-all duration-500 rounded-full"
             :class="activeCardIndex === index
-              ? 'w-8 h-2.5 bg-blue'
+              ? 'w-8 h-2.5 bg-dark-blue'
               : 'w-2.5 h-2.5 bg-gray-200'"
           />
         </div>
@@ -85,7 +85,7 @@
             <div class="flex gap-0.5">
               <span v-for="n in 5" :key="n" class="text-amber-400 text-base">★</span>
             </div>
-            <span class="text-3xl font-serif leading-none select-none" style="color: rgba(0,0,0,0.12);">"</span>
+            <span class="text-3xl font-serif leading-none select-none text-deep-blue">"</span>
           </div>
 
           <!-- Quote -->
@@ -97,7 +97,7 @@
 
           <!-- Author -->
           <div class="relative z-10 flex items-center gap-3 pt-1.5 mt-1.5 border-t border-gray-200">
-            <div class="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold tracking-wider bg-blue text-white">
+            <div class="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold tracking-wider bg-dark-blue text-white">
               {{ testimonial.initials }}
             </div>
             <div class="flex flex-col gap-0.5">

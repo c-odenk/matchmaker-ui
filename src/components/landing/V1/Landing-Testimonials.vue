@@ -27,7 +27,7 @@
 
           <!-- Author -->
           <div class="flex items-center gap-3 mt-auto pt-4 border-t border-gray-100">
-            <div class="w-9 h-9 rounded-full bg-deep-blue text-white flex items-center justify-center flex-shrink-0 text-xs font-bold tracking-wider">
+            <div class="w-9 h-9 rounded-full bg-dark-blue text-white flex items-center justify-center flex-shrink-0 text-xs font-bold tracking-wider">
               {{ testimonial.initials }}
             </div>
             <div class="flex flex-col gap-0.5">

@@ -11,7 +11,7 @@
           <!-- Überschrift + Text (statisch) -->
           <div class="flex flex-col gap-4">
             <div class="flex items-center gap-3">
-              <div class="flex-shrink-0 w-9 h-9 flex items-center justify-center rounded-xl bg-blue text-white">
+              <div class="flex-shrink-0 w-9 h-9 flex items-center justify-center rounded-xl bg-dark-blue text-white">
                 <MessageSquareQuote class="w-4 h-4" :stroke-width="1.5" />
               </div>
               <h2 class="text-h3-sm md:text-h3-md lg:text-h3-lg 2xl:text-h3-2xl text-black">
@@ -70,7 +70,7 @@
               @click="goTo(index)"
               class="transition-all duration-500 rounded-full"
               :class="currentIndex === index
-                ? 'w-8 h-2.5 bg-blue'
+                ? 'w-8 h-2.5 bg-dark-blue'
                 : 'w-2.5 h-2.5 bg-gray-200 hover:bg-gray-300'"
             />
           </div>
@@ -108,7 +108,7 @@
               </div>
               <p class="text-p-small-sm text-gray-700 flex-1 mb-4 m-0">"{{ testimonial.quote }}"</p>
               <div class="flex items-center gap-3 pt-4 border-t border-gray-100">
-                <div class="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold bg-deep-blue text-white">
+                <div class="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold bg-dark-blue text-white">
                   {{ testimonial.initials }}
                 </div>
                 <div>
@@ -126,7 +126,7 @@
               :key="index"
               @click="scrollToCard(index)"
               class="transition-all duration-500 rounded-full"
-              :class="activeCardIndex === index ? 'w-8 h-2.5 bg-blue' : 'w-2.5 h-2.5 bg-gray-200'"
+              :class="activeCardIndex === index ? 'w-8 h-2.5 bg-dark-blue' : 'w-2.5 h-2.5 bg-gray-200'"
             />
           </div>
         </div>

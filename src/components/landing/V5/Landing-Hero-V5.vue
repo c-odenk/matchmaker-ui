@@ -1,7 +1,7 @@
 <template>
   <div>
     <main class="overflow-hidden">
-      <section class="bg-blue relative overflow-hidden">
+      <section id="hero" class="bg-dark-blue relative overflow-hidden">
 
         <!-- Grid overlay with fade-out at edges -->
         <div class="pointer-events-none absolute inset-0 z-10" aria-hidden="true">
@@ -45,7 +45,7 @@
               </p>
             </div>
             <div class="hero-animate-item mt-10 flex flex-col items-center justify-center gap-2 md:flex-row" style="animation-delay: 0.25s">
-              <ButtonSecondary :icon="LogIn" href="#">
+              <ButtonSecondary :icon="LogIn" :href="loginUrl">
                 Jetzt anmelden
               </ButtonSecondary>
               <ButtonPrimary :icon="CalendarDays" href="#">
@@ -114,7 +114,9 @@ export default {
         badge: 'KI-gestütztes Talentpool management',
         heading: 'Recruiting-Automatisierung, die Ihrem Urteil vertraut.',
         subheading: 'KI übernimmt die zeitintensiven Schritte – Marktanalyse, Matching, Anschreiben. Der Berater entscheidet. Immer.'
-      }
+      },
+      // URL zur Webanwendung aus der Umgebungsvariable
+      loginUrl: process.env.VUE_APP_DASHBOARD_URL
     }
   }
 }

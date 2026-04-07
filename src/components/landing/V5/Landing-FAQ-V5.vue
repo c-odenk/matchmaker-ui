@@ -1,5 +1,5 @@
 <template>
-  <section class="py-12 md:py-16 lg:pt-12 lg:pb-20 2xl:py-36 bg-white">
+  <section class="py-12 md:py-16 lg:pt-12 lg:pb-20 2xl:py-20 ">
     <div class="mx-auto max-w-container-lg 2xl:max-w-container px-container-h">
       <div class="flex flex-col lg:flex-row gap-12 lg:gap-20">
 
@@ -33,7 +33,7 @@
 
               <h3
                 class="text-p-sm md:text-p-md lg:text-p-lg 2xl:text-p-2xl font-medium m-0 transition-colors duration-150"
-                :class="activeIndex === index ? 'text-blue' : 'text-black'"
+                :class="activeIndex === index ? 'text-dark-blue' : 'text-black'"
               >
                 {{ faq.question }}
               </h3>
@@ -41,7 +41,7 @@
               <div
                 class="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center transition-all duration-200"
                 :class="activeIndex === index
-                  ? 'bg-blue text-white'
+                  ? 'bg-dark-blue text-white'
                   : 'bg-gray-100 text-black group-hover:bg-gray-200'"
               >
                 <svg class="w-3.5 h-3.5 transition-transform duration-200" :class="activeIndex === index ? 'rotate-45' : ''" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">

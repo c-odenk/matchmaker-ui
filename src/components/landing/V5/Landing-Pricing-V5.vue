@@ -1,5 +1,5 @@
 <template>
-  <section class="py-20 md:py-28 lg:py-20 lg:pb-4 2xl:pt-28 2xl:pb-4 bg-white">
+  <section id="pricing" class="py-20 md:py-28 lg:py-20 lg:pb-4 2xl:pt-28 2xl:pb-16 bg-white">
     <div class="mx-auto max-w-container-lg 2xl:max-w-container px-container-h">
 
       <SectionHeader
@@ -23,7 +23,7 @@
           </div>
           <ul class="flex flex-col gap-3 flex-1">
             <li v-for="feature in starter.features" :key="feature.label" class="flex items-center gap-3 text-p-small-sm md:text-p-small-md lg:text-p-small-lg 2xl:text-p-small-2xl text-black">
-              <div class="flex-shrink-0 w-5 h-5 flex items-center justify-center text-blue">
+              <div class="flex-shrink-0 w-5 h-5 flex items-center justify-center text-dark-blue">
                 <component :is="feature.icon" class="w-4 h-4" :stroke-width="2" />
               </div>
               {{ feature.label }}
@@ -32,7 +32,7 @@
         </div>
 
         <div
-          class="bg-blue rounded-2xl p-10 md:p-7 lg:p-8 flex flex-col relative self-stretch shadow-xl scale-[1.02] z-10" 
+          class="bg-dark-blue rounded-2xl p-10 md:p-7 lg:p-8 flex flex-col relative self-stretch shadow-xl scale-[1.02] z-10" 
           style="border: 1px solid rgba(255,255,255,0.1);"
         >
           <div class="relative z-10 mb-6 flex flex-col min-h-[125px]">
@@ -91,10 +91,10 @@
                     :key="tier.label"
                     @click="selectTier(tier)"
                     class="w-full flex items-center justify-between px-4 py-3 transition-all duration-150 text-black group relative"
-                    :class="selectedTier.label === tier.label ? 'bg-blue/5 font-medium' : 'hover:bg-blue/5'"
+                    :class="selectedTier.label === tier.label ? 'bg-dark-blue/5 font-medium' : 'hover:bg-dark-blue/5'"
                   >
                     <span
-                      class="absolute left-0 top-0 bottom-0 w-0.5 bg-blue transition-all duration-150 rounded-r"
+                      class="absolute left-0 top-0 bottom-0 w-0.5 bg-dark-blue transition-all duration-150 rounded-r"
                       :class="selectedTier.label === tier.label ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'"
                     ></span>
                     <span class="text-p-small-sm md:text-p-small-md lg:text-p-small-lg 2xl:text-p-small-2xl">{{ tier.label }}</span>
@@ -106,7 +106,7 @@
           </div>
 
           <div class="relative z-10 mb-6">
-            <ButtonSecondary href="#" class="w-full">
+            <ButtonSecondary :href="loginUrl" class="w-full">
               Jetzt loslegen
             </ButtonSecondary>
           </div>
@@ -125,7 +125,7 @@
           </div>
           <ul class="flex flex-col gap-3 flex-1">
             <li v-for="feature in addon.features" :key="feature.label" class="flex items-center gap-3 text-p-small-sm md:text-p-small-md lg:text-p-small-lg 2xl:text-p-small-2xl text-black">
-              <div class="flex-shrink-0 w-5 h-5 flex items-center justify-center text-blue">
+              <div class="flex-shrink-0 w-5 h-5 flex items-center justify-center text-dark-blue">
                 <component :is="feature.icon" class="w-4 h-4" :stroke-width="2" />
               </div>
               {{ feature.label }}
@@ -201,7 +201,9 @@ export default {
           { label: 'Skalierbar je zusätzlicher Mitarbeiter', icon: UserCheck },
           { label: 'Monatlich kündbar, keine Mindestlaufzeit', icon: CalendarX },
         ]
-      }
+      },
+      // URL zur Webanwendung aus der Umgebungsvariable
+      loginUrl: process.env.VUE_APP_DASHBOARD_URL
     }
   },
   created() {

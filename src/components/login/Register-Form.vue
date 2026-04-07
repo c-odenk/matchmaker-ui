@@ -42,12 +42,12 @@
 
             <div class="flex justify-center mb-6">
               <router-link to="/" class="flex items-center gap-3">
-                <div class="w-9 h-9 rounded-xl bg-blue flex items-center justify-center shadow-md text-white">
+                <div class="w-9 h-9 rounded-xl bg-dark-blue flex items-center justify-center shadow-md text-white">
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                     <path d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
                   </svg>
                 </div>
-                <span class="text-black font-bold tracking-tight text-xl">matchmaker<span class="text-blue">.</span>hr</span>
+                <span class="text-black font-bold tracking-tight text-xl">matchmaker<span class="text-dark-blue">.</span>hr</span>
               </router-link>
             </div>
 
@@ -66,32 +66,32 @@
             <form @submit.prevent="handleRegister" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               
               <div class="flex flex-col gap-1.5">
-                <label class="text-[11px] font-bold text-gray-400 uppercase tracking-wider ml-1">Vorname</label>
+                <label class="text-[11px] text-gray-400 uppercase tracking-wider ml-1">Vorname</label>
                 <input v-model="form.firstName" type="text" placeholder="Max" class="register-input" required />
               </div>
 
               <div class="flex flex-col gap-1.5">
-                <label class="text-[11px] font-bold text-gray-400 uppercase tracking-wider ml-1">Nachname</label>
+                <label class="text-[11px] text-gray-400 uppercase tracking-wider ml-1">Nachname</label>
                 <input v-model="form.lastName" type="text" placeholder="Mustermann" class="register-input" required />
               </div>
 
               <div class="flex flex-col gap-1.5">
-                <label class="text-[11px] font-bold text-gray-400 uppercase tracking-wider ml-1">Firmenname</label>
+                <label class="text-[11px] text-gray-400 uppercase tracking-wider ml-1">Firmenname</label>
                 <input v-model="form.company" type="text" placeholder="Muster GmbH" class="register-input" required />
               </div>
 
               <div class="flex flex-col gap-1.5">
-                <label class="text-[11px] font-bold text-gray-400 uppercase tracking-wider ml-1">Telefon</label>
+                <label class="text-[11px] text-gray-400 uppercase tracking-wider ml-1">Telefon</label>
                 <input v-model="form.phone" type="tel" placeholder="+49 151..." class="register-input" required />
               </div>
 
               <div class="sm:col-span-2 flex flex-col gap-1.5">
-                <label class="text-[11px] font-bold text-gray-400 uppercase tracking-wider ml-1">Geschäftliche E-Mail</label>
+                <label class="text-[11px] text-gray-400 uppercase tracking-wider ml-1">Geschäftliche E-Mail</label>
                 <input v-model="form.email" type="email" placeholder="name@unternehmen.de" class="register-input" required />
               </div>
 
               <div class="sm:col-span-2 flex flex-col gap-1.5">
-                <label class="text-[11px] font-bold text-gray-400 uppercase tracking-wider ml-1">Passwort</label>
+                <label class="text-[11px] text-gray-400 uppercase tracking-wider ml-1">Passwort</label>
                 <div class="relative">
                   <input
                     v-model="form.password" :type="showPassword ? 'text' : 'password'" 
@@ -109,7 +109,7 @@
                   <div class="flex gap-1 flex-1">
                     <div v-for="i in 4" :key="i" class="h-1 flex-1 rounded-full transition-all duration-300" :class="i <= passwordStrength ? strengthColor : 'bg-gray-100'"></div>
                   </div>
-                  <span class="text-[10px] font-bold uppercase tracking-tight" :class="strengthTextColor">{{ strengthLabel }}</span>
+                  <span class="text-[10px] uppercase tracking-tight" :class="strengthTextColor">{{ strengthLabel }}</span>
                 </div>
               </div>
 
@@ -117,7 +117,7 @@
                 <button
                   type="submit"
                   :disabled="isLoading"
-                  class="register-btn w-full flex items-center justify-center gap-3 rounded-xl px-6 py-3.5 font-bold text-p-sm text-white bg-blue transition-all duration-200"
+                  class="register-btn w-full flex items-center justify-center gap-3 rounded-xl px-6 py-3.5 text-p-sm text-white bg-dark-blue transition-all duration-200"
                 >
                   <span>{{ isLoading ? 'Wird erstellt...' : 'Konto erstellen' }}</span>
                   <svg v-if="!isLoading" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
@@ -131,7 +131,7 @@
           <div class="px-6 sm:px-10 py-5 rounded-b-2xl border-t border-gray-100 bg-gray-50/50">
             <p class="text-center text-p-small-sm text-gray-400">
               Bereits registriert?
-              <router-link to="/login" class="ml-1 text-blue font-bold hover:underline">Jetzt anmelden</router-link>
+              <router-link to="/login" class="ml-1 text-dark-blue font-bold hover:underline">Jetzt anmelden</router-link>
             </p>
           </div>
 

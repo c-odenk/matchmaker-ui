@@ -2,7 +2,7 @@
   <a
     :href="href"
     :class="[
-      'inline-flex items-center justify-center gap-2 rounded-xl px-8 py-2.5',
+      'inline-flex items-center justify-center gap-2 rounded-button px-8 py-2.5',
       'bg-gray-200 text-black',
       'hover:bg-gray-300 transition-all duration-200',
       'text-p-sm md:text-p-md lg:text-p-lg 2xl:text-p-2xl',

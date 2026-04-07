@@ -1,7 +1,7 @@
 <template>
   <section class="py-12 md:py-16 bg-white">
     <div class="mx-auto max-w-container-lg 2xl:max-w-container px-container-h">
-      <div class="relative overflow-hidden rounded-2xl bg-deep-blue p-8 md:p-12 lg:p-16">
+      <div class="relative overflow-hidden rounded-2xl bg-dark-blue p-8 md:p-12 lg:p-16">
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-12 gap-y-16">
         <div v-for="benefit in benefits" :key="benefit.title" class="flex flex-col items-center gap-5 text-center">

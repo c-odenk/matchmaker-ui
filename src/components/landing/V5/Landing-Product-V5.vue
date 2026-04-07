@@ -1,5 +1,5 @@
 <template>
-  <section class="py-10 md:py-28 lg:py-20 bg-white overflow-hidden">
+  <section id="product" class="py-10 md:py-28 lg:py-20 bg-white overflow-hidden">
     <div class="mx-auto max-w-container-lg 2xl:max-w-container px-container-h">
       
       <div class="flex flex-col lg:flex-row items-start lg:items-center gap-8 md:gap-12 lg:gap-16">
@@ -9,7 +9,7 @@
           <div v-if="currentFeature" class="order-1 mb-6 lg:mb-8">
             <div class="flex flex-col gap-4">
               <div class="flex items-center gap-3">
-                <div class="flex-shrink-0 w-9 h-9 flex items-center justify-center rounded-xl bg-blue text-white shadow-sm">
+                <div class="flex-shrink-0 w-9 h-9 flex items-center justify-center rounded-xl bg-dark-blue text-white shadow-sm">
                   <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" :d="currentFeature.icon"/>
                   </svg>
@@ -55,7 +55,7 @@
                 <li v-for="(point, pIdx) in currentFeature.points" :key="'p-' + currentIndex + '-' + pIdx"
                   class="flex items-start gap-3 text-p-sm md:text-p-md lg:text-p-lg 2xl:text-p-2xl text-black">
                   <div class="flex-shrink-0 mt-1">
-                    <svg class="w-5 h-5 text-blue" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                    <svg class="w-5 h-5 text-dark-blue" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
                     </svg>
                   </div>
@@ -67,7 +67,7 @@
             <div class="flex items-center gap-2.5">
               <button v-for="(feature, index) in features" :key="'dot-' + index" @click="goTo(index)"
                 class="transition-all duration-300 rounded-full h-2.5"
-                :class="currentIndex === index ? 'w-8 bg-blue shadow-sm' : 'w-2.5 bg-gray-200 hover:bg-gray-300'" />
+                :class="currentIndex === index ? 'w-8 bg-dark-blue shadow-sm' : 'w-2.5 bg-gray-200 hover:bg-gray-300'" />
             </div>
           </div>
         </div>

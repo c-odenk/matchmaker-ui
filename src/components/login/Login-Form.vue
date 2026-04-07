@@ -42,12 +42,12 @@
 
             <div class="flex justify-center mb-8">
               <router-link to="/" class="flex items-center gap-3">
-                <div class="w-9 h-9 rounded-xl bg-blue flex items-center justify-center shadow-md text-white">
+                <div class="w-9 h-9 rounded-xl bg-dark-blue flex items-center justify-center shadow-md text-white">
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                     <path d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
                   </svg>
                 </div>
-                <span class="text-black font-bold tracking-tight text-xl">matchmaker<span class="text-blue">.</span>hr</span>
+                <span class="text-black font-bold tracking-tight text-xl">matchmaker<span class="text-dark-blue">.</span>hr</span>
               </router-link>
             </div>
 
@@ -62,7 +62,7 @@
 
             <form @submit.prevent="handleLogin" class="flex flex-col gap-5">
               <div class="flex flex-col gap-1.5">
-                <label for="email" class="text-[11px] font-bold text-gray-400 uppercase tracking-wider ml-1">E-Mail-Adresse</label>
+                <label for="email" class="text-[11px] text-gray-400 uppercase tracking-wider ml-1">E-Mail-Adresse</label>
                 <input
                   id="email" v-model="form.email" type="email" placeholder="name@unternehmen.de" required
                   class="login-input"
@@ -71,8 +71,8 @@
 
               <div class="flex flex-col gap-1.5">
                 <div class="flex items-center justify-between px-1">
-                  <label for="password" class="text-[11px] font-bold text-gray-400 uppercase tracking-wider">Passwort</label>
-                  <a href="#" class="text-[11px] font-bold text-blue uppercase tracking-wider hover:opacity-70 transition-opacity">Vergessen?</a>
+                  <label for="password" class="text-[11px] text-gray-400 uppercase tracking-wider">Passwort</label>
+                  <a href="#" class="text-[11px] text-dark-blue uppercase tracking-wider hover:opacity-70 transition-opacity">Vergessen?</a>
                 </div>
                 <div class="relative">
                   <input
@@ -94,7 +94,8 @@
               <button
                 type="submit"
                 :disabled="isLoading"
-                class="login-btn w-full flex items-center justify-center gap-3 rounded-xl px-6 py-3.5 font-bold text-p-sm text-white bg-blue transition-all duration-200 mt-2"
+                
+                class="login-btn w-full flex items-center justify-center gap-3 rounded-xl px-6 py-3.5 text-p-sm text-white bg-dark-blue transition-all duration-200 mt-2"
               >
                 <span>{{ isLoading ? 'Anmelden...' : 'Jetzt anmelden' }}</span>
                 <svg v-if="!isLoading" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
@@ -107,7 +108,7 @@
           <div class="px-6 sm:px-8 py-5 rounded-b-2xl border-t border-gray-100 bg-gray-50/50">
             <p class="text-center text-p-small-sm text-gray-400">
               Noch kein Konto?
-              <router-link to="/register" class="ml-1 text-blue font-bold hover:underline">Jetzt registrieren</router-link>
+              <router-link to="/register" class="ml-1 text-dark-blue hover:underline font-bold">Jetzt registrieren</router-link>
             </p>
           </div>
 
@@ -139,7 +140,7 @@ export default {
       try {
         // Simulierte Authentifizierung
         await new Promise(resolve => setTimeout(resolve, 1500))
-        this.$router.push('/dashboard')
+        this.$router.push('/dashboard') // Weiterleitung nach erfolgreichem Login
       } catch (error) {
         this.errorMessage = 'E-Mail oder Passwort ist nicht korrekt.'
       } finally {

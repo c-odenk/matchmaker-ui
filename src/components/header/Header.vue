@@ -8,7 +8,7 @@
 
           <!-- Logo / Brand Name -->
           <router-link to="/" class="flex items-center gap-3 shrink-0">
-            <div class="w-9 h-9 rounded-xl bg-blue flex items-center justify-center shadow-sm">
+            <div class="w-9 h-9 rounded-xl bg-dark-blue flex items-center justify-center shadow-sm">
               <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456z"/>
               </svg>
@@ -21,18 +21,17 @@
           <!-- Center Nav Links (Desktop) -->
           <ul class="absolute left-1/2 -translate-x-1/2 hidden lg:flex items-center gap-8">
             <li v-for="item in navItems" :key="item.name">
-              <router-link
-                :to="item.href"
+              <a
+                :href="item.href"
                 class="uppercase text-gray-900 hover:text-gray-600 transition-colors duration-200"
-                active-class="text-gray-900 font-medium"
                 @click="closeMenu"
-              >{{ item.name }}</router-link>
+              >{{ item.name }}</a>
             </li>
           </ul>
 
           <!-- Right: CTA (Desktop) -->
           <div class="hidden lg:flex items-center">
-            <ButtonPrimary href="/waitlist" :icon="ArrowRight" iconPosition="trailing">
+            <ButtonPrimary :href="loginUrl" :icon="ArrowRight" iconPosition="trailing">
               Anmelden
             </ButtonPrimary>
           </div>
@@ -59,16 +58,15 @@
         >
           <ul class="flex flex-col gap-4 pt-4">
             <li v-for="item in navItems" :key="item.name">
-              <router-link
-                :to="item.href"
+              <a
+                :href="item.href"
                 class="block text-sm text-gray-600 hover:text-gray-900 transition-colors"
-                active-class="text-gray-900 font-medium"
                 @click="closeMenu"
-              >{{ item.name }}</router-link>
+              >{{ item.name }}</a>
             </li>
           </ul>
           <div class="mt-6 w-full">
-            <ButtonPrimary href="/waitlist" :icon="ArrowRight" iconPosition="trailing" class="w-full">
+            <ButtonPrimary :href="loginUrl" :icon="ArrowRight" iconPosition="trailing" class="w-full">
               Anmelden
             </ButtonPrimary>
           </div>
@@ -91,10 +89,12 @@ export default {
       ArrowRight,
       isMenuOpen: false,
       navItems: [
-        { name: 'Home',    href: '/' },
-        { name: 'Produkt', href: '/produkt' },
-        { name: 'Preise',  href: '/preise' },
-      ]
+        { name: 'Home',    href: '#hero' },
+        { name: 'Produkt', href: '#product' },
+        { name: 'Preise',  href: '#pricing' },
+      ],
+      // URL zur Webanwendung aus der Umgebungsvariable
+      loginUrl: process.env.VUE_APP_DASHBOARD_URL
     }
   },
 

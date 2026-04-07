@@ -106,10 +106,10 @@
                     :key="tier.label"
                     @click="selectTier(tier)"
                     class="w-full flex items-center justify-between px-4 py-3 transition-all duration-150 text-black group relative"
-                    :class="selectedTier.label === tier.label ? 'bg-blue/5 font-medium' : 'hover:bg-blue/5'"
+                    :class="selectedTier.label === tier.label ? 'bg-dark-blue/5 font-medium' : 'hover:bg-dark-blue/5'"
                   >
                     <span
-                      class="absolute left-0 top-0 bottom-0 w-0.5 bg-blue transition-all duration-150 rounded-r"
+                      class="absolute left-0 top-0 bottom-0 w-0.5 bg-dark-blue transition-all duration-150 rounded-r"
                       :class="selectedTier.label === tier.label ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'"
                     ></span>
                     <span class="text-p-small-sm md:text-p-small-md lg:text-p-small-lg 2xl:text-p-small-2xl">{{ tier.label }}</span>

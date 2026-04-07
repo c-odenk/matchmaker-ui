@@ -64,7 +64,7 @@
               <div class="hero-animate-item mt-12 flex flex-col items-center justify-center gap-4 md:flex-row" style="animation-delay: 0.4s">
                 <a
                   href="#"
-                  class="inline-flex items-center justify-center h-12 rounded-xl px-8 text-base font-semibold bg-deep-blue text-white hover:shadow-lg hover:shadow-deep-blue/20 transition-all"
+                  class="inline-flex items-center justify-center h-12 rounded-xl px-8 text-base font-semibold bg-dark-blue text-white hover:shadow-lg hover:shadow-dark-blue/20 transition-all"
                 >
                   <span class="text-nowrap">Jetzt anmelden</span>
                 </a>

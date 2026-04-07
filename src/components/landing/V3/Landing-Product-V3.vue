@@ -11,7 +11,7 @@
 
               <!-- Title with inline icon -->
               <div class="flex items-center gap-3">
-                <div class="flex-shrink-0 w-9 h-9 flex items-center justify-center rounded-xl bg-blue text-white transition-colors duration-300">
+                <div class="flex-shrink-0 w-9 h-9 flex items-center justify-center rounded-xl bg-dark-blue text-white transition-colors duration-300">
                   <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" :d="currentFeature.icon"/>
                   </svg>
@@ -31,7 +31,7 @@
                   :key="point"
                   class="flex items-center gap-3 text-p-sm md:text-md lg:text-p-lg 2xl:text-p-2xl text-black"
                 >
-                  <div class="flex-shrink-0 w-5 h-5 rounded-full bg-blue flex items-center justify-center">
+                  <div class="flex-shrink-0 w-5 h-5 rounded-full bg-dark-blue flex items-center justify-center">
                     <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
                     </svg>
@@ -51,7 +51,7 @@
               @click="goTo(index)"
               class="transition-all duration-500 rounded-full"
               :class="currentIndex === index
-                ? 'w-8 h-2.5 bg-blue'
+                ? 'w-8 h-2.5 bg-dark-blue'
                 : 'w-2.5 h-2.5 bg-gray-200 hover:bg-gray-300'"
             />
           </div>
@@ -106,7 +106,7 @@
                       :alt="currentFeature.title"
                       class="w-full h-auto block transition-transform duration-500 group-hover:scale-[1.02]"
                     />
-                    <div class="absolute inset-0 bg-blue/0 group-hover:bg-blue/10 transition-colors duration-300 flex items-center justify-center">
+                    <div class="absolute inset-0 bg-dark-blue/0 group-hover:bg-dark-blue/10 transition-colors duration-300 flex items-center justify-center">
                       <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/90 backdrop-blur-sm rounded-xl px-4 py-2 flex items-center gap-2 shadow-lg">
                         <svg class="w-4 h-4 text-deep-blue" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                           <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803a7.5 7.5 0 0010.607 0zM10.5 7.5v6m3-3h-6"/>

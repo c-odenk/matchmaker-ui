@@ -31,7 +31,7 @@
         </div>
 
         <!-- Pro (Featured) -->
-        <div class="bg-deep-blue rounded-2xl p-8 flex flex-col shadow-xl h-full">
+        <div class="bg-dark-blue rounded-2xl p-8 flex flex-col shadow-xl h-full">
           <div class="mb-6">
             <h3 class="text-h3-sm md:text-h3-md lg:text-h3-lg 2xl:text-h3-2xl text-white mb-2">Pro</h3>
             <p class="paragraph-sm text-white/60">Für Studierende, die das Maximum aus ihrer Lernzeit herausholen wollen.</p>
