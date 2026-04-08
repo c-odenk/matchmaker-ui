@@ -2,9 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Smooth Scroll Behavior */
+/* Smooth Scroll Behavior + Overscroll Prevention */
+html,
+body {
+  min-height: 100%;
+  overscroll-behavior-y: none;
+}
+
 html {
   scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  touch-action: pan-y;
 }
 
 /* Central Design System Variables */

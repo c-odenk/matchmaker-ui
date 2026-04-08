@@ -53,8 +53,9 @@
             <div v-if="currentFeature" class="mt-4 lg:mt-2">
               <ul class="flex flex-col gap-3 lg:gap-4">
                 <li v-for="(point, pIdx) in currentFeature.points" :key="'p-' + currentIndex + '-' + pIdx"
-                  class="flex items-start gap-3 text-p-sm md:text-p-md lg:text-p-lg 2xl:text-p-2xl text-black">
-                  <div class="flex-shrink-0 mt-1">
+                  class="flex items-center gap-3 text-p-sm md:text-p-md lg:text-p-lg 2xl:text-p-2xl text-black">
+                  
+                  <div class="flex-shrink-0">
                     <svg class="w-5 h-5 text-dark-blue" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
                     </svg>

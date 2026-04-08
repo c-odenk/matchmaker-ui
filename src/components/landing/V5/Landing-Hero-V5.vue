@@ -28,7 +28,7 @@
           <div class="mx-auto w-full px-container-h text-center">
 
             <!-- Badge -->
-            <div class="hero-animate-item flex justify-center mb-6" style="animation-delay: 0s">
+            <div class=" badge hero-animate-item flex justify-center mb-6" style="animation-delay: 0s">
               <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-p-small-sm"
                 style="background: rgba(255,255,255,0.12); color: #ffffff; border: 1px solid rgba(255,255,255,0.3); backdrop-filter: blur(8px);">
                 <span class="w-2 h-2 rounded-full animate-pulse flex-shrink-0" style="background: #22c55e;"></span>
@@ -125,6 +125,10 @@ export default {
 <style scoped>
 .hero-animate-item {
   animation: heroFadeUp 0.6s ease both;
+}
+
+.badge {
+  /* display: none; */
 }
 
 @keyframes heroFadeUp {
