@@ -30,7 +30,7 @@
             <!-- Badge -->
             <div class=" badge hero-animate-item flex justify-center mb-6" style="animation-delay: 0s">
               <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-p-small-sm"
-                style="background: rgba(255,255,255,0.12); color: #ffffff; border: 1px solid rgba(255,255,255,0.3); backdrop-filter: blur(8px);">
+                style="background: rgba(255,255,255,0.12); color: #ffffff; backdrop-filter: blur(8px);">
                 <span class="w-2 h-2 rounded-full animate-pulse flex-shrink-0" style="background: #22c55e;"></span>
                 {{ hero.badge }}
               </span>
@@ -113,7 +113,7 @@ export default {
       hero: {
         badge: 'KI-gestütztes Talentpool management',
         heading: 'Recruiting-Automatisierung, die Ihrem Urteil vertraut.',
-        subheading: 'KI übernimmt die zeitintensiven Schritte – Marktanalyse, Matching, Anschreiben. Der Berater entscheidet. Immer.'
+        subheading: 'KI übernimmt die zeitintensiven Schritte – Marktanalyse, Matching, Anschreiben. Der Berater entscheidet.'
       },
       // URL zur Webanwendung aus der Umgebungsvariable
       loginUrl: process.env.VUE_APP_DASHBOARD_URL
