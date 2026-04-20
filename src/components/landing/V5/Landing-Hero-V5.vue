@@ -80,7 +80,7 @@
               <!-- Screenshot -->
               <img
                 class="w-full object-cover object-top"
-                src="@/assets/Dashboard-Mockup.png"
+                src="@/assets/Candidate-Mockup.png"
                 alt="Zentrales Berater-Dashboard für KI-gestütztes Matching"
                 width="2700"
                 height="1440"

@@ -111,13 +111,11 @@
 </template>
 
 <script>
-import imgSuchkriterien from '@/assets/Suchkriterien-Mockup.png'
-import imgNachrichten from '@/assets/Nachrichten-Mockup.png'
-
-const screenshots = {
-  'Suchkriterien-Mockup.png': imgSuchkriterien,
-  'Nachrichten-Mockup.png': imgNachrichten,
-}
+import ProfilingAgentMockup from '@/assets/Profiling-Agent-Mockup.png'
+import MarketAgentMockup from '@/assets/Scoring-Mockup.png' 
+import MatchingAgentMockup from '@/assets/Vacancy-Mockup.png'
+import OutreachAgentMockup from '@/assets/Outreach-Agent-Mockup.png'
+import HumanInTheLoopMockup from '@/assets/Human-in-the-loop-Mockup.png'
 
 export default {
   name: 'LandingProduct',
@@ -128,14 +126,14 @@ export default {
       features: [
         {
           title: 'Profiling Agent – Bedarfsanalyse & Profiling',
-          description: 'Strukturierte Erfassung des Suchauftrags – der Agent leitet präzise Anforderungsprofile und Suchkriterien für alle nachgelagerten Agenten ab.',
+          description: 'Strukturierte Erfassung des Suchauftrags – der Agent leitet ein präzises Qualifikationsprofil und Suchkriterien für alle nachgelagerten Agenten ab.',
           points: [
-            'Strukturierte Erfassung von Anforderungen und Rahmenbedingungen',
+            'Strukturierte Erfassung von Qualifikationen und Rahmenbedingungen',
             'Automatische Ableitung von Such- und Matching-Kriterien',
             'Einheitliche Profilbasis für alle nachgelagerten Agenten',
           ],
           icon: 'M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z',
-          screenshot: null,
+          screenshot: ProfilingAgentMockup,
         },
         {
           title: 'Market Agent – Vakanzidentifikation',
@@ -146,7 +144,7 @@ export default {
             'Vollständige Quellenhistorie für jede identifizierte Vakanz',
           ],
           icon: 'M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803a7.5 7.5 0 0010.607 0z',
-          screenshot: null,
+          screenshot: MarketAgentMockup,
         },
         {
           title: 'Matching Agent – Intelligentes Scoring',
@@ -157,7 +155,7 @@ export default {
             'Priorisierte Shortlist auf Anforderung',
           ],
           icon: 'M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25a2.25 2.25 0 0113.5 18v-2.25z',
-          screenshot: 'Suchkriterien-Mockup.png',
+          screenshot: MatchingAgentMockup,
         },
         {
           title: 'Outreach Agent – Kontaktierung & Engagement',
@@ -168,7 +166,7 @@ export default {
             'Freigabe per Klick – kein manueller Aufwand',
           ],
           icon: 'M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5',
-          screenshot: 'Nachrichten-Mockup.png',
+          screenshot: OutreachAgentMockup,
         },
         {
           title: 'Human-in-the-Loop',
@@ -179,36 +177,35 @@ export default {
             'Jederzeit steuerbar, konfigurierbar und anpassbar',
           ],
           icon: 'M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z',
-          screenshot: null,
+          screenshot: HumanInTheLoopMockup,
         }
       ]
     }
   },
   computed: {
     currentFeature() {
-      return this.features[this.currentIndex] || this.features[0];
+      return this.features[this.currentIndex] || this.features[0]
     },
     currentImage() {
-      if (!this.currentFeature?.screenshot) return null;
-      return screenshots[this.currentFeature.screenshot] || null;
+      return this.currentFeature?.screenshot || null
     },
     mobileTitle() {
-      if (!this.currentFeature?.title) return '';
-      const parts = this.currentFeature.title.split(' – ');
-      return parts.length > 1 ? parts[1] : this.currentFeature.title;
+      if (!this.currentFeature?.title) return ''
+      const parts = this.currentFeature.title.split(' – ')
+      return parts.length > 1 ? parts[1] : this.currentFeature.title
     }
   },
   methods: {
     goTo(index) {
-      this.currentIndex = index;
+      this.currentIndex = index
     },
     openLightbox(src, title) {
-      this.lightbox = { open: true, src, title };
-      document.body.style.overflow = 'hidden';
+      this.lightbox = { open: true, src, title }
+      document.body.style.overflow = 'hidden'
     },
     closeLightbox() {
-      this.lightbox.open = false;
-      document.body.style.overflow = '';
+      this.lightbox.open = false
+      document.body.style.overflow = ''
     }
   }
 }

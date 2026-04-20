@@ -21,7 +21,7 @@
 import Header from '@/components/header/Header.vue'
 import LandingHero from '@/components/landing/V5/Landing-Hero-V5.vue'
 import LandingBenefits from '@/components/landing/V5/Landing-Benefits-V5.vue'
-import LandingProduct from '@/components/landing/V5//Landing-Product-V5.vue'
+import LandingProduct from '@/components/landing/V5/Landing-Product-V5.vue'
 // import LandingWorkflow from '@/components/landing/Landing-Workflow.vue'
 import LandingTestimonials from '@/components/landing/V5/Landing-Testimonials-V5.vue'
 import LandingCta from '@/components/landing/V4/Landing-CTA-V4.vue'
