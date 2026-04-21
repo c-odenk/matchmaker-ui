@@ -27,14 +27,14 @@
           </div>
 
           <div class="order-2 lg:hidden w-full mb-8">
-            <div class="relative w-full aspect-[16/10]">
+            <div class="relative w-full aspect-[16/9]">
               <transition name="image-fade" mode="out-in">
                 <div v-if="currentFeature" :key="'img-mob-' + currentIndex" class="browser-mockup">
                   <div class="browser-header">
                     <div class="flex gap-1.5">
-                      <div class="w-2.5 h-2.5 rounded-full bg-[#ff5f57]"></div>
-                      <div class="w-2.5 h-2.5 rounded-full bg-[#febc2e]"></div>
-                      <div class="w-2.5 h-2.5 rounded-full bg-[#28c840]"></div>
+                      <div class="w-2 h-2 rounded-full bg-[#ff5f57]"></div>
+                      <div class="w-2 h-2 rounded-full bg-[#febc2e]"></div>
+                      <div class="w-2 h-2 rounded-full bg-[#28c840]"></div>
                     </div>
                   </div>
                   <div class="flex-1 relative bg-gray-50 overflow-hidden" @click="currentImage && openLightbox(currentImage, currentFeature.title)">
@@ -74,14 +74,14 @@
         </div>
 
         <div class="hidden lg:block lg:w-1/2 w-full">
-          <div class="relative w-full aspect-[16/10]">
+          <div class="relative w-full aspect-[16/9]">
             <transition name="image-fade" mode="out-in">
               <div v-if="currentFeature" :key="'img-desk-' + currentIndex" class="browser-mockup h-full">
                 <div class="browser-header">
                   <div class="flex gap-1.5">
-                    <div class="w-2.5 h-2.5 rounded-full bg-[#ff5f57]"></div>
-                    <div class="w-2.5 h-2.5 rounded-full bg-[#febc2e]"></div>
-                    <div class="w-2.5 h-2.5 rounded-full bg-[#28c840]"></div>
+                    <div class="w-2 h-2 rounded-full bg-[#ff5f57]"></div>
+                    <div class="w-2 h-2 rounded-full bg-[#febc2e]"></div>
+                    <div class="w-2 h-2 rounded-full bg-[#28c840]"></div>
                   </div>
                 </div>
                 <div class="flex-1 relative overflow-hidden bg-gray-50 group cursor-zoom-in" @click="currentImage && openLightbox(currentImage, currentFeature.title)">
@@ -99,8 +99,8 @@
     </div>
 
     <transition name="fade">
-      <div v-if="lightbox.open" class="fixed inset-0 z-[100] flex items-center justify-center p-4" @click.self="closeLightbox">
-        <div class="absolute inset-0 bg-black/90 backdrop-blur-xl"></div>
+      <div v-if="lightbox.open" class="fixed inset-0 z-[100] flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-black/90 backdrop-blur-xl cursor-pointer" @click="closeLightbox"></div>
         <div class="relative z-10 w-full max-w-6xl flex flex-col gap-4 items-center pointer-events-none">
           <img :src="lightbox.src" class="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl pointer-events-auto border border-white/10" />
           <button @click="closeLightbox" class="pointer-events-auto px-6 py-2 bg-white/10 hover:bg-white/20 text-white rounded-full transition-all text-sm font-medium">Schließen</button>
@@ -112,7 +112,7 @@
 
 <script>
 import ProfilingAgentMockup from '@/assets/Profiling-Agent-Mockup.png'
-import MarketAgentMockup from '@/assets/Scoring-Mockup.png' 
+import MarketAgentMockup from '@/assets/Scoring-Mockup.png'
 import MatchingAgentMockup from '@/assets/Vacancy-Mockup.png'
 import OutreachAgentMockup from '@/assets/Outreach-Agent-Mockup.png'
 import HumanInTheLoopMockup from '@/assets/Human-in-the-loop-Mockup.png'
@@ -216,7 +216,7 @@ export default {
   @apply w-full h-full rounded-2xl overflow-hidden border border-gray-200 shadow-lg bg-white flex flex-col;
 }
 .browser-header {
-  @apply flex-shrink-0 flex items-center px-4 py-3 bg-[#1e2d42] border-b border-white/5;
+  @apply flex-shrink-0 flex items-center px-4 py-1.5 bg-[#1e2d42] border-b border-white/5;
 }
 .placeholder-box {
   @apply h-full w-full flex flex-col items-center justify-center bg-[#1a2a3f] text-white/40;
