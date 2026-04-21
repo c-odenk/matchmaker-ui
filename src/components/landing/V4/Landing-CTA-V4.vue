@@ -3,8 +3,7 @@
     <div class="mx-auto max-w-container-lg 2xl:max-w-container px-container-h">
 
       <div
-        class="relative overflow-hidden bg-gray-50 border border-gray-200 rounded-3xl flex flex-col lg:flex-row items-center gap-10 lg:gap-0 px-8 md:px-12 lg:px-16 py-12 lg:pb-0 2xl:py-16"
-        
+        class="relative overflow-hidden bg-gray-50 border border-gray-200 rounded-3xl flex flex-col lg:flex-row items-center gap-10 lg:gap-0 px-8 md:px-12 lg:px-16 py-12 lg:py-16 2xl:py-20"
       >
         <!-- Linke Spalte: Text + Button -->
         <div class="lg:w-1/2 flex flex-col gap-6 z-10">
@@ -21,26 +20,22 @@
           </div>
         </div>
 
-        <!-- Rechte Spalte: Screenshots übereinander, leicht geneigt, ragen raus -->
-        <div class="lg:w-1/2 relative h-[280px] md:h-[340px] lg:h-[380px] w-full lg:overflow-visible">
+        <!-- Rechte Spalte: Screenshots übereinander, leicht geneigt -->
+        <div class="lg:w-1/2 relative h-[280px] md:h-[340px] lg:h-[320px] w-full flex items-center justify-end lg:overflow-visible">
 
-          <!-- Hinteres Element (leicht gedreht, versetzt) -->
+          <!-- Hinteres Element – grafischer Akzent in Dunkelblau -->
           <div
-            class="absolute rounded-2xl overflow-hidden border border-gray-200 shadow-xl bg-white"
-            style="width: 75%; aspect-ratio: 16/10; top: 10%; right: 0; transform: rotate(3deg) translateY(-5%); box-shadow: 0 20px 60px rgba(0,0,0,0.12);"
-          >
-            <div class="placeholder-box h-full">
-              <span class="opacity-20 text-[10px] font-bold uppercase tracking-widest text-gray-500">Screenshot folgt</span>
-            </div>
-          </div>
+            class="absolute rounded-2xl"
+            style="width: 95%; aspect-ratio: 16/9; top: 55%; right: -6%; transform: rotate(1.5deg) translateY(-47%); background: #1e2d42; box-shadow: 0 20px 60px rgba(0,0,0,0.15);"
+          />
 
-          <!-- Vorderes Element (gerade, leicht links) -->
+          <!-- Vorderes Element mit Screenshot -->
           <div
-            class="absolute rounded-2xl overflow-hidden border border-gray-200 bg-white"
-            style="width: 75%; aspect-ratio: 16/10; top: 0; right: 10%; box-shadow: 0 20px 60px rgba(0,0,0,0.1);"
+            class="absolute rounded-2xl overflow-hidden border border-gray-200 bg-white flex flex-col"
+            style="width: 95%; aspect-ratio: 16/9; top: 50%; right: 0%; transform: translateY(-50%); box-shadow: 0 20px 60px rgba(0,0,0,0.1);"
           >
             <!-- Browser Header -->
-            <div class="flex items-center gap-1.5 px-3 py-2.5 flex-shrink-0" style="background: #1e2d42; border-bottom: 1px solid rgba(255,255,255,0.08);">
+            <div class="flex items-center gap-1.5 px-3 py-1.5 flex-shrink-0" style="background: #1e2d42; border-bottom: 1px solid rgba(255,255,255,0.08);">
               <div class="w-2 h-2 rounded-full" style="background: #ff5f57;"></div>
               <div class="w-2 h-2 rounded-full" style="background: #febc2e;"></div>
               <div class="w-2 h-2 rounded-full" style="background: #28c840;"></div>
@@ -48,8 +43,8 @@
                 matchmaker.hr
               </div>
             </div>
-            <div class="placeholder-box flex-1 h-full">
-              <span class="opacity-20 text-[10px] font-bold uppercase tracking-widest text-gray-500">Screenshot folgt</span>
+            <div class="flex-1 relative overflow-hidden">
+              <img :src="workflowMockup" class="w-full h-full object-cover object-top" />
             </div>
           </div>
 
@@ -62,8 +57,8 @@
 
 <script>
 import { CalendarDays } from 'lucide-vue-next'
-// import ButtonSecondary from '@/components/common/ButtonSecondary.vue'
-import ButtonPrimary from '@/components/common/ButtonPrimary.vue';
+import ButtonPrimary from '@/components/common/ButtonPrimary.vue'
+import workflowMockup from '@/assets/Workflow-Mockup.png'
 
 export default {
   name: 'LandingCta',
@@ -71,6 +66,7 @@ export default {
   data() {
     return {
       CalendarDays,
+      workflowMockup,
       heading: 'Recruiting-Prozesse automatisieren. Beratungsqualität steigern.',
       subtext: 'matchmaker.hr verbindet KI-gestützte Automatisierung mit menschlichem Urteilsvermögen.'
     }
