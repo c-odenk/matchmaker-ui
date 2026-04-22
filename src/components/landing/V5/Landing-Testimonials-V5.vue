@@ -1,5 +1,5 @@
 <template>
-  <section class="py-12 md:py-16 bg-white">
+  <section ref="testimonialsSection" id="testimonials" class="py-12 md:py-16 bg-white">
     <div class="mx-auto max-w-container-lg 2xl:max-w-container px-container-h">
 
       <!-- Header -->
@@ -25,7 +25,8 @@
           class="shrink-0 w-screen snap-start px-container-h pb-3"
         >
           <div
-            class="bg-gray-50 border border-gray-200 flex flex-col rounded-2xl p-5 relative overflow-hidden h-full"
+            class="bg-gray-50 border border-gray-200 flex flex-col rounded-2xl p-5 relative overflow-hidden h-full testimonials-animate-card"
+            :style="{ 'animation-delay': `${0 + index * 0.25}s` }"
           >
             <!-- Stars + quote mark -->
             <div class="relative z-10 flex items-center justify-between mb-4">
@@ -78,7 +79,8 @@
         <div
           v-for="(testimonial, index) in testimonials"
           :key="index"
-          class="bg-gray-50 border border-gray-200 flex flex-col rounded-2xl p-6 relative overflow-hidden"
+          class="bg-gray-50 border border-gray-200 flex flex-col rounded-2xl p-6 relative overflow-hidden testimonials-animate-card"
+          :style="{ 'animation-delay': `${0 + index * 0.25}s` }"
         >
           <!-- Stars + quote mark -->
           <div class="relative z-10 flex items-center justify-between mb-4">
@@ -146,6 +148,7 @@ export default {
   },
   mounted() {
     this.cardRefs = []
+    this.setupIntersectionObserver()
   },
   methods: {
     onScroll() {
@@ -160,6 +163,22 @@ export default {
         left: index * container.offsetWidth,
         behavior: 'smooth'
       })
+    },
+    setupIntersectionObserver() {
+      if (!this.$refs.testimonialsSection) return
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('testimonials-animated')
+            observer.unobserve(entry.target)
+          }
+        })
+      }, {
+        threshold: 0.1
+      })
+      
+      observer.observe(this.$refs.testimonialsSection)
     }
   }
 }
@@ -172,5 +191,22 @@ export default {
 }
 .testimonials-scroll::-webkit-scrollbar {
   display: none;
+}
+
+/* Testimonials Animation */
+.testimonials-animate-card {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.testimonials-animated .testimonials-animate-card {
+  animation: testimonialsFadeUp 0.6s ease forwards;
+}
+
+@keyframes testimonialsFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 </style>

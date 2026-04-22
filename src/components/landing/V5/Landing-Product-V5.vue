@@ -1,10 +1,10 @@
 <template>
-  <section id="product" class="py-10 md:py-28 lg:py-20 bg-white overflow-hidden">
+  <section ref="productSection" id="product" class="py-10 md:py-28 lg:py-20 bg-white overflow-hidden">
     <div class="mx-auto max-w-container-lg 2xl:max-w-container px-container-h">
       
       <div class="flex flex-col lg:flex-row items-start lg:items-center gap-8 md:gap-12 lg:gap-16">
 
-        <div class="lg:w-1/2 flex flex-col w-full">
+        <div class="lg:w-1/2 flex flex-col w-full product-animate-text" style="animation-delay: 0s">
           
           <div v-if="currentFeature" class="order-1 mb-6 lg:mb-8">
             <div class="flex flex-col gap-4">
@@ -73,7 +73,7 @@
           </div>
         </div>
 
-        <div class="hidden lg:block lg:w-1/2 w-full">
+        <div class="hidden lg:block lg:w-1/2 w-full product-animate-image" style="animation-delay: 0.2s">
           <div class="relative w-full aspect-[16/9]">
             <transition name="image-fade" mode="out-in">
               <div v-if="currentFeature" :key="'img-desk-' + currentIndex" class="browser-mockup h-full">
@@ -119,6 +119,9 @@ import HumanInTheLoopMockup from '@/assets/Human-in-the-loop-Mockup.png'
 
 export default {
   name: 'LandingProduct',
+  mounted() {
+    this.setupIntersectionObserver()
+  },
   data() {
     return {
       currentIndex: 0,
@@ -203,6 +206,22 @@ export default {
       this.lightbox = { open: true, src, title }
       document.body.style.overflow = 'hidden'
     },
+    setupIntersectionObserver() {
+      if (!this.$refs.productSection) return
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('product-animated')
+            observer.unobserve(entry.target)
+          }
+        })
+      }, {
+        threshold: 0.1
+      })
+      
+      observer.observe(this.$refs.productSection)
+    },
     closeLightbox() {
       this.lightbox.open = false
       document.body.style.overflow = ''
@@ -212,6 +231,38 @@ export default {
 </script>
 
 <style scoped>
+/* Product Section Animations */
+.product-animate-text {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.product-animate-image {
+  opacity: 0;
+  transform: scale(0.95) translateX(30px);
+}
+
+.product-animated .product-animate-text {
+  animation: slideInFromLeft 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.product-animated .product-animate-image {
+  animation: slideInFromRight 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes slideInFromLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  to {
+    opacity: 1;
+    transform: scale(1) translateX(0);
+  }
+}
 .browser-mockup {
   @apply w-full h-full rounded-2xl overflow-hidden border border-gray-200 shadow-lg bg-white flex flex-col;
 }

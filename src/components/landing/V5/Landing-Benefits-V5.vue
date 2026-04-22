@@ -1,12 +1,12 @@
 <template>
-  <section class="py-10 md:py-28 lg:pt-40 lg:pb-20 bg-white">
+  <section ref="benefitsSection" class="py-10 md:py-28 lg:pt-40 lg:pb-20 bg-white">
     <div class="mx-auto max-w-container-lg 2xl:max-w-container px-container-h">
 
       <!-- Mobile + Tablet: stacked layout -->
       <div class="lg:hidden flex flex-col gap-6">
 
         <!-- Trust Bullets (versteckt auf Mobile) -->
-        <div class="hidden sm:flex flex-wrap items-center gap-x-5 gap-y-2 -mb-2">
+        <div class="hidden sm:flex flex-wrap items-center gap-x-5 gap-y-2 -mb-2 benefits-animate-item" style="animation-delay: 0s">
           <span v-for="item in trustItems" :key="item"
             class="flex items-center gap-1.5 text-p-small-sm text-black">
             <span class="w-2 h-2 rounded-full flex-shrink-0" style="background: #22c55e;"></span>
@@ -14,10 +14,10 @@
           </span>
         </div>
 
-        <h2 class="text-h3-sm md:text-h3-md text-black">{{ heading }}</h2>
-        <p class="text-p-sm md:text-p-md text-black">{{ subtext }}</p>
+        <h2 class="text-h3-sm md:text-h3-md text-black benefits-animate-item" style="animation-delay: 0.1s">{{ heading }}</h2>
+        <p class="text-p-sm md:text-p-md text-black benefits-animate-item" style="animation-delay: 0.2s">{{ subtext }}</p>
 
-        <div class="hidden sm:block self-start">
+        <div class="hidden sm:block self-start benefits-animate-item" style="animation-delay: 0.3s">
           <ButtonPrimary href="#" :icon="ArrowRight" iconPosition="trailing">
             Jetzt anmelden
           </ButtonPrimary>
@@ -61,9 +61,10 @@
         <!-- Tablet: 2x2 grid -->
         <div class="hidden sm:grid grid-cols-2 gap-4">
           <div
-            v-for="benefit in benefits"
+            v-for="(benefit, index) in benefits"
             :key="benefit.title"
-            class="flex flex-col gap-4 bg-gray-50 border border-gray-200 rounded-2xl p-6"
+            class="flex flex-col gap-4 bg-gray-50 border border-gray-200 rounded-2xl p-6 benefits-animate-item"
+            :style="{ 'animation-delay': `${0.4 + index * 0.1}s` }"
           >
             <div class="w-9 h-9 flex items-center justify-center rounded-xl bg-dark-blue text-white">
               <component :is="benefit.icon" class="w-4 h-4" :stroke-width="1.5" />
@@ -83,9 +84,10 @@
         <!-- Karten links -->
         <div class="lg:w-1/2 grid grid-cols-2 gap-4">
           <div
-            v-for="benefit in benefits"
+            v-for="(benefit, index) in benefits"
             :key="benefit.title"
-            class="flex flex-col gap-4 bg-gray-50 border border-gray-200 rounded-2xl p-4"
+            class="flex flex-col gap-4 bg-gray-50 border border-gray-200 rounded-2xl p-4 benefits-animate-item"
+            :style="{ 'animation-delay': `${0.2 + index * 0.1}s` }"
           >
             <div class="w-9 h-9 flex items-center justify-center rounded-xl bg-dark-blue text-white">
               <component :is="benefit.icon" class="w-4 h-4" :stroke-width="1.5" />
@@ -99,16 +101,16 @@
 
         <!-- Text rechts -->
         <div class="lg:w-1/2 flex flex-col gap-6">
-          <div class="flex flex-wrap items-center gap-x-5 gap-y-8 -mb-4">
+          <div class="flex flex-wrap items-center gap-x-5 gap-y-8 -mb-4 benefits-animate-item" style="animation-delay: 0s">
             <span v-for="item in trustItems" :key="item"
               class="flex items-center gap-1.5 text-p-small-lg 2xl:text-p-small-2xl text-black">
               <span class="w-2 h-2 rounded-full flex-shrink-0" style="background: #22c55e;"></span>
               {{ item }}
             </span>
           </div>
-          <h2 class="text-h3-lg 2xl:text-h3-2xl text-black">{{ heading }}</h2>
-          <p class="text-p-lg 2xl:text-p-2xl text-black">{{ subtext }}</p>
-          <div class="self-start">
+          <h2 class="text-h3-lg 2xl:text-h3-2xl text-black benefits-animate-item" style="animation-delay: 0.1s">{{ heading }}</h2>
+          <p class="text-p-lg 2xl:text-p-2xl text-black benefits-animate-item" style="animation-delay: 0.2s">{{ subtext }}</p>
+          <div class="self-start benefits-animate-item" style="animation-delay: 0.3s">
             <ButtonPrimary :href="loginUrl" :icon="ArrowRight" iconPosition="trailing">
               Jetzt anmelden
             </ButtonPrimary>
@@ -164,6 +166,7 @@ export default {
   },
   mounted() {
     this.cardRefs = []
+    this.setupIntersectionObserver()
   },
   methods: {
     onScroll() {
@@ -175,6 +178,24 @@ export default {
       const container = this.$refs.scrollContainer
       if (!container) return
       container.scrollTo({ left: index * container.offsetWidth, behavior: 'smooth' })
+    },
+    setupIntersectionObserver() {
+      if (!this.$refs.benefitsSection) return
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // Füge die Animationsklasse hinzu, wenn die Section sichtbar wird
+            entry.target.classList.add('benefits-animated')
+            // Optional: unobserve nach der Animation
+            observer.unobserve(entry.target)
+          }
+        })
+      }, {
+        threshold: 0.1
+      })
+      
+      observer.observe(this.$refs.benefitsSection)
     }
   }
 }
@@ -186,4 +207,20 @@ export default {
   -ms-overflow-style: none;
 }
 .benefits-scroll::-webkit-scrollbar { display: none; }
+
+.benefits-animate-item {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.benefits-animated .benefits-animate-item {
+  animation: benefitsFadeUp 0.6s ease forwards;
+}
+
+@keyframes benefitsFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 </style>

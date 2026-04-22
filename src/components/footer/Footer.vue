@@ -13,9 +13,9 @@
         <div>
           <h4 class="text-lg font-semibold text-white mb-4">Navigation</h4>
           <nav class="flex flex-col gap-2">
-            <router-link to="/" class="text-gray-300 hover:text-white transition-colors duration-150">Start</router-link>
-            <router-link to="/services" class="text-gray-300 hover:text-white transition-colors duration-150">Produkt</router-link>
-            <router-link to="/services" class="text-gray-300 hover:text-white transition-colors duration-150">Preise</router-link>
+            <a href="#" @click.prevent="scrollToSection('hero')" class="text-gray-300 hover:text-white transition-colors duration-150">Start</a>
+            <a href="#" @click.prevent="scrollToSection('product')" class="text-gray-300 hover:text-white transition-colors duration-150">Produkt</a>
+            <a href="#" @click.prevent="scrollToSection('pricing')" class="text-gray-300 hover:text-white transition-colors duration-150">Preise</a>
             <router-link to="/contact" class="text-gray-300 hover:text-white transition-colors duration-150">Kontakt</router-link>
           </nav>
         </div>
@@ -49,6 +49,14 @@
 
 <script>
 export default {
-  name: 'AppFooter'
+  name: 'AppFooter',
+  methods: {
+    scrollToSection(anchorId) {
+      const element = document.getElementById(anchorId)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+      }
+    }
+  }
 }
 </script>

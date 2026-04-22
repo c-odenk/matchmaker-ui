@@ -22,9 +22,9 @@
           <ul class="absolute left-1/2 -translate-x-1/2 hidden lg:flex items-center gap-8">
             <li v-for="item in navItems" :key="item.name">
               <a
-                :href="item.href"
+                href="#"
                 class="uppercase text-gray-900 hover:text-gray-600 transition-colors duration-200"
-                @click="closeMenu"
+                @click="scrollToSection(item.anchor)"
               >{{ item.name }}</a>
             </li>
           </ul>
@@ -59,9 +59,9 @@
           <ul class="flex flex-col gap-4 pt-4">
             <li v-for="item in navItems" :key="item.name">
               <a
-                :href="item.href"
+                href="#"
                 class="block text-sm text-gray-600 hover:text-gray-900 transition-colors"
-                @click="closeMenu"
+                @click="scrollToSection(item.anchor)"
               >{{ item.name }}</a>
             </li>
           </ul>
@@ -89,16 +89,22 @@ export default {
       ArrowRight,
       isMenuOpen: false,
       navItems: [
-        { name: 'Home',    href: '#hero' },
-        { name: 'Produkt', href: '#product' },
-        { name: 'Preise',  href: '#pricing' },
+        { name: 'Home',    anchor: 'hero' },
+        { name: 'Produkt', anchor: 'product' },
+        { name: 'Preise',  anchor: 'pricing' },
       ],
       // URL zur Webanwendung aus der Umgebungsvariable
       loginUrl: process.env.VUE_APP_DASHBOARD_URL
     }
   },
-
   methods: {
+    scrollToSection(anchorId) {
+      const element = document.getElementById(anchorId)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+      }
+      this.closeMenu()
+    },
     toggleMenu() {
       this.isMenuOpen = !this.isMenuOpen
     },
