@@ -175,7 +175,7 @@ export default {
           }
         })
       }, {
-        threshold: 0.1
+        threshold: 0.3
       })
       
       observer.observe(this.$refs.testimonialsSection)

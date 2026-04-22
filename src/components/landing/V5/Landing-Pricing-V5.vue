@@ -1,5 +1,5 @@
 <template>
-  <section id="pricing" class="py-20 md:py-28 lg:py-20 lg:pb-4 2xl:pt-28 2xl:pb-16 bg-white">
+  <section ref="pricingSection" id="pricing" class="py-20 md:py-28 lg:py-20 lg:pb-4 2xl:pt-28 2xl:pb-16 bg-white">
     <div class="mx-auto max-w-container-lg 2xl:max-w-container px-container-h">
 
       <SectionHeader
@@ -11,7 +11,8 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
 
         <div
-          class="bg-gray-50 border border-gray-200 rounded-2xl p-10 md:p-7 lg:p-8 flex flex-col self-stretch"
+          class="bg-gray-50 border border-gray-200 rounded-2xl p-10 md:p-7 lg:p-8 flex flex-col self-stretch pricing-animate-card"
+          style="animation-delay: 0s"
         >
           <div class="mb-6 flex flex-col min-h-[125px]">
             <h3 class="text-h3-sm md:text-h3-md lg:text-h3-lg 2xl:text-h3-2xl text-black mb-2">{{ starter.name }}</h3>
@@ -32,8 +33,8 @@
         </div>
 
         <div
-          class="bg-dark-blue rounded-2xl p-10 md:p-7 lg:p-8 flex flex-col relative self-stretch shadow-xl scale-[1.02] z-10" 
-          style="border: 1px solid rgba(255,255,255,0.1);"
+          class="bg-dark-blue rounded-2xl p-10 md:p-7 lg:p-8 flex flex-col relative self-stretch shadow-xl scale-[1.02] z-10 pricing-animate-card"
+          style="border: 1px solid rgba(255,255,255,0.1); animation-delay: 0.25s"
         >
           <div class="relative z-10 mb-6 flex flex-col min-h-[125px]">
             <h3 class="text-h3-sm md:text-h3-md lg:text-h3-lg 2xl:text-h3-2xl text-white mb-2">{{ pro.name }}</h3>
@@ -113,7 +114,8 @@
         </div>
 
         <div
-          class="bg-gray-50 border border-gray-200 rounded-2xl p-10 md:p-7 lg:p-8 flex flex-col self-stretch"
+          class="bg-gray-50 border border-gray-200 rounded-2xl p-10 md:p-7 lg:p-8 flex flex-col self-stretch pricing-animate-card"
+          style="animation-delay: 0.5s"
         >
           <div class="mb-6 flex flex-col min-h-[125px]">
             <h3 class="text-h3-sm md:text-h3-md lg:text-h3-lg 2xl:text-h3-2xl text-black mb-2">{{ addon.name }}</h3>
@@ -209,6 +211,9 @@ export default {
   created() {
     this.selectedTier = this.pro.tiers[0]
   },
+  mounted() {
+    this.setupIntersectionObserver()
+  },
   methods: {
     selectTier(tier) {
       this.selectedTier = tier
@@ -216,7 +221,42 @@ export default {
     },
     closeDropdown() {
       this.dropdownOpen = false
+    },
+    setupIntersectionObserver() {
+      if (!this.$refs.pricingSection) return
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('pricing-animated')
+            observer.unobserve(entry.target)
+          }
+        })
+      }, {
+        threshold: 0.3
+      })
+      
+      observer.observe(this.$refs.pricingSection)
     }
   }
 }
 </script>
+
+<style scoped>
+/* Pricing Animation */
+.pricing-animate-card {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.pricing-animated .pricing-animate-card {
+  animation: pricingFadeUp 0.6s ease forwards;
+}
+
+@keyframes pricingFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>

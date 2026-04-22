@@ -1,12 +1,12 @@
 <template>
-  <section class="py-12 md:py-16 lg:py-20 2xl:py-16">
+  <section ref="ctaSection" id="cta" class="py-12 md:py-16 lg:py-20 2xl:py-16">
     <div class="mx-auto max-w-container-lg 2xl:max-w-container px-container-h">
 
       <div
         class="relative overflow-hidden bg-gray-50 border border-gray-200 rounded-3xl flex flex-col lg:flex-row items-center gap-10 lg:gap-0 px-8 md:px-12 lg:px-16 py-12 lg:py-16 2xl:py-20"
       >
         <!-- Linke Spalte: Text + Button -->
-        <div class="lg:w-1/2 flex flex-col gap-6 z-10">
+        <div class="lg:w-1/2 flex flex-col gap-6 z-10 cta-animate-text" style="animation-delay: 0s">
           <h2 class="text-h2-sm md:text-h2-md lg:text-h2-lg 2xl:text-h2-2xl text-black leading-tight">
             {{ heading }}
           </h2>
@@ -21,7 +21,7 @@
         </div>
 
         <!-- Rechte Spalte: Screenshots übereinander, leicht geneigt -->
-        <div class="lg:w-1/2 relative h-[280px] md:h-[340px] lg:h-[320px] w-full flex items-center justify-end lg:overflow-visible">
+        <div class="lg:w-1/2 relative h-[280px] md:h-[340px] lg:h-[320px] w-full flex items-center justify-end lg:overflow-visible cta-animate-image" style="animation-delay: 0.2s">
 
           <!-- Hinteres Element – grafischer Akzent in Dunkelblau -->
           <div
@@ -70,6 +70,27 @@ export default {
       heading: 'Recruiting-Prozesse automatisieren. Beratungsqualität steigern.',
       subtext: 'matchmaker.hr verbindet KI-gestützte Automatisierung mit menschlichem Urteilsvermögen.'
     }
+  },
+  mounted() {
+    this.setupIntersectionObserver()
+  },
+  methods: {
+    setupIntersectionObserver() {
+      if (!this.$refs.ctaSection) return
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('cta-animated')
+            observer.unobserve(entry.target)
+          }
+        })
+      }, {
+        threshold: 0.3
+      })
+      
+      observer.observe(this.$refs.ctaSection)
+    }
   }
 }
 </script>
@@ -77,5 +98,38 @@ export default {
 <style scoped>
 .placeholder-box {
   @apply w-full h-full flex items-center justify-center bg-gray-50;
+}
+
+/* CTA Animation */
+.cta-animate-text {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.cta-animate-image {
+  opacity: 0;
+  transform: scale(0.95) translateX(30px);
+}
+
+.cta-animated .cta-animate-text {
+  animation: slideInFromLeft 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.cta-animated .cta-animate-image {
+  animation: slideInFromRight 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes slideInFromLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  to {
+    opacity: 1;
+    transform: scale(1) translateX(0);
+  }
 }
 </style>
