@@ -181,10 +181,10 @@ export default {
         name: 'Enterprise Lizenz',
         description: 'Für Personalberater, die ihren gesamten Recruiting-Prozess automatisieren wollen.',
         tiers: [
-          { label: 'Bis zu 50 Talente',  price: '--,--€',  priceSuffix: ' / Monat' },
-          { label: '50 – 100 Talente',   price: '--,--',  priceSuffix: ' / Monat' },
-          { label: '100 – 250 Talente',  price: '--,--€',  priceSuffix: ' / Monat' },
-          { label: 'Über 250 Talente',   price: '--,--€', priceSuffix: ' / Monat' },
+          { label: 'Bis zu 50 Talente',  price: '29,99€',  priceSuffix: ' / Monat' },
+          { label: '50 – 100 Talente',   price: '59,99€',  priceSuffix: ' / Monat' },
+          { label: '100 – 250 Talente',  price: '99,99€',  priceSuffix: ' / Monat' },
+          { label: 'Über 250 Talente',   price: '149,99€', priceSuffix: ' / Monat' },
         ],
         features: [
           { label: '3 Mitarbeiter-Lizenzen', icon: Users },
@@ -196,7 +196,7 @@ export default {
       addon: {
         name: 'Zusätzliche Mitarbeiter',
         description: 'Für wachsende Teams – alle Leistungen der Enterprise Lizenz, skalierbar je Mitarbeiter.',
-        price: '--,--€',
+        price: '19,99€',
         priceSuffix: ' / pro weitere Lizenz & Monat',
         features: [
           { label: 'Alle Leistungen der Enterprise Lizenz', icon: PlusCircle },
