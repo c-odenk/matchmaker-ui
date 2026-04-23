@@ -28,7 +28,7 @@
           <div class="mx-auto w-full px-container-h text-center">
 
             <!-- Badge -->
-            <div class=" badge hero-animate-item flex justify-center mb-6" style="animation-delay: 0s">
+            <div class="badge hero-animate-item flex justify-center mb-6" style="animation-delay: 0s">
               <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-p-small-sm"
                 style="background: rgba(255,255,255,0.12); color: #ffffff; backdrop-filter: blur(8px);">
                 <span class="w-2 h-2 rounded-full animate-pulse flex-shrink-0" style="background: #22c55e;"></span>
@@ -48,9 +48,13 @@
               <ButtonSecondary :icon="LogIn" :href="loginUrl">
                 Jetzt anmelden
               </ButtonSecondary>
-              <ButtonPrimary :icon="CalendarDays" href="#">
-                Demo vereinbaren
-              </ButtonPrimary>
+              <button 
+                @click="showDemoModal = true"
+                class="inline-flex items-center justify-center gap-2 rounded-button px-8 py-2 bg-dark-blue text-white hover:bg-dark-blue/90 hover:shadow-lg hover:shadow-dark-blue/20 transition-all duration-200 text-p-sm md:text-p-md lg:text-p-lg 2xl:text-p-2xl md:min-w-[160px] lg:min-w-[160px] xl:min-w-[175px]"
+              >
+                <CalendarDays class="w-4 h-4" :stroke-width="1.75" />
+                <span class="text-nowrap">Demo vereinbaren</span>
+              </button>
             </div>
           </div>
 
@@ -92,30 +96,33 @@
         </div>
       </section>
     </main>
+
+    <!-- Demo Modal -->
+    <ModalDemo :isOpen="showDemoModal" @close="showDemoModal = false" />
   </div>
 </template>
 
 <script>
 import { LogIn, CalendarDays } from 'lucide-vue-next'
-import ButtonPrimary from '@/components/common/ButtonPrimary.vue'
 import ButtonSecondary from '@/components/common/ButtonSecondary.vue'
+import ModalDemo from '@/components/modals/ModalDemo.vue'
 
 export default {
   name: 'LandingHero',
   components: {
-    ButtonPrimary,
-    ButtonSecondary
+    ButtonSecondary,
+    ModalDemo
   },
   data() {
     return {
       LogIn,
       CalendarDays,
+      showDemoModal: false,
       hero: {
         badge: 'KI-gestütztes Talentpool management',
         heading: 'Recruiting-Automatisierung, die Ihrem Urteil vertraut.',
         subheading: 'KI übernimmt die zeitintensiven Schritte – Marktanalyse, Matching, Anschreiben. Der Berater entscheidet.'
       },
-      // URL zur Webanwendung aus der Umgebungsvariable
       loginUrl: process.env.VUE_APP_DASHBOARD_URL
     }
   }

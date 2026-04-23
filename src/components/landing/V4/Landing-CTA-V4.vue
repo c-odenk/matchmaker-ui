@@ -5,7 +5,6 @@
       <div
         class="relative overflow-hidden bg-gray-50 border border-gray-200 rounded-3xl flex flex-col lg:flex-row items-center gap-10 lg:gap-0 px-8 md:px-12 lg:px-16 py-12 lg:py-16 2xl:py-20"
       >
-        <!-- Linke Spalte: Text + Button -->
         <div class="lg:w-1/2 flex flex-col gap-6 z-10 cta-animate-text" style="animation-delay: 0s">
           <h2 class="text-h2-sm md:text-h2-md lg:text-h2-lg 2xl:text-h2-2xl text-black leading-tight">
             {{ heading }}
@@ -14,28 +13,29 @@
             {{ subtext }}
           </p>
           <div class="self-start">
-            <ButtonPrimary href="#" :icon="CalendarDays">
-              Jetzt Demo vereinbaren
-            </ButtonPrimary>
+            <a 
+              @click.prevent="showDemoModal = true"
+              href="#"
+              class="inline-flex items-center justify-center gap-2 rounded-button px-8 py-2 bg-dark-blue text-white hover:bg-dark-blue/90 hover:shadow-lg hover:shadow-dark-blue/20 transition-all duration-200 text-p-sm md:text-p-md lg:text-p-lg 2xl:text-p-2xl md:min-w-[160px] lg:min-w-[160px] xl:min-w-[175px] cursor-pointer"
+            >
+              <CalendarDays class="w-4 h-4" :stroke-width="1.75" />
+              <span class="text-nowrap">Jetzt Demo vereinbaren</span>
+            </a>
           </div>
         </div>
 
-        <!-- Rechte Spalte: Screenshots übereinander, leicht geneigt -->
         <div class="lg:w-1/2 relative h-[280px] md:h-[340px] lg:h-[320px] w-full flex items-center justify-end lg:overflow-visible cta-animate-image" style="animation-delay: 0.2s">
 
-          <!-- Hinteres Element – grafischer Akzent in Dunkelblau -->
           <div
             class="absolute rounded-2xl"
             style="width: 95%; aspect-ratio: 16/9; top: 55%; right: -6%; transform: rotate(1.5deg) translateY(-47%); background: #1e2d42; box-shadow: 0 20px 60px rgba(0,0,0,0.15);"
           />
 
-          <!-- Vorderes Element mit Screenshot -->
           <div
-            class="absolute rounded-2xl overflow-hidden border border-gray-200 bg-white flex flex-col"
+            class="absolute rounded-2xl overflow-hidden bg-white flex flex-col"
             style="width: 95%; aspect-ratio: 16/9; top: 50%; right: 0%; transform: translateY(-50%); box-shadow: 0 20px 60px rgba(0,0,0,0.1);"
           >
-            <!-- Browser Header -->
-            <div class="flex items-center gap-1.5 px-3 py-1.5 flex-shrink-0" style="background: #1e2d42; border-bottom: 1px solid rgba(255,255,255,0.08);">
+            <div class="flex items-center gap-1.5 px-3 py-1.5 flex-shrink-0" style="background: #1e2d42;">
               <div class="w-2 h-2 rounded-full" style="background: #ff5f57;"></div>
               <div class="w-2 h-2 rounded-full" style="background: #febc2e;"></div>
               <div class="w-2 h-2 rounded-full" style="background: #28c840;"></div>
@@ -52,21 +52,25 @@
       </div>
 
     </div>
+
+    <!-- Demo Modal -->
+    <ModalDemo :isOpen="showDemoModal" @close="showDemoModal = false" />
   </section>
 </template>
 
 <script>
 import { CalendarDays } from 'lucide-vue-next'
-import ButtonPrimary from '@/components/common/ButtonPrimary.vue'
+import ModalDemo from '@/components/modals/ModalDemo.vue'
 import workflowMockup from '@/assets/Workflow-Mockup.png'
 
 export default {
   name: 'LandingCta',
-  components: { ButtonPrimary },
+  components: { ModalDemo },
   data() {
     return {
       CalendarDays,
       workflowMockup,
+      showDemoModal: false,
       heading: 'Recruiting-Prozesse automatisieren. Beratungsqualität steigern.',
       subtext: 'matchmaker.hr verbindet KI-gestützte Automatisierung mit menschlichem Urteilsvermögen.'
     }
