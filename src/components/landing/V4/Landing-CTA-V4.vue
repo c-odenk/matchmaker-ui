@@ -13,14 +13,9 @@
             {{ subtext }}
           </p>
           <div class="self-start">
-            <a 
-              @click.prevent="showDemoModal = true"
-              href="#"
-              class="inline-flex items-center justify-center gap-2 rounded-button px-8 py-2 bg-dark-blue text-white hover:bg-dark-blue/90 hover:shadow-lg hover:shadow-dark-blue/20 transition-all duration-200 text-p-sm md:text-p-md lg:text-p-lg 2xl:text-p-2xl md:min-w-[160px] lg:min-w-[160px] xl:min-w-[175px] cursor-pointer"
-            >
-              <CalendarDays class="w-4 h-4" :stroke-width="1.75" />
-              <span class="text-nowrap">Jetzt Demo vereinbaren</span>
-            </a>
+            <ButtonPrimary :icon="CalendarDays" @click="showDemoModal = true">
+              Jetzt Demo vereinbaren
+            </ButtonPrimary>
           </div>
         </div>
 
@@ -60,12 +55,13 @@
 
 <script>
 import { CalendarDays } from 'lucide-vue-next'
+import ButtonPrimary from '@/components/common/ButtonPrimary.vue'
 import ModalDemo from '@/components/modals/ModalDemo.vue'
 import workflowMockup from '@/assets/Workflow-Mockup.png'
 
 export default {
   name: 'LandingCta',
-  components: { ModalDemo },
+  components: { ButtonPrimary, ModalDemo },
   data() {
     return {
       CalendarDays,

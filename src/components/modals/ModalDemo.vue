@@ -9,11 +9,11 @@
       />
 
       <!-- Modal -->
-      <div class="relative z-10 w-full max-w-xl bg-white rounded-2xl overflow-hidden shadow-2xl">
+      <div class="relative z-10 w-full max-w-xl rounded-2xl overflow-hidden shadow-2xl">
 
         <!-- ERFOLGS-ANSICHT -->
         <transition name="content-fade" mode="out-in">
-          <div v-if="submitted" key="success" class="flex flex-col">
+          <div v-if="submitted" key="success" class="flex flex-col bg-white">
 
             <!-- Header -->
             <div class="px-8 pt-8 pb-7" style="background: linear-gradient(135deg, #172b4d 0%, #1e3a5f 100%);">
@@ -81,7 +81,7 @@
           </div>
 
           <!-- FORMULAR-ANSICHT -->
-          <div v-else key="form">
+          <div v-else key="form" class="bg-white">
 
             <!-- Header -->
             <div class="px-8 pt-8 pb-7" style="background: linear-gradient(135deg, #172b4d 0%, #1e3a5f 100%);">
