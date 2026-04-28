@@ -42,8 +42,13 @@
           </div>
 
           <div class="relative z-10 mb-6 flex items-baseline gap-1">
-            <span class="text-h2-sm md:text-h2-md lg:text-h2-lg 2xl:text-h2-2xl font-bold text-white">{{ selectedTier.price }}</span>
-            <span class="text-p-sm md:text-p-md lg:text-p-lg 2xl:text-p-2xl text-white">{{ selectedTier.priceSuffix }}</span>
+            <template v-if="plansLoading">
+              <span class="text-h2-sm md:text-h2-md lg:text-h2-lg 2xl:text-h2-2xl font-bold text-white opacity-40">–,–€</span>
+            </template>
+            <template v-else>
+              <span class="text-h2-sm md:text-h2-md lg:text-h2-lg 2xl:text-h2-2xl font-bold text-white">{{ selectedTier.price }}</span>
+              <span class="text-p-sm md:text-p-md lg:text-p-lg 2xl:text-p-2xl text-white">{{ selectedTier.priceSuffix }}</span>
+            </template>
           </div>
 
           <ul class="relative z-10 flex flex-col gap-3 mb-8">
@@ -60,11 +65,12 @@
             <div class="relative" v-click-outside="closeDropdown">
               <button
                 @click="dropdownOpen = !dropdownOpen"
-                class="w-full flex items-center justify-between gap-3 bg-white/10 hover:bg-white/15 border border-white/20 hover:border-white/35 text-white text-sm rounded-xl px-4 py-3 transition-all duration-200 focus:outline-none"
+                :disabled="plansLoading"
+                class="w-full flex items-center justify-between gap-3 bg-white/10 hover:bg-white/15 border border-white/20 hover:border-white/35 text-white text-sm rounded-xl px-4 py-3 transition-all duration-200 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <div class="flex items-center gap-2">
                   <Users class="w-4 h-4 text-white/60" :stroke-width="1.75" />
-                  <span class="text-p-small-sm md:text-p-small-md lg:text-p-small-lg 2xl:text-p-small-2xl">{{ selectedTier.label }}</span>
+                  <span class="text-p-small-sm md:text-p-small-md lg:text-p-small-lg 2xl:text-p-small-2xl">{{ plansLoading ? 'Wird geladen…' : selectedTier.label }}</span>
                 </div>
                 <svg
                   class="w-4 h-4 text-white/60 transition-transform duration-200"
@@ -122,8 +128,13 @@
             <p class="text-p-sm md:text-p-md lg:text-p-lg 2xl:text-p-2xl text-black">{{ addon.description }}</p>
           </div>
           <div class="mb-8 flex items-baseline gap-1">
-            <span class="text-h2-sm md:text-h2-md lg:text-h2-lg 2xl:text-h2-2xl font-bold text-black">{{ addon.price }}</span>
-            <span v-if="addon.priceSuffix" class="text-p-sm md:text-p-md lg:text-p-lg 2xl:text-p-2xl text-black">{{ addon.priceSuffix }}</span>
+            <template v-if="plansLoading">
+              <span class="text-h2-sm md:text-h2-md lg:text-h2-lg 2xl:text-h2-2xl font-bold text-black opacity-40">–,–€</span>
+            </template>
+            <template v-else>
+              <span class="text-h2-sm md:text-h2-md lg:text-h2-lg 2xl:text-h2-2xl font-bold text-black">{{ addon.price }}</span>
+              <span v-if="addon.priceSuffix" class="text-p-sm md:text-p-md lg:text-p-lg 2xl:text-p-2xl text-black">{{ addon.priceSuffix }}</span>
+            </template>
           </div>
           <ul class="flex flex-col gap-3 flex-1">
             <li v-for="feature in addon.features" :key="feature.label" class="flex items-center gap-3 text-p-small-sm md:text-p-small-md lg:text-p-small-lg 2xl:text-p-small-2xl text-black">
@@ -145,6 +156,19 @@ import { KeyRound, CreditCard, BadgeCheck, ScanSearch, Users, Server, Bot, Calen
 import SectionHeader from '@/components/common/SectionHeader.vue'
 import ButtonSecondary from '@/components/common/ButtonSecondary.vue'
 
+// Hilfsfunktion: API-Preis → Anzeigeformat ("129.00" → "129,00€")
+function formatPrice(preis) {
+  return preis.toLocaleString('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + '€'
+}
+
+// Hilfsfunktion: maxKandidaten → lesbares Label
+function tierLabel(maxKandidaten) {
+  if (!maxKandidaten) return 'Über 250 Talente'
+  if (maxKandidaten <= 50)  return 'Bis zu 50 Talente'
+  if (maxKandidaten <= 100) return '50 – 100 Talente'
+  return '100 – 250 Talente'
+}
+
 export default {
   name: 'LandingPricing',
   components: { SectionHeader, ButtonSecondary, Users },
@@ -163,7 +187,8 @@ export default {
   },
   data() {
     return {
-      selectedTier: null,
+      plansLoading: true,
+      selectedTier: { label: '', price: '', priceSuffix: ' / Monat' },
       dropdownOpen: false,
       starter: {
         name: 'Bring Your Own Key',
@@ -180,12 +205,7 @@ export default {
       pro: {
         name: 'Enterprise Lizenz',
         description: 'Für Personalberater, die ihren gesamten Recruiting-Prozess automatisieren wollen.',
-        tiers: [
-          { label: 'Bis zu 50 Talente',  price: '29,99€',  priceSuffix: ' / Monat' },
-          { label: '50 – 100 Talente',   price: '59,99€',  priceSuffix: ' / Monat' },
-          { label: '100 – 250 Talente',  price: '99,99€',  priceSuffix: ' / Monat' },
-          { label: 'Über 250 Talente',   price: '149,99€', priceSuffix: ' / Monat' },
-        ],
+        tiers: [], // wird von der API befüllt
         features: [
           { label: '3 Mitarbeiter-Lizenzen', icon: Users },
           { label: 'Hosting ihrer Kandidatenprofile und Vakanzen', icon: Server },
@@ -196,7 +216,7 @@ export default {
       addon: {
         name: 'Zusätzliche Mitarbeiter',
         description: 'Für wachsende Teams – alle Leistungen der Enterprise Lizenz, skalierbar je Mitarbeiter.',
-        price: '19,99€',
+        price: '',       // wird von der API befüllt
         priceSuffix: ' / pro weitere Lizenz & Monat',
         features: [
           { label: 'Alle Leistungen der Enterprise Lizenz', icon: PlusCircle },
@@ -204,17 +224,41 @@ export default {
           { label: 'Monatlich kündbar, keine Mindestlaufzeit', icon: CalendarX },
         ]
       },
-      // URL zur Webanwendung aus der Umgebungsvariable
       loginUrl: process.env.VUE_APP_DASHBOARD_URL
     }
   },
-  created() {
-    this.selectedTier = this.pro.tiers[0]
+  async created() {
+    await this.fetchPlans()
   },
   mounted() {
     this.setupIntersectionObserver()
   },
   methods: {
+    async fetchPlans() {
+      try {
+        const res = await fetch(`${process.env.VUE_APP_API_URL}/api/subscriptions/plans`)
+        const { data } = await res.json()
+
+        // Tiers in das Format umwandeln, das das Dropdown erwartet
+        this.pro.tiers = data.plans.map(plan => ({
+          label:       tierLabel(plan.maxKandidaten),
+          price:       formatPrice(plan.preisProMonat),
+          priceSuffix: ' / Monat',
+          tier:        plan.tier,
+        }))
+
+        // Zusatzlizenz-Preis setzen
+        this.addon.price = formatPrice(data.zusatzlizenzPreisProMonat)
+
+        // Ersten Tier vorauswählen
+        this.selectedTier = this.pro.tiers[0]
+      } catch (e) {
+        console.error('Preise konnten nicht geladen werden:', e)
+        // Im Fehlerfall leere Tiers belassen – Dropdown bleibt deaktiviert
+      } finally {
+        this.plansLoading = false
+      }
+    },
     selectTier(tier) {
       this.selectedTier = tier
       this.dropdownOpen = false
@@ -224,7 +268,7 @@ export default {
     },
     setupIntersectionObserver() {
       if (!this.$refs.pricingSection) return
-      
+
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
@@ -235,7 +279,7 @@ export default {
       }, {
         threshold: 0.3
       })
-      
+
       observer.observe(this.$refs.pricingSection)
     }
   }
