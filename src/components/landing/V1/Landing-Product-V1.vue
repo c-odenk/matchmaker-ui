@@ -1,6 +1,6 @@
 <template>
   <section ref="productSection" id="product" class="py-10 md:py-28 lg:py-20 bg-white overflow-hidden">
-    <div class="mx-auto max-w-container-lg 2xl:max-w-container px-container-h">
+    <div class="mx-auto max-w-container-sm md:max-w-container-md lg:max-w-container-lg 2xl:max-w-container px-container-h">
       
       <div class="flex flex-col lg:flex-row items-start lg:items-center gap-8 md:gap-12 lg:gap-16">
 
@@ -231,7 +231,6 @@ export default {
 </script>
 
 <style scoped>
-/* Product Section Animations */
 .product-animate-text {
   opacity: 0;
   transform: translateX(-30px);

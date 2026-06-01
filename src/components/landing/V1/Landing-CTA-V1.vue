@@ -1,6 +1,6 @@
 <template>
   <section ref="ctaSection" id="cta" class="py-12 md:py-16 lg:py-20 2xl:py-16">
-    <div class="mx-auto max-w-container-lg 2xl:max-w-container px-container-h">
+    <div class="mx-auto max-w-container-sm md:max-w-container-md lg:max-w-container-lg 2xl:max-w-container px-container-h">
 
       <div
         class="relative overflow-hidden bg-gray-50 border border-gray-200 rounded-3xl flex flex-col lg:flex-row items-center gap-10 lg:gap-0 px-8 md:px-12 lg:px-16 py-12 lg:py-16 2xl:py-20"
@@ -20,11 +20,6 @@
         </div>
 
         <div class="lg:w-1/2 relative h-[280px] md:h-[340px] lg:h-[320px] w-full flex items-center justify-end lg:overflow-visible cta-animate-image" style="animation-delay: 0.2s">
-
-          <div
-            class="absolute rounded-2xl"
-            style="width: 95%; aspect-ratio: 16/9; top: 55%; right: -6%; transform: rotate(1.5deg) translateY(-47%); background: #1e2d42; box-shadow: 0 20px 60px rgba(0,0,0,0.15);"
-          />
 
           <div
             class="absolute rounded-2xl overflow-hidden bg-white flex flex-col"
@@ -100,7 +95,6 @@ export default {
   @apply w-full h-full flex items-center justify-center bg-gray-50;
 }
 
-/* CTA Animation */
 .cta-animate-text {
   opacity: 0;
   transform: translateX(-30px);

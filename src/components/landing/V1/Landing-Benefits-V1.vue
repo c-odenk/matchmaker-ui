@@ -1,6 +1,6 @@
 <template>
-  <section ref="benefitsSection" class="py-10 md:py-28 lg:pt-40 lg:pb-20 bg-white">
-    <div class="mx-auto max-w-container-lg 2xl:max-w-container px-container-h">
+  <section ref="benefitsSection" class="py-10 md:py-28 lg:pt-40 lg:pb-20 bg-white overflow-x-hidden">
+    <div class="mx-auto max-w-container-sm md:max-w-container-md lg:max-w-container-lg 2xl:max-w-container px-container-h">
 
       <!-- Mobile + Tablet: stacked layout -->
       <div class="lg:hidden flex flex-col gap-6">
@@ -23,8 +23,8 @@
           </ButtonPrimary>
         </div>
 
-        <!-- Mobile: horizontal scroll (w-screen, volle Breite) -->
-        <div class="sm:hidden -mx-container-h">
+        <!-- Mobile: horizontal scroll -->
+        <div class="sm:hidden">
           <div
             ref="scrollContainer"
             class="benefits-scroll flex flex-row overflow-x-auto snap-x snap-mandatory"
@@ -34,7 +34,7 @@
               v-for="(benefit, index) in benefits"
               :key="benefit.title"
               :ref="el => { if (el) cardRefs[index] = el }"
-              class="shrink-0 w-screen snap-start px-container-h pb-3"
+              class="shrink-0 w-full snap-start pb-3"
             >
               <div class="flex flex-col gap-4 bg-gray-50 border border-gray-200 rounded-2xl p-5 h-full">
                 <div class="w-9 h-9 flex items-center justify-center rounded-xl bg-dark-blue text-white">
@@ -47,7 +47,7 @@
               </div>
             </div>
           </div>
-          <div class="flex items-center gap-2 mt-3 px-container-h">
+          <div class="flex items-center gap-2 mt-3">
             <button
               v-for="(benefit, index) in benefits"
               :key="index"
@@ -160,7 +160,6 @@ export default {
           icon: ShieldCheck
         }
       ],
-      // URL zur Webanwendung aus der Umgebungsvariable
       loginUrl: process.env.VUE_APP_DASHBOARD_URL
     }
   },
@@ -185,9 +184,7 @@ export default {
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            // Füge die Animationsklasse hinzu, wenn die Section sichtbar wird
             entry.target.classList.add('benefits-animated')
-            // Optional: unobserve nach der Animation
             observer.unobserve(entry.target)
           }
         })

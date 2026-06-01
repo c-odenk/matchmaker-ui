@@ -1,217 +1,211 @@
 <template>
-  <section class="relative bg-white py-6 md:py-8 lg:py-12">
-    <div class="mx-auto max-w-container-lg 2xl:max-w-container px-container-h">
+  <section ref="productSection" id="product" class="py-10 md:py-28 lg:py-20 bg-white overflow-hidden">
+    <div class="mx-auto max-w-container-sm md:max-w-container-md lg:max-w-container-lg 2xl:max-w-container px-container-h">
+      
+      <div class="flex flex-col lg:flex-row items-center gap-8 md:gap-12 lg:gap-16">
 
-      <!-- Desktop + Tablet -->
-      <div class="hidden sm:flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+        <!-- Linke Spalte: Slideshow -->
+        <div class="lg:w-1/2 flex flex-col w-full product-animate-text" style="animation-delay: 0s">
 
-        <!-- Linke Spalte: Text -->
-        <div class="lg:w-1/2 flex flex-col gap-6 justify-center">
-
-          <!-- Überschrift + Text (statisch) -->
-          <div class="flex flex-col gap-4">
-            <h2 class="text-h3-sm md:text-h3-md lg:text-h3-lg 2xl:text-h3-2xl text-black">
-              Was unsere Kunden sagen
-            </h2>
-            <p class="text-p-sm md:text-p-md lg:text-p-lg 2xl:text-p-2xl text-black">
-              Erfahren Sie, wie Recruitingteams mit matchmaker.hr ihre Prozesse effizienter gestalten und wertvolle Zeit für das Wesentliche gewinnen.
-            </p>
-          </div>
-
-          <!-- Slide Content -->
-          <div class="relative mt-4">
-
-            <!-- Dekoratives Hintergrund-Rechteck (gespiegelt zu LandingProduct) -->
-            <div
-              class="absolute rounded-2xl bg-dark-blue z-0"
-              style="top: -32px; left: -32px; bottom: 32px; right: 32px;"
-            ></div>
-
-            <div class="overflow-hidden">
-            <transition name="fade-right" mode="out-in">
-              <div
-                :key="currentIndex"
-                class="relative z-10 flex flex-col gap-5 rounded-2xl p-6"
-                style="background: #ffffff; padding: 4px; box-shadow: 0 8px 40px rgba(0,0,0,0.12), 0 1px 4px rgba(0,0,0,0.06); border: 1px solid #d1d5db;"
-              >
-                <!-- Stars -->
-                <div class="flex gap-1 mb-1">
-                  <span v-for="n in 5" :key="n" class="text-amber-400 text-lg">★</span>
+          <!-- Feature-Karte -->
+          <div class="relative overflow-hidden">
+            <transition name="slide-fade" mode="out-in">
+              <div v-if="currentFeature" :key="currentIndex" class="flex flex-col gap-4 p-1">
+                <div class="flex items-center gap-3">
+                  <div class="flex-shrink-0 w-9 h-9 flex items-center justify-center rounded-xl bg-dark-blue text-white shadow-sm">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" :d="currentFeature.icon"/>
+                    </svg>
+                  </div>
+                  <h3 class="text-h3-sm md:text-h3-md lg:text-h3-lg 2xl:text-h3-2xl text-black leading-snug font-bold">
+                    <span class="lg:hidden">{{ mobileTitle }}</span>
+                    <span class="hidden lg:inline">{{ currentFeature.title }}</span>
+                  </h3>
                 </div>
-
-                <!-- Quote -->
-                <p class="text-p-sm md:text-p-md lg:text-p-lg 2xl:text-p-2xl text-black m-0 font-normal">
-                  "{{ testimonials[currentIndex].quote }}"
+                <p class="text-p-sm md:text-p-md lg:text-p-lg 2xl:text-p-2xl text-black leading-relaxed">
+                  {{ currentFeature.description }}
                 </p>
-
-                <!-- Author -->
-                <div class="flex items-center gap-3 pt-4 border-t border-gray-100">
-                  <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold tracking-wider bg-dark-blue text-white">
-                    {{ testimonials[currentIndex].initials }}
-                  </div>
-                  <div class="flex flex-col gap-0.5">
-                    <span class="font-semibold text-gray-900 text-p-small-sm md:text-p-small-md">{{ testimonials[currentIndex].name }}</span>
-                    <span class="text-gray-500 text-p-small-sm">{{ testimonials[currentIndex].role }}</span>
-                  </div>
-                </div>
-
+                <ul class="flex flex-col gap-3">
+                  <li v-for="(point, pIdx) in currentFeature.points" :key="pIdx" class="flex items-center gap-3 text-p-sm md:text-p-md lg:text-p-lg 2xl:text-p-2xl text-black">
+                    <div class="flex-shrink-0">
+                      <svg class="w-5 h-5 text-dark-blue" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                      </svg>
+                    </div>
+                    <span class="flex-1 leading-snug">{{ point }}</span>
+                  </li>
+                </ul>
               </div>
             </transition>
-            </div>
           </div>
 
-          <!-- Dots -->
-          <div class="flex items-center gap-2">
+          <!-- Dots Navigation -->
+          <div class="flex items-center gap-2.5 mt-8">
             <button
-              v-for="(_, index) in testimonials"
-              :key="index"
+              v-for="(feature, index) in features"
+              :key="'dot-' + index"
               @click="goTo(index)"
-              class="transition-all duration-500 rounded-full"
-              :class="currentIndex === index
-                ? 'w-8 h-2.5 bg-dark-blue'
-                : 'w-2.5 h-2.5 bg-gray-200 hover:bg-gray-300'"
+              class="transition-all duration-300 rounded-full h-2.5"
+              :class="currentIndex === index ? 'w-8 bg-dark-blue shadow-sm' : 'w-2.5 bg-gray-200 hover:bg-gray-300'"
             />
           </div>
 
         </div>
 
-        <!-- Rechte Spalte: Person -->
-        <div class="lg:w-1/2 relative flex-shrink-0 flex justify-center" style="height: 500px;">
-          <img
-            src="@/assets/Person_Mockup.png"
-            alt="Recruiting Professional"
-            class="absolute z-10"
-            style="height: 100%; width: auto; bottom: 0; left: 50%; transform: translateX(-50%); object-fit: contain; object-position: bottom; max-width: 100%;"
-          />
-        </div>
-
-      </div>
-
-      <!-- Mobile: Horizontal Scroll -->
-      <div class="sm:hidden">
-        <div
-          ref="scrollContainer"
-          class="testimonials-scroll flex flex-row overflow-x-auto snap-x snap-mandatory"
-          @scroll="onScroll"
-        >
-          <div
-            v-for="(testimonial, index) in testimonials"
-            :key="index"
-            :ref="el => { if (el) cardRefs[index] = el }"
-            class="shrink-0 w-screen snap-start px-container-h pb-3"
-          >
-            <div class="flex flex-col rounded-xl p-6 h-full bg-gray-50 border border-gray-100">
-              <div class="flex gap-1 mb-4">
-                <span v-for="n in 5" :key="n" class="text-amber-400">★</span>
-              </div>
-              <p class="text-p-small-sm text-gray-700 flex-1 mb-4 m-0">"{{ testimonial.quote }}"</p>
-              <div class="flex items-center gap-3 pt-4 border-t border-gray-100">
-                <div class="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold bg-dark-blue text-white">
-                  {{ testimonial.initials }}
-                </div>
-                <div>
-                  <div class="font-semibold text-gray-900 text-p-small-sm">{{ testimonial.name }}</div>
-                  <div class="text-gray-500 text-p-small-sm">{{ testimonial.role }}</div>
-                </div>
-              </div>
+        <!-- Rechte Spalte: Video-Platzhalter -->
+        <div class="w-full lg:w-1/2 product-animate-image" style="animation-delay: 0.2s">
+          <div class="relative w-full aspect-[16/9] rounded-2xl overflow-hidden border border-gray-200 shadow-lg bg-gray-50 flex flex-col items-center justify-center gap-4">
+            
+            <div class="w-16 h-16 rounded-full bg-dark-blue/10 border-2 border-dark-blue/20 flex items-center justify-center">
+              <svg class="w-7 h-7 text-dark-blue ml-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
             </div>
-          </div>
-        </div>
-        <div class="px-container-h mt-4">
-          <div class="flex items-center gap-2">
-            <button
-              v-for="(_, index) in testimonials"
-              :key="index"
-              @click="scrollToCard(index)"
-              class="transition-all duration-500 rounded-full"
-              :class="activeCardIndex === index ? 'w-8 h-2.5 bg-dark-blue' : 'w-2.5 h-2.5 bg-gray-200'"
-            />
-          </div>
-        </div>
-      </div>
 
+            <div class="flex flex-col items-center gap-1 px-6 text-center">
+              <p class="text-p-small-lg font-semibold text-gray-500">Video folgt in Kürze</p>
+              <p class="text-p-small-lg text-gray-400">Hier wird eine Produktdemo von matchmaker.hr zu sehen sein.</p>
+            </div>
+
+            <div class="absolute top-3 left-3 w-5 h-5 border-t-2 border-l-2 border-gray-300 rounded-tl-md"></div>
+            <div class="absolute top-3 right-3 w-5 h-5 border-t-2 border-r-2 border-gray-300 rounded-tr-md"></div>
+            <div class="absolute bottom-3 left-3 w-5 h-5 border-b-2 border-l-2 border-gray-300 rounded-bl-md"></div>
+            <div class="absolute bottom-3 right-3 w-5 h-5 border-b-2 border-r-2 border-gray-300 rounded-br-md"></div>
+
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 </template>
 
 <script>
 export default {
-  name: 'LandingTestimonials',
+  name: 'LandingProduct',
+  mounted() {
+    this.setupIntersectionObserver()
+  },
   data() {
     return {
       currentIndex: 0,
-      activeCardIndex: 0,
-      cardRefs: [],
-      testimonials: [
+      features: [
         {
-          quote: 'Der Market Intelligence Agent liefert täglich qualifizierte Vakanzen – ohne manuelles Jobboard-Screening. Unser Sourcing-Aufwand hat sich halbiert.',
-          name: 'Markus Brandt',
-          role: 'Senior Consultant, Brandt & Partner',
-          initials: 'MB'
+          title: 'Profiling Agent – Bedarfsanalyse & Profiling',
+          description: 'Strukturierte Erfassung des Suchauftrags – der Agent leitet ein präzises Qualifikationsprofil und Suchkriterien für alle nachgelagerten Agenten ab.',
+          points: [
+            'Strukturierte Erfassung von Qualifikationen und Rahmenbedingungen',
+            'Automatische Ableitung von Such- und Matching-Kriterien',
+            'Einheitliche Profilbasis für alle nachgelagerten Agenten',
+          ],
+          icon: 'M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z',
         },
         {
-          quote: 'Wir erhalten nicht mehr die meisten Treffer, sondern die richtigen – mit einer Begründung, die wir Kunden direkt präsentieren können.',
-          name: 'Sabine Richter',
-          role: 'Head of Recruiting, TalentBridge',
-          initials: 'SR'
+          title: 'Market Agent – Vakanzidentifikation',
+          description: 'Kontinuierliches Scanning des Stellenmarkts – neue Vakanzen werden automatisch erfasst, aufbereitet und mit dem Kandidatenpool abgeglichen.',
+          points: [
+            'Kontinuierliches Scanning von Jobboards und Unternehmenswebsites',
+            'Automatischer Abgleich mit bestehenden Kandidatenprofilen',
+            'Vollständige Quellenhistorie für jede identifizierte Vakanz',
+          ],
+          icon: 'M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803a7.5 7.5 0 0010.607 0z',
         },
         {
-          quote: 'Die Anschreiben sind individuell, professionell und versandfertig. Wir geben nur noch frei – das spart täglich mehrere Stunden.',
-          name: 'Jonas Hartmann',
-          role: 'MD, Neo Executive Search',
-          initials: 'JH'
+          title: 'Matching Agent – Intelligentes Scoring',
+          description: 'Semantisches Scoring auf Basis von Qualifikation, Karriereverlauf und implizitem Kontext – mit nachvollziehbarer Begründung je Empfehlung.',
+          points: [
+            'Semantisches Scoring auf Basis der Kandidaten-DNA',
+            'Nachvollziehbare KI-Begründung je Empfehlung',
+            'Priorisierte Shortlist auf Anforderung',
+          ],
+          icon: 'M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25a2.25 2.25 0 0113.5 18v-2.25z',
         },
         {
-          quote: 'Volle Automatisierung wäre im Executive Search undenkbar. Mit matchmaker.hr behalten wir die Kontrolle – ohne auf Effizienz zu verzichten.',
-          name: 'Christina Vogt',
-          role: 'Partner, Vogt & Associates',
-          initials: 'CV'
+          title: 'Outreach Agent – Kontaktierung & Engagement',
+          description: 'Automatische Recherche des zuständigen Ansprechpartners, individualisiertes Anschreiben und Bereitstellung zur Freigabe – in Minuten statt Stunden.',
+          points: [
+            'Automatische Identifikation von Entscheidern via API',
+            'Hochgradig personalisierte Anschreiben je Kontakt',
+            'Freigabe per Klick – kein manueller Aufwand',
+          ],
+          icon: 'M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5',
+        },
+        {
+          title: 'Human-in-the-Loop',
+          description: 'Alle Agenten arbeiten im Hintergrund – die finale Entscheidung liegt beim Berater. Jede Aktion durchläuft einen definierten menschlichen Freigabe-Schritt.',
+          points: [
+            'Kein automatischer Versand ohne Beratergenehmigung',
+            'Transparente Nachvollziehbarkeit jeder Entscheidung',
+            'Jederzeit steuerbar, konfigurierbar und anpassbar',
+          ],
+          icon: 'M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z',
         }
       ]
     }
   },
-  mounted() {
-    this.cardRefs = []
+  computed: {
+    currentFeature() {
+      return this.features[this.currentIndex] || this.features[0]
+    },
+    mobileTitle() {
+      if (!this.currentFeature?.title) return ''
+      const parts = this.currentFeature.title.split(' – ')
+      return parts.length > 1 ? parts[1] : this.currentFeature.title
+    }
   },
   methods: {
     goTo(index) {
       this.currentIndex = index
     },
-    onScroll() {
-      const container = this.$refs.scrollContainer
-      if (!container) return
-      this.activeCardIndex = Math.round(container.scrollLeft / container.offsetWidth)
-    },
-    scrollToCard(index) {
-      const container = this.$refs.scrollContainer
-      if (!container) return
-      container.scrollTo({ left: index * container.offsetWidth, behavior: 'smooth' })
+    setupIntersectionObserver() {
+      if (!this.$refs.productSection) return
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('product-animated')
+            observer.unobserve(entry.target)
+          }
+        })
+      }, { threshold: 0.3 })
+      observer.observe(this.$refs.productSection)
     }
   }
 }
 </script>
 
 <style scoped>
-.testimonials-scroll {
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+.product-animate-text {
+  opacity: 0;
+  transform: translateX(-30px);
 }
-.testimonials-scroll::-webkit-scrollbar { display: none; }
 
-.fade-right-enter-active {
-  transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-.fade-right-leave-active {
-  transition: opacity 0.3s cubic-bezier(0.55, 0, 1, 0.45),
-              transform 0.3s cubic-bezier(0.55, 0, 1, 0.45);
-}
-.fade-right-enter-from {
+.product-animate-image {
   opacity: 0;
-  transform: translateX(48px);
+  transform: scale(0.95) translateX(30px);
 }
-.fade-right-leave-to {
+
+.product-animated .product-animate-text {
+  animation: slideInFromLeft 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.product-animated .product-animate-image {
+  animation: slideInFromRight 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes slideInFromLeft {
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInFromRight {
+  to { opacity: 1; transform: scale(1) translateX(0); }
+}
+
+.slide-fade-enter-active,
+.slide-fade-leave-active {
+  transition: opacity 0.2s ease;
+}
+.slide-fade-enter-from,
+.slide-fade-leave-to {
   opacity: 0;
-  transform: translateX(-32px);
 }
 </style>

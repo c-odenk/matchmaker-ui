@@ -1,6 +1,6 @@
 <template>
-  <section class="py-12 md:py-16 lg:py-24 2xl:py-36 bg-white">
-    <div class="mx-auto max-w-container-lg 2xl:max-w-container px-container-h">
+  <section ref="faqSection" id="faq" class="py-12 md:py-16 lg:pt-12 lg:pb-20 2xl:py-20">
+    <div class="mx-auto max-w-container-sm md:max-w-container-md lg:max-w-container-lg 2xl:max-w-container px-container-h">
       <div class="flex flex-col lg:flex-row gap-12 lg:gap-20">
 
         <!-- Col 1: Header -->
@@ -21,7 +21,8 @@
           <div
             v-for="(faq, index) in faqs"
             :key="index"
-            class="border-t py-5 cursor-pointer group"
+            class="border-t py-5 cursor-pointer group faq-animate-item"
+            :style="{ 'animation-delay': `${0 + index * 0.1}s` }"
             :class="[
               { 'border-b': index === faqs.length - 1 },
               activeIndex === index ? 'border-gray-300' : 'border-gray-200'
@@ -100,10 +101,47 @@ export default {
       ]
     }
   },
+  mounted() {
+    this.setupIntersectionObserver()
+  },
   methods: {
     toggleFAQ(index) {
       this.activeIndex = this.activeIndex === index ? null : index
+    },
+    setupIntersectionObserver() {
+      if (!this.$refs.faqSection) return
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('faq-animated')
+            observer.unobserve(entry.target)
+          }
+        })
+      }, {
+        threshold: 0.3
+      })
+      
+      observer.observe(this.$refs.faqSection)
     }
   }
 }
 </script>
+
+<style scoped>
+.faq-animate-item {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.faq-animated .faq-animate-item {
+  animation: faqFadeUp 0.6s ease forwards;
+}
+
+@keyframes faqFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>

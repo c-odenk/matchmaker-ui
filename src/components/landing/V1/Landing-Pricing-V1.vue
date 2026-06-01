@@ -1,6 +1,6 @@
 <template>
   <section ref="pricingSection" id="pricing" class="py-20 md:py-28 lg:py-20 lg:pb-4 2xl:pt-28 2xl:pb-16 bg-white">
-    <div class="mx-auto max-w-container-lg 2xl:max-w-container px-container-h">
+    <div class="mx-auto max-w-container-sm md:max-w-container-md lg:max-w-container-lg 2xl:max-w-container px-container-h">
 
       <SectionHeader
         title="Effizientes Talentpool management - zum fairen Preis"
@@ -156,12 +156,12 @@ import { KeyRound, CreditCard, BadgeCheck, ScanSearch, Users, Server, Bot, Calen
 import SectionHeader from '@/components/common/SectionHeader.vue'
 import ButtonSecondary from '@/components/common/ButtonSecondary.vue'
 
-// Hilfsfunktion: API-Preis → Anzeigeformat ("129.00" → "129,00€")
+const CACHE_KEY = 'matchmaker_plans_cache'
+
 function formatPrice(preis) {
   return preis.toLocaleString('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + '€'
 }
 
-// Hilfsfunktion: maxKandidaten → lesbares Label
 function tierLabel(maxKandidaten) {
   if (!maxKandidaten) return 'Über 250 Talente'
   if (maxKandidaten <= 50)  return 'Bis zu 50 Talente'
@@ -205,7 +205,7 @@ export default {
       pro: {
         name: 'Enterprise Lizenz',
         description: 'Für Personalberater, die ihren gesamten Recruiting-Prozess automatisieren wollen.',
-        tiers: [], // wird von der API befüllt
+        tiers: [],
         features: [
           { label: '3 Mitarbeiter-Lizenzen', icon: Users },
           { label: 'Hosting ihrer Kandidatenprofile und Vakanzen', icon: Server },
@@ -216,7 +216,7 @@ export default {
       addon: {
         name: 'Zusätzliche Mitarbeiter',
         description: 'Für wachsende Teams – alle Leistungen der Enterprise Lizenz, skalierbar je Mitarbeiter.',
-        price: '',       // wird von der API befüllt
+        price: '',
         priceSuffix: ' / pro weitere Lizenz & Monat',
         features: [
           { label: 'Alle Leistungen der Enterprise Lizenz', icon: PlusCircle },
@@ -234,31 +234,42 @@ export default {
     this.setupIntersectionObserver()
   },
   methods: {
+    applyPlans(data) {
+      this.pro.tiers = data.plans.map(plan => ({
+        label:       tierLabel(plan.maxKandidaten),
+        price:       formatPrice(plan.preisProMonat),
+        priceSuffix: ' / Monat',
+        tier:        plan.tier,
+      }))
+      this.addon.price = formatPrice(data.zusatzlizenzPreisProMonat)
+      if (!this.selectedTier.label) this.selectedTier = this.pro.tiers[0]
+    },
+
     async fetchPlans() {
+      // ── 1. Cache sofort anzeigen – kein Warten auf API ──────────────
+      try {
+        const cached = localStorage.getItem(CACHE_KEY)
+        if (cached) {
+          this.applyPlans(JSON.parse(cached))
+          this.plansLoading = false
+        }
+      } catch (e) {
+        // localStorage nicht verfügbar – kein Problem, weiter mit API
+      }
+
+      // ── 2. Frische Daten im Hintergrund laden & Cache aktualisieren ──
       try {
         const res = await fetch(`${process.env.VUE_APP_API_URL}/api/subscriptions/plans`)
         const { data } = await res.json()
-
-        // Tiers in das Format umwandeln, das das Dropdown erwartet
-        this.pro.tiers = data.plans.map(plan => ({
-          label:       tierLabel(plan.maxKandidaten),
-          price:       formatPrice(plan.preisProMonat),
-          priceSuffix: ' / Monat',
-          tier:        plan.tier,
-        }))
-
-        // Zusatzlizenz-Preis setzen
-        this.addon.price = formatPrice(data.zusatzlizenzPreisProMonat)
-
-        // Ersten Tier vorauswählen
-        this.selectedTier = this.pro.tiers[0]
+        localStorage.setItem(CACHE_KEY, JSON.stringify(data))
+        this.applyPlans(data)
       } catch (e) {
         console.error('Preise konnten nicht geladen werden:', e)
-        // Im Fehlerfall leere Tiers belassen – Dropdown bleibt deaktiviert
       } finally {
         this.plansLoading = false
       }
     },
+
     selectTier(tier) {
       this.selectedTier = tier
       this.dropdownOpen = false
@@ -287,7 +298,6 @@ export default {
 </script>
 
 <style scoped>
-/* Pricing Animation */
 .pricing-animate-card {
   opacity: 0;
   transform: translateY(20px);

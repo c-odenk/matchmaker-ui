@@ -1,9 +1,7 @@
 <template>
   <header>
     <nav class="w-full bg-white">
-      <div
-        class="mx-auto max-w-container-lg 2xl:max-w-container px-container-h"
-      >
+      <div class="mx-auto max-w-container-sm md:max-w-container-md lg:max-w-container-lg 2xl:max-w-container px-container-h">
         <div class="relative flex items-center justify-between py-4">
 
           <!-- Logo / Brand Name -->
@@ -14,18 +12,14 @@
               </svg>
             </div>
             <span class="text-gray-900 font-semibold tracking-tight text-xl">
-              matchmaker<span class="text-deep-blue">.</span>hr
+              matchmaker<span class="text-dark-blue">.</span>hr
             </span>
           </router-link>
 
           <!-- Center Nav Links (Desktop) -->
           <ul class="absolute left-1/2 -translate-x-1/2 hidden lg:flex items-center gap-8">
             <li v-for="item in navItems" :key="item.name">
-              <a
-                href="#"
-                class="uppercase text-gray-900 hover:text-gray-600 transition-colors duration-200"
-                @click="scrollToSection(item.anchor)"
-              >{{ item.name }}</a>
+              <a href="#" class="uppercase text-gray-900 hover:text-gray-600 transition-colors duration-200" @click.prevent="scrollToSection(item.anchor)">{{ item.name }}</a>
             </li>
           </ul>
 
@@ -50,28 +44,64 @@
             </svg>
           </button>
         </div>
+      </div>
 
-        <!-- Mobile Menu -->
-        <div
-          v-if="isMenuOpen"
-          class="lg:hidden pb-6 border-t border-gray-100 mt-1"
-        >
-          <ul class="flex flex-col gap-4 pt-4">
-            <li v-for="item in navItems" :key="item.name">
-              <a
-                href="#"
-                class="block text-sm text-gray-600 hover:text-gray-900 transition-colors"
+      <!-- Mobile Menu (Fullscreen) -->
+      <transition
+        enter-active-class="transition ease-out duration-200"
+        enter-from-class="opacity-0 -translate-y-2"
+        enter-to-class="opacity-100 translate-y-0"
+        leave-active-class="transition ease-in duration-150"
+        leave-from-class="opacity-100 translate-y-0"
+        leave-to-class="opacity-0 -translate-y-2"
+      >
+        <div v-if="isMenuOpen" class="lg:hidden fixed inset-0 top-[57px] bg-white z-50 overflow-y-auto">
+          <div class="px-container-h py-8 flex flex-col gap-8 h-full">
+
+            <!-- Hauptnavigation -->
+            <div class="flex flex-col gap-1">
+              <p class="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2">Navigation</p>
+              <button
+                v-for="item in navItems"
+                :key="item.name"
+                class="flex items-center justify-between py-2.5 px-4 rounded-xl text-gray-800 hover:bg-gray-50 hover:text-dark-blue transition-colors duration-150 group w-full text-left"
                 @click="scrollToSection(item.anchor)"
-              >{{ item.name }}</a>
-            </li>
-          </ul>
-          <div class="mt-6 w-full">
-            <ButtonPrimary :href="loginUrl" :icon="ArrowRight" iconPosition="trailing" class="w-full">
-              Anmelden
-            </ButtonPrimary>
+              >
+                <span class="text-lg font-medium">{{ item.name }}</span>
+                <svg class="w-5 h-5 text-gray-300 group-hover:text-dark-blue transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Rechtliches -->
+            <div class="flex flex-col gap-1">
+              <p class="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2">Rechtliches</p>
+              <router-link
+                v-for="item in legalItems"
+                :key="item.name"
+                :to="item.to"
+                class="flex items-center justify-between py-2.5 px-4 rounded-xl text-gray-800 hover:bg-gray-50 hover:text-dark-blue transition-colors duration-150 group"
+                @click="closeMenu"
+              >
+                <span class="text-lg font-medium">{{ item.name }}</span>
+                <svg class="w-5 h-5 text-gray-300 group-hover:text-dark-blue transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+                </svg>
+              </router-link>
+            </div>
+
+            <!-- CTA -->
+            <div class="mt-auto pb-8">
+              <ButtonPrimary :href="loginUrl" :icon="ArrowRight" iconPosition="trailing" class="w-full">
+                Anmelden
+              </ButtonPrimary>
+            </div>
+
           </div>
         </div>
-      </div>
+      </transition>
+
     </nav>
   </header>
 </template>
@@ -83,7 +113,6 @@ import ButtonPrimary from '@/components/common/ButtonPrimary.vue'
 export default {
   name: 'AppHeader',
   components: { ButtonPrimary },
-
   data() {
     return {
       ArrowRight,
@@ -93,9 +122,21 @@ export default {
         { name: 'Produkt', anchor: 'product' },
         { name: 'Preise',  anchor: 'pricing' },
       ],
-      // URL zur Webanwendung aus der Umgebungsvariable
+      legalItems: [
+        { name: 'Datenschutz', to: '/privacy' },
+        { name: 'Impressum',   to: '/imprint' },
+        { name: 'AGB',         to: '/terms'   },
+      ],
       loginUrl: process.env.VUE_APP_DASHBOARD_URL
     }
+  },
+  watch: {
+    isMenuOpen(val) {
+      document.body.style.overflow = val ? 'hidden' : ''
+    }
+  },
+  beforeUnmount() {
+    document.body.style.overflow = ''
   },
   methods: {
     scrollToSection(anchorId) {

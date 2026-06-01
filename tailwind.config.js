@@ -21,8 +21,8 @@ module.exports = {
         'container-h': '1.5rem', // 24px horizontal padding
       },
       maxWidth: {
-        'container-sm': '100%',   // sm  = Smartphone  (< 768 px)   → keine Prefix nötig (Basis-Klasse)
-        'container-md': '60vw',   // md  = Tablet      (≥ 768 px)     (48rem ?!)
+        'container-sm': '95%',   // sm  = Smartphone  (< 768 px)   → keine Prefix nötig (Basis-Klasse)
+        'container-md': '90%',    // md  = Tablet      (≥ 768 px)     (48rem ?!)
         'container-lg': '80rem',  // lg  = Laptop      (≥ 1024 px)
         'container':    '95rem',  // 2xl = Desktop     (≥ 1536 px)
       },
@@ -35,8 +35,8 @@ module.exports = {
         
         'h1-sm':  ['2.0rem',  { lineHeight: '1.15', fontWeight: '700' }],  // Smartphone   
         'h1-md':  ['3.0rem',  { lineHeight: '1.10', fontWeight: '700' }],  // Tablet  
-        'h1-lg':  ['3.0rem',  { lineHeight: '1.05', fontWeight: '700' }],  // Laptop 
-        'h1-2xl': ['3.5rem',  { lineHeight: '1.10', fontWeight: '700' }],  // Desktop  
+        'h1-lg':  ['2.3rem',  { lineHeight: '1.05', fontWeight: '700' }],  // Laptop 
+        'h1-2xl': ['2.0rem',  { lineHeight: '1.10', fontWeight: '700' }],  // Desktop  
 
         // ── H2 ──────────────────────────────────────────────────────────────
    

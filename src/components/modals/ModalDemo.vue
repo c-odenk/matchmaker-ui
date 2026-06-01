@@ -29,7 +29,7 @@
                     Demo vereinbaren.
                   </h2>
                   <p class="text-white/60 text-sm leading-relaxed max-w-md">
-                    Lassen Sie sich matchmaker.hr in 15 Minuten zeigen – wir melden uns zur Bestätigung.
+                    Lassen Sie sich matchmaker.hr in 15 Minuten zeigen.
                   </p>
                 </div>
                 <button 
@@ -97,7 +97,7 @@
                     Demo vereinbaren.
                   </h2>
                   <p class="text-white/60 text-sm leading-relaxed max-w-md">
-                    Lassen Sie sich matchmaker.hr in 15 Minuten zeigen – wir melden uns zur Bestätigung.
+                    Lassen Sie sich matchmaker.hr in 15 Minuten zeigen.
                   </p>
                 </div>
                 <button 
