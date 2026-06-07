@@ -15,10 +15,10 @@
           class="rounded-2xl overflow-hidden flex flex-col pricing-animate-card border border-gray-200"
           style="animation-delay: 0s; background: #f9fafb;"
         >
-          <div class="px-7 pt-7 pb-6">
+          <div class="px-7 pt-6 pb-6">
             <h3 class="text-h3-sm md:text-h3-md lg:text-h3-lg 2xl:text-h3-2xl text-black mb-1">{{ starter.name }}</h3>
-            <p class="text-p-small-lg 2xl:text-p-small-2xl text-gray-500 mb-6">{{ starter.description }}</p>
-            <div class="flex items-baseline gap-1 mb-3">
+            <p class="text-p-small-lg 2xl:text-p-small-2xl text-black mb-6">{{ starter.description }}</p>
+            <div class="flex items-baseline gap-1">
               <span class="text-h2-sm md:text-h2-md lg:text-h2-lg 2xl:text-h2-2xl font-bold text-black">{{ starter.price }}</span>
             </div>
           </div>
@@ -42,16 +42,16 @@
           class="rounded-2xl overflow-hidden flex flex-col pricing-animate-card"
           style="animation-delay: 0.15s; background: #172b4d;"
         >
-          <div class="px-7 pt-7 pb-6">
+          <div class="px-7 pt-6 pb-6">
             <h3 class="text-h3-sm md:text-h3-md lg:text-h3-lg 2xl:text-h3-2xl text-white mb-1">{{ pro.name }}</h3>
-            <p class="text-p-small-lg 2xl:text-p-small-2xl mb-6" style="color: rgba(255,255,255,0.5);">{{ pro.description }}</p>
-            <div class="flex items-baseline gap-1.5 mb-3">
+            <p class="text-p-small-lg 2xl:text-p-small-2xl mb-6 text-white">{{ pro.description }}</p>
+            <div class="flex items-baseline gap-1.5">
               <template v-if="plansLoading">
                 <span class="text-h2-sm md:text-h2-md lg:text-h2-lg 2xl:text-h2-2xl font-bold text-white opacity-40">–,–€</span>
               </template>
               <template v-else>
                 <span class="text-h2-sm md:text-h2-md lg:text-h2-lg 2xl:text-h2-2xl font-bold text-white">{{ selectedTier.price }}</span>
-                <span class="text-p-small-lg 2xl:text-p-small-2xl" style="color: rgba(255,255,255,0.5);">{{ selectedTier.priceSuffix }}</span>
+                <span class="text-p-small-lg 2xl:text-p-small-2xl text-white">{{ selectedTier.priceSuffix }}</span>
               </template>
             </div>
           </div>
@@ -59,7 +59,7 @@
           <div class="mx-7" style="border-top: 1px solid rgba(255,255,255,0.1);"></div>
 
           <div class="px-7 py-6 flex-1 flex flex-col">
-            <p class="text-[10px] font-bold uppercase tracking-widest mb-4" style="color: rgba(255,255,255,0.35);">Leistungen</p>
+            <p class="text-[10px] font-bold uppercase tracking-widest mb-4 text-white">Leistungen</p>
             <ul class="flex flex-col gap-3 mb-6">
               <li v-for="feature in pro.features" :key="feature.label" class="flex items-start gap-3 text-p-small-lg 2xl:text-p-small-2xl text-white">
                 <div class="flex-shrink-0 mt-0.5">
@@ -72,7 +72,7 @@
             <div class="mb-4" style="border-top: 1px solid rgba(255,255,255,0.1);"></div>
 
             <div class="mb-5">
-              <p class="text-[10px] font-bold uppercase tracking-widest mb-2" style="color: rgba(255,255,255,0.35);">Talent-Pool Größe</p>
+              <p class="text-[10px] font-bold uppercase tracking-widest mb-2 text-white">Talent-Pool Größe</p>
               <div class="flex flex-col gap-1.5">
                 <button
                   v-for="tier in pro.tiers"
@@ -103,16 +103,16 @@
           class="rounded-2xl overflow-hidden flex flex-col pricing-animate-card border border-gray-200"
           style="animation-delay: 0.3s; background: #f9fafb;"
         >
-          <div class="px-7 pt-7 pb-6">
+          <div class="px-7 pt-6 pb-6">
             <h3 class="text-h3-sm md:text-h3-md lg:text-h3-lg 2xl:text-h3-2xl text-black mb-1">{{ addon.name }}</h3>
-            <p class="text-p-small-lg 2xl:text-p-small-2xl text-gray-500 mb-6">{{ addon.description }}</p>
-            <div class="flex items-baseline gap-1 flex-wrap mb-3">
+            <p class="text-p-small-lg 2xl:text-p-small-2xl text-black mb-6">{{ addon.description }}</p>
+            <div class="flex items-baseline gap-1 flex-wrap">
               <template v-if="plansLoading">
                 <span class="text-h2-sm md:text-h2-md lg:text-h2-lg 2xl:text-h2-2xl font-bold text-black opacity-40">–,–€</span>
               </template>
               <template v-else>
                 <span class="text-h2-sm md:text-h2-md lg:text-h2-lg 2xl:text-h2-2xl font-bold text-black">{{ addon.price }}</span>
-                <span v-if="addon.priceSuffix" class="text-p-small-lg 2xl:text-p-small-2xl text-gray-500">{{ addon.priceSuffix }}</span>
+                <span v-if="addon.priceSuffix" class="text-p-small-lg 2xl:text-p-small-2xl text-black">{{ addon.priceSuffix }}</span>
               </template>
             </div>
           </div>
@@ -120,7 +120,7 @@
           <div class="mx-7 border-t border-gray-200"></div>
 
           <div class="px-7 py-6 flex-1 flex flex-col">
-            <p class="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-4">Leistungen</p>
+            <p class="text-[10px] font-bold uppercase tracking-widest text-black mb-4">Leistungen</p>
             <ul class="flex flex-col gap-3 flex-1">
               <li v-for="feature in addon.features" :key="feature.label" class="flex items-start gap-3 text-p-small-lg 2xl:text-p-small-2xl text-black">
                 <div class="flex-shrink-0 mt-0.5">

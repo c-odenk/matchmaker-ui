@@ -3,28 +3,42 @@
     <main class="overflow-hidden">
       <section id="hero" class="bg-dark-blue relative overflow-hidden">
 
-        <!-- Hintergrund Glow-Effekt -->
+        <!-- Hintergrund Glow-Effekte -->
         <div class="pointer-events-none absolute inset-0 z-10" aria-hidden="true">
+          <!-- Blauer Glow oben rechts -->
           <div
             class="absolute"
             style="
-              top: -20%;
-              right: -10%;
-              width: 70%;
-              height: 80%;
-              background: radial-gradient(ellipse at center, rgba(41, 118, 214, 0.35) 0%, transparent 70%);
-              filter: blur(40px);
+              top: -30%;
+              right: -15%;
+              width: 75%;
+              height: 90%;
+              background: radial-gradient(ellipse at center, rgba(41, 118, 214, 0.45) 0%, transparent 65%);
+              filter: blur(50px);
             "
           ></div>
+          <!-- Hellblauer Akzent oben mitte -->
           <div
             class="absolute"
             style="
               top: -10%;
-              left: 20%;
+              left: 30%;
+              width: 40%;
+              height: 50%;
+              background: radial-gradient(ellipse at center, rgba(100, 160, 230, 0.2) 0%, transparent 70%);
+              filter: blur(60px);
+            "
+          ></div>
+          <!-- Tiefer blauer Akzent unten links -->
+          <div
+            class="absolute"
+            style="
+              bottom: 0;
+              left: -10%;
               width: 50%;
               height: 60%;
-              background: radial-gradient(ellipse at center, rgba(23, 43, 77, 0.6) 0%, transparent 70%);
-              filter: blur(60px);
+              background: radial-gradient(ellipse at center, rgba(23, 43, 77, 0.8) 0%, transparent 70%);
+              filter: blur(40px);
             "
           ></div>
         </div>
@@ -36,8 +50,8 @@
 
             <!-- Badge -->
             <div class="hero-animate-item flex justify-center mb-5" style="animation-delay: 0s">
-              <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-p-small-sm text-white/70"
-                style="background: rgba(255,255,255,0.08); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.10);">
+              <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-p-small-sm text-white"
+                style="background: rgba(255,255,255,0.08); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.12);">
                 <span class="w-2 h-2 rounded-full animate-pulse flex-shrink-0" style="background: #22c55e;"></span>
                 {{ hero.badge }}
               </span>
@@ -47,7 +61,7 @@
               <h1 class="max-w-3xl mx-auto text-h1-sm md:text-h1-md lg:text-h1-lg 2xl:text-h1-2xl tracking-tight text-white">
                 {{ hero.heading }}
               </h1>
-              <p class="mt-4 max-w-lg mx-auto text-p-sm md:text-p-md lg:text-p-lg text-white/60">
+              <p class="mt-4 max-w-lg mx-auto text-p-sm md:text-p-md lg:text-p-lg text-white">
                 {{ hero.subheading }}
               </p>
             </div>
@@ -62,9 +76,11 @@
             </div>
           </div>
 
-          <!-- Mockups -->
-          <div class="hero-animate-item hidden sm:flex items-end justify-center relative mt-14 mx-auto max-w-5xl 2xl:max-w-5xl px-4 sm:px-8 gap-0" style="animation-delay: 0.4s">
-
+          <!-- Mockups: Desktop + Tablet -->
+          <div
+            class="hero-animate-item hidden md:flex items-end justify-center relative mt-14 mx-auto max-w-5xl px-4 sm:px-8 gap-0"
+            style="animation-delay: 0.4s"
+          >
             <!-- Tablet-Platzhalter (links) -->
             <div
               class="relative flex-shrink-0 z-10"
@@ -156,7 +172,39 @@
                 />
               </div>
             </div>
+          </div>
 
+          <!-- Mockup: Smartphone (nur sichtbar auf sm, nicht md+) -->
+          <div
+            class="hero-animate-item block md:hidden relative mt-10 mx-auto px-container-h pb-10"
+            style="animation-delay: 0.4s"
+          >
+            <div
+              class="relative w-full overflow-hidden rounded-2xl"
+              style="box-shadow: 0 20px 60px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.08);"
+            >
+              <div
+                class="flex items-center gap-1.5 px-3 py-2"
+                style="background: #1e2d42; border-bottom: 1px solid rgba(255,255,255,0.08);"
+              >
+                <div class="w-2 h-2 rounded-full" style="background: #ff5f57;"></div>
+                <div class="w-2 h-2 rounded-full" style="background: #febc2e;"></div>
+                <div class="w-2 h-2 rounded-full" style="background: #28c840;"></div>
+                <div
+                  class="ml-2 flex-1 rounded px-2 py-0.5"
+                  style="background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.35); max-width: 120px; font-size: 0.6rem;"
+                >
+                  matchmaker.hr
+                </div>
+              </div>
+              <img
+                class="w-full object-cover object-top"
+                src="@/assets/Candidate-Mockup.png"
+                alt="Zentrales Berater-Dashboard für KI-gestütztes Matching"
+                width="2700"
+                height="1440"
+              />
+            </div>
           </div>
 
         </div>

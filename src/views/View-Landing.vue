@@ -4,6 +4,7 @@
     
     <main class="landing-content">
       <LandingHero />
+      <!-- <LandingProblems /> -->
       <LandingBenefits />
       <LandingProduct />
       <LandingTestimonials />
@@ -19,10 +20,11 @@
 <script>
 import Header from '@/components/header/Header.vue'
 import LandingHero from '@/components/landing/V2/Landing-Hero-V2.vue'
+// import LandingProblems from '@/components/landing/V1/Landing-Problems-V1.vue'
 import LandingBenefits from '@/components/landing/V1/Landing-Benefits-V1.vue'
 import LandingProduct from '@/components/landing/V3/Landing-Product-V3.vue'
 import LandingTestimonials from '@/components/landing/V1/Landing-Testimonials-V1.vue'
-import LandingCta from '@/components/landing/V1/Landing-CTA-V1.vue'
+import LandingCta from '@/components/landing/V2/Landing-CTA-V2.vue'
 import LandingPricing from '@/components/landing/V2/Landing-Pricing-V2.vue'
 import LandingFaq from '@/components/landing/V1/Landing-FAQ-V1.vue'
 import Footer from '@/components/footer/Footer.vue'
@@ -32,6 +34,7 @@ export default {
   components: {
     Header,
     LandingHero,
+    // LandingProblems,
     LandingBenefits,
     LandingProduct,
     LandingTestimonials,

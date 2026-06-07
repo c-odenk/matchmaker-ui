@@ -9,32 +9,32 @@
       />
 
       <!-- Modal -->
-      <div class="relative z-10 w-full max-w-xl rounded-2xl overflow-hidden shadow-2xl">
+      <div class="relative z-10 w-full max-w-xl rounded-2xl overflow-hidden shadow-2xl bg-white">
 
         <!-- ERFOLGS-ANSICHT -->
         <transition name="content-fade" mode="out-in">
-          <div v-if="submitted" key="success" class="flex flex-col bg-white">
+          <div v-if="submitted" key="success" class="flex flex-col rounded-2xl overflow-hidden">
 
             <!-- Header -->
-            <div class="px-8 pt-8 pb-7" style="background: linear-gradient(135deg, #172b4d 0%, #1e3a5f 100%);">
+            <div class="px-8 pt-8 pb-7 rounded-t-2xl" style="background: linear-gradient(135deg, #172b4d 0%, #1e3a5f 100%);">
               <div class="flex items-start justify-between">
                 <div class="flex flex-col gap-3">
-                  <span class="inline-flex items-center gap-1.5 self-start px-3 py-1 rounded-full text-[0.7rem] tracking-widest uppercase bg-white/10 text-white/70 border border-white/10">
+                  <span class="inline-flex items-center gap-1.5 self-start px-3 py-1 rounded-full text-[0.7rem] tracking-widest uppercase bg-white/10 text-white border border-white/10">
                     <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                     </svg>
                     Produkt-Demo
                   </span>
-                  <h2 class="text-2xl md:text-3xl font-bold text-white leading-tight">
+                  <h2 class="text-h2-sm md:text-h2-md font-bold text-white leading-tight">
                     Demo vereinbaren.
                   </h2>
-                  <p class="text-white/60 text-sm leading-relaxed max-w-md">
+                  <p class="text-p-small-sm md:text-p-small-md text-white leading-relaxed max-w-md">
                     Lassen Sie sich matchmaker.hr in 15 Minuten zeigen.
                   </p>
                 </div>
                 <button 
                   @click="handleClose"
-                  class="flex-shrink-0 ml-4 w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white/60 hover:text-white transition-all"
+                  class="flex-shrink-0 ml-4 w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white transition-all"
                 >
                   <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
@@ -54,8 +54,8 @@
                 </div>
 
                 <div class="flex flex-col gap-2">
-                  <h3 class="text-xl font-bold text-gray-900">Vielen Dank!</h3>
-                  <p class="text-sm text-gray-500 leading-relaxed max-w-xs">
+                  <h3 class="text-h3-sm md:text-h3-md font-bold text-black">Vielen Dank!</h3>
+                  <p class="text-p-small-sm md:text-p-small-md text-black leading-relaxed max-w-xs">
                     Ihre Anfrage ist bei uns eingegangen. Wir bestätigen den Termin in Kürze per E-Mail.
                   </p>
                 </div>
@@ -66,14 +66,14 @@
                 <div></div>
                 <button
                   @click="handleClose"
-                  class="px-7 py-3 bg-dark-blue hover:bg-[#1e3a5f] text-white text-sm font-semibold rounded-xl transition-all shadow-sm hover:shadow-md"
+                  class="px-7 py-3 bg-dark-blue hover:bg-[#1e3a5f] text-white text-p-small-sm md:text-p-small-md font-semibold rounded-xl transition-all shadow-sm hover:shadow-md"
                 >
                   Schließen
                 </button>
               </div>
 
               <!-- Disclaimer -->
-              <p class="text-center text-[0.72rem] text-gray-400 -mt-1">
+              <p class="text-center text-[0.72rem] text-black -mt-1">
                 Mit dem Absenden stimmen Sie unserer Datenschutzerklärung zu.
               </p>
             </div>
@@ -81,28 +81,28 @@
           </div>
 
           <!-- FORMULAR-ANSICHT -->
-          <div v-else key="form" class="bg-white">
+          <div v-else key="form" class="rounded-2xl overflow-hidden">
 
             <!-- Header -->
-            <div class="px-8 pt-8 pb-7" style="background: linear-gradient(135deg, #172b4d 0%, #1e3a5f 100%);">
+            <div class="px-8 pt-8 pb-7 rounded-t-2xl" style="background: linear-gradient(135deg, #172b4d 0%, #1e3a5f 100%);">
               <div class="flex items-start justify-between">
                 <div class="flex flex-col gap-3">
-                  <span class="inline-flex items-center gap-1.5 self-start px-3 py-1 rounded-full text-[0.7rem] tracking-widest uppercase bg-white/10 text-white/70 border border-white/10">
+                  <span class="inline-flex items-center gap-1.5 self-start px-3 py-1 rounded-full text-[0.7rem] tracking-widest uppercase bg-white/10 text-white border border-white/10">
                     <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                     </svg>
                     Produkt-Demo
                   </span>
-                  <h2 class="text-2xl md:text-3xl font-bold text-white leading-tight">
+                  <h2 class="text-h2-sm md:text-h2-md font-bold text-white leading-tight">
                     Demo vereinbaren.
                   </h2>
-                  <p class="text-white/60 text-sm leading-relaxed max-w-md">
+                  <p class="text-p-small-sm md:text-p-small-md text-white leading-relaxed max-w-md">
                     Lassen Sie sich matchmaker.hr in 15 Minuten zeigen.
                   </p>
                 </div>
                 <button 
                   @click="$emit('close')"
-                  class="flex-shrink-0 ml-4 w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white/60 hover:text-white transition-all"
+                  class="flex-shrink-0 ml-4 w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white transition-all"
                 >
                   <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
@@ -117,44 +117,44 @@
               <!-- Vorname + Name -->
               <div class="grid grid-cols-2 gap-4">
                 <div class="flex flex-col gap-1.5">
-                  <label class="text-[0.7rem] tracking-widest uppercase text-gray-400">Vorname</label>
+                  <label class="text-[0.7rem] tracking-widest uppercase text-black font-semibold">Vorname</label>
                   <input
                     v-model="form.firstName"
                     type="text"
                     placeholder="Maria"
-                    class="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 text-gray-900 text-sm placeholder-gray-300 focus:outline-none focus:border-dark-blue focus:bg-white transition-all"
+                    class="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 text-black text-p-small-sm md:text-p-small-md placeholder-gray-300 focus:outline-none focus:border-dark-blue focus:bg-white transition-all"
                   />
                 </div>
                 <div class="flex flex-col gap-1.5">
-                  <label class="text-[0.7rem] tracking-widest uppercase text-gray-400">Name</label>
+                  <label class="text-[0.7rem] tracking-widest uppercase text-black font-semibold">Name</label>
                   <input
                     v-model="form.lastName"
                     type="text"
                     placeholder="Schmidt"
-                    class="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 text-gray-900 text-sm placeholder-gray-300 focus:outline-none focus:border-dark-blue focus:bg-white transition-all"
+                    class="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 text-black text-p-small-sm md:text-p-small-md placeholder-gray-300 focus:outline-none focus:border-dark-blue focus:bg-white transition-all"
                   />
                 </div>
               </div>
 
               <!-- Firma -->
               <div class="flex flex-col gap-1.5">
-                <label class="text-[0.7rem] tracking-widest uppercase text-gray-400">Firma</label>
+                <label class="text-[0.7rem] tracking-widest uppercase text-black font-semibold">Firma</label>
                 <input
                   v-model="form.company"
                   type="text"
                   placeholder="Muster Personalberatung GmbH"
-                  class="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 text-gray-900 text-sm placeholder-gray-300 focus:outline-none focus:border-dark-blue focus:bg-white transition-all"
+                  class="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 text-black text-p-small-sm md:text-p-small-md placeholder-gray-300 focus:outline-none focus:border-dark-blue focus:bg-white transition-all"
                 />
               </div>
 
               <!-- E-Mail -->
               <div class="flex flex-col gap-1.5">
-                <label class="text-[0.7rem] tracking-widest uppercase text-gray-400">E-Mail</label>
+                <label class="text-[0.7rem] tracking-widest uppercase text-black font-semibold">E-Mail</label>
                 <input
                   v-model="form.email"
                   type="email"
                   placeholder="maria.schmidt@firma.de"
-                  class="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 text-gray-900 text-sm placeholder-gray-300 focus:outline-none focus:border-dark-blue focus:bg-white transition-all"
+                  class="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 text-black text-p-small-sm md:text-p-small-md placeholder-gray-300 focus:outline-none focus:border-dark-blue focus:bg-white transition-all"
                 />
               </div>
 
@@ -162,20 +162,20 @@
               <div class="flex items-center justify-between pt-2">
                 <button
                   @click="$emit('close')"
-                  class="px-6 py-3 text-sm font-medium text-gray-500 hover:text-gray-800 transition-colors"
+                  class="px-6 py-3 text-p-small-sm md:text-p-small-md font-medium text-black hover:text-dark-blue transition-colors"
                 >
                   Abbrechen
                 </button>
                 <button
                   @click="handleSubmit"
-                  class="px-7 py-3 bg-dark-blue hover:bg-[#1e3a5f] text-white text-sm font-semibold rounded-xl transition-all shadow-sm hover:shadow-md"
+                  class="px-7 py-3 bg-dark-blue hover:bg-[#1e3a5f] text-white text-p-small-sm md:text-p-small-md font-semibold rounded-xl transition-all shadow-sm hover:shadow-md"
                 >
                   Anfrage senden
                 </button>
               </div>
 
               <!-- Disclaimer -->
-              <p class="text-center text-[0.72rem] text-gray-400 -mt-1">
+              <p class="text-center text-[0.72rem] text-black -mt-1">
                 Mit dem Absenden stimmen Sie unserer Datenschutzerklärung zu.
               </p>
 
