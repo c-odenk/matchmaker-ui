@@ -92,7 +92,7 @@
               <!-- Vorname + Name -->
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div class="flex flex-col gap-1.5">
-                  <label for="demo-first-name" class="text-p-small font-medium text-gray-700">Vorname</label>
+                  <label for="demo-first-name" class="text-[11px] text-gray-400 uppercase tracking-wider ml-1">Vorname</label>
                   <input
                     id="demo-first-name"
                     ref="firstInput"
@@ -100,45 +100,45 @@
                     type="text"
                     autocomplete="given-name"
                     placeholder="Maria"
-                    class="w-full px-4 py-2.5 rounded-input border border-gray-200 bg-gray-50 text-black text-p placeholder-gray-400 focus:outline-none focus:border-dark-blue focus:bg-white focus:ring-2 focus:ring-dark-blue/10 transition-all"
+                    class="w-full px-3.5 py-2.5 rounded-xl border border-gray-200 bg-gray-50 text-black text-p-small placeholder-gray-400 focus:outline-none focus:border-dark-blue focus:bg-white focus:ring-2 focus:ring-dark-blue/10 transition-all"
                   />
                 </div>
                 <div class="flex flex-col gap-1.5">
-                  <label for="demo-last-name" class="text-p-small font-medium text-gray-700">Name</label>
+                  <label for="demo-last-name" class="text-[11px] text-gray-400 uppercase tracking-wider ml-1">Name</label>
                   <input
                     id="demo-last-name"
                     v-model="form.lastName"
                     type="text"
                     autocomplete="family-name"
                     placeholder="Schmidt"
-                    class="w-full px-4 py-2.5 rounded-input border border-gray-200 bg-gray-50 text-black text-p placeholder-gray-400 focus:outline-none focus:border-dark-blue focus:bg-white focus:ring-2 focus:ring-dark-blue/10 transition-all"
+                    class="w-full px-3.5 py-2.5 rounded-xl border border-gray-200 bg-gray-50 text-black text-p-small placeholder-gray-400 focus:outline-none focus:border-dark-blue focus:bg-white focus:ring-2 focus:ring-dark-blue/10 transition-all"
                   />
                 </div>
               </div>
 
               <!-- Firma -->
               <div class="flex flex-col gap-1.5">
-                <label for="demo-company" class="text-p-small font-medium text-gray-700">Firma</label>
+                <label for="demo-company" class="text-[11px] text-gray-400 uppercase tracking-wider ml-1">Firma</label>
                 <input
                   id="demo-company"
                   v-model="form.company"
                   type="text"
                   autocomplete="organization"
                   placeholder="Muster Personalberatung GmbH"
-                  class="w-full px-4 py-2.5 rounded-input border border-gray-200 bg-gray-50 text-black text-p placeholder-gray-400 focus:outline-none focus:border-dark-blue focus:bg-white focus:ring-2 focus:ring-dark-blue/10 transition-all"
+                  class="w-full px-3.5 py-2.5 rounded-xl border border-gray-200 bg-gray-50 text-black text-p-small placeholder-gray-400 focus:outline-none focus:border-dark-blue focus:bg-white focus:ring-2 focus:ring-dark-blue/10 transition-all"
                 />
               </div>
 
               <!-- E-Mail -->
               <div class="flex flex-col gap-1.5">
-                <label for="demo-email" class="text-p-small font-medium text-gray-700">Geschäftliche E-Mail</label>
+                <label for="demo-email" class="text-[11px] text-gray-400 uppercase tracking-wider ml-1">Geschäftliche E-Mail</label>
                 <input
                   id="demo-email"
                   v-model="form.email"
                   type="email"
                   autocomplete="email"
                   placeholder="maria.schmidt@firma.de"
-                  class="w-full px-4 py-2.5 rounded-input border border-gray-200 bg-gray-50 text-black text-p placeholder-gray-400 focus:outline-none focus:border-dark-blue focus:bg-white focus:ring-2 focus:ring-dark-blue/10 transition-all"
+                  class="w-full px-3.5 py-2.5 rounded-xl border border-gray-200 bg-gray-50 text-black text-p-small placeholder-gray-400 focus:outline-none focus:border-dark-blue focus:bg-white focus:ring-2 focus:ring-dark-blue/10 transition-all"
                 />
               </div>
 
