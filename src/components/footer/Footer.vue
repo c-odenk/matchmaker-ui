@@ -16,7 +16,7 @@
             <a href="#" @click.prevent="scrollToSection('hero')" class="text-gray-300 hover:text-white transition-colors duration-150">Start</a>
             <a href="#" @click.prevent="scrollToSection('product')" class="text-gray-300 hover:text-white transition-colors duration-150">Produkt</a>
             <a href="#" @click.prevent="scrollToSection('pricing')" class="text-gray-300 hover:text-white transition-colors duration-150">Preise</a>
-            <router-link to="/contact" class="text-gray-300 hover:text-white transition-colors duration-150">Kontakt</router-link>
+            <a href="mailto:info@matchmaker.hr" class="text-gray-300 hover:text-white transition-colors duration-150">Kontakt</a>
           </nav>
         </div>
         
@@ -60,6 +60,9 @@ export default {
       const element = document.getElementById(anchorId)
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' })
+      } else {
+        // Sektion existiert nur auf der Startseite – dorthin navigieren
+        this.$router.push({ path: '/', hash: `#${anchorId}` })
       }
     }
   }

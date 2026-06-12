@@ -143,6 +143,9 @@ export default {
       const element = document.getElementById(anchorId)
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' })
+      } else {
+        // Sektion existiert nur auf der Startseite – dorthin navigieren
+        this.$router.push({ path: '/', hash: `#${anchorId}` })
       }
       this.closeMenu()
     },
