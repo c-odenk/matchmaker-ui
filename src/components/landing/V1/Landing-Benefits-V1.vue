@@ -18,7 +18,7 @@
         <p class="text-p-sm md:text-p-md text-black benefits-animate-item" style="animation-delay: 0.2s">{{ subtext }}</p>
 
         <div class="hidden sm:block self-start benefits-animate-item" style="animation-delay: 0.3s">
-          <ButtonPrimary href="#" :icon="ArrowRight" iconPosition="trailing">
+          <ButtonPrimary :href="loginUrl" :icon="ArrowRight" iconPosition="trailing">
             Jetzt anmelden
           </ButtonPrimary>
         </div>

@@ -63,7 +63,7 @@
             </div>
             <!-- Screenshot -->
             <div class="flex-1 relative overflow-hidden">
-              <img :src="workflowMockup" class="w-full h-full object-cover object-top" />
+              <img :src="workflowMockup" alt="Workflow-Ansicht in matchmaker.hr mit Agenten-Pipeline und Freigabe-Schritten" class="w-full h-full object-cover object-top" />
             </div>
           </div>
         </div>

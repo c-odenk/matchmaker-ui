@@ -34,7 +34,7 @@
                 <div class="flex gap-0.5">
                   <span v-for="n in 5" :key="n" class="text-amber-400 text-base">★</span>
                 </div>
-                <span class="text-3xl font-serif leading-none select-none text-deep-blue">"</span>
+                <span class="text-3xl font-serif leading-none select-none text-dark-blue">"</span>
               </div>
 
               <!-- Quote -->
@@ -87,7 +87,7 @@
             <div class="flex gap-0.5">
               <span v-for="n in 5" :key="n" class="text-amber-400 text-base">★</span>
             </div>
-            <span class="text-3xl font-serif leading-none select-none text-deep-blue">"</span>
+            <span class="text-3xl font-serif leading-none select-none text-dark-blue">"</span>
           </div>
 
           <!-- Quote -->

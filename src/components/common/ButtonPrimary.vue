@@ -2,7 +2,7 @@
   <component
     :is="isButton ? 'button' : 'a'"
     :href="isButton ? undefined : href"
-    type="button"
+    :type="isButton ? 'button' : undefined"
     :class="[
       'inline-flex items-center justify-center gap-2 rounded-button px-8 py-2',
       'bg-dark-blue text-white',
