@@ -1,5 +1,5 @@
 <template>
-  <section ref="productSection" id="product" class="py-10 md:py-28 lg:py-20 bg-white overflow-hidden">
+  <section ref="productSection" id="product" class="py-10 md:py-20 lg:py-20 bg-white overflow-hidden">
     <div class="mx-auto max-w-container-sm md:max-w-container-md lg:max-w-container-lg 2xl:max-w-container px-container-h">
 
       <div class="flex flex-col gap-12 md:gap-16 lg:gap-24">

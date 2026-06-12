@@ -1,5 +1,5 @@
 <template>
-  <section ref="pricingSection" id="pricing" class="py-20 md:py-28 lg:py-20 lg:pb-4 2xl:pt-28 2xl:pb-16 bg-white">
+  <section ref="pricingSection" id="pricing" class="py-16 md:py-20 lg:py-20 lg:pb-4 2xl:pt-28 2xl:pb-16 bg-white">
     <div class="mx-auto max-w-container-sm md:max-w-container-md lg:max-w-container-lg 2xl:max-w-container px-container-h">
 
       <SectionHeader
@@ -8,7 +8,7 @@
         align="left"
       />
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-stretch">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 items-stretch">
 
         <!-- Starter -->
         <div
@@ -46,7 +46,7 @@
             <h3 class="text-h3-sm md:text-h3-md lg:text-h3-lg 2xl:text-h3-2xl text-white mb-1">{{ pro.name }}</h3>
             <p class="text-p-small-lg 2xl:text-p-small-2xl mb-6 text-white">{{ pro.description }}</p>
             <div class="flex items-baseline gap-1.5">
-              <template v-if="plansLoading">
+              <template v-if="plansLoading || !selectedTier.price">
                 <span class="text-h2-sm md:text-h2-md lg:text-h2-lg 2xl:text-h2-2xl font-bold text-white opacity-40">–,–€</span>
               </template>
               <template v-else>
@@ -71,7 +71,7 @@
 
             <div class="mb-4" style="border-top: 1px solid rgba(255,255,255,0.1);"></div>
 
-            <div class="mb-5">
+            <div v-if="pro.tiers.length" class="mb-5">
               <p class="text-[10px] font-bold uppercase tracking-widest mb-2 text-white">Talent-Pool Größe</p>
               <div class="flex flex-col gap-1.5">
                 <button
@@ -107,7 +107,7 @@
             <h3 class="text-h3-sm md:text-h3-md lg:text-h3-lg 2xl:text-h3-2xl text-black mb-1">{{ addon.name }}</h3>
             <p class="text-p-small-lg 2xl:text-p-small-2xl text-black mb-6">{{ addon.description }}</p>
             <div class="flex items-baseline gap-1 flex-wrap">
-              <template v-if="plansLoading">
+              <template v-if="plansLoading || !addon.price">
                 <span class="text-h2-sm md:text-h2-md lg:text-h2-lg 2xl:text-h2-2xl font-bold text-black opacity-40">–,–€</span>
               </template>
               <template v-else>
@@ -164,7 +164,7 @@ export default {
       selectedTier: { label: '', price: '', priceSuffix: ' / Monat' },
       starter: {
         name: 'Bring Your Own Key',
-        description: 'Volle Kostenkontrolle – direkte Abrechnung über den eigenen API-Account, ohne weitere Aufschläge.',
+        description: 'Direkte Abrechnung über den eigenen API-Account, ohne weitere Aufschläge.',
         price: 'Kostenlos',
         features: [
           { label: 'Eigener KI-API-Schlüssel erforderlich', icon: KeyRound },

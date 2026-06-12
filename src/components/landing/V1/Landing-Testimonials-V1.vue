@@ -29,8 +29,11 @@
               class="bg-gray-50 border border-gray-200 flex flex-col rounded-2xl p-5 relative overflow-hidden h-full testimonials-animate-card"
               :style="{ 'animation-delay': `${0 + index * 0.25}s` }"
             >
-              <!-- Quote mark -->
-              <div class="relative z-10 flex items-center justify-end mb-4">
+              <!-- Stars + quote mark -->
+              <div class="relative z-10 flex items-center justify-between mb-4">
+                <div class="flex gap-0.5">
+                  <span v-for="n in 5" :key="n" class="text-amber-400 text-base">★</span>
+                </div>
                 <span class="text-3xl font-serif leading-none select-none text-dark-blue">"</span>
               </div>
 
@@ -79,8 +82,11 @@
           class="bg-gray-50 border border-gray-200 flex flex-col rounded-2xl p-6 relative overflow-hidden testimonials-animate-card"
           :style="{ 'animation-delay': `${0 + index * 0.25}s` }"
         >
-          <!-- Quote mark -->
-          <div class="relative z-10 flex items-center justify-end mb-4">
+          <!-- Stars + quote mark -->
+          <div class="relative z-10 flex items-center justify-between mb-4">
+            <div class="flex gap-0.5">
+              <span v-for="n in 5" :key="n" class="text-amber-400 text-base">★</span>
+            </div>
             <span class="text-3xl font-serif leading-none select-none text-dark-blue">"</span>
           </div>
 
