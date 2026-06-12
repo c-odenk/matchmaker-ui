@@ -18,6 +18,20 @@ body {
   touch-action: pan-y;
 }
 
+/* Animationen für Nutzer mit reduzierter Bewegung deaktivieren */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 /* Design-Tokens werden zentral in tailwind.config.js verwaltet.
    Hier liegen nur globale Basis-Styles und Komponentenklassen. */
 

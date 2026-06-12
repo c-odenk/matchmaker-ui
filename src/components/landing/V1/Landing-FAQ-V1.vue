@@ -21,39 +21,44 @@
           <div
             v-for="(faq, index) in faqs"
             :key="index"
-            class="border-t py-5 cursor-pointer group faq-animate-item"
+            class="border-t py-5 group faq-animate-item"
             :style="{ 'animation-delay': `${0 + index * 0.1}s` }"
             :class="[
               { 'border-b': index === faqs.length - 1 },
               activeIndex === index ? 'border-gray-300' : 'border-gray-200'
             ]"
-            @click="toggleFAQ(index)"
           >
             <!-- Question -->
-            <div class="flex items-center justify-between gap-6">
-
-              <h3
-                class="text-p-sm md:text-p-md lg:text-p-lg 2xl:text-p-2xl font-medium m-0 transition-colors duration-150"
-                :class="activeIndex === index ? 'text-dark-blue' : 'text-black'"
+            <h3 class="m-0">
+              <button
+                type="button"
+                class="w-full flex items-center justify-between gap-6 text-left bg-transparent border-0 p-0 cursor-pointer"
+                :aria-expanded="activeIndex === index"
+                :aria-controls="`faq-answer-${index}`"
+                @click="toggleFAQ(index)"
               >
-                {{ faq.question }}
-              </h3>
+                <span
+                  class="text-p-sm md:text-p-md lg:text-p-lg 2xl:text-p-2xl font-medium transition-colors duration-150"
+                  :class="activeIndex === index ? 'text-dark-blue' : 'text-black'"
+                >
+                  {{ faq.question }}
+                </span>
 
-              <div
-                class="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center transition-all duration-200"
-                :class="activeIndex === index
-                  ? 'bg-dark-blue text-white'
-                  : 'bg-gray-100 text-black group-hover:bg-gray-200'"
-              >
-                <svg class="w-3.5 h-3.5 transition-transform duration-200" :class="activeIndex === index ? 'rotate-45' : ''" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
-                </svg>
-              </div>
-
-            </div>
+                <span
+                  class="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center transition-all duration-200"
+                  :class="activeIndex === index
+                    ? 'bg-dark-blue text-white'
+                    : 'bg-gray-100 text-black group-hover:bg-gray-200'"
+                >
+                  <svg class="w-3.5 h-3.5 transition-transform duration-200" :class="activeIndex === index ? 'rotate-45' : ''" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+                  </svg>
+                </span>
+              </button>
+            </h3>
 
             <!-- Answer -->
-            <div v-show="activeIndex === index" class="mt-4 pr-10">
+            <div v-show="activeIndex === index" :id="`faq-answer-${index}`" class="mt-4 pr-10">
               <p class="text-p-sm md:text-p-md lg:text-p-lg 2xl:text-p-2xl text-black/70 m-0">
                 {{ faq.answer }}
               </p>
