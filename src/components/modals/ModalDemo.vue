@@ -1,196 +1,188 @@
 <template>
   <transition name="modal-fade">
     <div v-if="isOpen" class="fixed inset-0 z-[200] flex items-center justify-center p-4">
-      
+
       <!-- Backdrop -->
-      <div 
+      <div
         class="absolute inset-0 bg-black/60 backdrop-blur-sm"
-        @click="$emit('close')"
+        @click="handleClose"
       />
 
       <!-- Modal -->
-      <div class="relative z-10 w-full max-w-xl rounded-2xl overflow-hidden shadow-2xl bg-white">
-
-        <!-- ERFOLGS-ANSICHT -->
+      <div
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="demo-modal-title"
+        class="relative z-10 w-full max-w-lg rounded-2xl bg-white shadow-2xl overflow-hidden"
+      >
         <transition name="content-fade" mode="out-in">
-          <div v-if="submitted" key="success" class="flex flex-col rounded-2xl overflow-hidden">
+
+          <!-- ERFOLGS-ANSICHT -->
+          <div v-if="submitted" key="success">
 
             <!-- Header -->
-            <div class="px-8 pt-8 pb-7 rounded-t-2xl" style="background: linear-gradient(135deg, #172b4d 0%, #1e3a5f 100%);">
-              <div class="flex items-start justify-between">
-                <div class="flex flex-col gap-3">
-                  <span class="inline-flex items-center gap-1.5 self-start px-3 py-1 rounded-full text-[0.7rem] tracking-widest uppercase bg-white/10 text-white border border-white/10">
-                    <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                    </svg>
-                    Produkt-Demo
-                  </span>
-                  <h2 class="text-h2-sm md:text-h2-md font-bold text-white leading-tight">
-                    Demo vereinbaren.
-                  </h2>
-                  <p class="text-p-small-sm md:text-p-small-md text-white leading-relaxed max-w-md">
-                    Lassen Sie sich matchmaker.hr in 15 Minuten zeigen.
-                  </p>
-                </div>
-                <button 
-                  @click="handleClose"
-                  class="flex-shrink-0 ml-4 w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white transition-all"
-                >
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
-                  </svg>
-                </button>
+            <div class="flex items-start gap-4 px-6 md:px-8 pt-6 md:pt-7 pb-5 border-b border-gray-100">
+              <div class="w-9 h-9 rounded-xl bg-dark-blue text-white flex items-center justify-center flex-shrink-0">
+                <CalendarDays class="w-4 h-4" :stroke-width="1.75" />
               </div>
+              <div class="flex-1 min-w-0">
+                <h2 id="demo-modal-title" class="text-h3 text-black leading-snug">Demo vereinbaren</h2>
+              </div>
+              <button
+                @click="handleClose"
+                aria-label="Schließen"
+                class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 text-gray-500 hover:text-gray-900 transition-colors"
+              >
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+              </button>
             </div>
 
             <!-- Erfolgs-Body -->
-            <div class="px-8 py-7 flex flex-col gap-5">
-              <div class="flex flex-col items-center text-center gap-6 py-6">
-                <!-- Checkmark Animation -->
-                <div class="w-16 h-16 rounded-full flex items-center justify-center success-circle">
-                  <svg class="w-8 h-8 text-white success-check" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-                  </svg>
-                </div>
-
-                <div class="flex flex-col gap-2">
-                  <h3 class="text-h3-sm md:text-h3-md font-bold text-black">Vielen Dank!</h3>
-                  <p class="text-p-small-sm md:text-p-small-md text-black leading-relaxed max-w-xs">
-                    Ihre Anfrage ist bei uns eingegangen. Wir bestätigen den Termin in Kürze per E-Mail.
-                  </p>
-                </div>
+            <div class="px-6 md:px-8 py-8 flex flex-col items-center text-center gap-6">
+              <div class="w-16 h-16 rounded-full flex items-center justify-center success-circle">
+                <svg class="w-8 h-8 text-white success-check" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                </svg>
               </div>
 
-              <!-- Actions -->
-              <div class="flex items-center justify-between pt-2">
-                <div></div>
-                <button
-                  @click="handleClose"
-                  class="px-7 py-3 bg-dark-blue hover:bg-[#1e3a5f] text-white text-p-small-sm md:text-p-small-md font-semibold rounded-xl transition-all shadow-sm hover:shadow-md"
-                >
-                  Schließen
-                </button>
+              <div class="flex flex-col gap-2">
+                <h3 class="text-h3 text-black">Vielen Dank!</h3>
+                <p class="text-p-small text-gray-600 leading-relaxed max-w-xs">
+                  Ihre Anfrage ist bei uns eingegangen. Wir bestätigen den Termin in Kürze per E-Mail.
+                </p>
               </div>
 
-              <!-- Disclaimer -->
-              <p class="text-center text-[0.72rem] text-black -mt-1">
-                Mit dem Absenden stimmen Sie unserer Datenschutzerklärung zu.
-              </p>
+              <ButtonPrimary @click="handleClose">
+                Schließen
+              </ButtonPrimary>
             </div>
 
           </div>
 
           <!-- FORMULAR-ANSICHT -->
-          <div v-else key="form" class="rounded-2xl overflow-hidden">
+          <div v-else key="form">
 
             <!-- Header -->
-            <div class="px-8 pt-8 pb-7 rounded-t-2xl" style="background: linear-gradient(135deg, #172b4d 0%, #1e3a5f 100%);">
-              <div class="flex items-start justify-between">
-                <div class="flex flex-col gap-3">
-                  <span class="inline-flex items-center gap-1.5 self-start px-3 py-1 rounded-full text-[0.7rem] tracking-widest uppercase bg-white/10 text-white border border-white/10">
-                    <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                    </svg>
-                    Produkt-Demo
-                  </span>
-                  <h2 class="text-h2-sm md:text-h2-md font-bold text-white leading-tight">
-                    Demo vereinbaren.
-                  </h2>
-                  <p class="text-p-small-sm md:text-p-small-md text-white leading-relaxed max-w-md">
-                    Lassen Sie sich matchmaker.hr in 15 Minuten zeigen.
-                  </p>
-                </div>
-                <button 
-                  @click="$emit('close')"
-                  class="flex-shrink-0 ml-4 w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white transition-all"
-                >
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
-                  </svg>
-                </button>
+            <div class="flex items-start gap-4 px-6 md:px-8 pt-6 md:pt-7 pb-5 border-b border-gray-100">
+              <div class="w-9 h-9 rounded-xl bg-dark-blue text-white flex items-center justify-center flex-shrink-0">
+                <CalendarDays class="w-4 h-4" :stroke-width="1.75" />
               </div>
+              <div class="flex-1 min-w-0">
+                <h2 id="demo-modal-title" class="text-h3 text-black leading-snug">Demo vereinbaren</h2>
+                <p class="mt-1 text-p-small text-gray-500">
+                  Lassen Sie sich matchmaker.hr in 15 Minuten persönlich zeigen.
+                </p>
+              </div>
+              <button
+                @click="handleClose"
+                aria-label="Schließen"
+                class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 text-gray-500 hover:text-gray-900 transition-colors"
+              >
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+              </button>
             </div>
 
             <!-- Form Body -->
-            <div class="px-8 py-7 flex flex-col gap-5">
+            <form class="px-6 md:px-8 py-6 flex flex-col gap-4" @submit.prevent="handleSubmit">
 
               <!-- Vorname + Name -->
-              <div class="grid grid-cols-2 gap-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div class="flex flex-col gap-1.5">
-                  <label class="text-[0.7rem] tracking-widest uppercase text-black font-semibold">Vorname</label>
+                  <label for="demo-first-name" class="text-p-small font-medium text-gray-700">Vorname</label>
                   <input
+                    id="demo-first-name"
+                    ref="firstInput"
                     v-model="form.firstName"
                     type="text"
+                    autocomplete="given-name"
                     placeholder="Maria"
-                    class="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 text-black text-p-small-sm md:text-p-small-md placeholder-gray-300 focus:outline-none focus:border-dark-blue focus:bg-white transition-all"
+                    class="w-full px-4 py-2.5 rounded-input border border-gray-200 bg-gray-50 text-black text-p placeholder-gray-400 focus:outline-none focus:border-dark-blue focus:bg-white focus:ring-2 focus:ring-dark-blue/10 transition-all"
                   />
                 </div>
                 <div class="flex flex-col gap-1.5">
-                  <label class="text-[0.7rem] tracking-widest uppercase text-black font-semibold">Name</label>
+                  <label for="demo-last-name" class="text-p-small font-medium text-gray-700">Name</label>
                   <input
+                    id="demo-last-name"
                     v-model="form.lastName"
                     type="text"
+                    autocomplete="family-name"
                     placeholder="Schmidt"
-                    class="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 text-black text-p-small-sm md:text-p-small-md placeholder-gray-300 focus:outline-none focus:border-dark-blue focus:bg-white transition-all"
+                    class="w-full px-4 py-2.5 rounded-input border border-gray-200 bg-gray-50 text-black text-p placeholder-gray-400 focus:outline-none focus:border-dark-blue focus:bg-white focus:ring-2 focus:ring-dark-blue/10 transition-all"
                   />
                 </div>
               </div>
 
               <!-- Firma -->
               <div class="flex flex-col gap-1.5">
-                <label class="text-[0.7rem] tracking-widest uppercase text-black font-semibold">Firma</label>
+                <label for="demo-company" class="text-p-small font-medium text-gray-700">Firma</label>
                 <input
+                  id="demo-company"
                   v-model="form.company"
                   type="text"
+                  autocomplete="organization"
                   placeholder="Muster Personalberatung GmbH"
-                  class="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 text-black text-p-small-sm md:text-p-small-md placeholder-gray-300 focus:outline-none focus:border-dark-blue focus:bg-white transition-all"
+                  class="w-full px-4 py-2.5 rounded-input border border-gray-200 bg-gray-50 text-black text-p placeholder-gray-400 focus:outline-none focus:border-dark-blue focus:bg-white focus:ring-2 focus:ring-dark-blue/10 transition-all"
                 />
               </div>
 
               <!-- E-Mail -->
               <div class="flex flex-col gap-1.5">
-                <label class="text-[0.7rem] tracking-widest uppercase text-black font-semibold">E-Mail</label>
+                <label for="demo-email" class="text-p-small font-medium text-gray-700">Geschäftliche E-Mail</label>
                 <input
+                  id="demo-email"
                   v-model="form.email"
                   type="email"
+                  autocomplete="email"
                   placeholder="maria.schmidt@firma.de"
-                  class="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 text-black text-p-small-sm md:text-p-small-md placeholder-gray-300 focus:outline-none focus:border-dark-blue focus:bg-white transition-all"
+                  class="w-full px-4 py-2.5 rounded-input border border-gray-200 bg-gray-50 text-black text-p placeholder-gray-400 focus:outline-none focus:border-dark-blue focus:bg-white focus:ring-2 focus:ring-dark-blue/10 transition-all"
                 />
               </div>
 
               <!-- Actions -->
-              <div class="flex items-center justify-between pt-2">
+              <div class="flex items-center justify-between gap-4 pt-2">
                 <button
-                  @click="$emit('close')"
-                  class="px-6 py-3 text-p-small-sm md:text-p-small-md font-medium text-black hover:text-dark-blue transition-colors"
+                  type="button"
+                  @click="handleClose"
+                  class="px-4 py-2 text-p-small font-medium text-gray-500 hover:text-dark-blue transition-colors"
                 >
                   Abbrechen
                 </button>
-                <button
-                  @click="handleSubmit"
-                  class="px-7 py-3 bg-dark-blue hover:bg-[#1e3a5f] text-white text-p-small-sm md:text-p-small-md font-semibold rounded-xl transition-all shadow-sm hover:shadow-md"
+                <ButtonPrimary
+                  type="submit"
+                  :disabled="!formValid"
+                  class="disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:shadow-none"
                 >
                   Anfrage senden
-                </button>
+                </ButtonPrimary>
               </div>
 
               <!-- Disclaimer -->
-              <p class="text-center text-[0.72rem] text-black -mt-1">
-                Mit dem Absenden stimmen Sie unserer Datenschutzerklärung zu.
+              <p class="text-center text-p-small text-gray-400">
+                Mit dem Absenden stimmen Sie unserer
+                <router-link to="/privacy" class="underline hover:text-dark-blue transition-colors">Datenschutzerklärung</router-link>
+                zu.
               </p>
 
-            </div>
+            </form>
           </div>
-        </transition>
 
+        </transition>
       </div>
     </div>
   </transition>
 </template>
 
 <script>
+import { CalendarDays } from 'lucide-vue-next'
+import ButtonPrimary from '@/components/common/ButtonPrimary.vue'
+
 export default {
   name: 'ModalDemo',
+  components: { CalendarDays, ButtonPrimary },
   props: {
     isOpen: {
       type: Boolean,
@@ -209,16 +201,44 @@ export default {
       }
     }
   },
+  computed: {
+    formValid() {
+      const { firstName, lastName, company, email } = this.form
+      return (
+        firstName.trim() !== '' &&
+        lastName.trim() !== '' &&
+        company.trim() !== '' &&
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())
+      )
+    }
+  },
   watch: {
     isOpen(val) {
       document.body.style.overflow = val ? 'hidden' : ''
-      if (!val) {
-        setTimeout(() => { this.submitted = false }, 300)
+      if (val) {
+        document.addEventListener('keydown', this.onKeydown)
+        this.$nextTick(() => this.$refs.firstInput?.focus())
+      } else {
+        document.removeEventListener('keydown', this.onKeydown)
+        setTimeout(() => {
+          if (this.submitted) {
+            this.form = { firstName: '', lastName: '', company: '', email: '' }
+          }
+          this.submitted = false
+        }, 300)
       }
     }
   },
+  beforeUnmount() {
+    document.body.style.overflow = ''
+    document.removeEventListener('keydown', this.onKeydown)
+  },
   methods: {
+    onKeydown(e) {
+      if (e.key === 'Escape') this.handleClose()
+    },
     handleSubmit() {
+      if (!this.formValid) return
       this.$emit('submit', { ...this.form })
       this.submitted = true
     },

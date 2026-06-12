@@ -21,6 +21,13 @@ section[id] {
 body {
   overflow-x: hidden;
   touch-action: pan-y;
+  /* Expliziter Hintergrund: Sektionen ohne bg-Klasse sonst transparent
+     auf dunkler Browser-Canvas (prefers-color-scheme: dark) */
+  background-color: #ffffff;
+}
+
+:root {
+  color-scheme: light;
 }
 
 /* Animationen für Nutzer mit reduzierter Bewegung deaktivieren */
