@@ -18,39 +18,8 @@ body {
   touch-action: pan-y;
 }
 
-/* Central Design System Variables */
-:root {
-  /* Colors */
-  --color-deep-blue: #1f2c44;
-  --color-light-blue: #2976d6;
-  
-  /* Typography */
-  --font-family-sans: 'Inter', -apple-system, 'BlinkMacSystemFont', 'Segoe UI', sans-serif;
-  
-  /* Font Sizes */
-  --font-size-xs: 0.75rem;
-  --font-size-sm: 0.875rem;
-  --font-size-base: 1rem;
-  --font-size-lg: 1.125rem;
-  --font-size-xl: 1.25rem;
-  --font-size-2xl: 1.5rem;
-  --font-size-3xl: 1.875rem;
-  --font-size-4xl: 2.25rem;
-  --font-size-5xl: 3rem;
-  --font-size-6xl: 3.75rem;
-  --font-size-7xl: 4.5rem;
-  
-  /* Line Heights */
-  --line-height-tight: 1rem;
-  --line-height-normal: 1.25rem;
-  --line-height-relaxed: 1.5rem;
-  --line-height-loose: 1.75rem;
-  --line-height-heading: 1.2;
-  
-  /* Spacing */
-  --spacing-container-h: 1.5rem;
-  --spacing-container-max-width: 95rem;
-}
+/* Design-Tokens werden zentral in tailwind.config.js verwaltet.
+   Hier liegen nur globale Basis-Styles und Komponentenklassen. */
 
 @layer components {
   /* Fließtext – Standard-Absatz */

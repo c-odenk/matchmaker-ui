@@ -39,8 +39,8 @@
           <!-- Screenshot Platzhalter -->
           <div class="w-full lg:w-1/2">
             <div
-              class="relative w-full rounded-2xl overflow-hidden shadow-xl"
-              style="background: #172b4d; aspect-ratio: 16/9;"
+              class="relative w-full rounded-2xl overflow-hidden shadow-xl bg-dark-blue"
+              style="aspect-ratio: 16/9;"
             >
               <div class="absolute inset-0 p-4 md:p-5 flex flex-col gap-2 md:gap-3">
 

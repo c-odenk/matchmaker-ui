@@ -52,7 +52,7 @@
             <div class="hero-animate-item flex justify-center mb-5" style="animation-delay: 0s">
               <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-p-small-sm text-white"
                 style="background: rgba(255,255,255,0.08); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.12);">
-                <span class="w-2 h-2 rounded-full animate-pulse flex-shrink-0" style="background: #22c55e;"></span>
+                <span class="w-2 h-2 rounded-full animate-pulse flex-shrink-0 bg-green-500"></span>
                 {{ hero.badge }}
               </span>
             </div>
@@ -91,8 +91,8 @@
                 style="border-radius: 10px 10px 0 0; box-shadow: -16px 24px 60px rgba(0,0,0,0.6);"
               >
                 <div
-                  class="flex items-center gap-1 px-2.5 py-1.5"
-                  style="background: #1a2a3f; border-bottom: 1px solid rgba(255,255,255,0.07);"
+                  class="flex items-center gap-1 px-2.5 py-1.5 bg-browser-frame-bar"
+                  style="border-bottom: 1px solid rgba(255,255,255,0.07);"
                 >
                   <div class="w-1.5 h-1.5 rounded-full" style="background: rgba(255,255,255,0.2);"></div>
                   <div class="w-1.5 h-1.5 rounded-full" style="background: rgba(255,255,255,0.2);"></div>
@@ -104,7 +104,7 @@
                     matchmaker.hr
                   </div>
                 </div>
-                <div class="w-full" style="background: #172b4d; aspect-ratio: 3/4;">
+                <div class="w-full bg-dark-blue" style="aspect-ratio: 3/4;">
                   <div class="p-3 flex gap-2 h-full">
                     <div class="flex flex-col gap-2 w-1/4 pt-1">
                       <div class="w-5 h-5 rounded-md mb-1" style="background: rgba(255,255,255,0.2);"></div>
@@ -150,8 +150,8 @@
                 style="border-radius: 12px 12px 0 0; box-shadow: 0 32px 80px rgba(0,0,0,0.5), 0 8px 24px rgba(0,0,0,0.3);"
               >
                 <div
-                  class="flex items-center gap-1.5 px-3 py-2"
-                  style="background: #1e2d42; border-bottom: 1px solid rgba(255,255,255,0.08);"
+                  class="flex items-center gap-1.5 px-3 py-2 bg-browser-frame"
+                  style="border-bottom: 1px solid rgba(255,255,255,0.08);"
                 >
                   <div class="w-2 h-2 rounded-full" style="background: #ff5f57;"></div>
                   <div class="w-2 h-2 rounded-full" style="background: #febc2e;"></div>
@@ -184,8 +184,8 @@
               style="box-shadow: 0 20px 60px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.08);"
             >
               <div
-                class="flex items-center gap-1.5 px-3 py-2"
-                style="background: #1e2d42; border-bottom: 1px solid rgba(255,255,255,0.08);"
+                class="flex items-center gap-1.5 px-3 py-2 bg-browser-frame"
+                style="border-bottom: 1px solid rgba(255,255,255,0.08);"
               >
                 <div class="w-2 h-2 rounded-full" style="background: #ff5f57;"></div>
                 <div class="w-2 h-2 rounded-full" style="background: #febc2e;"></div>

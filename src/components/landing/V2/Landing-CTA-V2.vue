@@ -3,8 +3,7 @@
     <div class="mx-auto max-w-container-sm md:max-w-container-md lg:max-w-container-lg 2xl:max-w-container px-container-h">
 
       <div
-        class="relative overflow-hidden rounded-3xl flex flex-col lg:flex-row items-center gap-10 lg:gap-0 px-8 md:px-12 lg:px-16 py-12 lg:py-16 2xl:py-20"
-        style="background: #172b4d;"
+        class="relative overflow-hidden rounded-3xl flex flex-col lg:flex-row items-center gap-10 lg:gap-0 px-8 md:px-12 lg:px-16 py-12 lg:py-16 2xl:py-20 bg-dark-blue"
       >
 
         <!-- Glow-Effekt im Hintergrund -->
@@ -40,20 +39,19 @@
         <!-- Mockup rechts -->
         <div class="lg:w-1/2 relative h-[240px] md:h-[300px] lg:h-[300px] w-full flex items-center justify-end lg:overflow-visible cta-animate-image" style="animation-delay: 0.2s">
           <div
-            class="absolute rounded-2xl overflow-hidden flex flex-col"
+            class="absolute rounded-2xl overflow-hidden flex flex-col bg-browser-frame"
             style="
               width: 95%;
               aspect-ratio: 16/9;
               top: 50%;
               right: 0%;
               transform: translateY(-50%);
-              background: #1e2d42;
               box-shadow: 0 24px 60px rgba(0,0,0,0.4), 0 4px 16px rgba(0,0,0,0.3);
               border: 1px solid rgba(255,255,255,0.08);
             "
           >
             <!-- Browser Bar -->
-            <div class="flex items-center gap-1.5 px-3 py-1.5 flex-shrink-0" style="background: #1a2a3f; border-bottom: 1px solid rgba(255,255,255,0.07);">
+            <div class="flex items-center gap-1.5 px-3 py-1.5 flex-shrink-0 bg-browser-frame-bar" style="border-bottom: 1px solid rgba(255,255,255,0.07);">
               <div class="w-2 h-2 rounded-full" style="background: #ff5f57;"></div>
               <div class="w-2 h-2 rounded-full" style="background: #febc2e;"></div>
               <div class="w-2 h-2 rounded-full" style="background: #28c840;"></div>

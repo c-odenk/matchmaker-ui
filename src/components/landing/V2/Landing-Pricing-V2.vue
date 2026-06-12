@@ -12,8 +12,8 @@
 
         <!-- Starter -->
         <div
-          class="rounded-2xl overflow-hidden flex flex-col pricing-animate-card border border-gray-200"
-          style="animation-delay: 0s; background: #f9fafb;"
+          class="rounded-2xl overflow-hidden flex flex-col pricing-animate-card border border-gray-200 bg-gray-50"
+          style="animation-delay: 0s;"
         >
           <div class="px-7 pt-6 pb-6">
             <h3 class="text-h3-sm md:text-h3-md lg:text-h3-lg 2xl:text-h3-2xl text-black mb-1">{{ starter.name }}</h3>
@@ -39,8 +39,8 @@
 
         <!-- Pro -->
         <div
-          class="rounded-2xl overflow-hidden flex flex-col pricing-animate-card"
-          style="animation-delay: 0.15s; background: #172b4d;"
+          class="rounded-2xl overflow-hidden flex flex-col pricing-animate-card bg-dark-blue"
+          style="animation-delay: 0.15s;"
         >
           <div class="px-7 pt-6 pb-6">
             <h3 class="text-h3-sm md:text-h3-md lg:text-h3-lg 2xl:text-h3-2xl text-white mb-1">{{ pro.name }}</h3>
@@ -100,8 +100,8 @@
 
         <!-- Addon -->
         <div
-          class="rounded-2xl overflow-hidden flex flex-col pricing-animate-card border border-gray-200"
-          style="animation-delay: 0.3s; background: #f9fafb;"
+          class="rounded-2xl overflow-hidden flex flex-col pricing-animate-card border border-gray-200 bg-gray-50"
+          style="animation-delay: 0.3s;"
         >
           <div class="px-7 pt-6 pb-6">
             <h3 class="text-h3-sm md:text-h3-md lg:text-h3-lg 2xl:text-h3-2xl text-black mb-1">{{ addon.name }}</h3>

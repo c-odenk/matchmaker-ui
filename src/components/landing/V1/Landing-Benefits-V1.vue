@@ -9,7 +9,7 @@
         <div class="hidden sm:flex flex-wrap items-center gap-x-5 gap-y-2 -mb-2 benefits-animate-item" style="animation-delay: 0s">
           <span v-for="item in trustItems" :key="item"
             class="flex items-center gap-1.5 text-p-small-sm text-black">
-            <span class="w-2 h-2 rounded-full flex-shrink-0" style="background: #22c55e;"></span>
+            <span class="w-2 h-2 rounded-full flex-shrink-0 bg-green-500"></span>
             {{ item }}
           </span>
         </div>
@@ -104,7 +104,7 @@
           <div class="flex flex-wrap items-center gap-x-5 gap-y-8 -mb-4 benefits-animate-item" style="animation-delay: 0s">
             <span v-for="item in trustItems" :key="item"
               class="flex items-center gap-1.5 text-p-small-lg 2xl:text-p-small-2xl text-black">
-              <span class="w-2 h-2 rounded-full flex-shrink-0" style="background: #22c55e;"></span>
+              <span class="w-2 h-2 rounded-full flex-shrink-0 bg-green-500"></span>
               {{ item }}
             </span>
           </div>
