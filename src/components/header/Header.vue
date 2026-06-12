@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header class="sticky top-0 z-50">
     <nav class="w-full bg-white">
       <div class="mx-auto max-w-container-sm md:max-w-container-md lg:max-w-container-lg 2xl:max-w-container px-container-h">
         <div class="relative flex items-center justify-between py-4">
@@ -55,20 +55,21 @@
         leave-from-class="opacity-100 translate-y-0"
         leave-to-class="opacity-0 -translate-y-2"
       >
-        <div v-if="isMenuOpen" class="lg:hidden fixed inset-0 top-[57px] bg-white z-50 overflow-y-auto">
-          <div class="px-container-h py-8 flex flex-col gap-8 h-full">
+<!-- top-[68px] = Header-Höhe (h-9 Logo + 2 × py-4) -->
+        <div v-if="isMenuOpen" class="lg:hidden fixed inset-0 top-[68px] bg-white z-50 overflow-y-auto">
+          <div class="px-container-h py-6 flex flex-col gap-6 h-full">
 
             <!-- Hauptnavigation -->
             <div class="flex flex-col gap-1">
-              <p class="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2">Navigation</p>
+              <p class="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-1 px-3">Navigation</p>
               <button
                 v-for="item in navItems"
                 :key="item.name"
-                class="flex items-center justify-between py-2.5 px-4 rounded-xl text-gray-800 hover:bg-gray-50 hover:text-dark-blue transition-colors duration-150 group w-full text-left"
+                class="flex items-center justify-between py-3 px-3 rounded-xl text-gray-800 hover:bg-gray-50 hover:text-dark-blue transition-colors duration-150 group w-full text-left"
                 @click="scrollToSection(item.anchor)"
               >
-                <span class="text-lg font-medium">{{ item.name }}</span>
-                <svg class="w-5 h-5 text-gray-300 group-hover:text-dark-blue transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <span class="text-p font-medium">{{ item.name }}</span>
+                <svg class="w-4 h-4 text-gray-300 group-hover:text-dark-blue transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
                 </svg>
               </button>
@@ -76,16 +77,16 @@
 
             <!-- Rechtliches -->
             <div class="flex flex-col gap-1">
-              <p class="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2">Rechtliches</p>
+              <p class="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-1 px-3">Rechtliches</p>
               <router-link
                 v-for="item in legalItems"
                 :key="item.name"
                 :to="item.to"
-                class="flex items-center justify-between py-2.5 px-4 rounded-xl text-gray-800 hover:bg-gray-50 hover:text-dark-blue transition-colors duration-150 group"
+                class="flex items-center justify-between py-3 px-3 rounded-xl text-gray-800 hover:bg-gray-50 hover:text-dark-blue transition-colors duration-150 group"
                 @click="closeMenu"
               >
-                <span class="text-lg font-medium">{{ item.name }}</span>
-                <svg class="w-5 h-5 text-gray-300 group-hover:text-dark-blue transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <span class="text-p font-medium">{{ item.name }}</span>
+                <svg class="w-4 h-4 text-gray-300 group-hover:text-dark-blue transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
                 </svg>
               </router-link>

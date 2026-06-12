@@ -1,5 +1,5 @@
 <template>
-  <section ref="benefitsSection" class="py-10 md:py-20 lg:pt-40 lg:pb-20 bg-white overflow-x-hidden">
+  <section ref="benefitsSection" class="py-10 md:py-16 lg:pt-40 lg:pb-20 bg-white overflow-x-hidden">
     <div class="mx-auto max-w-container-sm md:max-w-container-md lg:max-w-container-lg 2xl:max-w-container px-container-h">
 
       <!-- Mobile + Tablet: stacked layout -->
@@ -189,7 +189,7 @@ export default {
           }
         })
       }, {
-        threshold: 0.3
+        threshold: 0.15
       })
       
       observer.observe(this.$refs.benefitsSection)

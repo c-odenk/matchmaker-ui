@@ -1,11 +1,12 @@
 <template>
-  <section ref="pricingSection" id="pricing" class="py-16 md:py-20 lg:py-20 lg:pb-4 2xl:pt-28 2xl:pb-16 bg-white">
+  <section ref="pricingSection" id="pricing" class="py-12 md:py-16 lg:py-20 lg:pb-4 2xl:pt-28 2xl:pb-16 bg-white">
     <div class="mx-auto max-w-container-sm md:max-w-container-md lg:max-w-container-lg 2xl:max-w-container px-container-h">
 
       <SectionHeader
         title="Effizientes Talentpool-Management – zum fairen Preis"
         description="Wählen Sie den Plan, der zu Ihren Anforderungen passt. Upgrades oder Downgrades sind jederzeit möglich."
         align="left"
+        marginBottom="mb-8"
       />
 
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 items-stretch">
@@ -246,7 +247,7 @@ export default {
             observer.unobserve(entry.target)
           }
         })
-      }, { threshold: 0.3 })
+      }, { threshold: 0.15 })
       observer.observe(this.$refs.pricingSection)
     }
   }

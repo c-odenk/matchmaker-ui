@@ -106,7 +106,7 @@ export default {
             observer.unobserve(entry.target)
           }
         })
-      }, { threshold: 0.3 })
+      }, { threshold: 0.15 })
       observer.observe(this.$refs.ctaSection)
     }
   }

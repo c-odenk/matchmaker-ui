@@ -7,12 +7,13 @@
         title="So setzen Berater matchmaker.hr ein"
         description="Drei exemplarische Szenarien, wie matchmaker.hr Prozesse in der Personalberatung verändert."
         align="left"
+        marginBottom="mb-8"
       />
 
     </div>
 
     <!-- Mobile: Horizontal Scroll -->
-    <div class="sm:hidden mt-6">
+    <div class="sm:hidden">
       <div class="mx-auto max-w-container-sm px-container-h">
         <div
           ref="scrollContainer"
@@ -74,7 +75,7 @@
     </div>
 
     <!-- Tablet + Desktop: Grid -->
-    <div class="hidden sm:block mx-auto max-w-container-sm md:max-w-container-md lg:max-w-container-lg 2xl:max-w-container px-container-h mt-6">
+    <div class="hidden sm:block mx-auto max-w-container-sm md:max-w-container-md lg:max-w-container-lg 2xl:max-w-container px-container-h">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-stretch">
         <div
           v-for="(testimonial, index) in testimonials"
@@ -175,7 +176,7 @@ export default {
           }
         })
       }, {
-        threshold: 0.3
+        threshold: 0.15
       })
       
       observer.observe(this.$refs.testimonialsSection)

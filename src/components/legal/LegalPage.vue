@@ -4,7 +4,7 @@
 
     <main class="flex-1 bg-white">
       <section class="py-12 md:py-16 lg:py-20">
-        <div class="mx-auto max-w-container-sm md:max-w-container-md lg:max-w-3xl px-container-h">
+        <div class="mx-auto max-w-container-sm md:max-w-container-md lg:max-w-container-lg 2xl:max-w-container px-container-h">
 
           <h1 class="text-h2-sm md:text-h2-md lg:text-h2-lg 2xl:text-h2-2xl text-black leading-tight mb-3">
             {{ title }}

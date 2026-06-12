@@ -13,6 +13,11 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Anker-Sektionen unter dem Sticky-Header freihalten */
+section[id] {
+  scroll-margin-top: 5rem;
+}
+
 body {
   overflow-x: hidden;
   touch-action: pan-y;

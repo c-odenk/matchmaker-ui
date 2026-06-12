@@ -1,7 +1,7 @@
 <template>
   <section ref="faqSection" id="faq" class="py-12 md:py-16 lg:pt-12 lg:pb-20 2xl:py-20">
     <div class="mx-auto max-w-container-sm md:max-w-container-md lg:max-w-container-lg 2xl:max-w-container px-container-h">
-      <div class="flex flex-col lg:flex-row gap-12 lg:gap-20">
+      <div class="flex flex-col lg:flex-row gap-8 lg:gap-20">
 
         <!-- Col 1: Header -->
         <div class="lg:w-1/2 flex flex-col lg:sticky lg:top-28 lg:self-start">
@@ -124,7 +124,7 @@ export default {
           }
         })
       }, {
-        threshold: 0.3
+        threshold: 0.15
       })
       
       observer.observe(this.$refs.faqSection)
