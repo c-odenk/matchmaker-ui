@@ -88,7 +88,7 @@ export default {
         },
         {
           question: 'Welche Datenquellen werden für die Marktanalyse genutzt?',
-          answer: 'Der Market Intelligence Agent scannt kontinuierlich öffentlich zugängliche Quellen wie Jobboards, Unternehmenswebsites und Karrierenetzwerke. Die genauen Quellen können konfiguriert werden.'
+          answer: 'Der Market Agent scannt kontinuierlich öffentlich zugängliche Quellen wie Jobboards, Unternehmenswebsites und Karrierenetzwerke. Die genauen Quellen können konfiguriert werden.'
         },
         {
           question: 'Wie wird die Qualität der generierten Anschreiben sichergestellt?',

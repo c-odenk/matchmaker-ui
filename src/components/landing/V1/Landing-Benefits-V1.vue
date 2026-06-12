@@ -141,7 +141,7 @@ export default {
       benefits: [
         {
           title: 'Automatisierte Marktanalyse',
-          solution: 'Kontinuierliches Scanning relevanter Quellen und automatisches abgleichen mit ihrem Kandidatenpool.',
+          solution: 'Kontinuierliches Scanning relevanter Quellen und automatischer Abgleich mit Ihrem Kandidatenpool.',
           icon: Search
         },
         {

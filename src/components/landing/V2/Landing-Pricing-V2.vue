@@ -3,7 +3,7 @@
     <div class="mx-auto max-w-container-sm md:max-w-container-md lg:max-w-container-lg 2xl:max-w-container px-container-h">
 
       <SectionHeader
-        title="Effizientes Talentpool management – zum fairen Preis"
+        title="Effizientes Talentpool-Management – zum fairen Preis"
         description="Wählen Sie den Plan, der zu Ihren Anforderungen passt. Upgrades oder Downgrades sind jederzeit möglich."
         align="left"
       />
@@ -179,7 +179,7 @@ export default {
         tiers: [],
         features: [
           { label: '3 Mitarbeiter-Lizenzen', icon: Users },
-          { label: 'Hosting ihrer Kandidatenprofile und Vakanzen', icon: Server },
+          { label: 'Hosting Ihrer Kandidatenprofile und Vakanzen', icon: Server },
           { label: 'Multi-Agenten-System vollständig enthalten', icon: Bot },
           { label: 'Monatlich kündbar, keine Mindestlaufzeit', icon: CalendarX },
         ]

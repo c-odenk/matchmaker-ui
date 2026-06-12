@@ -4,8 +4,8 @@
 
       <!-- Header -->
       <SectionHeader
-        title="Was unsere Kunden sagen"
-        description="Recruitingteams berichten, wie matchmaker.hr ihre Prozesse verändert."
+        title="So setzen Berater matchmaker.hr ein"
+        description="Drei exemplarische Szenarien, wie matchmaker.hr Prozesse in der Personalberatung verändert."
         align="left"
       />
 
@@ -29,11 +29,8 @@
               class="bg-gray-50 border border-gray-200 flex flex-col rounded-2xl p-5 relative overflow-hidden h-full testimonials-animate-card"
               :style="{ 'animation-delay': `${0 + index * 0.25}s` }"
             >
-              <!-- Stars + quote mark -->
-              <div class="relative z-10 flex items-center justify-between mb-4">
-                <div class="flex gap-0.5">
-                  <span v-for="n in 5" :key="n" class="text-amber-400 text-base">★</span>
-                </div>
+              <!-- Quote mark -->
+              <div class="relative z-10 flex items-center justify-end mb-4">
                 <span class="text-3xl font-serif leading-none select-none text-dark-blue">"</span>
               </div>
 
@@ -82,11 +79,8 @@
           class="bg-gray-50 border border-gray-200 flex flex-col rounded-2xl p-6 relative overflow-hidden testimonials-animate-card"
           :style="{ 'animation-delay': `${0 + index * 0.25}s` }"
         >
-          <!-- Stars + quote mark -->
-          <div class="relative z-10 flex items-center justify-between mb-4">
-            <div class="flex gap-0.5">
-              <span v-for="n in 5" :key="n" class="text-amber-400 text-base">★</span>
-            </div>
+          <!-- Quote mark -->
+          <div class="relative z-10 flex items-center justify-end mb-4">
             <span class="text-3xl font-serif leading-none select-none text-dark-blue">"</span>
           </div>
 
@@ -126,22 +120,22 @@ export default {
       cardRefs: [],
       testimonials: [
         {
-          quote: 'Der Market Intelligence Agent liefert täglich qualifizierte Vakanzen – ohne manuelles Jobboard-Screening. Unser Sourcing-Aufwand hat sich halbiert.',
-          name: 'Markus Brandt',
-          role: 'Senior Consultant, Brandt & Partner',
-          initials: 'MB'
+          quote: 'Der Market Agent liefert täglich qualifizierte Vakanzen – ohne manuelles Jobboard-Screening. Der Sourcing-Aufwand halbiert sich.',
+          name: 'Senior Consultant',
+          role: 'Personalberatung, IT & Engineering',
+          initials: 'SC'
         },
         {
-          quote: 'Wir erhalten nicht mehr die meisten Treffer, sondern die richtigen – mit einer Begründung, die wir Kunden direkt präsentieren können.',
-          name: 'Sabine Richter',
-          role: 'Head of Recruiting, TalentBridge',
-          initials: 'SR'
+          quote: 'Nicht mehr die meisten Treffer, sondern die richtigen – mit einer Begründung, die sich Kunden direkt präsentieren lässt.',
+          name: 'Head of Recruiting',
+          role: 'Recruiting-Team, 8 Berater',
+          initials: 'HR'
         },
         {
-          quote: 'Die Anschreiben sind individuell, professionell und versandfertig. Wir geben nur noch frei – das spart täglich mehrere Stunden.',
-          name: 'Jonas Hartmann',
-          role: 'MD, Neo Executive Search',
-          initials: 'JH'
+          quote: 'Die Anschreiben sind individuell, professionell und versandfertig. Der Berater gibt nur noch frei – das spart täglich mehrere Stunden.',
+          name: 'Managing Director',
+          role: 'Executive Search Boutique',
+          initials: 'MD'
         }
       ]
     }

@@ -6,7 +6,7 @@
         <!-- Brand Section -->
         <div>
           <h3 class="text-h3-sm md:text-h3-md lg:text-h3-lg 2xl:text-h3-2xl text-white mb-4">matchmaker.hr</h3>
-          <p class="text-gray-300 leading-relaxed">Ihr Partner für effizientes Talentpool management.</p>
+          <p class="text-gray-300 leading-relaxed">Ihr Partner für effizientes Talentpool-Management.</p>
         </div>
         
         <!-- Navigation -->
@@ -41,7 +41,7 @@
       
       <!-- Footer Bottom -->
       <div class="border-t border-gray-700 pt-8 text-center">
-        <p class="paragraph-sm text-gray-400">&copy; 2026 matchmaker.hr. Alle Rechte vorbehalten.</p>
+        <p class="paragraph-sm text-gray-400">&copy; {{ currentYear }} matchmaker.hr. Alle Rechte vorbehalten.</p>
       </div>
     </div>
   </footer>
@@ -50,6 +50,11 @@
 <script>
 export default {
   name: 'AppFooter',
+  computed: {
+    currentYear() {
+      return new Date().getFullYear()
+    }
+  },
   methods: {
     scrollToSection(anchorId) {
       const element = document.getElementById(anchorId)

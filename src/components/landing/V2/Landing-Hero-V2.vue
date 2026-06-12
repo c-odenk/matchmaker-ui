@@ -235,9 +235,9 @@ export default {
       CalendarDays,
       showDemoModal: false,
       hero: {
-        badge: 'KI-gestütztes Talentpool management',
+        badge: 'KI-gestütztes Talentpool-Management',
         heading: 'Recruiting-Automatisierung, die Ihrem Urteil vertraut.',
-        subheading: 'KI übernimmt die zeitintensiven Schritte – Marktanalyse, Matching, Anschreiben. Der Berater entscheidet.'
+        subheading: 'KI übernimmt die zeitintensiven Schritte – Marktanalyse, Matching, Anschreiben. Sie entscheiden.'
       },
       loginUrl: process.env.VUE_APP_DASHBOARD_URL
     }
