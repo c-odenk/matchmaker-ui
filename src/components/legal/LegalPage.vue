@@ -9,11 +9,7 @@
           <h1 class="text-h2-sm md:text-h2-md lg:text-h2-lg 2xl:text-h2-2xl text-black leading-tight mb-3">
             {{ title }}
           </h1>
-          <p class="text-p-small-sm md:text-p-small-md lg:text-p-small-lg 2xl:text-p-small-2xl text-gray-500 mb-10 md:mb-12">
-            Stand: {{ updated }}
-          </p>
-
-          <div class="legal-content">
+          <div class="legal-content mt-8 md:mt-10">
             <slot />
           </div>
 
@@ -37,10 +33,6 @@ export default {
       type: String,
       required: true
     },
-    updated: {
-      type: String,
-      default: 'Juni 2026'
-    }
   }
 }
 </script>

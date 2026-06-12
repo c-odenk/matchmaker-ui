@@ -70,9 +70,14 @@
               <ButtonSecondary :icon="LogIn" :href="loginUrl">
                 Jetzt anmelden
               </ButtonSecondary>
-              <ButtonPrimary :icon="CalendarDays" @click="showDemoModal = true">
-                Demo vereinbaren
-              </ButtonPrimary>
+              <button
+                type="button"
+                @click="showDemoModal = true"
+                class="inline-flex items-center justify-center gap-2 rounded-button px-8 py-2.5 text-p text-white border border-white/20 hover:border-white/40 hover:bg-white/10 transition-all duration-200 md:min-w-[160px] cursor-pointer"
+              >
+                <CalendarDaysIcon class="w-4 h-4 flex-shrink-0" :stroke-width="1.75" />
+                <span class="text-nowrap">Demo vereinbaren</span>
+              </button>
             </div>
           </div>
 
@@ -217,22 +222,20 @@
 </template>
 
 <script>
-import { LogIn, CalendarDays } from 'lucide-vue-next'
-import ButtonPrimary from '@/components/common/ButtonPrimary.vue'
+import { LogIn, CalendarDays as CalendarDaysIcon } from 'lucide-vue-next'
 import ButtonSecondary from '@/components/common/ButtonSecondary.vue'
 import ModalDemo from '@/components/modals/ModalDemo.vue'
 
 export default {
   name: 'LandingHero',
   components: {
-    ButtonPrimary,
     ButtonSecondary,
+    CalendarDaysIcon,
     ModalDemo
   },
   data() {
     return {
       LogIn,
-      CalendarDays,
       showDemoModal: false,
       hero: {
         badge: 'KI-gestütztes Talentpool-Management',
