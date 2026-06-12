@@ -170,10 +170,12 @@
                 </div>
                 <img
                   class="w-full object-cover object-top"
-                  src="@/assets/Candidate-Mockup.png"
+                  :src="mockup.src"
+                  :srcset="mockup.srcset"
+                  sizes="(min-width: 1088px) 792px, calc(82.5vw - 53px)"
                   alt="Zentrales Berater-Dashboard für KI-gestütztes Matching"
-                  width="2700"
-                  height="1440"
+                  width="2875"
+                  height="1527"
                 />
               </div>
             </div>
@@ -204,10 +206,12 @@
               </div>
               <img
                 class="w-full object-cover object-top"
-                src="@/assets/Candidate-Mockup.png"
+                :src="mockup.src"
+                :srcset="mockup.srcset"
+                sizes="calc(100vw - 48px)"
                 alt="Zentrales Berater-Dashboard für KI-gestütztes Matching"
-                width="2700"
-                height="1440"
+                width="2875"
+                height="1527"
               />
             </div>
           </div>
@@ -225,6 +229,10 @@
 import { LogIn, CalendarDays as CalendarDaysIcon } from 'lucide-vue-next'
 import ButtonSecondary from '@/components/common/ButtonSecondary.vue'
 import ModalDemo from '@/components/modals/ModalDemo.vue'
+import mockup800 from '@/assets/Candidate-Mockup-800w.png'
+import mockup1200 from '@/assets/Candidate-Mockup-1200w.png'
+import mockup1600 from '@/assets/Candidate-Mockup-1600w.png'
+import mockupFull from '@/assets/Candidate-Mockup.png'
 
 export default {
   name: 'LandingHero',
@@ -237,6 +245,10 @@ export default {
     return {
       LogIn,
       showDemoModal: false,
+      mockup: {
+        src: mockup1600,
+        srcset: `${mockup800} 800w, ${mockup1200} 1200w, ${mockup1600} 1600w, ${mockupFull} 2875w`
+      },
       hero: {
         badge: 'KI-gestütztes Talentpool-Management',
         heading: 'Recruiting-Automatisierung, die Ihrem Urteil vertraut.',
