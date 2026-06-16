@@ -1,5 +1,5 @@
 <template>
-  <section ref="faqSection" id="faq" class="py-12 md:py-16 lg:pt-12 lg:pb-20 2xl:py-20">
+  <section ref="faqSection" id="faq" class="py-12 md:py-16 lg:py-20">
     <div class="mx-auto max-w-container-sm md:max-w-container-md lg:max-w-container-lg 2xl:max-w-container px-container-h">
       <div class="flex flex-col lg:flex-row gap-8 lg:gap-20">
 

@@ -20,23 +20,29 @@
           <!-- ERFOLGS-ANSICHT -->
           <div v-if="submitted" key="success">
 
-            <!-- Header -->
-            <div class="flex items-start gap-4 px-6 md:px-8 pt-6 md:pt-7 pb-5 border-b border-gray-100">
-              <div class="w-9 h-9 rounded-xl bg-dark-blue text-white flex items-center justify-center flex-shrink-0">
-                <CalendarDays class="w-4 h-4" :stroke-width="1.75" />
-              </div>
-              <div class="flex-1 min-w-0">
-                <h2 id="demo-modal-title" class="text-h3 text-black leading-snug">Demo vereinbaren</h2>
+            <!-- Header (Dark-Blue, wie Hero/CTA) -->
+            <div class="relative overflow-hidden bg-dark-blue px-6 md:px-8 pt-6 pb-6">
+              <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+                <div
+                  class="absolute"
+                  style="top:-70%; right:-10%; width:60%; height:220%; background: radial-gradient(ellipse at center, rgba(41,118,214,0.35) 0%, transparent 65%); filter: blur(40px);"
+                ></div>
               </div>
               <button
                 @click="handleClose"
                 aria-label="Schließen"
-                class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 text-gray-500 hover:text-gray-900 transition-colors"
+                class="absolute top-4 right-4 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white/70 hover:text-white transition-colors"
               >
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
                 </svg>
               </button>
+              <div class="relative z-10 flex items-center gap-4 pr-10">
+                <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0" style="border:1px solid rgba(255,255,255,0.12);">
+                  <CalendarDays class="w-5 h-5 text-white" :stroke-width="1.75" />
+                </div>
+                <h2 id="demo-modal-title" class="text-h3 text-white leading-snug">Demo vereinbaren</h2>
+              </div>
             </div>
 
             <!-- Erfolgs-Body -->
@@ -64,26 +70,36 @@
           <!-- FORMULAR-ANSICHT -->
           <div v-else key="form">
 
-            <!-- Header -->
-            <div class="flex items-start gap-4 px-6 md:px-8 pt-6 md:pt-7 pb-5 border-b border-gray-100">
-              <div class="w-9 h-9 rounded-xl bg-dark-blue text-white flex items-center justify-center flex-shrink-0">
-                <CalendarDays class="w-4 h-4" :stroke-width="1.75" />
+            <!-- Header (Dark-Blue mit Glow + Trust-Zeile) -->
+            <div class="relative overflow-hidden bg-dark-blue px-6 md:px-8 pt-6 pb-5">
+              <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+                <div
+                  class="absolute"
+                  style="top:-70%; right:-10%; width:60%; height:220%; background: radial-gradient(ellipse at center, rgba(41,118,214,0.35) 0%, transparent 65%); filter: blur(40px);"
+                ></div>
               </div>
-              <div class="flex-1 min-w-0">
-                <h2 id="demo-modal-title" class="text-h3 text-black leading-snug">Demo vereinbaren</h2>
-                <p class="mt-1 text-p-small text-gray-500">
-                  Lassen Sie sich matchmaker.hr in 15 Minuten persönlich zeigen.
-                </p>
-              </div>
+
               <button
                 @click="handleClose"
                 aria-label="Schließen"
-                class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 text-gray-500 hover:text-gray-900 transition-colors"
+                class="absolute top-4 right-4 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white/70 hover:text-white transition-colors"
               >
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
                 </svg>
               </button>
+
+              <div class="relative z-10 flex items-start gap-4 pr-10">
+                <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0" style="border:1px solid rgba(255,255,255,0.12);">
+                  <CalendarDays class="w-5 h-5 text-white" :stroke-width="1.75" />
+                </div>
+                <div class="flex-1 min-w-0">
+                  <h2 id="demo-modal-title" class="text-h3 text-white leading-snug">Demo vereinbaren</h2>
+                  <p class="mt-1 text-p-small text-white/70">
+                    Lassen Sie sich matchmaker.hr in 15 Minuten persönlich zeigen.
+                  </p>
+                </div>
+              </div>
             </div>
 
             <!-- Form Body -->
@@ -153,6 +169,8 @@
                 </button>
                 <ButtonPrimary
                   type="submit"
+                  :icon="Send"
+                  iconPosition="trailing"
                   :disabled="!formValid"
                   class="disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:shadow-none"
                 >
@@ -177,7 +195,7 @@
 </template>
 
 <script>
-import { CalendarDays } from 'lucide-vue-next'
+import { CalendarDays, Send } from 'lucide-vue-next'
 import ButtonPrimary from '@/components/common/ButtonPrimary.vue'
 
 export default {
@@ -192,6 +210,7 @@ export default {
   emits: ['close', 'submit'],
   data() {
     return {
+      Send,
       submitted: false,
       form: {
         firstName: '',
