@@ -55,7 +55,7 @@
                 <span class="w-2 h-2 rounded-full animate-pulse flex-shrink-0 bg-green-500"></span>
                 {{ hero.badge }}
               </span>
-            </div>
+            </div>  
 
             <div class="hero-animate-item" style="animation-delay: 0.1s">
               <h1 class="max-w-3xl mx-auto text-h1-sm md:text-h1-md lg:text-h1-lg 2xl:text-h1-2xl tracking-tight text-white">

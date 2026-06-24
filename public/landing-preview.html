@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>matchmaker.hr — Vorschau (Redesign)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --navy:#172b4d; --navy-2:#1e2d42; --blue:#2976d6; --blue-soft:#eaf2fc;
+    --green:#22c55e; --ink:#0f172a; --body:#475569; --muted:#7c8aa0;
+    --line:#e7ebf1; --surface:#f6f8fc; --white:#fff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased;line-height:1.6}
+  a{text-decoration:none;color:inherit}
+  img{display:block;max-width:100%}
+  .wrap{max-width:77rem;margin:0 auto;padding:0 24px}
+  .sec{padding:88px 0}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;letter-spacing:.01em;color:var(--navy);background:rgba(23,43,77,.06);padding:6px 14px;border-radius:999px}
+  .eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--blue)}
+  .eyebrow.on-dark{color:#fff;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14)}
+  .eyebrow.on-dark .dot{background:var(--green)}
+  h1{font-size:clamp(1.75rem,1.2rem + 1.7vw,2.5rem);font-weight:800;line-height:1.08;letter-spacing:-.02em}
+  h2{font-size:clamp(1.45rem,1.1rem + 1.2vw,1.9rem);font-weight:800;line-height:1.12;letter-spacing:-.02em}
+  h3{font-size:1.12rem;font-weight:700;letter-spacing:-.01em}
+  .lead{font-size:clamp(1.02rem,.98rem + .3vw,1.18rem);color:var(--body)}
+  .accent{color:var(--blue)}
+  .center{text-align:center}
+  .sec-head{max-width:660px;margin:0 auto 56px}
+  .sec-head.center{text-align:center}
+  .sec-head h2{margin:18px 0 14px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:46px;padding:0 22px;border-radius:9px;font-size:.97rem;font-weight:600;cursor:pointer;border:none;transition:.18s}
+  .btn-blue{background:var(--blue);color:#fff}
+  .btn-blue:hover{background:#2065bd}
+  .btn-ghost{background:#fff;color:var(--ink);border:1px solid var(--line)}
+  .btn-ghost:hover{background:var(--surface)}
+  .btn-primary{background:var(--navy);color:#fff}
+  .btn-primary:hover{background:#0f1f3a}
+  header .btn-primary{min-width:178px}
+  .btn-ghost-dark{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.22)}
+  .btn-ghost-dark:hover{background:rgba(255,255,255,.08)}
+  .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px}
+
+  header{position:sticky;top:0;z-index:50;background:#fff}
+  .navpill{display:flex;align-items:center;justify-content:space-between;gap:18px;height:74px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.08rem;letter-spacing:-.02em}
+  .brand .mark{width:30px;height:30px;border-radius:8px;background:var(--navy);display:flex;align-items:center;justify-content:center;color:#fff}
+  .brand .mark svg{width:16px;height:16px}
+  .nav-links{display:flex;gap:30px;font-size:1.02rem;font-weight:500;color:var(--navy)}
+  .nav-links a{display:inline-flex;align-items:center;gap:7px}
+  .nav-links a:hover{color:var(--blue)}
+  .nav-right{display:flex;align-items:center;gap:14px}
+  .rating{display:flex;align-items:center;gap:9px;margin-bottom:14px}
+  .rating .stars{color:#fbbf24;font-size:.92rem;letter-spacing:1px}
+  .rating .rt{font-size:.82rem;color:rgba(255,255,255,.72)}
+  .hero-left{position:relative}
+  .note{position:absolute;z-index:6;background:#fff7e6;color:#8a6516;font-size:.76rem;font-weight:700;padding:7px 13px;border-radius:8px;box-shadow:0 10px 24px rgba(0,0,0,.22);white-space:nowrap;pointer-events:none}
+  .note-1{top:34px;left:332px}
+  .note-2{top:300px;right:-6px}
+  .sources{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff}
+  .sources-row{display:flex;align-items:center;justify-content:center;gap:16px 30px;flex-wrap:wrap;padding:24px}
+  .sources-row .lbl{font-size:.82rem;font-weight:600;color:var(--muted)}
+  .sources-row .src{display:inline-flex;align-items:center;gap:8px;font-size:1.02rem;font-weight:600;color:#5d6b80;letter-spacing:-.01em}
+  .srcmono{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:4px;background:#0A66C2;color:#fff;font-size:11px;font-weight:800;flex-shrink:0}
+
+  /* Hero */
+  .hero{position:relative;background:var(--navy);color:#fff;overflow:hidden}
+  .hero .glow{position:absolute;pointer-events:none}
+  .hero .g1{top:-20%;right:-10%;width:55%;height:90%;background:radial-gradient(ellipse at center,rgba(41,118,214,.5),transparent 65%);filter:blur(60px)}
+  .hero .g2{bottom:-30%;left:-8%;width:45%;height:80%;background:radial-gradient(ellipse at center,rgba(41,118,214,.2),transparent 70%);filter:blur(70px)}
+  .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.5fr .9fr;gap:44px;align-items:center;padding:74px 24px 84px}
+  .hero h1{margin:20px 0 0}
+  .hero .lead{color:rgba(255,255,255,.82);max-width:614px;margin:18px 0 0}
+  .hero-cta{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}
+  .hero-trust{display:flex;gap:20px;margin-top:24px;flex-wrap:wrap;font-size:.85rem;color:rgba(255,255,255,.62)}
+  .hero-trust span{display:inline-flex;align-items:center;gap:7px}
+  .hero-trust .ck{width:7px;height:7px;border-radius:50%;background:var(--green);flex-shrink:0}
+
+  .hero-visual{position:relative}
+  .hero-photo{position:relative;width:100%;max-width:440px;margin-left:auto;border-radius:22px;overflow:hidden;aspect-ratio:4/4.4;box-shadow:0 40px 90px rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.1)}
+  .hero-photo img{width:100%;height:100%;object-fit:cover}
+  .hero-photo .ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:#eef2f7;color:#9aa7b8}
+  .hero-photo .ph span{font-size:.85rem;font-weight:600;letter-spacing:.02em}
+  .float-card{position:absolute;background:#fff;color:var(--ink);border-radius:14px;padding:13px 15px;box-shadow:0 18px 40px rgba(0,0,0,.28);display:flex;align-items:center;gap:11px}
+  .float-card .pimg{width:38px;height:38px;border-radius:50%;object-fit:cover;flex-shrink:0}
+  .float-card .fc-name{font-size:.84rem;font-weight:700;line-height:1.2}
+  .float-card .fc-sub{font-size:.72rem;color:var(--muted)}
+  .float-card .fc-score{margin-left:6px;font-size:.95rem;font-weight:800;color:var(--blue)}
+  .fc-top{top:34px;left:-26px}
+  .fc-bot{bottom:30px;right:-22px}
+  .float-card .ck{width:30px;height:30px;border-radius:9px;background:#e7f8ee;color:#15803d;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+
+  .pill{display:inline-flex;align-items:center;gap:6px;font-size:.72rem;font-weight:600;padding:4px 10px;border-radius:999px}
+  .pill-blue{background:var(--blue-soft);color:var(--blue)}
+  .pill-green{background:#e7f8ee;color:#15803d}
+  .pill-gray{background:#eef2f7;color:#56657c}
+
+  /* Agenten / Prozess */
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:18px}
+  .step{position:relative;background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px}
+  .step .num{width:36px;height:36px;border-radius:10px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;margin-bottom:15px}
+  .step .ag{font-size:.72rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--blue);margin-bottom:5px}
+  .step h3{margin-bottom:8px;font-size:1.02rem}
+  .step p{font-size:.88rem;color:var(--body)}
+  .hil{margin-top:18px;display:flex;align-items:center;gap:14px;background:var(--navy);color:#fff;border-radius:16px;padding:20px 24px;flex-wrap:wrap}
+  .hil .ic{width:42px;height:42px;border-radius:12px;background:rgba(41,118,214,.2);border:1px solid rgba(41,118,214,.35);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .hil b{font-weight:700}
+  .hil .t{font-size:.92rem;color:rgba(255,255,255,.78);flex:1;min-width:240px}
+
+  /* Pool cards mit echten Fotos */
+  .pool-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:20px}
+  .pcard{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;transition:.18s;display:flex;flex-direction:column}
+  .pcard:hover{border-color:#cdd9ea;transform:translateY(-3px);box-shadow:0 14px 30px rgba(23,43,77,.07)}
+  .pcard .top{display:flex;align-items:center;gap:12px}
+  .pcard .pimg{width:46px;height:46px;border-radius:50%;object-fit:cover;flex-shrink:0}
+  .pcard .nm{font-weight:700;font-size:.96rem}
+  .pcard .ro{font-size:.78rem;color:var(--muted)}
+  .pcard .vac{display:flex;align-items:center;gap:9px;margin-top:14px;padding:11px;border:1px solid var(--line);border-radius:10px}
+  .pcard .vac .ar{color:var(--blue);font-weight:700}
+  .pcard .vt{font-size:.84rem;font-weight:600;line-height:1.25}
+  .pcard .vc{font-size:.73rem;color:var(--muted)}
+  .pcard .ctx{font-size:.8rem;color:var(--body);margin-top:auto;padding-top:14px;display:flex;align-items:center;gap:7px}
+  .pcard .ctx .gi{color:var(--green)}
+
+  /* Cockpit / Dashboard */
+  .two{display:grid;grid-template-columns:1fr 1.1fr;gap:52px;align-items:center}
+  .two.rev{grid-template-columns:1.1fr 1fr}
+  .feat-list{list-style:none;margin-top:22px;display:flex;flex-direction:column;gap:14px}
+  .feat-list li{display:flex;gap:12px;font-size:1rem;color:var(--body)}
+  .feat-list .ck{flex-shrink:0;width:22px;height:22px;border-radius:50%;background:#e7f8ee;color:#15803d;display:flex;align-items:center;justify-content:center;font-size:12px;margin-top:1px}
+  .browser{position:relative;border-radius:14px;overflow:hidden;box-shadow:0 30px 70px rgba(23,43,77,.18);border:1px solid var(--line)}
+  .browser-bar{display:flex;align-items:center;gap:7px;padding:11px 16px;background:var(--navy-2)}
+  .browser-bar i{width:11px;height:11px;border-radius:50%}
+  .browser-url{margin-left:12px;font-size:.72rem;color:rgba(255,255,255,.4);background:rgba(255,255,255,.06);padding:4px 12px;border-radius:6px}
+  .dash{background:#fff;color:var(--ink);padding:20px 22px}
+  .dash-toprow{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+  .crow{display:flex;align-items:center;gap:13px;padding:12px 0;border-top:1px solid var(--line)}
+  .crow:first-of-type{border-top:none}
+  .crow .pimg{width:38px;height:38px;border-radius:50%;object-fit:cover;flex-shrink:0}
+  .crow .nm{font-size:.88rem;font-weight:600}
+  .crow .ro{font-size:.74rem;color:var(--muted)}
+  .crow .sc{margin-left:auto;font-weight:800;color:var(--navy);font-size:.95rem}
+  .crow .cinit{width:38px;height:38px;border-radius:9px;background:var(--blue-soft);color:var(--blue);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.76rem;flex-shrink:0}
+  .initc{border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0}
+  .vdoc{width:38px;height:38px;border-radius:9px;background:var(--surface);border:1px solid var(--line);color:#94a3b8;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .src-pill{display:inline-block;font-size:.66rem;font-weight:600;color:#56657c;background:#eef2f7;border:1px solid var(--line);border-radius:6px;padding:1px 7px;margin-left:4px;vertical-align:middle}
+  .kibox{margin-top:16px;display:flex;gap:18px;background:#f0faf4;border:1px solid #cdeed9;border-radius:14px;padding:18px 20px}
+  .kiscore{flex-shrink:0;width:78px;text-align:center}
+  .kinum{width:62px;height:62px;border-radius:50%;border:3px solid #16a34a;color:#16a34a;display:flex;align-items:center;justify-content:center;font-size:1.35rem;font-weight:800;margin:0 auto}
+  .kilbl{font-size:.58rem;text-transform:uppercase;letter-spacing:.05em;color:#15803d;font-weight:700;margin-top:7px}
+  .kihead{display:flex;align-items:center;gap:7px;font-weight:700;color:#15803d;font-size:.9rem;margin-bottom:8px}
+  .kitext p{font-size:.82rem;color:var(--body);line-height:1.55}
+  .kirate{margin-top:13px;font-size:.76rem;color:var(--muted);display:flex;align-items:center;gap:8px}
+  .kistars{color:#f59e0b;letter-spacing:1px}
+  .scard-top{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+  .sicon{width:40px;height:40px;border-radius:11px;background:rgba(41,118,214,.2);border:1px solid rgba(41,118,214,.32);display:flex;align-items:center;justify-content:center;color:#fff;flex-shrink:0}
+  .msg-lbl{font-size:.68rem;font-weight:600;color:var(--muted);margin-bottom:4px}
+  .msg-val{font-size:.81rem;font-weight:600;color:var(--ink);line-height:1.35}
+  .msg-field{margin-top:14px;border:1.5px solid #ea580c;border-radius:10px;padding:10px 13px;background:#fff}
+  .msg-input{font-size:.8rem;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:9px;padding:9px 12px;margin-top:4px}
+  .msg-body{font-size:.78rem;color:var(--body);background:var(--surface);border:1px solid var(--line);border-radius:9px;padding:11px 13px;margin-top:4px;line-height:1.55}
+  .msg-foot{display:flex;justify-content:flex-end;gap:8px;margin-top:16px}
+  .msg-btn{height:34px;display:inline-flex;align-items:center;padding:0 13px;border-radius:8px;font-size:.76rem;font-weight:600;border:1px solid var(--line);background:#fff;color:var(--ink)}
+  .msg-btn-primary{background:#ea580c;color:#fff;border-color:#ea580c}
+  .dash-foot{margin-top:14px;display:flex;gap:8px}
+  .cockpit-tag{position:absolute;bottom:-18px;left:-18px;background:#fff;border-radius:12px;padding:10px 13px;box-shadow:0 16px 36px rgba(23,43,77,.18);display:flex;align-items:center;gap:10px}
+  .cockpit-tag .pimg{width:34px;height:34px;border-radius:50%;object-fit:cover}
+  .cockpit-tag .nm{font-size:.8rem;font-weight:700}
+  .cockpit-tag .sub{font-size:.7rem;color:var(--green);font-weight:600}
+
+  /* Stats */
+  .stats{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+  .stats .glow{position:absolute;top:-40%;left:50%;transform:translateX(-50%);width:75%;height:150%;background:radial-gradient(ellipse at center,rgba(41,118,214,.28),transparent 65%);filter:blur(70px);pointer-events:none}
+  .stats-grid{position:relative;z-index:2;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+  .scard{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:28px 26px}
+  .scard .big{font-size:1.8rem;font-weight:800;letter-spacing:-.02em;line-height:1;flex-shrink:0}
+  .scard .lb{font-weight:600;font-size:.9rem;line-height:1.2}
+  .scard .ds{font-size:.85rem;color:rgba(255,255,255,.6);margin-top:6px}
+
+  /* Vergleich */
+  .compare{max-width:840px;margin:0 auto;border:1px solid var(--line);border-radius:18px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr}
+  .compare .col{padding:32px 30px}
+  .compare .col.b{border-left:1px solid var(--line);background:rgba(41,118,214,.035)}
+  .compare .clbl{font-size:.78rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-bottom:20px}
+  .compare .clbl.a{color:var(--muted)}
+  .compare .clbl.b{color:var(--blue)}
+  .compare ul{list-style:none;display:flex;flex-direction:column;gap:15px}
+  .compare li{display:flex;gap:11px;font-size:.95rem}
+  .compare .x{color:#cbd5e1;flex-shrink:0}
+  .compare .v{color:var(--green);flex-shrink:0}
+  .compare li.a-txt{color:var(--muted)}
+  .compare li.b-txt{color:var(--ink)}
+
+  /* Benefits */
+  .ben-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+  .ben{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px}
+  .ben .ic{width:42px;height:42px;border-radius:12px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:18px}
+  .ben h3{font-size:1.02rem;margin-bottom:8px}
+  .ben p{font-size:.9rem;color:var(--body)}
+
+  /* Testimonials */
+  .test-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+  .test{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px;display:flex;flex-direction:column;gap:16px}
+  .test .stars{color:#f59e0b;font-size:.95rem;letter-spacing:2px}
+  .test .q{font-size:.95rem;color:var(--ink);flex:1}
+  .test .who{display:flex;align-items:center;gap:12px;border-top:1px solid var(--line);padding-top:15px}
+  .test .pimg{width:42px;height:42px;border-radius:50%;object-fit:cover}
+  .test .nm{font-size:.88rem;font-weight:700}
+  .test .ro{font-size:.76rem;color:var(--muted)}
+
+  /* CTA */
+  .cta-band{position:relative;overflow:hidden;background:var(--navy);color:#fff;border-radius:24px;padding:54px 54px}
+  .cta-band .glow{position:absolute;top:-60%;right:-8%;width:50%;height:200%;background:radial-gradient(ellipse at center,rgba(41,118,214,.38),transparent 65%);filter:blur(55px);pointer-events:none}
+  .cta-inner{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap}
+  .cta-inner h2{max-width:560px}
+  .cta-inner p{color:rgba(255,255,255,.78);margin-top:12px;max-width:520px}
+
+  footer{background:var(--navy);color:rgba(255,255,255,.66);padding:62px 0 34px}
+  .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:36px}
+  footer .brand{color:#fff;margin-bottom:14px}
+  footer .brand .mark{background:#fff;color:var(--navy)}
+  footer .tag{font-size:.9rem;max-width:270px}
+  footer h4{color:#fff;font-size:.82rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-bottom:16px}
+  footer ul{list-style:none;display:flex;flex-direction:column;gap:11px;font-size:.9rem}
+  footer ul a:hover{color:#fff}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:44px;padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.82rem;color:rgba(255,255,255,.5)}
+
+  .preview-flag{position:fixed;bottom:14px;right:14px;z-index:99;background:var(--blue);color:#fff;font-size:.72rem;font-weight:600;padding:7px 14px;border-radius:999px;box-shadow:0 8px 24px rgba(41,118,214,.4)}
+
+  .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
+  .pcardx{display:flex;flex-direction:column;border-radius:18px;padding:30px 28px;background:#fff;border:1px solid var(--line);box-shadow:0 8px 26px rgba(23,43,77,.06)}
+  .pcardx.feat{background:var(--navy);border-color:var(--navy);color:#fff;position:relative;box-shadow:0 26px 54px rgba(23,43,77,.22)}
+  .pname{font-size:1.18rem;font-weight:700}
+  .pdesc{font-size:.85rem;color:var(--body);margin-top:7px;line-height:1.5;min-height:48px}
+  .pcardx.feat .pdesc{color:rgba(255,255,255,.72)}
+  .pprice{display:flex;align-items:baseline;gap:6px;margin-top:18px}
+  .pprice b{font-size:1.9rem;font-weight:800;letter-spacing:-.02em}
+  .pprice .pper{font-size:.82rem;color:var(--muted)}
+  .pcardx.feat .pprice .pper{color:rgba(255,255,255,.72)}
+  .pdiv{border-top:1px solid var(--line);margin:20px 0}
+  .pcardx.feat .pdiv{border-color:rgba(255,255,255,.13)}
+  .plabel{font-size:.64rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:13px}
+  .pcardx.feat .plabel{color:rgba(255,255,255,.6)}
+  .pfeat{list-style:none;display:flex;flex-direction:column;gap:12px}
+  .pfeat li{display:flex;align-items:flex-start;gap:10px;font-size:.86rem;color:var(--ink);line-height:1.4}
+  .pcardx.feat .pfeat li{color:#fff}
+  .pchk{flex-shrink:0;margin-top:1px;color:var(--navy)}
+  .pcardx.feat .pchk{color:#4ade80}
+  .pfico{flex-shrink:0;margin-top:1px;width:17px;height:17px}
+  .psel-wrap{position:relative}
+  .psel{width:100%;height:42px;padding:0 38px 0 14px;border-radius:10px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.06);color:#fff;font-size:.86rem;font-weight:500;cursor:pointer;-webkit-appearance:none;appearance:none}
+  .psel:focus{outline:none;border-color:var(--blue)}
+  .psel:hover{border-color:rgba(255,255,255,.4)}
+  .psel option{color:#172b4d}
+  .psel-chev{position:absolute;right:13px;top:50%;transform:translateY(-50%);pointer-events:none;color:rgba(255,255,255,.7)}
+  .pbtn{height:44px;border-radius:9px;display:flex;align-items:center;justify-content:center;gap:7px;font-size:.92rem;font-weight:600;transition:.18s}
+  .pcardx:not(.feat) .pbtn{margin-top:28px}
+  .pbtn-ghost{border:1px solid var(--line);color:var(--ink);background:#fff}
+  .pbtn-ghost:hover{background:var(--surface)}
+  .pbtn-blue{background:var(--blue);color:#fff;margin-top:20px}
+  .pbtn-blue:hover{background:#2065bd}
+  .pbadge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--blue);color:#fff;font-size:.7rem;font-weight:700;padding:5px 15px;border-radius:999px;white-space:nowrap}
+
+  @media(min-width:1536px){
+    .wrap{max-width:84rem}
+  }
+  @media(max-width:880px){
+    .sec{padding:58px 0}
+    .nav-links{display:none}
+    .note{display:none}
+    .hero-grid{grid-template-columns:1fr;gap:40px;padding:48px 24px 64px}
+    .price-grid{grid-template-columns:1fr}
+    .hero-photo{margin:0 auto}
+    .fc-top{left:0}.fc-bot{right:0}
+    .two,.two.rev{grid-template-columns:1fr;gap:34px}
+    .compare{grid-template-columns:1fr}
+    .compare .col.b{border-left:none;border-top:1px solid var(--line)}
+    .foot-grid{grid-template-columns:1fr 1fr;gap:28px}
+    .cta-band{padding:36px 26px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="navpill">
+      <div class="brand">
+        <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9.8 15.9L9 18.75l-.81-2.85a4.5 4.5 0 00-3.09-3.09L2.25 12l2.85-.81a4.5 4.5 0 003.09-3.09L9 5.25l.81 2.85a4.5 4.5 0 003.09 3.09L15.75 12l-2.85.81a4.5 4.5 0 00-3.09 3.09z"/></svg></span>
+        <span>matchmaker<span style="color:var(--navy)">.</span>hr</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#hero"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"/></svg>Home</a>
+        <a href="#agenten"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9"/></svg>Produkt</a>
+        <a href="#preise"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" d="M9.568 3H5.25A2.25 2.25 0 003 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 005.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 009.568 3z"/><path stroke-linecap="round" stroke-linejoin="round" d="M6 6h.008v.008H6V6z"/></svg>Preise</a>
+      </nav>
+      <div class="nav-right">
+        <a href="#" style="display:inline-flex;align-items:center;gap:7px;font-size:.95rem;font-weight:500;color:#334155"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"/></svg>Demo vereinbaren</a>
+        <a class="btn btn-primary" href="#">Anmelden</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="glow g1"></div>
+  <div class="glow g2"></div>
+  <div class="wrap hero-grid">
+    <div class="hero-left">
+      <span class="eyebrow on-dark"><span class="dot"></span>KI-gestütztes Talentpool-Management</span>
+      <div class="rating" style="margin-left:5px;margin-top:14px"><span class="stars">★★★★★</span><span class="rt">Aus der Beratungspraxis empfohlen</span></div>
+      <h1>Recruiting-Automatisierung,<br>die <span style="color:#5fa0ea">Ihrem Urteil</span> vertraut.</h1>
+      <p class="lead">KI übernimmt die zeitintensiven Schritte – Marktanalyse, Matching und Anschreiben. Sie entscheiden, was rausgeht.</p>
+      <div class="hero-cta">
+        <a class="btn btn-blue" href="#">Jetzt anmelden →</a>
+        <a class="btn btn-ghost-dark" href="#">Demo vereinbaren</a>
+      </div>
+      <div class="hero-trust">
+        <span><span class="ck"></span>DSGVO-konform</span>
+        <span><span class="ck"></span>EU-Hosting</span>
+        <span><span class="ck"></span>Human-in-the-Loop</span>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-photo">
+        <div class="ph">
+          <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.4"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/></svg>
+          <span>Platzhalter-Bild</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUELLEN-LEISTE (ehrlicher Logo-Cloud-Ersatz: was der Market Agent scannt) -->
+<section class="sources">
+  <div class="wrap sources-row">
+    <span class="lbl">Der Market Agent scannt kontinuierlich</span>
+    <span class="src"><span class="srcmono">S</span>StepStone</span>
+    <span class="src"><img src="https://cdn.simpleicons.org/indeed" alt="" width="17" height="17" onerror="this.style.display='none'" />Indeed</span>
+    <span class="src"><img src="https://api.iconify.design/simple-icons/linkedin.svg?color=%230A66C2" alt="" width="17" height="17" onerror="this.style.display='none'" />LinkedIn</span>
+    <span class="src"><img src="https://cdn.simpleicons.org/xing" alt="" width="17" height="17" onerror="this.style.display='none'" />Xing</span>
+    <span class="src"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21"/></svg>Unternehmenswebsites</span>
+  </div>
+</section>
+
+<!-- AGENTEN / PROZESS -->
+<section class="sec" id="agenten" style="background:#fff">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow"><span class="dot"></span>So arbeitet matchmaker.hr</span>
+      <h2>Vier spezialisierte <span class="accent">Agenten</span> – ein Berater, der entscheidet.</h2>
+      <p class="lead">Jeder wiederkehrende Schritt im Vermittlungsprozess läuft automatisch zu. Die KI bereitet vor, der Berater gibt frei.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="num"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg></div><div class="ag">Profiling Agent</div><h3>Bedarfsanalyse &amp; Profiling</h3><p>Strukturierte Erfassung des Suchauftrags – daraus entsteht ein präzises Qualifikationsprofil und Suchkriterien für alle Agenten.</p></div>
+      <div class="step"><div class="num"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803a7.5 7.5 0 0010.607 0z"/></svg></div><div class="ag">Market Agent</div><h3>Vakanzidentifikation</h3><p>Kontinuierliches Scanning von Jobboards und Unternehmenswebsites – neue Vakanzen werden mit dem Kandidatenpool abgeglichen.</p></div>
+      <div class="step"><div class="num"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 7.5l1.035-.259a3.375 3.375 0 002.456-2.455l.259-1.036.259 1.035a3.375 3.375 0 002.455 2.456L21.75 7.5l-1.035.259a3.375 3.375 0 00-2.456 2.455z"/></svg></div><div class="ag">Matching Agent</div><h3>Intelligentes Scoring</h3><p>Semantisches Scoring auf Basis von Qualifikation und Karriereverlauf – mit nachvollziehbarer Begründung je Empfehlung.</p></div>
+      <div class="step"><div class="num"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.125A59.769 59.769 0 0121.485 12 59.77 59.77 0 013.27 20.875L5.999 12zm0 0h7.5"/></svg></div><div class="ag">Outreach Agent</div><h3>Kontaktierung</h3><p>Automatische Recherche des Ansprechpartners und ein individualisiertes Anschreiben – bereitgestellt zur Freigabe per Klick.</p></div>
+    </div>
+    <div class="hil">
+      <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7db8f0" stroke-width="1.9"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.96 11.96 0 013.6 6 12 12 0 003 9.75c0 5.59 3.82 10.29 9 11.62 5.18-1.33 9-6.03 9-11.62 0-1.31-.21-2.57-.6-3.75h-.15c-3.2 0-6.1-1.25-8.25-3.29z"/></svg></div>
+      <div class="t"><b style="color:#fff">Human-in-the-Loop.</b> Von der Marktanalyse bis zum fertigen Anschreiben automatisiert die KI jeden Schritt. Erst das tatsächliche Versenden gibt der Berater frei – so bleibt die Kontrolle bei Ihnen.</div>
+      <span class="pill pill-green" style="background:rgba(34,197,94,.18);color:#7ee2a8">Sie behalten die Kontrolle</span>
+    </div>
+  </div>
+</section>
+
+<!-- TALENTPOOL / ABGLEICH -->
+<section class="sec" id="pool" style="background:var(--surface)">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow"><span class="dot"></span>Ihr Talentpool</span>
+      <h2>Ihr Kandidatenpool, automatisch mit dem <span class="accent">Markt abgeglichen.</span></h2>
+      <p class="lead">Der Market Agent gleicht Ihre Kandidaten laufend mit neuen Vakanzen ab. Der Matching Agent bewertet jede Empfehlung nachvollziehbar – auch schwächere Treffer werden transparent als solche markiert.</p>
+    </div>
+    <div class="pool-grid">
+      <div class="pcard">
+        <div class="top"><div class="initc" style="width:46px;height:46px;font-size:.85rem">MM</div><div><div class="nm">Max Mustermann</div><div class="ro">Senior IT Projektleiter · Hamburg</div></div></div>
+        <div class="vac"><span class="ar">→</span><div><div class="vt">Director Cloud Architecture</div><div class="vc">Nexis Cloud Systems GmbH · LinkedIn</div></div><span style="margin-left:auto;font-weight:800;color:#16a34a;font-size:1.05rem">94</span></div>
+        <div class="ctx"><span class="gi">✓</span>Bester von 2 Treffern · mit KI-Begründung</div>
+      </div>
+      <div class="pcard">
+        <div class="top"><div class="initc" style="width:46px;height:46px;font-size:.85rem">LH</div><div><div class="nm">Lena Hofmann</div><div class="ro">Senior Frontend Engineer · München</div></div></div>
+        <div class="vac"><span class="ar">→</span><div><div class="vt">Lead Frontend Engineer</div><div class="vc">Acme Cloud GmbH · StepStone</div></div><span style="margin-left:auto;font-weight:800;color:#2976d6;font-size:1.05rem">88</span></div>
+        <div class="ctx"><span class="gi">✓</span>Nachricht vorbereitet – zur Freigabe</div>
+      </div>
+      <div class="pcard">
+        <div class="top"><div class="initc" style="width:46px;height:46px;font-size:.85rem">AS</div><div><div class="nm">Aylin Schuster</div><div class="ro">Senior SRE · Berlin</div></div></div>
+        <div class="vac"><span class="ar">→</span><div><div class="vt">Site Reliability Engineer</div><div class="vc">Finbridge GmbH · Xing</div></div><span style="margin-left:auto;font-weight:800;color:#ea580c;font-size:1.05rem">61</span></div>
+        <div class="ctx"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#ea580c" stroke-width="2" style="flex-shrink:0"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m0 3.75h.008M10.34 3.94L1.99 18a1.5 1.5 0 001.3 2.25h17.42a1.5 1.5 0 001.3-2.25L13.66 3.94a1.5 1.5 0 00-2.6 0z"/></svg>Eingeschränkter Match · 2 von 5 Kriterien</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COCKPIT / DASHBOARD + HUMAN-IN-THE-LOOP -->
+<section class="sec" style="background:#fff">
+  <div class="wrap two">
+    <div>
+      <span class="eyebrow"><span class="dot"></span>KI-Begründung</span>
+      <h2 style="margin:18px 0 14px">Die KI bereitet vor. <span class="accent">Sie entscheiden.</span></h2>
+      <p class="lead">Alle Agenten arbeiten im Hintergrund und legen Ihnen versandfertige Vorschläge vor. Nichts geht raus, bevor Sie es freigegeben haben.</p>
+      <ul class="feat-list">
+        <li><span class="ck">✓</span>Pro Kandidat automatisch gefundene Vakanzen mit Match-Score</li>
+        <li><span class="ck">✓</span>Nachvollziehbare KI-Begründung zu jedem Treffer</li>
+        <li><span class="ck">✓</span>Die Nachricht geht erst nach Ihrer Freigabe raus</li>
+      </ul>
+    </div>
+    <div style="position:relative">
+      <div class="browser">
+        <div class="browser-bar">
+          <i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i>
+          <span class="browser-url">app-matchmaker-hr.netlify.app/kandidaten</span>
+        </div>
+        <div class="dash">
+          <div style="font-weight:700;font-size:1rem">Director Cloud Architecture &amp; Enterprise IT (m/w/d)</div>
+          <div style="font-size:.76rem;color:var(--muted);margin-top:4px;display:flex;align-items:center;gap:7px;flex-wrap:wrap">Nexis Cloud Systems GmbH · Berlin <span class="src-pill" style="margin-left:0">LinkedIn</span> · 17.6.2026</div>
+          <div class="kibox">
+            <div class="kiscore">
+              <div class="kinum">94</div>
+              <div class="kilbl">Match Score</div>
+            </div>
+            <div class="kitext">
+              <div class="kihead"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/></svg>KI-Begründung</div>
+              <p>Passt, weil Qualifikationsprofil, Führungsverantwortung und Rahmenbedingungen der Vakanz nahezu deckungsgleich mit dem Kandidatenprofil sind.</p>
+              <p style="margin-top:8px">Die Anforderungen treffen die Kernkompetenzen punktgenau: 12 Jahre IT-Infrastruktur-Erfahrung inkl. Consulting-Background, nachgewiesene Führung eines 15-FTE-Teams sowie Budgetverantwortung von 1,5 Mio. € p.a. Auch die geforderten Zertifizierungen (PMP, Certified Scrum Master) sind vollständig vorhanden; die Cloud-Skalierung von 10 auf 200 Knoten ist ein klares strategisches Asset.</p>
+              <p style="margin-top:8px">Der Standort Berlin weicht zwar vom Wohnort Hamburg ab – das hybride Modell mit bis zu 80 % Remote deckt sich aber exakt mit der Suchpräferenz und entschärft das Risiko vollständig.</p>
+              <p style="margin-top:8px"><b style="color:var(--ink)">Empfehlung:</b> Direktansprache mit hoher Priorität – Closing-Potenzial sehr hoch. Titel-Upgrade (Director) als zentrales Verkaufsargument positionieren.</p>
+              <div class="kirate">Bewertung zutreffend? <span class="kistars">★★★★★</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUTREACH / NACHRICHT (gespiegelt: Mockup links, Text rechts) -->
+<section class="sec" style="background:#fff">
+  <div class="wrap two rev">
+    <div>
+      <div class="browser">
+        <div class="browser-bar">
+          <i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i>
+          <span class="browser-url">app-matchmaker-hr.netlify.app/nachrichten</span>
+        </div>
+        <div class="dash">
+          <div style="display:flex;align-items:center;gap:9px;font-weight:700;font-size:.98rem">Nachricht an Christian Weber <span class="src-pill" style="margin-left:0">Entwurf</span></div>
+          <div style="display:grid;grid-template-columns:120px 1fr;gap:6px 22px;margin-top:14px">
+            <div><div class="msg-lbl">Kandidat</div><div class="msg-val">Max Mustermann</div></div>
+            <div><div class="msg-lbl">Vakanz</div><div class="msg-val">Director Cloud Architecture &amp; Enterprise IT (m/w/d) · Nexis Cloud Systems GmbH</div></div>
+          </div>
+          <div class="msg-field">
+            <div class="msg-lbl">Empfänger &amp; Kanal auswählen</div>
+            <div style="display:flex;align-items:center;gap:8px;font-size:.81rem;flex-wrap:wrap"><span style="font-weight:600">Christian Weber</span><span class="src-pill" style="margin-left:0">E-Mail</span><span style="color:var(--muted)">c.weber@nexis-cloud.example.com</span></div>
+          </div>
+          <div style="margin-top:13px"><div class="msg-lbl">Betreff</div><div class="msg-input">Erfahrener Director Cloud Architecture – Passung zu Ihrer Vakanz</div></div>
+          <div style="margin-top:13px"><div class="msg-lbl">Nachricht</div><div class="msg-body">Sehr geehrte Damen und Herren, ich melde mich, weil ich eine Führungspersönlichkeit betreue, die hervorragend auf Ihre Position als Director Cloud Architecture &amp; Enterprise IT passt.<br><br>Die Person bringt 12 Jahre IT-Erfahrung mit, davon 5 in leitender Funktion, und hat eine Cloud-Infrastruktur von 10 auf 200 Knoten skaliert …<br><br>Gerne sende ich Ihnen das vollständige Profil zu oder stehe für ein kurzes Gespräch zur Verfügung.</div></div>
+          <div class="msg-foot">
+            <span class="msg-btn">Schließen</span>
+            <span class="msg-btn">Speichern</span>
+            <span class="msg-btn msg-btn-primary">Als Versandbereit markieren</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <span class="eyebrow"><span class="dot"></span>Outreach Agent</span>
+      <h2 style="margin:18px 0 14px">Das Anschreiben? <span class="accent">Schon formuliert.</span></h2>
+      <p class="lead">Der Outreach Agent recherchiert den passenden Ansprechpartner, wählt den Kanal und formuliert eine individuelle Nachricht – versandfertig als Entwurf. Sie prüfen, passen bei Bedarf an und geben frei.</p>
+      <ul class="feat-list">
+        <li><span class="ck">✓</span>Ansprechpartner und Kanal automatisch ermittelt</li>
+        <li><span class="ck">✓</span>Individuell formulierter Betreff und Text je Kontakt</li>
+        <li><span class="ck">✓</span>Versand erst nach Ihrer Freigabe – „Als versandbereit markieren"</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- STATS (reale Kennzahlen) -->
+<section class="sec stats">
+  <div class="glow"></div>
+  <div class="wrap">
+    <div class="sec-head center" style="margin-bottom:48px">
+      <h2 style="color:#fff;margin:0">Spürbare Entlastung, <span class="accent">messbare Wirkung</span></h2>
+    </div>
+    <div class="stats-grid">
+      <div class="scard">
+        <div class="scard-top">
+          <div class="sicon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 17 13.5 8.5 8.5 13.5 2 7"/><polyline points="16 17 22 17 22 11"/></svg></div>
+          <div class="big">−70 %</div>
+          <div class="lb">weniger Sourcing-Aufwand</div>
+        </div>
+        <div class="ds">Kein manuelles Jobboard-Screening mehr.</div>
+      </div>
+      <div class="scard">
+        <div class="scard-top">
+          <div class="sicon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3c2.755 0 5.455.232 8.083.678.533.09.917.556.917 1.096v1.044a2.25 2.25 0 01-.659 1.591l-5.432 5.432a2.25 2.25 0 00-.659 1.591v2.927a2.25 2.25 0 01-1.244 2.013L9.75 21v-6.568a2.25 2.25 0 00-.659-1.591L3.659 7.409A2.25 2.25 0 013 5.818V4.774c0-.54.384-1.006.917-1.096A48.32 48.32 0 0112 3z"/></svg></div>
+          <div class="big">4 → 1</div>
+          <div class="lb">Schritte bis zur Freigabe</div>
+        </div>
+        <div class="ds">Vier Agenten arbeiten zu, der Berater gibt frei.</div>
+      </div>
+      <div class="scard">
+        <div class="scard-top">
+          <div class="sicon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.96 11.96 0 013.6 6 12 12 0 003 9.75c0 5.59 3.82 10.29 9 11.62 5.18-1.33 9-6.03 9-11.62 0-1.31-.21-2.57-.6-3.75h-.15c-3.2 0-6.1-1.25-8.25-3.29z"/></svg></div>
+          <div class="big">100 %</div>
+          <div class="lb">EU-Hosting</div>
+        </div>
+        <div class="ds">DSGVO-konform, Daten bleiben in der EU.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VERGLEICH -->
+<section class="sec" id="vergleich" style="background:#fff">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow"><span class="dot"></span>Manuell vs. matchmaker.hr</span>
+      <h2>Ihre Zeit gehört der <span class="accent">Beratung.</span></h2>
+      <p class="lead">Nicht dem manuellen Sourcing. Recruiting frisst Stunden mit wiederkehrender Klickarbeit – Zeit, die für Mandate fehlt.</p>
+    </div>
+    <div class="compare">
+      <div class="col a">
+        <div class="clbl a">Ohne matchmaker.hr</div>
+        <ul>
+          <li class="a-txt"><span class="x">✕</span>Manuelles Jobboard-Screening, Tag für Tag</li>
+          <li class="a-txt"><span class="x">✕</span>Kandidatenpool veraltet, kaum jemand pflegt ihn nach</li>
+          <li class="a-txt"><span class="x">✕</span>Anschreiben werden einzeln recherchiert und getippt</li>
+          <li class="a-txt"><span class="x">✕</span>Mehr Mandate gehen nur über mehr Personal</li>
+        </ul>
+      </div>
+      <div class="col b">
+        <div class="clbl b">Mit matchmaker.hr</div>
+        <ul>
+          <li class="b-txt"><span class="v">✓</span>Der Market Agent scannt den Stellenmarkt automatisch</li>
+          <li class="b-txt"><span class="v">✓</span>Laufender Abgleich hält den Pool aktuell</li>
+          <li class="b-txt"><span class="v">✓</span>Versandfertige Anschreiben – Freigabe per Klick</li>
+          <li class="b-txt"><span class="v">✓</span>Skalierung ohne Neueinstellung, der Berater entscheidet</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="sec" style="background:var(--surface)">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow"><span class="dot"></span>Warum matchmaker.hr</span>
+      <h2>KI-gestützte Automatisierung für <span class="accent">modernes Recruiting.</span></h2>
+    </div>
+    <div class="ben-grid">
+      <div class="ben"><div class="ic">◎</div><h3>Automatisierte Marktanalyse</h3><p>Kontinuierliches Scanning relevanter Quellen und automatischer Abgleich mit Ihrem Kandidatenpool.</p></div>
+      <div class="ben"><div class="ic">✓</div><h3>Intelligentes Matching</h3><p>Semantisches Scoring auf Basis von Qualifikation und Erfahrung – mit transparenter Begründung.</p></div>
+      <div class="ben"><div class="ic">✉</div><h3>Skalierbarer Outreach</h3><p>Automatische Identifikation von Ansprechpartnern und Erstellung versandfertiger Anschreiben.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="sec" style="background:#fff">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow"><span class="dot"></span>Aus der Praxis</span>
+      <h2>So setzen Berater <span class="accent">matchmaker.hr</span> ein.</h2>
+    </div>
+    <div class="test-grid">
+      <div class="test">
+        <div class="stars">★★★★★</div>
+        <p class="q">„Der Market Agent liefert täglich qualifizierte Vakanzen – ohne manuelles Jobboard-Screening. Der Sourcing-Aufwand halbiert sich."</p>
+        <div class="who"><div><div class="nm">Senior Consultant</div><div class="ro">Personalberatung · IT &amp; Engineering</div></div></div>
+      </div>
+      <div class="test">
+        <div class="stars">★★★★★</div>
+        <p class="q">„Nicht mehr die meisten Treffer, sondern die richtigen – mit einer Begründung, die sich Kunden direkt präsentieren lässt."</p>
+        <div class="who"><div><div class="nm">Head of Recruiting</div><div class="ro">Recruiting-Team · 8 Berater</div></div></div>
+      </div>
+      <div class="test">
+        <div class="stars">★★★★★</div>
+        <p class="q">„Die Anschreiben sind individuell, professionell und versandfertig. Der Berater gibt nur noch frei – das spart täglich Stunden."</p>
+        <div class="who"><div><div class="nm">Managing Director</div><div class="ro">Executive Search Boutique</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PREISE -->
+<section class="sec" id="preise" style="background:#fff">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow"><span class="dot"></span>Preise</span>
+      <h2>Effizientes Talentpool-Management – <span class="accent">zum fairen Preis.</span></h2>
+      <p class="lead">Wählen Sie den Plan, der zu Ihren Anforderungen passt. Upgrades oder Downgrades sind jederzeit möglich.</p>
+    </div>
+    <div class="price-grid">
+
+      <div class="pcardx">
+        <div class="pname">Bring Your Own Key</div>
+        <div class="pdesc">Direkte Abrechnung über den eigenen API-Account, ohne weitere Aufschläge.</div>
+        <div class="pprice"><b>Kostenlos</b></div>
+        <div class="pdiv"></div>
+        <ul class="pfeat">
+          <li><img class="pfico" src="https://api.iconify.design/lucide/key-round.svg?color=%23172b4d" alt="" width="17" height="17" onerror="this.style.display='none'" />Eigener KI-API-Schlüssel erforderlich</li>
+          <li><img class="pfico" src="https://api.iconify.design/lucide/credit-card.svg?color=%23172b4d" alt="" width="17" height="17" onerror="this.style.display='none'" />Direkte Abrechnung beim Anbieter</li>
+          <li><img class="pfico" src="https://api.iconify.design/lucide/badge-check.svg?color=%23172b4d" alt="" width="17" height="17" onerror="this.style.display='none'" />Keine versteckten Aufschläge oder Margen</li>
+          <li><img class="pfico" src="https://api.iconify.design/lucide/scan-search.svg?color=%23172b4d" alt="" width="17" height="17" onerror="this.style.display='none'" />Volle Transparenz über die eigene Nutzung</li>
+        </ul>
+      </div>
+
+      <div class="pcardx feat">
+        <div class="pname">Enterprise Lizenz</div>
+        <div class="pdesc">Für Personalberater, die ihren gesamten Recruiting-Prozess automatisieren wollen.</div>
+        <div class="pprice"><b>129,00 €</b><span class="pper">/ Monat</span></div>
+        <div class="pdiv"></div>
+        <div class="plabel">Leistungen</div>
+        <ul class="pfeat">
+          <li><img class="pfico" src="https://api.iconify.design/lucide/users.svg?color=%234ade80" alt="" width="17" height="17" onerror="this.style.display='none'" />3 Mitarbeiter-Lizenzen</li>
+          <li><img class="pfico" src="https://api.iconify.design/lucide/server.svg?color=%234ade80" alt="" width="17" height="17" onerror="this.style.display='none'" />Hosting Ihrer Kandidatenprofile und Vakanzen</li>
+          <li><img class="pfico" src="https://api.iconify.design/lucide/bot.svg?color=%234ade80" alt="" width="17" height="17" onerror="this.style.display='none'" />Multi-Agenten-System vollständig enthalten</li>
+          <li><img class="pfico" src="https://api.iconify.design/lucide/calendar-x.svg?color=%234ade80" alt="" width="17" height="17" onerror="this.style.display='none'" />Monatlich kündbar, keine Mindestlaufzeit</li>
+        </ul>
+        <div class="pdiv"></div>
+        <div class="plabel">Talent-Pool Größe</div>
+        <div class="psel-wrap">
+          <select id="tierSelect" class="psel">
+            <option value="129,00 €">Bis zu 50 Talente</option>
+            <option value="159,00 €">50 – 100 Talente</option>
+            <option value="199,00 €">100 – 250 Talente</option>
+            <option value="249,00 €">Über 250 Talente</option>
+          </select>
+          <svg class="psel-chev" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+        </div>
+        <a class="pbtn pbtn-blue" href="#">Jetzt loslegen →</a>
+      </div>
+
+      <div class="pcardx">
+        <div class="pname">Zusätzliche Mitarbeiter</div>
+        <div class="pdesc">Für wachsende Teams – alle Leistungen der Enterprise Lizenz, skalierbar je Mitarbeiter.</div>
+        <div class="pprice"><b>19,99 €</b><span class="pper">/ Lizenz &amp; Monat</span></div>
+        <div class="pdiv"></div>
+        <div class="plabel">Leistungen</div>
+        <ul class="pfeat">
+          <li><img class="pfico" src="https://api.iconify.design/lucide/circle-plus.svg?color=%23172b4d" alt="" width="17" height="17" onerror="this.style.display='none'" />Alle Leistungen der Enterprise Lizenz</li>
+          <li><img class="pfico" src="https://api.iconify.design/lucide/user-check.svg?color=%23172b4d" alt="" width="17" height="17" onerror="this.style.display='none'" />Skalierbar je zusätzlicher Mitarbeiter</li>
+          <li><img class="pfico" src="https://api.iconify.design/lucide/calendar-x.svg?color=%23172b4d" alt="" width="17" height="17" onerror="this.style.display='none'" />Monatlich kündbar, keine Mindestlaufzeit</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="sec" style="background:#fff;padding-top:8px">
+  <div class="wrap">
+    <div class="cta-band">
+      <div class="glow"></div>
+      <div class="cta-inner">
+        <div>
+          <h2 style="color:#fff">Wie viele Stunden kostet Sie manuelles Sourcing – Woche für Woche?</h2>
+          <p>matchmaker.hr automatisiert die wiederkehrende Recherche bis zum fertigen Anschreiben. Lassen Sie es sich in 15 Minuten zeigen – oder starten Sie direkt.</p>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a class="btn btn-blue" href="#">Jetzt anmelden →</a>
+          <a class="btn btn-ghost-dark" href="#">Demo vereinbaren</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="brand"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9.8 15.9L9 18.75l-.81-2.85a4.5 4.5 0 00-3.09-3.09L2.25 12l2.85-.81a4.5 4.5 0 003.09-3.09L9 5.25l.81 2.85a4.5 4.5 0 003.09 3.09L15.75 12l-2.85.81a4.5 4.5 0 00-3.09 3.09z"/></svg></span>matchmaker.hr</div>
+        <p class="tag">Ihr Partner für effizientes Talentpool-Management.</p>
+      </div>
+      <div><h4>Navigation</h4><ul><li><a href="#">Start</a></li><li><a href="#">Produkt</a></li><li><a href="#">Preise</a></li><li><a href="#">Kontakt</a></li></ul></div>
+      <div><h4>Rechtliches</h4><ul><li><a href="#">Datenschutz</a></li><li><a href="#">Impressum</a></li><li><a href="#">AGB</a></li></ul></div>
+      <div><h4>Kontakt</h4><ul><li><a href="#">Email: info@matchmaker.hr</a></li></ul></div>
+    </div>
+    <div class="foot-bottom" style="justify-content:center">
+      <span>© 2026 matchmaker.hr. Alle Rechte vorbehalten.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="preview-flag">matchmaker.hr · Landingpage-Redesign</div>
+
+<script>
+(function(){
+  var sel = document.getElementById('tierSelect');
+  var priceEl = document.querySelector('#preise .feat .pprice b');
+  if(sel && priceEl){
+    sel.addEventListener('change', function(){ priceEl.textContent = sel.value; });
+  }
+})();
+</script>
+
+</body>
+</html>

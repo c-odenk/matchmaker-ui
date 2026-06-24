@@ -250,7 +250,7 @@ export default {
         srcset: `${mockup800} 800w, ${mockup1200} 1200w, ${mockup1600} 1600w, ${mockupFull} 2875w`
       },
       hero: {
-        badge: 'KI-gestütztes Talentpool-Management',
+        badge: 'Für Personalberatungen & Recruiter',
         headingBefore: 'Recruiting-Automatisierung, die ',
         headingAccent: 'Ihrem Urteil',
         headingAfter: ' vertraut.',
