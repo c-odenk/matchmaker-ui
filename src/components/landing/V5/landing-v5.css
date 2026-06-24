@@ -131,11 +131,12 @@ html{scroll-behavior:smooth}
 .lp5 .browser-url{margin-left:12px;font-size:.72rem;color:rgba(255,255,255,.4);background:rgba(255,255,255,.06);padding:4px 12px;border-radius:6px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .lp5 .dash{background:#fff;color:var(--ink);padding:20px 22px}
 .lp5 .src-pill{display:inline-block;font-size:.66rem;font-weight:600;color:#56657c;background:#eef2f7;border:1px solid var(--line);border-radius:6px;padding:1px 7px;margin-left:4px;vertical-align:middle}
-.lp5 .kibox{margin-top:16px;display:flex;gap:18px;background:#f0faf4;border:1px solid #cdeed9;border-radius:14px;padding:18px 20px}
-.lp5 .kiscore{flex-shrink:0;width:78px;text-align:center}
+.lp5 .kibox{margin-top:16px;display:grid;grid-template-columns:auto 1fr;column-gap:18px;row-gap:8px;align-items:start;background:#f0faf4;border:1px solid #cdeed9;border-radius:14px;padding:18px 20px}
+.lp5 .kiscore{width:78px;text-align:center;grid-column:1;grid-row:1 / span 2}
 .lp5 .kinum{width:62px;height:62px;border-radius:50%;border:3px solid #16a34a;color:#16a34a;display:flex;align-items:center;justify-content:center;font-size:1.35rem;font-weight:800;margin:0 auto}
 .lp5 .kilbl{font-size:.58rem;text-transform:uppercase;letter-spacing:.05em;color:#15803d;font-weight:700;margin-top:7px}
-.lp5 .kihead{display:flex;align-items:center;gap:7px;font-weight:700;color:#15803d;font-size:.9rem;margin-bottom:8px}
+.lp5 .kihead{display:flex;align-items:center;gap:7px;font-weight:700;color:#15803d;font-size:.9rem;grid-column:2;grid-row:1}
+.lp5 .kitext{grid-column:2;grid-row:2}
 .lp5 .kitext p{font-size:.82rem;color:var(--body);line-height:1.55}
 .lp5 .kirate{margin-top:13px;font-size:.76rem;color:var(--muted);display:flex;align-items:center;gap:8px}
 .lp5 .kistars{color:#f59e0b;letter-spacing:1px}
@@ -144,6 +145,7 @@ html{scroll-behavior:smooth}
 .lp5 .msg-field{margin-top:14px;border:1.5px solid #ea580c;border-radius:10px;padding:10px 13px;background:#fff}
 .lp5 .msg-input{font-size:.8rem;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:9px;padding:9px 12px;margin-top:4px}
 .lp5 .msg-body{font-size:.78rem;color:var(--body);background:var(--surface);border:1px solid var(--line);border-radius:9px;padding:11px 13px;margin-top:4px;line-height:1.55}
+.lp5 .msg-body-short{display:none}
 .lp5 .msg-foot{display:flex;justify-content:flex-end;gap:8px;margin-top:16px}
 .lp5 .msg-btn{height:34px;display:inline-flex;align-items:center;padding:0 13px;border-radius:8px;font-size:.76rem;font-weight:600;border:1px solid var(--line);background:#fff;color:var(--ink)}
 .lp5 .msg-btn-primary{background:#ea580c;color:#fff;border-color:#ea580c}
@@ -252,6 +254,11 @@ html{scroll-behavior:smooth}
   .lp5 .two,.lp5 .two.rev{grid-template-columns:1fr;gap:30px}
   .lp5 .steps{grid-template-columns:1fr 1fr}
   .lp5 .browser{max-width:540px;margin-left:auto;margin-right:auto}
+  /* KI-Begründung: Score + Titel in eine Zeile, Begründung volle Breite darunter (spart Platz) */
+  .lp5 .kibox{row-gap:14px}
+  .lp5 .kiscore{grid-row:1;align-self:center}
+  .lp5 .kihead{align-self:center}
+  .lp5 .kitext{grid-column:1 / span 2}
   .lp5 .compare{grid-template-columns:1fr}
   .lp5 .compare .col.b{border-left:none;border-top:1px solid var(--line)}
   .lp5 .foot-grid{grid-template-columns:1fr 1fr;gap:28px}
@@ -260,7 +267,9 @@ html{scroll-behavior:smooth}
 }
 
 @media(max-width:560px){
-  .lp5 .wrap{padding:0 18px}
+  /* nur horizontal verkleinern – sonst würde das padding-shorthand das
+     vertikale Padding von .wrap-Elementen wie .hero-grid/.sources-row killen */
+  .lp5 .wrap{padding-left:18px;padding-right:18px}
   .lp5 .hero-cta{flex-direction:column;align-items:stretch}
   .lp5 .hero-cta .btn{width:100%}
   .lp5 .cta-inner>div:last-child{flex-direction:column;width:100%}
@@ -270,6 +279,10 @@ html{scroll-behavior:smooth}
   .lp5 .foot-grid{grid-template-columns:1fr;gap:24px}
   .lp5 .cta-band{padding:32px 22px}
   .lp5 .hero-photo{max-width:330px}
+  /* Outreach-Nachricht: gekürzte Variante auf dem Smartphone */
+  .lp5 .msg-body-full{display:none}
+  .lp5 .msg-body-short{display:block}
+  .lp5 .msg-foot{flex-wrap:wrap}
 }
 
 /* === Scroll-Reveal Animationen ===
