@@ -14,7 +14,7 @@
 
     <h2>Kontakt</h2>
     <p>
-      E-Mail: <a href="mailto:info@matchmaker.hr">info@matchmaker.hr</a>
+      E-Mail: <a href="mailto:info@matchmaker.hr">info@matchmaker-hr.de</a>
     </p>
 
     <h2>Registereintrag</h2>
