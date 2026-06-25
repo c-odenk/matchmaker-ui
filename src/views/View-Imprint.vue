@@ -14,7 +14,7 @@
 
     <h2>Kontakt</h2>
     <p>
-      Telefon:n.a.<br>
+      Telefon: n.a.<br>
       E-Mail: <a href="mailto:info@matchmaker.hr">info@matchmaker.hr</a>
     </p>
 
