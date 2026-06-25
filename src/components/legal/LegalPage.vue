@@ -1,64 +1,47 @@
 <template>
-  <div class="flex flex-col min-h-screen">
-    <Header />
+  <div class="lp5">
+    <LandingHeader />
+    <main>
+      <!-- Titel-Band (Navy + Glow, wie Hero/CTA) -->
+      <section class="legal-head">
+        <span class="legal-head-glow" aria-hidden="true"></span>
+        <div class="wrap">
+          <router-link to="/" class="legal-back">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"/></svg>
+            Zurück zur Startseite
+          </router-link>
+          <h1>{{ title }}</h1>
+        </div>
+      </section>
 
-    <main class="flex-1 bg-white">
-      <section class="py-12 md:py-16 lg:py-20">
-        <div class="mx-auto max-w-container-sm md:max-w-container-md lg:max-w-container-lg 2xl:max-w-container px-container-h">
-
-          <h1 class="text-h2-sm md:text-h2-md lg:text-h2-lg 2xl:text-h2-2xl text-black leading-tight mb-3">
-            {{ title }}
-          </h1>
-          <div class="legal-content mt-8 md:mt-10">
+      <!-- Inhalt -->
+      <section class="sec">
+        <div class="wrap">
+          <div class="legal-content">
             <slot />
           </div>
-
         </div>
       </section>
     </main>
-
-    <Footer />
+    <LandingFooter />
+    <LandingDemoModal />
   </div>
 </template>
 
 <script>
-import Header from '@/components/header/Header.vue'
-import Footer from '@/components/footer/Footer.vue'
+import LandingHeader from '@/components/landing/V5/Landing-Header-V5.vue'
+import LandingFooter from '@/components/landing/V5/Landing-Footer-V5.vue'
+import LandingDemoModal from '@/components/landing/V5/Landing-DemoModal-V5.vue'
 
 export default {
   name: 'LegalPage',
-  components: { Header, Footer },
+  components: { LandingHeader, LandingFooter, LandingDemoModal },
   props: {
-    title: {
-      type: String,
-      required: true
-    },
+    title: { type: String, required: true }
   }
 }
 </script>
 
-<style scoped>
-.legal-content :slotted(h2) {
-  @apply text-h3 text-black mt-10 mb-3;
-}
-
-.legal-content :slotted(h3) {
-  @apply text-p font-bold text-black mt-6 mb-2;
-}
-
-.legal-content :slotted(p) {
-  @apply text-p text-black/80 mb-4 leading-relaxed;
-}
-
-.legal-content :slotted(ul) {
-  @apply text-p text-black/80 mb-4 pl-5 list-disc flex flex-col gap-1.5;
-}
-
-.legal-content :slotted(a) {
-  @apply text-light-blue hover:underline;
-}
-
-.legal-content :slotted(address) {
-  @apply text-p text-black/80 not-italic mb-4 leading-relaxed;
-}
-</style>
+<!-- Stellt sicher, dass das V5-Stylesheet auch beim Direktaufruf einer
+     Rechtsseite (Deep-Link) geladen ist – nicht nur über die Landingpage. -->
+<style src="../landing/V5/landing-v5.css"></style>

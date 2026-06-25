@@ -3,9 +3,9 @@
 
     <h2>1. Verantwortlicher</h2>
     <address>
-      matchmaker.hr GmbH<br>
-      Musterstraße 12<br>
-      41061 Mönchengladbach<br>
+      matchmaker.hr<br>
+      Ravensberger Str. 21<br>
+      53474 Bad Neuenahr-Ahrweiler<br>
       E-Mail: <a href="mailto:info@matchmaker.hr">info@matchmaker.hr</a>
     </address>
 

@@ -47,8 +47,13 @@ export default {
   methods: {
     go(id) {
       this.menuOpen = false
-      const el = document.getElementById(id)
-      if (el) this.$nextTick(() => el.scrollIntoView({ behavior: 'smooth' }))
+      // Auf der Landingpage direkt scrollen; von einer Unterseite zurück zur
+      // Startseite navigieren (der Router scrollt per scrollBehavior zum Anker).
+      if (this.$route.path === '/') {
+        const el = document.getElementById(id)
+        if (el) { el.scrollIntoView({ behavior: 'smooth' }); return }
+      }
+      this.$router.push({ path: '/', hash: '#' + id })
     },
     openDemo() {
       this.menuOpen = false

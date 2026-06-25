@@ -3,13 +3,13 @@
 
     <h2>Angaben gemäß § 5 DDG</h2>
     <address>
-      matchmaker.hr GmbH<br>
-      Musterstraße 12<br>
-      41061 Mönchengladbach<br>
+      matchmaker.hr<br>
+      Ravensberger Str. 21<br>
+      53474 Bad Neuenahr-Ahrweiler<br>
       Deutschland
     </address>
     <p>
-      Vertreten durch den Geschäftsführer: Max Mustermann
+      Vertreten durch den Geschäftsführer: Christopher Odenkirchen
     </p>
 
     <h2>Kontakt</h2>
@@ -21,8 +21,8 @@
     <h2>Registereintrag</h2>
     <p>
       Eintragung im Handelsregister.<br>
-      Registergericht: Amtsgericht Mönchengladbach<br>
-      Registernummer: HRB 00000
+      Registergericht: <br>
+      Registernummer: 
     </p>
 
     <h2>Umsatzsteuer-ID</h2>
@@ -33,9 +33,9 @@
 
     <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
     <p>
-      Max Mustermann<br>
-      Musterstraße 12<br>
-      41061 Mönchengladbach
+      Christopher Odenkirchen<br>
+      Ravensberger Str. 21<br>
+      53474 Bad Neuenahr-Ahrweiler
     </p>
 
     <h2>EU-Streitschlichtung</h2>
