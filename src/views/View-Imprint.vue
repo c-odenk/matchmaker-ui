@@ -14,15 +14,15 @@
 
     <h2>Kontakt</h2>
     <p>
-      Telefon: +49 (0) 123 456789<br>
+      Telefon:n.a.<br>
       E-Mail: <a href="mailto:info@matchmaker.hr">info@matchmaker.hr</a>
     </p>
 
     <h2>Registereintrag</h2>
     <p>
       Eintragung im Handelsregister.<br>
-      Registergericht: <br>
-      Registernummer: 
+      Registergericht: n.a.<br>
+      Registernummer: n.a.
     </p>
 
     <h2>Umsatzsteuer-ID</h2>
