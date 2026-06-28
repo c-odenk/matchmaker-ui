@@ -27,7 +27,7 @@
 
           <div class="hero-cta">
             <a class="btn btn-blue" :href="loginUrl">Jetzt anmelden →</a>
-            <a class="btn btn-ghost-dark" href="#" @click.prevent="openDemo">Demo vereinbaren</a>
+            <button type="button" class="btn btn-ghost-dark" @click="openDemo">Demo vereinbaren</button>
           </div>
 
           <div class="hero-trust">
@@ -46,10 +46,12 @@
                 alt="Personalberaterin arbeitet mit matchmaker.hr am Laptop"
                 width="907"
                 height="982"
+                fetchpriority="high"
+                decoding="async"
               />
             </div>
 
-            <!-- Badge Layer (bleibt im DOM, aber unsichtbar) -->
+            <!-- Schwebende Badges um das Hero-Bild -->
             <div class="hero-badges">
               <div class="hero-badge hb-stat">
                 <span class="hb-ic hb-ic-green">
@@ -58,9 +60,7 @@
                     <polyline points="16 17 22 17 22 11"/>
                   </svg>
                 </span>
-                <span class="hb-txt">
-                  <b>−70&nbsp;%</b><i>weniger Aufwand</i>
-                </span>
+                <span class="hb-txt"><b>−70&nbsp;%</b>&nbsp;weniger Aufwand</span>
               </div>
 
               <div class="hero-badge hb-time">
@@ -80,7 +80,7 @@
                       d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9m11.25-5.25h-4.5m4.5 0v4.5m0-4.5L15 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15m11.25 5.25h-4.5m4.5 0v-4.5m0 4.5L15 15"/>
                   </svg>
                 </span>
-                Skalierbar
+                Skalierbarer Outreach
               </div>
             </div>
 
@@ -95,15 +95,15 @@
 
         <span class="src"><span class="srcmono">S</span>StepStone</span>
         <span class="src">
-          <img src="https://cdn.simpleicons.org/indeed" width="17" height="17" @error="imgErr" />
+          <img src="https://cdn.simpleicons.org/indeed" width="17" height="17" alt="" loading="lazy" @error="imgErr" />
           Indeed
         </span>
         <span class="src">
-          <img src="https://api.iconify.design/simple-icons/linkedin.svg?color=%230A66C2" width="17" height="17" @error="imgErr" />
+          <img src="https://api.iconify.design/simple-icons/linkedin.svg?color=%230A66C2" width="17" height="17" alt="" loading="lazy" @error="imgErr" />
           LinkedIn
         </span>
         <span class="src">
-          <img src="https://cdn.simpleicons.org/xing" width="17" height="17" @error="imgErr" />
+          <img src="https://cdn.simpleicons.org/xing" width="17" height="17" alt="" loading="lazy" @error="imgErr" />
           Xing
         </span>
 
@@ -142,11 +142,7 @@ export default {
 </script>
 
 <style>
-/* =========================================
-   HERO BADGES: hidden (clean UI state)
-   ========================================= */
-
-.lp5 .hero-badges {
-  display: none !important;
-}
+  .hero-badges {
+    display: none;
+  }
 </style>

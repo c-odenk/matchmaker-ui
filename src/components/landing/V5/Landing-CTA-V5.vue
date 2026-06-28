@@ -10,7 +10,7 @@
           </div>
           <div style="display:flex;gap:12px;flex-wrap:wrap">
             <a class="btn btn-blue" :href="loginUrl">Jetzt anmelden →</a>
-            <a class="btn btn-ghost-dark" href="#" @click.prevent="openDemo">Demo vereinbaren</a>
+            <button type="button" class="btn btn-ghost-dark" @click="openDemo">Demo vereinbaren</button>
           </div>
         </div>
       </div>

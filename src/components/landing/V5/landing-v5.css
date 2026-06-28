@@ -28,7 +28,7 @@ html{scroll-behavior:smooth}
 .lp5 .sec-head{max-width:660px;margin:0 auto 40px}
 .lp5 .sec-head.center{text-align:center}
 .lp5 .sec-head h2{margin:18px 0 14px}
-.lp5 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:46px;padding:0 22px;border-radius:9px;font-size:.97rem;font-weight:600;cursor:pointer;border:none;transition:.18s}
+.lp5 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:46px;padding:0 22px;border-radius:9px;font-size:.97rem;font-weight:600;font-family:inherit;cursor:pointer;border:none;transition:.18s}
 .lp5 .btn-blue{background:var(--blue);color:#fff}
 .lp5 .btn-blue:hover{background:#2065bd}
 .lp5 .btn-ghost{background:#fff;color:var(--ink);border:1px solid var(--line)}
@@ -49,7 +49,7 @@ html{scroll-behavior:smooth}
 .lp5 .nav-links a{display:inline-flex;align-items:center;gap:7px;cursor:pointer}
 .lp5 .nav-links a:hover{color:var(--blue)}
 .lp5 .nav-right{display:flex;align-items:center;gap:14px}
-.lp5 .nav-demo{display:inline-flex;align-items:center;gap:7px;font-size:.95rem;font-weight:500;color:#334155}
+.lp5 .nav-demo{display:inline-flex;align-items:center;gap:7px;font-size:.95rem;font-weight:500;font-family:inherit;color:#334155;background:none;border:none;padding:0;cursor:pointer}
 .lp5 .nav-demo:hover{color:var(--blue)}
 .lp5 .nav-toggle{display:none;width:42px;height:42px;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:10px;background:#fff;cursor:pointer;flex-shrink:0}
 .lp5 .nav-burger{position:relative;width:18px;height:14px}
@@ -81,7 +81,7 @@ html{scroll-behavior:smooth}
 .lp5 .hero h1{margin:20px 0 0}
 .lp5 .hero .lead{color:rgba(255,255,255,.82);max-width:614px;margin:18px 0 0}
 .lp5 .hero-cta{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}
-.lp5 .hero-trust{display:flex;gap:20px;margin-top:24px;flex-wrap:wrap;font-size:.85rem;color:rgba(255,255,255,.62)}
+.lp5 .hero-trust{display:flex;gap:20px;margin-top:14px;flex-wrap:wrap;font-size:.85rem;color:rgba(255,255,255,.62)}
 .lp5 .hero-trust span{display:inline-flex;align-items:center;gap:7px}
 .lp5 .hero-trust .ck{width:7px;height:7px;border-radius:50%;background:var(--green);flex-shrink:0}
 .lp5 .hero-visual{position:relative}
@@ -89,17 +89,16 @@ html{scroll-behavior:smooth}
 .lp5 .hero-photo{position:relative;width:100%;border-radius:22px;overflow:hidden;aspect-ratio:4/4.4;box-shadow:0 40px 90px rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.1)}
 .lp5 .hero-photo img{display:block;width:100%;height:100%;object-fit:cover}
 /* Schwebende Badges um das Hero-Bild */
-.lp5 .hero-badge{position:absolute;z-index:3;display:flex;align-items:center;gap:9px;background:#fff;border:1px solid var(--line);border-radius:13px;padding:9px 13px;box-shadow:0 16px 34px rgba(8,15,30,.20);font-size:.8rem;font-weight:600;color:var(--ink);white-space:nowrap}
-.lp5 .hero-badge .hb-ic{width:30px;height:30px;flex-shrink:0;border-radius:9px;display:flex;align-items:center;justify-content:center}
+.lp5 .hero-badge{position:absolute;z-index:3;display:flex;align-items:center;gap:7px;background:#fff;border:1px solid var(--line);border-radius:11px;padding:5px 9px;box-shadow:0 16px 34px rgba(8,15,30,.20);font-size:.72rem;font-weight:600;color:var(--ink);white-space:nowrap}
+.lp5 .hero-badge .hb-ic{width:25px;height:25px;flex-shrink:0;border-radius:8px;display:flex;align-items:center;justify-content:center}
 .lp5 .hb-ic-green{background:#e7f8ee;color:#15803d}
 .lp5 .hb-ic-blue{background:var(--blue-soft);color:var(--blue)}
 .lp5 .hb-ic-navy{background:rgba(23,43,77,.08);color:var(--navy)}
-.lp5 .hb-stat .hb-txt{display:flex;flex-direction:column;line-height:1}
-.lp5 .hb-stat .hb-txt b{font-size:1rem;font-weight:800;color:var(--ink)}
-.lp5 .hb-stat .hb-txt i{font-size:.68rem;font-weight:500;font-style:normal;color:var(--muted);margin-top:3px}
-.lp5 .hb-stat{top:28px;left:-26px}
-.lp5 .hb-time{bottom:48px;right:-22px}
-.lp5 .hb-scale{bottom:-14px;left:28px}
+.lp5 .hb-stat .hb-txt{display:inline-flex;align-items:baseline;gap:5px;line-height:1}
+.lp5 .hb-stat .hb-txt b{font-size:.86rem;font-weight:800;color:var(--ink)}
+.lp5 .hb-stat{top:112px;left:-92px}
+.lp5 .hb-time{top:50%;transform:translateY(-50%);right:-56px}
+.lp5 .hb-scale{bottom:112px;left:-82px}
 
 .lp5 .pill{display:inline-flex;align-items:center;gap:6px;font-size:.72rem;font-weight:600;padding:4px 10px;border-radius:999px}
 .lp5 .pill-blue{background:var(--blue-soft);color:var(--blue)}
@@ -209,9 +208,10 @@ html{scroll-behavior:smooth}
 .lp5 footer .brand{color:#fff;margin-bottom:14px}
 .lp5 footer .brand .mark{background:#fff;color:var(--navy)}
 .lp5 footer .tag{font-size:.9rem;max-width:270px}
-.lp5 footer h4{color:#fff;font-size:.82rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-bottom:16px}
+.lp5 footer h3{color:#fff;font-size:.82rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-bottom:16px}
 .lp5 footer ul{list-style:none;display:flex;flex-direction:column;gap:11px;font-size:.9rem}
-.lp5 footer ul a:hover{color:#fff}
+.lp5 footer ul a:hover,.lp5 footer ul .foot-link:hover{color:#fff}
+.lp5 footer ul .foot-link{background:none;border:none;padding:0;margin:0;font:inherit;color:inherit;cursor:pointer;text-align:left}
 .lp5 .foot-bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:44px;padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.82rem;color:rgba(255,255,255,.5)}
 
 .lp5 .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
@@ -247,6 +247,10 @@ html{scroll-behavior:smooth}
 
 @media(min-width:1536px){
   .lp5 .wrap{max-width:84rem}
+}
+/* Tablet-Band: rechtes Badge weniger weit raus, damit overflow:hidden es nicht beschneidet */
+@media(min-width:881px) and (max-width:1279px){
+  .lp5 .hb-time{right:-22px}
 }
 @media(max-width:880px){
   .lp5 .sec{padding:48px 0}
@@ -294,9 +298,9 @@ html{scroll-behavior:smooth}
   .lp5 .hero-badge{font-size:.73rem;padding:7px 10px;gap:7px}
   .lp5 .hero-badge .hb-ic{width:26px;height:26px}
   .lp5 .hb-stat .hb-txt b{font-size:.9rem}
-  .lp5 .hb-stat{top:14px;left:-10px}
-  .lp5 .hb-time{bottom:28px;right:-8px}
-  .lp5 .hb-scale{bottom:-12px;left:14px}
+  .lp5 .hb-stat{top:54px;left:-20px}
+  .lp5 .hb-time{top:50%;transform:translateY(-50%);right:-18px}
+  .lp5 .hb-scale{bottom:54px;left:-20px}
   /* Outreach-Nachricht: gekürzte Variante auf dem Smartphone */
   .lp5 .msg-body-full{display:none}
   .lp5 .msg-body-short{display:block}

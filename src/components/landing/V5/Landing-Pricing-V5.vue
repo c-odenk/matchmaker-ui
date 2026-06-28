@@ -36,7 +36,7 @@
           <div class="pdiv"></div>
           <div class="plabel">Talent-Pool Größe</div>
           <div class="psel-wrap">
-            <select class="psel" v-model="selectedPrice">
+            <select class="psel" v-model="selectedPrice" aria-label="Talent-Pool Größe">
               <option value="129,00 €">Bis zu 50 Talente</option>
               <option value="159,00 €">50 – 100 Talente</option>
               <option value="199,00 €">100 – 250 Talente</option>
