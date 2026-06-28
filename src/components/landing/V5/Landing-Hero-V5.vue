@@ -41,14 +41,18 @@
           <div class="hero-figure">
 
             <div class="hero-photo">
-              <img
-                :src="heroImg"
-                alt="Personalberaterin arbeitet mit matchmaker.hr am Laptop"
-                width="907"
-                height="982"
-                fetchpriority="high"
-                decoding="async"
-              />
+              <picture>
+                <source :srcset="heroAvif" type="image/avif" />
+                <source :srcset="heroWebp" type="image/webp" />
+                <img
+                  :src="heroImg"
+                  alt="Personalberaterin arbeitet mit matchmaker.hr am Laptop"
+                  width="907"
+                  height="982"
+                  fetchpriority="high"
+                  decoding="async"
+                />
+              </picture>
             </div>
 
             <!-- Schwebende Badges um das Hero-Bild -->
@@ -121,13 +125,17 @@
 <script>
 import { openDemoModal } from '@/components/landing/V5/demo-modal-store'
 import heroImg from '@/assets/Hero-Consultant.jpg'
+import heroWebp from '@/assets/Hero-Consultant.webp'
+import heroAvif from '@/assets/Hero-Consultant.avif'
 
 export default {
   name: 'LandingHeroV5',
   data() {
     return {
       loginUrl: process.env.VUE_APP_DASHBOARD_URL || '#',
-      heroImg
+      heroImg,
+      heroWebp,
+      heroAvif
     }
   },
   methods: {
