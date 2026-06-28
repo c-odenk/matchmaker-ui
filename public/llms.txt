@@ -1,0 +1,16 @@
+# matchmaker.hr
+
+> KI-gestütztes Talentpool-Management für Personalberater: matchmaker.hr automatisiert die zeitintensiven Schritte im Vermittlungsprozess – Marktanalyse, Matching und Outreach –, während der Berater per Human-in-the-Loop jede Entscheidung selbst trifft. DSGVO-konform mit EU-Hosting.
+
+matchmaker.hr arbeitet mit vier spezialisierten KI-Agenten, die dem Berater zuarbeiten: der Profiling Agent erstellt aus dem Suchauftrag ein strukturiertes Qualifikationsprofil, der Market Agent scannt kontinuierlich Jobboards und Unternehmenswebsites nach Vakanzen, der Matching Agent bewertet Kandidaten per semantischem Scoring mit nachvollziehbarer Begründung, und der Outreach Agent recherchiert Ansprechpartner und formuliert versandfertige Anschreiben. Die KI bereitet vor und schlägt vor – der Berater gibt jeden Schritt per Klick frei und entscheidet immer selbst.
+
+## Seiten
+
+- [Startseite](https://matchmaker-hr.de/): Produktüberblick, Funktionsweise der vier Agenten, Preise und Demo-Anfrage.
+- [Datenschutz](https://matchmaker-hr.de/privacy): Datenschutzerklärung – DSGVO-konform, Daten bleiben in der EU.
+- [Impressum](https://matchmaker-hr.de/imprint): Anbieterkennzeichnung und rechtliche Angaben.
+- [AGB](https://matchmaker-hr.de/terms): Allgemeine Geschäftsbedingungen.
+
+## Kontakt
+
+- [E-Mail an matchmaker.hr](mailto:info@matchmaker.hr): info@matchmaker.hr
