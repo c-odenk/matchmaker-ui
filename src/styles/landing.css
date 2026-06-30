@@ -1,0 +1,40 @@
+/* Globale Cross-Cutting-Styles der Landingpage.
+   Bewusst minimal: fast das gesamte Styling liegt als Tailwind-Utilities in den
+   Komponenten. Hier nur, was komponentenübergreifend per JS gesteuert wird. */
+
+/* Responsive Overrides der Struktur-Helfer (als reines CSS, damit @apply keine
+   Arbitrary-Variants benötigt). */
+@media (max-width: 880px) {
+  .sec { padding-top: 3rem; padding-bottom: 3rem; }
+}
+@media (max-width: 560px) {
+  .wrap { padding-left: 18px; padding-right: 18px; }
+}
+
+/* === Scroll-Reveal ===
+   Die .in-Klasse wird per IntersectionObserver gesetzt (siehe useScrollReveal).
+   Grundzustand (versteckt) nur ohne reduzierte Bewegung. Es werden ausschließlich
+   opacity/transform animiert – kein Reflow. */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal,
+  .reveal-left,
+  .reveal-right,
+  .reveal-scale {
+    opacity: 0;
+    transition: opacity 0.75s cubic-bezier(0.22, 0.61, 0.36, 1),
+                transform 0.75s cubic-bezier(0.22, 0.61, 0.36, 1);
+    will-change: opacity, transform;
+  }
+  .reveal       { transform: translateY(30px); }
+  .reveal-left  { transform: translateX(-44px); }
+  .reveal-right { transform: translateX(44px); }
+  .reveal-scale { transform: scale(0.93); }
+  .reveal.in,
+  .reveal-left.in,
+  .reveal-right.in,
+  .reveal-scale.in {
+    opacity: 1;
+    transform: none;
+    will-change: auto;
+  }
+}

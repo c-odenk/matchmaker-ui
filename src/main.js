@@ -2,6 +2,7 @@ import { createApp, nextTick } from 'vue'
 import App from './App.vue'
 import router from './router'
 import './main.css'
+import './styles/landing.css'
 
 const app = createApp(App).use(router)
 

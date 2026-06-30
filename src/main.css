@@ -67,5 +67,15 @@ body {
   .paragraph-lg          { @apply paragraph-lead; }
   .paragraph-body        { @apply paragraph-base; }
   .paragraph-description { @apply paragraph-sm;   }
+
+  /* ── Landingpage: zentrale Struktur-Helfer ──────────────────────────────
+     .wrap = zentrierter Inhalts-Container, .sec = vertikaler Sektionsabstand.
+     Bewusst als Komponentenklassen, da sie auf nahezu jeder Sektion liegen. */
+  .wrap {
+    @apply mx-auto w-full max-w-wrap px-6 2xl:max-w-wrap-2xl;
+  }
+  .sec {
+    @apply py-16;
+  }
 }
 

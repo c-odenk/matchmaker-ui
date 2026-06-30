@@ -1,15 +1,13 @@
 <template>
-  <LandingV5 />
+  <LandingPage />
 </template>
 
 <script>
-// Aktive Landingpage: V5 (originalgetreuer Redesign-Entwurf).
-// Die früheren Versionen (V1–V4) bleiben unter src/components/landing/ erhalten
-// und können bei Bedarf wieder eingebunden werden.
-import LandingV5 from '@/components/landing/V5/Landing-V5.vue'
+// Aktive Landingpage – komponentenbasiert unter src/components/landing/.
+import LandingPage from '@/components/landing/LandingPage.vue'
 
 export default {
   name: 'ViewLanding',
-  components: { LandingV5 }
+  components: { LandingPage }
 }
 </script>
