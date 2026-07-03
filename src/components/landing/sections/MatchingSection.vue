@@ -2,7 +2,7 @@
   <!-- KI-Begründung: Text links, Mockup rechts -->
   <section class="sec bg-white">
     <div class="wrap two grid [grid-template-columns:1fr_1.1fr] gap-[52px] items-center max-[880px]:grid-cols-1 max-[880px]:gap-[30px]">
-      <div class="min-w-0">
+      <div class="min-w-0 max-[880px]:text-center max-[880px]:max-w-[620px] max-[880px]:mx-auto">
         <EyebrowBadge>KI-Begründung</EyebrowBadge>
         <h2 class="text-section text-ink mt-[18px] mb-[14px]">Die KI bereitet vor. <span class="text-blue">Sie entscheiden.</span></h2>
         <p class="text-lead text-body">Alle Agenten arbeiten im Hintergrund und legen Ihnen versandfertige Vorschläge vor. Nichts geht raus, bevor Sie es freigegeben haben.</p>

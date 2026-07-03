@@ -17,11 +17,12 @@
         </div>
       </div>
 
-      <div class="hil mt-[18px] flex items-center gap-[14px] bg-navy text-white rounded-2xl px-6 py-5 flex-wrap">
+      <!-- Smartphone: vertikal & zentriert gestapelt -->
+      <div class="hil mt-[18px] flex items-center gap-[14px] bg-navy text-white rounded-2xl px-6 py-5 flex-wrap max-[560px]:flex-col max-[560px]:text-center max-[560px]:gap-3">
         <div class="w-[42px] h-[42px] rounded-xl bg-blue/20 border border-blue/[0.35] flex items-center justify-center shrink-0">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7db8f0" stroke-width="1.9"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.96 11.96 0 013.6 6 12 12 0 003 9.75c0 5.59 3.82 10.29 9 11.62 5.18-1.33 9-6.03 9-11.62 0-1.31-.21-2.57-.6-3.75h-.15c-3.2 0-6.1-1.25-8.25-3.29z"/></svg>
         </div>
-        <div class="text-[.92rem] text-white/[0.78] flex-1 min-w-[240px]"><b class="font-bold text-white">Human-in-the-Loop.</b> Von der Marktanalyse bis zum fertigen Anschreiben automatisiert die KI jeden Schritt. Erst das tatsächliche Versenden gibt der Berater frei – so bleibt die Kontrolle bei Ihnen.</div>
+        <div class="text-[.92rem] text-white/[0.78] flex-1 min-w-[240px] max-[560px]:min-w-0"><b class="font-bold text-white">Human-in-the-Loop.</b> Von der Marktanalyse bis zum fertigen Anschreiben automatisiert die KI jeden Schritt. Erst das tatsächliche Versenden gibt der Berater frei – so bleibt die Kontrolle bei Ihnen.</div>
         <span class="inline-flex items-center gap-[6px] text-[.72rem] font-semibold px-[10px] py-1 rounded-full bg-green/[0.18] text-[#7ee2a8]">Sie behalten die Kontrolle</span>
       </div>
     </div>

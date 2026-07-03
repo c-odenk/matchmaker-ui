@@ -2,10 +2,10 @@
   <!-- Outreach: Mockup links, Text rechts (gespiegelt) -->
   <section class="sec bg-white">
     <div class="wrap two rev grid [grid-template-columns:1.1fr_1fr] gap-[52px] items-center max-[880px]:grid-cols-1 max-[880px]:gap-[30px]">
-      <div class="min-w-0">
+      <div class="min-w-0 max-[880px]:order-2">
         <BrowserFrame url="app-matchmaker-hr.netlify.app/nachrichten">
           <div class="flex items-center gap-[9px] font-bold text-[.98rem]">Nachricht an Christian Weber <span class="src-pill !ml-0">Entwurf</span></div>
-          <div class="grid [grid-template-columns:120px_1fr] gap-x-[22px] gap-y-[6px] mt-[14px]">
+          <div class="grid [grid-template-columns:120px_1fr] gap-x-[22px] gap-y-[6px] mt-[14px] max-[560px]:grid-cols-1 max-[560px]:gap-y-[10px]">
             <div><div class="msg-lbl">Kandidat</div><div class="msg-val">Max Mustermann</div></div>
             <div><div class="msg-lbl">Vakanz</div><div class="msg-val">Director Cloud Architecture &amp; Enterprise IT (m/w/d) · Nexis Cloud Systems GmbH</div></div>
           </div>
@@ -27,7 +27,7 @@
         </BrowserFrame>
       </div>
 
-      <div class="min-w-0">
+      <div class="min-w-0 max-[880px]:order-1 max-[880px]:text-center max-[880px]:max-w-[620px] max-[880px]:mx-auto">
         <EyebrowBadge>Kontaktaufnahme</EyebrowBadge>
         <h2 class="text-section text-ink mt-[18px] mb-[14px]">Das Anschreiben? <span class="text-blue">Schon formuliert.</span></h2>
         <p class="text-lead text-body">Der Outreach Agent recherchiert den passenden Ansprechpartner, wählt den Kanal und formuliert eine individuelle Nachricht – versandfertig als Entwurf. Sie prüfen, passen bei Bedarf an und geben frei.</p>

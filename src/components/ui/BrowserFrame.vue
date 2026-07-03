@@ -1,5 +1,5 @@
 <template>
-  <div class="relative rounded-[14px] overflow-hidden shadow-browser border border-line max-[880px]:max-w-[540px] max-[880px]:mx-auto">
+  <div class="relative rounded-[14px] overflow-hidden shadow-browser border border-line">
     <!-- Fensterleiste -->
     <div class="flex items-center gap-[7px] px-4 py-[11px] bg-navy-2">
       <i class="w-[11px] h-[11px] rounded-full bg-[#ff5f57]"></i>

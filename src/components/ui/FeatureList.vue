@@ -1,5 +1,6 @@
 <template>
-  <ul class="list-none mt-[22px] flex flex-col gap-[14px]">
+  <!-- Bleibt linksbündig; unter zentrierten Intros (≤880px) als Block zentriert -->
+  <ul class="list-none mt-[22px] flex flex-col gap-[14px] text-left max-[880px]:w-fit max-[880px]:mx-auto">
     <li v-for="(item, i) in items" :key="i" class="flex gap-3 text-[.9rem] text-body">
       <span class="shrink-0 w-[22px] h-[22px] rounded-full bg-[#e7f8ee] text-[#15803d] flex items-center justify-center text-[12px] mt-px">✓</span>
       <span>{{ item }}</span>

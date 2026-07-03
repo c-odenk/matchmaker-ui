@@ -6,7 +6,7 @@
         <template #lead>Nicht dem manuellen Sourcing. Recruiting frisst Stunden mit wiederkehrender Klickarbeit – Zeit, die für Mandate fehlt.</template>
       </SectionHeading>
 
-      <div class="compare max-w-[840px] mx-auto border border-line rounded-[18px] overflow-hidden grid grid-cols-2 max-[880px]:grid-cols-1">
+      <div class="compare max-w-[840px] mx-auto border border-line rounded-[18px] overflow-hidden grid grid-cols-2 max-[560px]:grid-cols-1">
         <div class="col a px-[30px] py-8">
           <div class="text-[.78rem] font-bold tracking-[0.05em] uppercase mb-5 text-muted">Ohne matchmaker.hr</div>
           <ul class="list-none flex flex-col gap-[15px]">
@@ -15,7 +15,7 @@
             </li>
           </ul>
         </div>
-        <div class="col b px-[30px] py-8 border-l border-line bg-blue/[0.035] max-[880px]:border-l-0 max-[880px]:border-t">
+        <div class="col b px-[30px] py-8 border-l border-line bg-blue/[0.035] max-[560px]:border-l-0 max-[560px]:border-t">
           <div class="text-[.78rem] font-bold tracking-[0.05em] uppercase mb-5 text-blue">Mit matchmaker.hr</div>
           <ul class="list-none flex flex-col gap-[15px]">
             <li v-for="t in withMm" :key="t" class="flex gap-[11px] text-[.95rem] text-ink">

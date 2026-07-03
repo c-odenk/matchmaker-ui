@@ -6,24 +6,26 @@
         <template #lead>Wählen Sie den Plan, der zu Ihren Anforderungen passt. Upgrades oder Downgrades sind jederzeit möglich.</template>
       </SectionHeading>
 
-      <div class="price-grid grid grid-cols-3 gap-5 items-stretch max-[880px]:grid-cols-1 max-[880px]:max-w-[460px] max-[880px]:mx-auto">
+      <div class="price-grid grid grid-cols-1 gap-5 items-stretch max-w-[460px] mx-auto min-[700px]:grid-cols-2 min-[700px]:max-w-none min-[700px]:mx-0 min-[881px]:grid-cols-3">
 
-        <!-- Bring Your Own Key -->
-        <div class="pcardx flex flex-col rounded-[18px] px-7 py-[30px] bg-white border border-line shadow-price">
-          <div class="text-[1.18rem] font-bold">Bring Your Own Key</div>
-          <div class="text-[.85rem] text-body mt-[7px] leading-[1.5] min-h-[48px]">Direkte Abrechnung über den eigenen API-Account, ohne weitere Aufschläge.</div>
-          <div class="flex items-baseline gap-[6px] mt-[18px]"><b class="text-[1.9rem] font-extrabold tracking-[-0.02em]">Kostenlos</b></div>
-          <div class="border-t border-line my-5"></div>
-          <ul class="list-none flex flex-col gap-3">
+        <!-- Bring Your Own Key (im Tablet-Band: volle Breite unten, horizontal geteilt) -->
+        <div class="pcardx flex flex-col rounded-[18px] px-7 py-[30px] bg-white border border-line shadow-price min-[700px]:order-3 min-[700px]:col-span-2 min-[881px]:order-none min-[881px]:col-span-1 min-[700px]:max-[880px]:flex-row min-[700px]:max-[880px]:items-center min-[700px]:max-[880px]:gap-8">
+          <div class="min-[700px]:max-[880px]:flex-1">
+            <div class="text-[1.18rem] font-bold">Bring Your Own Key</div>
+            <div class="text-[.85rem] text-body mt-[7px] leading-[1.5] min-h-[48px]">Direkte Abrechnung über den eigenen API-Account, ohne weitere Aufschläge.</div>
+            <div class="flex items-baseline flex-wrap gap-x-[6px] mt-[18px]"><b class="text-[1.9rem] font-extrabold tracking-[-0.02em] whitespace-nowrap">Kostenlos</b></div>
+          </div>
+          <div class="border-t border-line my-5 min-[700px]:max-[880px]:hidden"></div>
+          <ul class="list-none flex flex-col gap-3 min-[700px]:max-[880px]:flex-1 min-[700px]:max-[880px]:border-l min-[700px]:max-[880px]:border-line min-[700px]:max-[880px]:pl-8">
             <li v-for="f in byokFeatures" :key="f.text" class="flex items-start gap-[10px] text-[.86rem] text-ink leading-[1.4]"><img class="shrink-0 mt-px w-[17px] h-[17px]" :src="f.icon" alt="" width="17" height="17" @error="imgErr" />{{ f.text }}</li>
           </ul>
         </div>
 
         <!-- Enterprise (Feature-Karte) -->
-        <div class="pcardx flex flex-col rounded-[18px] px-7 py-[30px] relative bg-navy border border-navy text-white shadow-price-feat">
+        <div class="pcardx flex flex-col rounded-[18px] px-7 py-[30px] relative bg-navy border border-navy text-white shadow-price-feat min-[700px]:order-1 min-[881px]:order-none">
           <div class="text-[1.18rem] font-bold">Enterprise Lizenz</div>
           <div class="text-[.85rem] text-white/[0.72] mt-[7px] leading-[1.5] min-h-[48px]">Für Personalberater, die ihren gesamten Recruiting-Prozess automatisieren wollen.</div>
-          <div class="flex items-baseline gap-[6px] mt-[18px]"><b class="text-[1.9rem] font-extrabold tracking-[-0.02em]">{{ selectedPrice }}</b><span class="text-[.82rem] text-white/[0.72]">/ Monat</span></div>
+          <div class="flex items-baseline flex-wrap gap-x-[6px] mt-[18px]"><b class="text-[1.9rem] font-extrabold tracking-[-0.02em] whitespace-nowrap">{{ selectedPrice }}</b><span class="text-[.82rem] text-white/[0.72]">/ Monat</span></div>
           <div class="border-t border-white/[0.13] my-5"></div>
           <div class="text-[.64rem] font-bold tracking-[0.09em] uppercase text-white/60 mb-[13px]">Leistungen</div>
           <ul class="list-none flex flex-col gap-3">
@@ -44,10 +46,10 @@
         </div>
 
         <!-- Zusätzliche Mitarbeiter -->
-        <div class="pcardx flex flex-col rounded-[18px] px-7 py-[30px] bg-white border border-line shadow-price">
+        <div class="pcardx flex flex-col rounded-[18px] px-7 py-[30px] bg-white border border-line shadow-price min-[700px]:order-2 min-[881px]:order-none">
           <div class="text-[1.18rem] font-bold">Zusätzliche Mitarbeiter</div>
           <div class="text-[.85rem] text-body mt-[7px] leading-[1.5] min-h-[48px]">Für wachsende Teams – alle Leistungen der Enterprise Lizenz, skalierbar je Mitarbeiter.</div>
-          <div class="flex items-baseline gap-[6px] mt-[18px]"><b class="text-[1.9rem] font-extrabold tracking-[-0.02em]">19,99 €</b><span class="text-[.82rem] text-muted">/ Lizenz &amp; Monat</span></div>
+          <div class="flex items-baseline flex-wrap gap-x-[6px] mt-[18px]"><b class="text-[1.9rem] font-extrabold tracking-[-0.02em] whitespace-nowrap">19,99 €</b><span class="text-[.82rem] text-muted">/ Lizenz &amp; Monat</span></div>
           <div class="border-t border-line my-5"></div>
           <div class="text-[.64rem] font-bold tracking-[0.09em] uppercase text-muted mb-[13px]">Leistungen</div>
           <ul class="list-none flex flex-col gap-3">

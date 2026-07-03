@@ -7,7 +7,8 @@
       </SectionHeading>
 
       <div class="pool-grid grid gap-5 [grid-template-columns:repeat(auto-fit,minmax(290px,1fr))]">
-        <div v-for="c in candidates" :key="c.initials" class="pcard bg-white border border-line rounded-2xl p-6 transition-all duration-[180ms] flex flex-col hover:border-[#cdd9ea] hover:-translate-y-[3px] hover:shadow-card-hover">
+        <!-- Auf dem Tablet nur 2, auf dem Smartphone nur 1 Beispielkarte – weniger Scrollen & Leerräume -->
+        <div v-for="(c, i) in candidates" :key="c.initials" class="pcard bg-white border border-line rounded-2xl p-6 transition-all duration-[180ms] flex flex-col hover:border-[#cdd9ea] hover:-translate-y-[3px] hover:shadow-card-hover" :class="[i === 1 && 'max-[560px]:hidden', i === 2 && 'max-[880px]:hidden']">
           <div class="flex items-center gap-3">
             <div class="w-[46px] h-[46px] shrink-0 flex items-center justify-center rounded-full bg-navy text-white font-bold text-[.85rem] tracking-[0.03em]">{{ c.initials }}</div>
             <div>

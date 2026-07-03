@@ -9,7 +9,13 @@
 }
 @media (max-width: 560px) {
   .wrap { padding-left: 18px; padding-right: 18px; }
+  /* Engerer vertikaler Rhythmus auf dem Smartphone */
+  .sec { padding-top: 2.5rem; padding-bottom: 2.5rem; }
 }
+
+/* Horizontale Karten-Scroller (Tablet): Scrollbar ausblenden, Wischen bleibt möglich */
+.no-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
 
 /* === Scroll-Reveal ===
    Die .in-Klasse wird per IntersectionObserver gesetzt (siehe useScrollReveal).

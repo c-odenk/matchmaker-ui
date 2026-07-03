@@ -4,10 +4,10 @@
     <div class="absolute bottom-[-30%] left-[-8%] w-[45%] h-[80%] bg-[radial-gradient(ellipse_at_center,rgba(41,118,214,.2),transparent_70%)] blur-[70px] pointer-events-none"></div>
 
     <div class="wrap relative z-[2] grid [grid-template-columns:1.5fr_.9fr] gap-11 items-center pt-[74px] px-6 pb-[84px] max-[880px]:grid-cols-1 max-[880px]:gap-9 max-[880px]:pt-10 max-[880px]:pb-[54px]">
-      <div class="hero-left relative">
+      <div class="hero-left relative max-[880px]:text-center">
         <EyebrowBadge dark>KI-gestütztes Talentpool-Management</EyebrowBadge>
 
-        <div class="flex items-center gap-[9px] mb-[14px] ml-[5px] mt-[14px]">
+        <div class="flex items-center gap-[9px] mb-[14px] ml-[5px] mt-[14px] max-[880px]:justify-center max-[880px]:ml-0">
           <span class="text-[#fbbf24] text-[.92rem] tracking-[1px]">★★★★★</span>
           <span class="text-[.82rem] text-white/[0.72]">Aus der Beratungspraxis empfohlen</span>
         </div>
@@ -17,24 +17,24 @@
           <span class="text-[#5fa0ea]">Ihrem Urteil</span> vertraut.
         </h1>
 
-        <p class="text-lead text-white/[0.82] max-w-[614px] mt-[18px]">
+        <p class="text-lead text-white/[0.82] max-w-[614px] mt-[18px] max-[880px]:mx-auto">
           KI übernimmt die zeitintensiven Schritte – Marktanalyse, Matching und Anschreiben. Sie entscheiden - immer!
         </p>
 
-        <div class="flex gap-3 mt-[30px] flex-wrap max-[560px]:flex-col max-[560px]:items-stretch">
+        <div class="flex gap-3 mt-[30px] flex-wrap max-[880px]:justify-center max-[560px]:flex-col max-[560px]:items-stretch">
           <BaseButton variant="blue" :href="loginUrl" class="max-[560px]:w-full">Jetzt anmelden →</BaseButton>
           <BaseButton variant="ghost-dark" class="max-[560px]:w-full" @click="openDemo">Demo vereinbaren</BaseButton>
         </div>
 
-        <div class="flex gap-5 mt-[14px] flex-wrap text-[.85rem] text-white/[0.62]">
-          <span class="inline-flex items-center gap-[7px]"><span class="w-[7px] h-[7px] rounded-full bg-green shrink-0"></span>DSGVO-konform</span>
-          <span class="inline-flex items-center gap-[7px]"><span class="w-[7px] h-[7px] rounded-full bg-green shrink-0"></span>EU-Hosting</span>
-          <span class="inline-flex items-center gap-[7px]"><span class="w-[7px] h-[7px] rounded-full bg-green shrink-0"></span>Human-in-the-Loop</span>
+        <div class="flex gap-5 mt-[14px] flex-wrap text-[.85rem] text-white/[0.62] max-[880px]:justify-center max-[560px]:gap-2 max-[560px]:text-[.76rem]">
+          <span class="inline-flex items-center gap-[7px] whitespace-nowrap max-[560px]:gap-[5px]"><span class="w-[7px] h-[7px] rounded-full bg-green shrink-0"></span>DSGVO-konform</span>
+          <span class="inline-flex items-center gap-[7px] whitespace-nowrap max-[560px]:gap-[5px]"><span class="w-[7px] h-[7px] rounded-full bg-green shrink-0"></span>EU-Hosting</span>
+          <span class="inline-flex items-center gap-[7px] whitespace-nowrap max-[560px]:gap-[5px]"><span class="w-[7px] h-[7px] rounded-full bg-green shrink-0"></span>Human-in-the-Loop</span>
         </div>
       </div>
 
-      <div class="hero-visual relative">
-        <div class="relative w-full max-w-[440px] ml-auto max-[880px]:mx-auto max-[560px]:max-w-[330px]">
+      <div class="hero-visual relative max-[880px]:hidden">
+        <div class="relative w-full max-w-[440px] ml-auto">
           <div class="relative w-full rounded-[22px] overflow-hidden aspect-[4/4.4] shadow-hero-photo border border-white/10">
             <picture>
               <source :srcset="heroAvif" type="image/avif" />

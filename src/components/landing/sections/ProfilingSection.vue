@@ -2,7 +2,7 @@
   <section class="sec bg-white" id="profiling">
     <div class="wrap two grid [grid-template-columns:1fr_1.1fr] gap-[52px] items-center max-[880px]:grid-cols-1 max-[880px]:gap-[30px]">
       <!-- Text -->
-      <div class="min-w-0">
+      <div class="min-w-0 max-[880px]:text-center max-[880px]:max-w-[620px] max-[880px]:mx-auto">
         <EyebrowBadge>Ihre Talente</EyebrowBadge>
         <h2 class="text-section text-ink mt-[18px] mb-[14px]">Aus jedem Lebenslauf wird ein <span class="text-blue">strukturiertes Profil.</span></h2>
         <p class="text-lead text-body">Lebenslauf hochladen – der Profiling Agent liest die Daten automatisch aus und erstellt daraus ein präzises, anonymisiertes Qualifikationsprofil.</p>
@@ -11,7 +11,7 @@
 
       <!-- Animiertes Browserfenster: der Profiling-Workflow Schritt für Schritt -->
       <div class="relative min-w-0">
-        <div class="relative rounded-[14px] overflow-hidden shadow-browser border border-line max-[880px]:max-w-[540px] max-[880px]:mx-auto">
+        <div class="relative rounded-[14px] overflow-hidden shadow-browser border border-line">
           <div class="flex items-center gap-[7px] px-4 py-[11px] bg-navy-2">
             <i class="w-[11px] h-[11px] rounded-full bg-[#ff5f57]"></i>
             <i class="w-[11px] h-[11px] rounded-full bg-[#febc2e]"></i>
@@ -286,6 +286,10 @@ export default {
 .pf-chips.sm span { font-size: .66rem; padding: 3px 8px; }
 .pf-sec-h { display: flex; align-items: center; gap: 8px; font-weight: 800; font-size: .84rem; color: #172b4d; margin-top: 16px; padding-top: 14px; border-top: 1px solid #e7ebf1; }
 .pf-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 18px; margin-top: 14px; }
+@media (max-width: 560px) {
+  /* Profilspalten auf dem Smartphone untereinander (sonst zu gequetscht) */
+  .pf-cols { grid-template-columns: 1fr; gap: 12px; }
+}
 .pf-lbl { font-size: .64rem; font-weight: 600; color: #7c8aa0; margin-bottom: 5px; }
 .pf-val { font-size: .76rem; color: #0f172a; font-weight: 500; }
 .pf-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
