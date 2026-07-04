@@ -6,7 +6,7 @@
         <!-- ≤880px: zentriert und volle Breite, analog zur Hero -->
         <div class="relative z-[2] flex items-center justify-between gap-10 flex-wrap max-[880px]:flex-col max-[880px]:items-center max-[880px]:gap-[22px] max-[880px]:text-center">
           <div>
-            <h2 class="text-section text-white max-w-[560px] max-[880px]:max-w-none">Wie viele Stunden kostet Sie manuelles Sourcing – Woche für Woche?</h2>
+            <h2 class="text-section text-white max-w-[560px] max-[880px]:max-w-none !text-[clamp(1.25rem,1rem+0.9vw,1.55rem)]">Wie viele Stunden kostet Sie manuelles Sourcing – Woche für Woche?</h2>
             <p class="text-white/[0.78] mt-3 max-w-[520px] text-[.95rem] max-[880px]:max-w-none">matchmaker.hr automatisiert die wiederkehrende Recherche bis zum fertigen Anschreiben. Lassen Sie es sich in 15 Minuten zeigen – oder starten Sie direkt.</p>
           </div>
           <div class="flex gap-3 flex-wrap max-[880px]:justify-center max-[560px]:flex-col max-[560px]:w-full">
