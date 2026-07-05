@@ -1,3 +1,10 @@
+# Chrome für das Prerendering (Puppeteer) muss auf Netlify vor dem Build
+# explizit installiert werden — der Download bei "npm install" landet in einem
+# Cache-Verzeichnis, das Netlify zwischen Builds nicht aufbewahrt.
+[build]
+  command = "npx puppeteer browsers install chrome && npm run build"
+  publish = "dist"
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
