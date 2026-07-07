@@ -78,6 +78,12 @@
               <textarea id="dm-msg" v-model.trim="form.message" class="dm-textarea" rows="2" placeholder="Worauf sollen wir besonders eingehen?"></textarea>
             </div>
 
+            <p v-if="error" class="dm-error" role="alert">
+              Ihre Anfrage konnte gerade nicht übermittelt werden. Bitte versuchen Sie es
+              erneut oder schreiben Sie uns direkt an
+              <a href="mailto:christopher.odenkirchen@googlemail.com">christopher.odenkirchen@googlemail.com</a>.
+            </p>
+
             <div class="dm-actions">
               <button type="button" class="dm-cancel" @click="close">Abbrechen</button>
               <button type="submit" class="dm-submit" :disabled="!formValid || sending">
@@ -109,6 +115,8 @@
 <script>
 import { demoModal, closeDemoModal } from '@/composables/demoModal'
 
+const API_BASE = process.env.VUE_APP_API_URL || 'https://matchmaker-api-l835.onrender.com'
+
 const emptyForm = () => ({
   firstName: '', lastName: '', company: '', email: '',
   phone: '', date: '', slot: 'Vormittag (9–12 Uhr)', message: ''
@@ -117,7 +125,7 @@ const emptyForm = () => ({
 export default {
   name: 'DemoModal',
   data() {
-    return { submitted: false, sending: false, form: emptyForm() }
+    return { submitted: false, sending: false, error: false, form: emptyForm() }
   },
   computed: {
     open() { return demoModal.open },
@@ -136,7 +144,7 @@ export default {
         this.$nextTick(() => this.$refs.firstInput && this.$refs.firstInput.focus())
       } else {
         document.removeEventListener('keydown', this.onKey)
-        setTimeout(() => { this.submitted = false; this.sending = false; this.form = emptyForm() }, 300)
+        setTimeout(() => { this.submitted = false; this.sending = false; this.error = false; this.form = emptyForm() }, 300)
       }
     }
   },
@@ -150,9 +158,27 @@ export default {
     async handleSubmit() {
       if (!this.formValid || this.sending) return
       this.sending = true
+      this.error = false
       try {
-        await new Promise(r => setTimeout(r, 700))
+        const f = this.form
+        const res = await fetch(`${API_BASE}/api/demo-requests`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            vorname: f.firstName,
+            nachname: f.lastName,
+            firma: f.company,
+            email: f.email,
+            ...(f.phone && { telefon: f.phone }),
+            ...(f.date && { wunschtermin: f.date }),
+            ...(f.slot && { bevorzugteZeit: f.slot }),
+            ...(f.message && { nachricht: f.message })
+          })
+        })
+        if (!res.ok) throw new Error(`HTTP ${res.status}`)
         this.submitted = true
+      } catch {
+        this.error = true
       } finally {
         this.sending = false
       }
@@ -194,6 +220,8 @@ export default {
 .dm-submit:hover { background: #2065bd; }
 .dm-submit:disabled { opacity: .5; cursor: not-allowed; }
 .dm-submit-success { margin-top: 22px; min-width: 150px; }
+.dm-error { font-size: .82rem; line-height: 1.5; color: #b42318; background: #fef3f2; border: 1px solid #fecdca; border-radius: 10px; padding: 10px 13px; }
+.dm-error a { color: #b42318; font-weight: 600; }
 .dm-disclaimer { font-size: .72rem; color: #7c8aa0; text-align: center; margin-top: 2px; }
 .dm-disclaimer a { color: #2976d6; text-decoration: underline; }
 .dm-spin { width: 18px; height: 18px; border-radius: 50%; border: 2px solid rgba(255, 255, 255, .4); border-top-color: #fff; animation: dm-spin .7s linear infinite; }
