@@ -39,10 +39,16 @@ export function setupScrollReveal(rootEl) {
     }
   }, { threshold: 0.16, rootMargin: '0px 0px -7% 0px' })
 
+  // Auf dem Smartphone stapeln sich Karten-Gruppen einspaltig; die volle
+  // Staffelung ließe jede Karte spürbar nacheinander eintrudeln. Dort deutlich
+  // straffen, Tablet/Desktop behalten die ursprüngliche Staffelung.
+  const isMobile = window.matchMedia && window.matchMedia('(max-width: 560px)').matches
+  const staggerFactor = isMobile ? 0.35 : 1
+
   REVEAL_PLAN.forEach(({ sel, type, stagger }) => {
     rootEl.querySelectorAll(sel).forEach((el, i) => {
       el.classList.add(type)
-      if (stagger) el.style.transitionDelay = (i * stagger) + 'ms'
+      if (stagger) el.style.transitionDelay = (i * stagger * staggerFactor) + 'ms'
       observer.observe(el)
     })
   })

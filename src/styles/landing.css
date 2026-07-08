@@ -43,4 +43,21 @@
     transform: none;
     will-change: auto;
   }
+
+  /* Auf dem Smartphone laufen alle Sektionen einspaltig durch – dadurch löst
+     praktisch bei jedem Scroll-Schritt eine neue Reveal-Animation aus. Kürzere
+     Dauer + spürbar kleinere Bewegung, damit sich das beim Scrollen nicht
+     "anstrengend" anfühlt. Tablet/Desktop bleiben unverändert. */
+  @media (max-width: 560px) {
+    .reveal,
+    .reveal-left,
+    .reveal-right,
+    .reveal-scale {
+      transition-duration: 0.4s;
+    }
+    .reveal       { transform: translateY(14px); }
+    .reveal-left  { transform: translateX(-16px); }
+    .reveal-right { transform: translateX(16px); }
+    .reveal-scale { transform: scale(0.97); }
+  }
 }

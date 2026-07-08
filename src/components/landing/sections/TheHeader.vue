@@ -34,7 +34,7 @@
     <!-- Mobiles Menü: im Dokumentfluss, klappt auf und schiebt den Seiteninhalt nach unten -->
     <div class="mnav-wrap hidden max-[880px]:grid" :class="{ open: menuOpen }">
       <div class="min-h-0 overflow-hidden">
-        <nav class="flex flex-col bg-white border-t border-line pt-3 px-6 pb-5">
+        <nav class="mnav-panel flex flex-col bg-white border-t border-line pt-3 px-6 pb-5">
           <a v-for="l in links" :key="l.id" :href="'/#' + l.id" @click.prevent="go(l.id)" class="py-[13px] px-2 text-[1.04rem] font-medium text-navy rounded-[9px] cursor-pointer">{{ l.label }}</a>
           <div class="flex flex-col gap-[10px] mt-[10px] pt-[14px] border-t border-line">
             <BaseButton variant="ghost" class="w-full !h-12" @click="openDemo">Demo vereinbaren</BaseButton>
@@ -99,7 +99,18 @@ export default {
 .nav-burger.x i:nth-child(3) { top: 6px; transform: rotate(-45deg); }
 
 /* Aufklappen des mobilen Menüs: animierte Grid-Zeile (0fr → 1fr),
-   damit der Seiteninhalt mitgeschoben wird statt überlagert. */
-.mnav-wrap { grid-template-rows: 0fr; transition: grid-template-rows 0.3s ease; }
+   damit der Seiteninhalt mitgeschoben wird statt überlagert.
+   Kurze Dauer + Ease-Out, damit die Layout-Animation knackig wirkt;
+   der Panel-Inhalt fadet synchron ein statt „scheibchenweise" aufzutauchen. */
+.mnav-wrap {
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.22s cubic-bezier(0.33, 1, 0.68, 1);
+}
 .mnav-wrap.open { grid-template-rows: 1fr; }
+.mnav-panel {
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity 0.16s ease, transform 0.22s cubic-bezier(0.33, 1, 0.68, 1);
+}
+.mnav-wrap.open .mnav-panel { opacity: 1; transform: none; }
 </style>
