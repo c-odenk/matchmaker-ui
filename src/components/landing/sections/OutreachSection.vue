@@ -16,8 +16,8 @@
           <div class="mt-[13px]"><div class="msg-lbl">Betreff</div><div class="msg-input">Erfahrener Director Cloud Architecture – Passung zu Ihrer Vakanz</div></div>
           <div class="mt-[13px]">
             <div class="msg-lbl">Nachricht</div>
-            <div class="msg-body msg-body-full">Sehr geehrte Damen und Herren, ich melde mich, weil ich eine Führungspersönlichkeit betreue, die hervorragend auf Ihre Position als Director Cloud Architecture &amp; Enterprise IT passt.<br><br>Die Person bringt 12 Jahre IT-Erfahrung mit, davon 5 in leitender Funktion, und hat eine Cloud-Infrastruktur von 10 auf 200 Knoten skaliert …<br><br>Gerne sende ich Ihnen das vollständige Profil zu oder stehe für ein kurzes Gespräch zur Verfügung.</div>
-            <div class="msg-body msg-body-short">Sehr geehrte Damen und Herren, ich betreue eine Führungspersönlichkeit, die hervorragend auf Ihre Vakanz als Director Cloud Architecture passt – 12 Jahre IT-Erfahrung, davon 5 in leitender Funktion.<br><br>Gerne sende ich Ihnen das vollständige Profil zu.</div>
+            <div class="msg-body msg-body-full">Sehr geehrte Damen und Herren,<br><br>ich melde mich, weil ich eine Führungspersönlichkeit betreue, die hervorragend auf Ihre Position als Director Cloud Architecture &amp; Enterprise IT passt.<br><br>Die Person bringt 12 Jahre IT-Erfahrung mit, davon 5 in leitender Funktion, und hat eine Cloud-Infrastruktur von 10 auf 200 Knoten skaliert …<br><br>Gerne sende ich Ihnen das vollständige Profil zu oder stehe für ein kurzes Gespräch zur Verfügung.</div>
+            <div class="msg-body msg-body-short">Sehr geehrte Damen und Herren,<br><br>ich betreue eine Führungspersönlichkeit, die hervorragend auf Ihre Vakanz als Director Cloud Architecture passt – 12 Jahre IT-Erfahrung, davon 5 in leitender Funktion.<br><br>Gerne sende ich Ihnen das vollständige Profil zu.</div>
           </div>
           <div class="msg-foot">
             <span class="msg-btn">Schließen</span>

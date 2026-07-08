@@ -198,7 +198,7 @@ export default {
 .dm-head-ic { width: 42px; height: 42px; flex-shrink: 0; border-radius: 11px; background: rgba(255, 255, 255, .1); border: 1px solid rgba(255, 255, 255, .14); display: flex; align-items: center; justify-content: center; }
 .dm-title { font-size: 1.2rem; font-weight: 800; letter-spacing: -.01em; line-height: 1.2; }
 .dm-sub { font-size: .84rem; color: rgba(255, 255, 255, .72); margin-top: 4px; line-height: 1.4; }
-.dm-trust { position: relative; z-index: 1; display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 16px; margin-left: 56px; font-size: .76rem; color: rgba(255, 255, 255, .7); }
+.dm-trust { position: relative; z-index: 1; display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 10px; margin-left: 56px; font-size: .76rem; color: rgba(255, 255, 255, .7); }
 .dm-trust span { display: inline-flex; align-items: center; gap: 6px; }
 .dm-trust svg { color: #7db8f0; flex-shrink: 0; }
 .dm-body { padding: 24px 30px 26px; overflow-y: auto; display: flex; flex-direction: column; gap: 14px; }
