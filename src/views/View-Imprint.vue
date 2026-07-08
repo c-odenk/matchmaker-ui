@@ -3,38 +3,38 @@
 
     <h2>Angaben gemäß § 5 DDG</h2>
     <address>
-      matchmaker.hr<br>
-      Ravensberger Str. 21<br>
-      53474 Bad Neuenahr-Ahrweiler<br>
-      Deutschland
+      {{ legalInfo.company }}<br>
+      {{ legalInfo.street }}<br>
+      {{ legalInfo.zip }} {{ legalInfo.city }}<br>
+      {{ legalInfo.country }}
     </address>
     <p>
-      Vertreten durch den Geschäftsführer: Christopher Odenkirchen
+      Vertreten durch den Geschäftsführer: {{ legalInfo.ceo }}
     </p>
 
     <h2>Kontakt</h2>
     <p>
-      E-Mail: <a href="mailto:info@matchmaker.hr">info@matchmaker-hr.de</a>
+      E-Mail: <a :href="`mailto:${legalInfo.email}`">{{ legalInfo.email }}</a>
     </p>
 
     <h2>Registereintrag</h2>
     <p>
       Eintragung im Handelsregister.<br>
-      Registergericht: n.a.<br>
-      Registernummer: n.a.
+      Registergericht: {{ legalInfo.registerCourt }}<br>
+      Registernummer: {{ legalInfo.registerNumber }}
     </p>
 
     <h2>Umsatzsteuer-ID</h2>
     <p>
       Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz:<br>
-      DE000000000
+      {{ legalInfo.vatId }}
     </p>
 
     <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
     <p>
-      Christopher Odenkirchen<br>
-      Ravensberger Str. 21<br>
-      53474 Bad Neuenahr-Ahrweiler
+      {{ legalInfo.ceo }}<br>
+      {{ legalInfo.street }}<br>
+      {{ legalInfo.zip }} {{ legalInfo.city }}
     </p>
 
     <h2>EU-Streitschlichtung</h2>
@@ -83,9 +83,13 @@
 
 <script>
 import LegalPage from '@/components/legal/LegalPage.vue'
+import { legalInfo } from '@/config/legalInfo'
 
 export default {
   name: 'ViewImprint',
-  components: { LegalPage }
+  components: { LegalPage },
+  data() {
+    return { legalInfo }
+  }
 }
 </script>

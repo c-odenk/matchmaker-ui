@@ -33,7 +33,7 @@
         <div>
           <h3 class="text-white text-[.82rem] font-bold tracking-[0.04em] uppercase mb-4">Kontakt</h3>
           <ul class="list-none flex flex-col gap-[11px] text-[.9rem]">
-            <li><a href="mailto:info@matchmaker.hr" class="hover:text-white">Email: info@matchmaker.hr</a></li>
+            <li><a :href="`mailto:${legalInfo.email}`" class="hover:text-white">Email: {{ legalInfo.email }}</a></li>
           </ul>
         </div>
       </div>
@@ -47,11 +47,12 @@
 
 <script>
 import { openDemoModal } from '@/composables/demoModal'
+import { legalInfo } from '@/config/legalInfo'
 
 export default {
   name: 'TheFooter',
   data() {
-    return { year: new Date().getFullYear() }
+    return { year: new Date().getFullYear(), legalInfo }
   },
   methods: {
     go(id) {

@@ -3,9 +3,10 @@
 
     <h2>§ 1 Geltungsbereich</h2>
     <p>
-      Diese Allgemeinen Geschäftsbedingungen gelten für alle Verträge zwischen der
-      matchmaker.hr GmbH, Musterstraße 12, 41061 Mönchengladbach (nachfolgend „Anbieter")
-      und ihren Kunden über die Nutzung der Software-Plattform matchmaker.hr.
+      Diese Allgemeinen Geschäftsbedingungen gelten für alle Verträge zwischen
+      {{ legalInfo.company }}, {{ legalInfo.street }}, {{ legalInfo.zip }} {{ legalInfo.city }}
+      (nachfolgend „Anbieter") und ihren Kunden über die Nutzung der Software-Plattform
+      matchmaker.hr.
     </p>
     <p>
       Das Angebot richtet sich ausschließlich an Unternehmer im Sinne des § 14 BGB,
@@ -136,9 +137,13 @@
 
 <script>
 import LegalPage from '@/components/legal/LegalPage.vue'
+import { legalInfo } from '@/config/legalInfo'
 
 export default {
   name: 'ViewTerms',
-  components: { LegalPage }
+  components: { LegalPage },
+  data() {
+    return { legalInfo }
+  }
 }
 </script>

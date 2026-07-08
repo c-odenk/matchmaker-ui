@@ -3,10 +3,10 @@
 
     <h2>1. Verantwortlicher</h2>
     <address>
-      matchmaker.hr<br>
-      Ravensberger Str. 21<br>
-      53474 Bad Neuenahr-Ahrweiler<br>
-      E-Mail: <a href="mailto:info@matchmaker.hr">info@matchmaker.hr</a>
+      {{ legalInfo.company }}<br>
+      {{ legalInfo.street }}<br>
+      {{ legalInfo.zip }} {{ legalInfo.city }}<br>
+      E-Mail: <a :href="`mailto:${legalInfo.email}`">{{ legalInfo.email }}</a>
     </address>
 
     <h2>2. Überblick</h2>
@@ -110,7 +110,7 @@
     </ul>
     <p>
       Zur Ausübung Ihrer Rechte genügt eine formlose E-Mail an
-      <a href="mailto:info@matchmaker.hr">info@matchmaker.hr</a>.
+      <a :href="`mailto:${legalInfo.email}`">{{ legalInfo.email }}</a>.
     </p>
 
   </LegalPage>
@@ -118,9 +118,13 @@
 
 <script>
 import LegalPage from '@/components/legal/LegalPage.vue'
+import { legalInfo } from '@/config/legalInfo'
 
 export default {
   name: 'ViewPrivacy',
-  components: { LegalPage }
+  components: { LegalPage },
+  data() {
+    return { legalInfo }
+  }
 }
 </script>

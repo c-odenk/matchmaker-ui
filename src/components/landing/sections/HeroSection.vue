@@ -7,7 +7,7 @@
       <div class="hero-left relative max-[880px]:text-center">
         <EyebrowBadge dark class="!px-[22.4px]">KI-gestütztes Talentpool-Management</EyebrowBadge>
 
-        <div class="flex items-center gap-[9px] mb-[14px] ml-[5px] mt-[8px] max-[880px]:justify-center max-[880px]:ml-0">
+        <div class="flex items-center gap-[4px] mb-[14px] ml-[5px] mt-[8px] max-[880px]:justify-center max-[880px]:ml-0">
           <span class="text-[#fbbf24] text-[.92rem] tracking-[1px]">★★★★★</span>
           <span class="text-[.82rem] text-white/[0.72]">Aus der Beratungspraxis empfohlen</span>
         </div>

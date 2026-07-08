@@ -3,12 +3,12 @@
     <div class="wrap">
       <div class="flex items-center justify-between gap-[18px] h-[74px] max-[880px]:h-16">
         <!-- Marke -->
-        <div class="flex items-center gap-[10px] font-bold text-[1.08rem] tracking-[-0.02em] text-ink">
+        <router-link to="/" @click="goHome" class="flex items-center gap-[10px] font-bold text-[1.08rem] tracking-[-0.02em] text-ink cursor-pointer">
           <span class="w-[30px] h-[30px] rounded-lg bg-navy flex items-center justify-center text-white">
             <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9.8 15.9L9 18.75l-.81-2.85a4.5 4.5 0 00-3.09-3.09L2.25 12l2.85-.81a4.5 4.5 0 003.09-3.09L9 5.25l.81 2.85a4.5 4.5 0 003.09 3.09L15.75 12l-2.85.81a4.5 4.5 0 00-3.09 3.09z"/></svg>
           </span>
           <span>matchmaker<span class="text-navy">.</span>hr</span>
-        </div>
+        </router-link>
 
         <!-- Desktop-Navigation -->
         <nav class="flex gap-[30px] text-[1.02rem] font-medium text-navy max-[880px]:hidden">
@@ -63,6 +63,12 @@ export default {
     }
   },
   methods: {
+    goHome() {
+      this.menuOpen = false
+      if (this.$route.path === '/') {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+      }
+    },
     go(id) {
       this.menuOpen = false
       if (this.$route.path === '/') {
