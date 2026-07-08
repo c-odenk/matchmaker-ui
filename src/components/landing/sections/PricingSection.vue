@@ -1,5 +1,5 @@
 <template>
-  <section class="sec bg-white" id="preise">
+  <section class="sec bg-white max-[560px]:!pb-3" id="preise">
     <div class="wrap">
       <SectionHeading eyebrow="Preise">
         Effizientes Talentpool-Management – <span class="text-blue">zum fairen Preis.</span>

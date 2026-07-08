@@ -21,9 +21,15 @@
             <div class="kihead"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/></svg>KI-Begründung</div>
             <div class="kitext">
               <p>Passt, weil Qualifikationsprofil, Führungsverantwortung und Rahmenbedingungen der Vakanz nahezu deckungsgleich mit dem Kandidatenprofil sind.</p>
-              <p class="mt-2">Die Anforderungen treffen die Kernkompetenzen punktgenau: 12 Jahre IT-Infrastruktur-Erfahrung inkl. Consulting-Background, nachgewiesene Führung eines 15-FTE-Teams sowie Budgetverantwortung von 1,5 Mio. € p.a. Auch die geforderten Zertifizierungen (PMP, Certified Scrum Master) sind vollständig vorhanden; die Cloud-Skalierung von 10 auf 200 Knoten ist ein klares strategisches Asset.</p>
-              <p class="mt-2">Der Standort Berlin weicht zwar vom Wohnort Hamburg ab – das hybride Modell mit bis zu 80 % Remote deckt sich aber exakt mit der Suchpräferenz und entschärft das Risiko vollständig.</p>
-              <p class="mt-2"><b class="text-ink">Empfehlung:</b> Direktansprache mit hoher Priorität – Closing-Potenzial sehr hoch. Titel-Upgrade (Director) als zentrales Verkaufsargument positionieren.</p>
+              <div class="kimore" :class="{ open: kiExpanded }">
+                <p class="mt-2">Die Anforderungen treffen die Kernkompetenzen punktgenau: 12 Jahre IT-Infrastruktur-Erfahrung inkl. Consulting-Background, nachgewiesene Führung eines 15-FTE-Teams sowie Budgetverantwortung von 1,5 Mio. € p.a. Auch die geforderten Zertifizierungen (PMP, Certified Scrum Master) sind vollständig vorhanden; die Cloud-Skalierung von 10 auf 200 Knoten ist ein klares strategisches Asset.</p>
+                <p class="mt-2">Der Standort Berlin weicht zwar vom Wohnort Hamburg ab – das hybride Modell mit bis zu 80 % Remote deckt sich aber exakt mit der Suchpräferenz und entschärft das Risiko vollständig.</p>
+                <p class="mt-2"><b class="text-ink">Empfehlung:</b> Direktansprache mit hoher Priorität – Closing-Potenzial sehr hoch. Titel-Upgrade (Director) als zentrales Verkaufsargument positionieren.</p>
+              </div>
+              <button type="button" class="kitoggle" :aria-expanded="kiExpanded ? 'true' : 'false'" @click="kiExpanded = !kiExpanded">
+                {{ kiExpanded ? 'Weniger anzeigen' : 'Ganze Begründung lesen' }}
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" :class="{ 'rotate-180': kiExpanded }"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+              </button>
               <div class="kirate">Bewertung zutreffend? <span class="kistars">★★★★★</span></div>
             </div>
           </div>
@@ -43,6 +49,7 @@ export default {
   components: { EyebrowBadge, FeatureList, BrowserFrame },
   data() {
     return {
+      kiExpanded: false,
       features: [
         'Pro Kandidat automatisch gefundene Vakanzen mit Match-Score',
         'Nachvollziehbare KI-Begründung zu jedem Treffer',
@@ -64,10 +71,23 @@ export default {
 .kitext p { font-size: .82rem; color: #475569; line-height: 1.55; }
 .kirate { margin-top: 13px; font-size: .76rem; color: #7c8aa0; display: flex; align-items: center; gap: 8px; }
 .kistars { color: #f59e0b; letter-spacing: 1px; }
+/* Toggle nur auf dem Smartphone: dort ist die volle Begründung eingeklappt,
+   ab >560px bleibt immer alles sichtbar. */
+.kitoggle { display: none; }
 @media (max-width: 880px) {
   .kibox { row-gap: 14px; }
   .kiscore { grid-row: 1; align-self: center; }
   .kihead { align-self: center; }
   .kitext { grid-column: 1 / span 2; }
+}
+@media (max-width: 560px) {
+  .kimore { display: none; }
+  .kimore.open { display: block; }
+  .kitoggle {
+    display: inline-flex; align-items: center; gap: 5px; margin-top: 10px;
+    background: none; border: none; padding: 0; cursor: pointer;
+    font: inherit; font-size: .8rem; font-weight: 700; color: #15803d;
+  }
+  .kitoggle svg { transition: transform .2s ease; }
 }
 </style>

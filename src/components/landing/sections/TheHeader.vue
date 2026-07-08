@@ -31,16 +31,18 @@
       </div>
     </div>
 
-    <!-- Mobiles Menü -->
-    <transition name="mnav">
-      <nav v-show="menuOpen" class="hidden flex-col max-[880px]:flex absolute top-full left-0 right-0 bg-white border-t border-line shadow-mobile-nav pt-3 px-6 pb-5">
-        <a v-for="l in links" :key="l.id" :href="'/#' + l.id" @click.prevent="go(l.id)" class="py-[13px] px-2 text-[1.04rem] font-medium text-navy rounded-[9px] cursor-pointer">{{ l.label }}</a>
-        <div class="flex flex-col gap-[10px] mt-[10px] pt-[14px] border-t border-line">
-          <BaseButton variant="ghost" class="w-full !h-12" @click="openDemo">Demo vereinbaren</BaseButton>
-          <BaseButton variant="primary" :href="loginUrl" class="w-full !h-12">Anmelden →</BaseButton>
-        </div>
-      </nav>
-    </transition>
+    <!-- Mobiles Menü: im Dokumentfluss, klappt auf und schiebt den Seiteninhalt nach unten -->
+    <div class="mnav-wrap hidden max-[880px]:grid" :class="{ open: menuOpen }">
+      <div class="min-h-0 overflow-hidden">
+        <nav class="flex flex-col bg-white border-t border-line pt-3 px-6 pb-5">
+          <a v-for="l in links" :key="l.id" :href="'/#' + l.id" @click.prevent="go(l.id)" class="py-[13px] px-2 text-[1.04rem] font-medium text-navy rounded-[9px] cursor-pointer">{{ l.label }}</a>
+          <div class="flex flex-col gap-[10px] mt-[10px] pt-[14px] border-t border-line">
+            <BaseButton variant="ghost" class="w-full !h-12" @click="openDemo">Demo vereinbaren</BaseButton>
+            <BaseButton variant="primary" :href="loginUrl" class="w-full !h-12">Anmelden →</BaseButton>
+          </div>
+        </nav>
+      </div>
+    </div>
   </header>
 </template>
 
@@ -96,7 +98,8 @@ export default {
 .nav-burger.x i:nth-child(2) { opacity: 0; }
 .nav-burger.x i:nth-child(3) { top: 6px; transform: rotate(-45deg); }
 
-/* Übergang des mobilen Menüs */
-.mnav-enter-active, .mnav-leave-active { transition: opacity 0.25s ease, transform 0.25s ease; }
-.mnav-enter-from, .mnav-leave-to { opacity: 0; transform: translateY(-10px); }
+/* Aufklappen des mobilen Menüs: animierte Grid-Zeile (0fr → 1fr),
+   damit der Seiteninhalt mitgeschoben wird statt überlagert. */
+.mnav-wrap { grid-template-rows: 0fr; transition: grid-template-rows 0.3s ease; }
+.mnav-wrap.open { grid-template-rows: 1fr; }
 </style>

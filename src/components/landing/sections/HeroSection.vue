@@ -3,7 +3,7 @@
     <div class="absolute top-[-20%] right-[-10%] w-[55%] h-[90%] bg-[radial-gradient(ellipse_at_center,rgba(41,118,214,.5),transparent_65%)] blur-[60px] pointer-events-none"></div>
     <div class="absolute bottom-[-30%] left-[-8%] w-[45%] h-[80%] bg-[radial-gradient(ellipse_at_center,rgba(41,118,214,.2),transparent_70%)] blur-[70px] pointer-events-none"></div>
 
-    <div class="wrap relative z-[2] grid [grid-template-columns:1.5fr_.9fr] gap-11 items-center pt-[74px] px-6 pb-[84px] max-[880px]:grid-cols-1 max-[880px]:gap-9 max-[880px]:pt-10 max-[880px]:pb-[54px]">
+    <div class="wrap relative z-[2] grid [grid-template-columns:1.5fr_.9fr] gap-11 items-center pt-[74px] px-6 pb-[84px] max-[880px]:grid-cols-1 max-[880px]:gap-9 max-[880px]:pt-10 max-[880px]:pb-[54px] max-[560px]:pt-20 max-[560px]:pb-[94px]">
       <div class="hero-left relative max-[880px]:text-center">
         <EyebrowBadge dark class="!px-[22.4px]">KI-gestütztes Talentpool-Management</EyebrowBadge>
 
