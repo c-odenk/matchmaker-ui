@@ -5,9 +5,9 @@
 
     <div class="wrap relative z-[2] grid [grid-template-columns:1.5fr_.9fr] gap-11 items-center pt-[74px] px-6 pb-[84px] max-[880px]:grid-cols-1 max-[880px]:gap-9 max-[880px]:pt-10 max-[880px]:pb-[54px]">
       <div class="hero-left relative max-[880px]:text-center">
-        <EyebrowBadge dark>KI-gestütztes Talentpool-Management</EyebrowBadge>
+        <EyebrowBadge dark class="!px-[22.4px]">KI-gestütztes Talentpool-Management</EyebrowBadge>
 
-        <div class="flex items-center gap-[9px] mb-[14px] ml-[5px] mt-[14px] max-[880px]:justify-center max-[880px]:ml-0">
+        <div class="flex items-center gap-[9px] mb-[14px] ml-[5px] mt-[8px] max-[880px]:justify-center max-[880px]:ml-0">
           <span class="text-[#fbbf24] text-[.92rem] tracking-[1px]">★★★★★</span>
           <span class="text-[.82rem] text-white/[0.72]">Aus der Beratungspraxis empfohlen</span>
         </div>
@@ -26,7 +26,7 @@
           <BaseButton variant="ghost-dark" class="max-[560px]:w-full" @click="openDemo">Demo vereinbaren</BaseButton>
         </div>
 
-        <div class="flex gap-5 mt-[14px] flex-wrap text-[.85rem] text-white/[0.62] max-[880px]:justify-center max-[560px]:gap-2 max-[560px]:text-[.76rem]">
+        <div class="flex gap-[10.7px] mt-[8px] flex-wrap text-[.85rem] text-white/[0.62] max-[880px]:justify-center max-[560px]:gap-2 max-[560px]:text-[.76rem]">
           <span class="inline-flex items-center gap-[7px] whitespace-nowrap max-[560px]:gap-[5px]"><span class="w-[7px] h-[7px] rounded-full bg-green shrink-0"></span>DSGVO-konform</span>
           <span class="inline-flex items-center gap-[7px] whitespace-nowrap max-[560px]:gap-[5px]"><span class="w-[7px] h-[7px] rounded-full bg-green shrink-0"></span>EU-Hosting</span>
           <span class="inline-flex items-center gap-[7px] whitespace-nowrap max-[560px]:gap-[5px]"><span class="w-[7px] h-[7px] rounded-full bg-green shrink-0"></span>Human-in-the-Loop</span>
