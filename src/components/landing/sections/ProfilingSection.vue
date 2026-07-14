@@ -10,7 +10,7 @@
       </div>
 
       <!-- Animiertes Browserfenster: der Profiling-Workflow Schritt für Schritt -->
-      <div class="relative min-w-0">
+      <div class="relative min-w-0 max-[880px]:w-full max-[880px]:max-w-[620px] max-[880px]:mx-auto">
         <div class="relative rounded-[14px] overflow-hidden shadow-browser border border-line">
           <div class="flex items-center gap-[7px] px-4 py-[11px] bg-navy-2">
             <i class="w-[11px] h-[11px] rounded-full bg-[#ff5f57]"></i>

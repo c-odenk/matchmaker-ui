@@ -9,7 +9,7 @@
         <FeatureList :items="features" />
       </div>
 
-      <div class="relative min-w-0">
+      <div class="relative min-w-0 max-[880px]:w-full max-[880px]:max-w-[620px] max-[880px]:mx-auto">
         <BrowserFrame url="app-matchmaker-hr.netlify.app/kandidaten">
           <div class="font-bold text-[1rem]">Director Cloud Architecture &amp; Enterprise IT (m/w/d)</div>
           <div class="text-[.76rem] text-muted mt-1 flex items-center gap-[7px] flex-wrap">Nexis Cloud Systems GmbH · Berlin <span class="src-pill !ml-0">LinkedIn</span> · 17.6.2026</div>

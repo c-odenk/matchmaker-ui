@@ -1,5 +1,5 @@
 <template>
-  <section class="sec bg-white pt-2 max-[560px]:!pt-2">
+  <section class="sec bg-white !pt-2">
     <div class="wrap">
       <div class="cta-band relative overflow-hidden bg-navy text-white rounded-3xl p-[54px] max-[880px]:px-8 max-[880px]:py-10 max-[560px]:px-[22px] max-[560px]:py-8">
         <div class="absolute top-[-60%] right-[-8%] w-1/2 h-[200%] bg-[radial-gradient(ellipse_at_center,rgba(41,118,214,.38),transparent_65%)] blur-[55px] pointer-events-none"></div>

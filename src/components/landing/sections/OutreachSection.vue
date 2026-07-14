@@ -2,7 +2,7 @@
   <!-- Outreach: Mockup links, Text rechts (gespiegelt) -->
   <section class="sec bg-white">
     <div class="wrap two rev grid [grid-template-columns:1.1fr_1fr] gap-[52px] items-center max-[880px]:grid-cols-1 max-[880px]:gap-[30px]">
-      <div class="min-w-0 max-[880px]:order-2">
+      <div class="min-w-0 max-[880px]:order-2 max-[880px]:w-full max-[880px]:max-w-[620px] max-[880px]:mx-auto">
         <BrowserFrame url="app-matchmaker-hr.netlify.app/nachrichten">
           <div class="flex items-center gap-[9px] font-bold text-[.98rem]">Nachricht an Christian Weber <span class="src-pill !ml-0">Entwurf</span></div>
           <div class="grid [grid-template-columns:120px_1fr] gap-x-[22px] gap-y-[6px] mt-[14px] max-[560px]:grid-cols-1 max-[560px]:gap-y-[10px]">
@@ -20,8 +20,8 @@
             <div class="msg-body msg-body-short">Sehr geehrte Damen und Herren,<br><br>ich betreue eine Führungspersönlichkeit, die hervorragend auf Ihre Vakanz als Director Cloud Architecture passt – 12 Jahre IT-Erfahrung, davon 5 in leitender Funktion.<br><br>Gerne sende ich Ihnen das vollständige Profil zu.</div>
           </div>
           <div class="msg-foot">
-            <span class="msg-btn">Schließen</span>
-            <span class="msg-btn">Speichern</span>
+            <span class="msg-btn msg-btn-secondary">Schließen</span>
+            <span class="msg-btn msg-btn-secondary">Speichern</span>
             <span class="msg-btn msg-btn-primary">Als Versandbereit markieren</span>
           </div>
         </BrowserFrame>
@@ -72,5 +72,6 @@ export default {
   .msg-body-full { display: none; }
   .msg-body-short { display: block; }
   .msg-foot { flex-wrap: wrap; }
+  .msg-btn-secondary { display: none; }
 }
 </style>
