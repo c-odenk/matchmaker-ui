@@ -56,17 +56,47 @@
             </div>
 
             <div class="dm-row">
-              <div class="dm-field">
-                <label for="dm-dt">Wunschtermin</label>
-                <input id="dm-dt" v-model="form.date" class="dm-input" type="date" :min="todayISO" />
+              <div class="dm-field dm-date-field" ref="dateField">
+                <label id="dm-dt-label">Wunschtermin <span class="dm-opt">nur Mo &amp; Fr</span></label>
+                <button
+                  type="button" class="dm-input dm-date-trigger" :class="{ 'dm-date-placeholder': !form.date }"
+                  aria-haspopup="true" :aria-expanded="pickerOpen ? 'true' : 'false'" aria-labelledby="dm-dt-label"
+                  @click="togglePicker"
+                >
+                  {{ formattedDate || 'Datum wählen' }}
+                  <svg class="dm-date-ic" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"/></svg>
+                </button>
+
+                <div v-if="pickerOpen" class="dm-datepicker">
+                  <div class="dm-dp-head">
+                    <button type="button" class="dm-dp-nav" :disabled="isPrevMonthDisabled" aria-label="Vorheriger Monat" @click="prevMonth">
+                      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+                    </button>
+                    <span class="dm-dp-month">{{ pickerMonthLabel }}</span>
+                    <button type="button" class="dm-dp-nav" aria-label="Nächster Monat" @click="nextMonth">
+                      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                    </button>
+                  </div>
+                  <div class="dm-dp-weekdays">
+                    <span v-for="wd in weekdayLabels" :key="wd">{{ wd }}</span>
+                  </div>
+                  <div class="dm-dp-grid">
+                    <button
+                      v-for="day in pickerDays" :key="day.iso" type="button" class="dm-dp-day"
+                      :class="{ 'dm-dp-day-muted': !day.isCurrentMonth, 'dm-dp-day-unavailable': day.isCurrentMonth && day.disabled, 'dm-dp-day-selected': day.iso === form.date, 'dm-dp-day-today': day.isToday }"
+                      :disabled="day.disabled" :aria-label="day.iso"
+                      @click="selectDay(day)"
+                    >{{ day.label }}</button>
+                  </div>
+                  <p class="dm-dp-legend">Verfügbar: montags &amp; freitags</p>
+                </div>
               </div>
               <div class="dm-field">
                 <label for="dm-sl">Bevorzugte Zeit</label>
                 <div class="dm-select-wrap">
                   <select id="dm-sl" v-model="form.slot" class="dm-select">
-                    <option value="Vormittag (9–12 Uhr)">Vormittag (9–12 Uhr)</option>
-                    <option value="Nachmittag (12–17 Uhr)">Nachmittag (12–17 Uhr)</option>
-                    <option value="Flexibel">Flexibel</option>
+                    <option value="Vormittag (10–12 Uhr)">Vormittag (10–12 Uhr)</option>
+                    <option value="Nachmittag (14–17 Uhr)">Nachmittag (14–17 Uhr)</option>
                   </select>
                   <svg class="dm-chev" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
                 </div>
@@ -119,21 +149,66 @@ const API_BASE = process.env.VUE_APP_API_URL || 'https://matchmaker-api-l835.onr
 
 const emptyForm = () => ({
   firstName: '', lastName: '', company: '', email: '',
-  phone: '', date: '', slot: 'Vormittag (9–12 Uhr)', message: ''
+  phone: '', date: '', slot: 'Vormittag (10–12 Uhr)', message: ''
 })
+
+const WEEKDAY_LABELS = ['Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa', 'So']
 
 export default {
   name: 'DemoModal',
   data() {
-    return { submitted: false, sending: false, error: false, form: emptyForm() }
+    const today = new Date()
+    today.setHours(0, 0, 0, 0)
+    return {
+      submitted: false, sending: false, error: false, form: emptyForm(),
+      pickerOpen: false,
+      pickerMonth: new Date(today.getFullYear(), today.getMonth(), 1),
+      todayMidnight: today,
+      weekdayLabels: WEEKDAY_LABELS
+    }
   },
   computed: {
     open() { return demoModal.open },
-    todayISO() { return new Date().toISOString().slice(0, 10) },
+    isValidWeekday() {
+      if (!this.form.date) return true
+      const day = new Date(`${this.form.date}T00:00:00`).getDay()
+      return day === 1 || day === 5
+    },
     formValid() {
       const f = this.form
       return !!(f.firstName && f.lastName && f.company &&
-        /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.email) && f.date)
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.email) && f.date && this.isValidWeekday)
+    },
+    formattedDate() {
+      if (!this.form.date) return ''
+      const [y, m, d] = this.form.date.split('-').map(Number)
+      return new Date(y, m - 1, d).toLocaleDateString('de-DE', { weekday: 'short', day: '2-digit', month: '2-digit', year: 'numeric' })
+    },
+    pickerMonthLabel() {
+      return this.pickerMonth.toLocaleDateString('de-DE', { month: 'long', year: 'numeric' })
+    },
+    isPrevMonthDisabled() {
+      return this.pickerMonth.getFullYear() === this.todayMidnight.getFullYear() &&
+        this.pickerMonth.getMonth() === this.todayMidnight.getMonth()
+    },
+    pickerDays() {
+      const year = this.pickerMonth.getFullYear()
+      const month = this.pickerMonth.getMonth()
+      const offset = (new Date(year, month, 1).getDay() + 6) % 7 // Montag = 0
+      const days = []
+      for (let i = 0; i < 42; i++) {
+        const d = new Date(year, month, 1 - offset + i)
+        const dow = d.getDay()
+        const isCurrentMonth = d.getMonth() === month
+        days.push({
+          iso: this.toISO(d),
+          label: d.getDate(),
+          isCurrentMonth,
+          isToday: this.isSameDate(d, this.todayMidnight),
+          disabled: !isCurrentMonth || d < this.todayMidnight || !(dow === 1 || dow === 5)
+        })
+      }
+      return days
     }
   },
   watch: {
@@ -144,6 +219,7 @@ export default {
         this.$nextTick(() => this.$refs.firstInput && this.$refs.firstInput.focus())
       } else {
         document.removeEventListener('keydown', this.onKey)
+        this.closePicker()
         setTimeout(() => { this.submitted = false; this.sending = false; this.error = false; this.form = emptyForm() }, 300)
       }
     }
@@ -151,10 +227,48 @@ export default {
   beforeUnmount() {
     document.body.style.overflow = ''
     document.removeEventListener('keydown', this.onKey)
+    document.removeEventListener('click', this.onDocClick, true)
   },
   methods: {
-    onKey(e) { if (e.key === 'Escape') this.close() },
+    onKey(e) {
+      if (e.key !== 'Escape') return
+      if (this.pickerOpen) { this.closePicker(); return }
+      this.close()
+    },
     close() { closeDemoModal() },
+    toISO(d) {
+      const pad = n => String(n).padStart(2, '0')
+      return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`
+    },
+    isSameDate(a, b) {
+      return a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate()
+    },
+    togglePicker() { this.pickerOpen ? this.closePicker() : this.openPicker() },
+    openPicker() {
+      const base = this.form.date ? new Date(`${this.form.date}T00:00:00`) : this.todayMidnight
+      this.pickerMonth = new Date(base.getFullYear(), base.getMonth(), 1)
+      this.pickerOpen = true
+      this.$nextTick(() => document.addEventListener('click', this.onDocClick, true))
+    },
+    closePicker() {
+      this.pickerOpen = false
+      document.removeEventListener('click', this.onDocClick, true)
+    },
+    onDocClick(e) {
+      if (this.$refs.dateField && !this.$refs.dateField.contains(e.target)) this.closePicker()
+    },
+    prevMonth() {
+      if (this.isPrevMonthDisabled) return
+      this.pickerMonth = new Date(this.pickerMonth.getFullYear(), this.pickerMonth.getMonth() - 1, 1)
+    },
+    nextMonth() {
+      this.pickerMonth = new Date(this.pickerMonth.getFullYear(), this.pickerMonth.getMonth() + 1, 1)
+    },
+    selectDay(day) {
+      if (day.disabled) return
+      this.form.date = day.iso
+      this.closePicker()
+    },
     async handleSubmit() {
       if (!this.formValid || this.sending) return
       this.sending = true
@@ -211,7 +325,7 @@ export default {
 .dm-input:focus, .dm-select:focus, .dm-textarea:focus { outline: none; border-color: #2976d6; background: #fff; box-shadow: 0 0 0 3px rgba(41, 118, 214, .12); }
 .dm-textarea { resize: vertical; min-height: 54px; line-height: 1.5; }
 .dm-select-wrap { position: relative; }
-.dm-select { appearance: none; -webkit-appearance: none; cursor: pointer; padding-right: 38px; }
+.dm-select { appearance: none; -webkit-appearance: none; cursor: pointer; height: 47px; padding-top: 0; padding-bottom: 0; padding-right: 38px; line-height: 45px; }
 .dm-chev { position: absolute; right: 13px; top: 50%; transform: translateY(-50%); pointer-events: none; color: #7c8aa0; }
 .dm-actions { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-top: 6px; }
 .dm-cancel { background: none; border: none; font: inherit; font-size: .9rem; font-weight: 600; color: #7c8aa0; cursor: pointer; padding: 8px 4px; transition: .16s; }
@@ -220,6 +334,26 @@ export default {
 .dm-submit:hover { background: #2065bd; }
 .dm-submit:disabled { opacity: .5; cursor: not-allowed; }
 .dm-submit-success { margin-top: 22px; min-width: 150px; }
+.dm-date-field { position: relative; }
+.dm-date-trigger { display: flex; align-items: center; justify-content: space-between; gap: 8px; text-align: left; cursor: pointer; }
+.dm-date-placeholder { color: #9aa7b8; }
+.dm-date-ic { color: #7c8aa0; flex-shrink: 0; }
+.dm-datepicker { position: absolute; top: calc(100% + 6px); left: 0; z-index: 20; width: 268px; background: #fff; border: 1px solid #e7ebf1; border-radius: 12px; box-shadow: 0 16px 40px rgba(8, 15, 30, .16); padding: 14px; }
+.dm-dp-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+.dm-dp-month { font-size: .84rem; font-weight: 700; color: #0f172a; text-transform: capitalize; }
+.dm-dp-nav { width: 26px; height: 26px; display: flex; align-items: center; justify-content: center; border-radius: 8px; border: none; background: none; color: #56657c; cursor: pointer; transition: .16s; }
+.dm-dp-nav:hover:not(:disabled) { background: #f0f3f8; color: #0f172a; }
+.dm-dp-nav:disabled { opacity: .3; cursor: not-allowed; }
+.dm-dp-weekdays { display: grid; grid-template-columns: repeat(7, 1fr); margin-bottom: 2px; }
+.dm-dp-weekdays span { font-size: .64rem; font-weight: 700; text-transform: uppercase; color: #9aa7b8; text-align: center; }
+.dm-dp-grid { display: grid; grid-template-columns: repeat(7, 1fr); row-gap: 2px; }
+.dm-dp-day { aspect-ratio: 1; display: flex; align-items: center; justify-content: center; font-size: .78rem; font-weight: 600; color: #0f172a; background: none; border: none; border-radius: 8px; cursor: pointer; transition: .14s; }
+.dm-dp-day:hover:not(:disabled) { background: #eaf2fc; color: #2976d6; }
+.dm-dp-day-muted { color: #d8dee7; }
+.dm-dp-day-unavailable { color: #d99a96; cursor: not-allowed; }
+.dm-dp-day-today { box-shadow: inset 0 0 0 1.5px #cbd5e1; }
+.dm-dp-day-selected, .dm-dp-day-selected:hover { background: #2976d6; color: #fff; }
+.dm-dp-legend { margin-top: 10px; padding-top: 10px; border-top: 1px solid #f0f3f8; font-size: .7rem; color: #7c8aa0; text-align: center; }
 .dm-error { font-size: .82rem; line-height: 1.5; color: #b42318; background: #fef3f2; border: 1px solid #fecdca; border-radius: 10px; padding: 10px 13px; }
 .dm-error a { color: #b42318; font-weight: 600; }
 .dm-disclaimer { font-size: .72rem; color: #7c8aa0; text-align: center; margin-top: 2px; }
