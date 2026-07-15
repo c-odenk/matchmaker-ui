@@ -2,7 +2,7 @@
   <section class="border-y border-line bg-white">
     <div class="wrap sources-row flex items-center justify-center gap-x-[30px] gap-y-4 flex-wrap py-6 max-[560px]:gap-x-5 max-[560px]:gap-y-[10px] max-[560px]:py-5">
       <!-- Tablet-Band: Label als eigene Zeile, Quellen-Logos darunter -->
-      <span class="text-p font-semibold text-ink min-[561px]:max-[880px]:w-full min-[561px]:max-[880px]:text-center">Der Market Agent scannt kontinuierlich</span>
+      <span class="text-p font-semibold text-muted min-[561px]:max-[880px]:w-full min-[561px]:max-[880px]:text-center">Der Market Agent scannt kontinuierlich</span>
 
       <span class="inline-flex items-center gap-2 text-[1.02rem] font-semibold text-[#5d6b80] tracking-[-0.01em] max-[560px]:text-[.92rem]">
         <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7">
