@@ -12,6 +12,68 @@ const routes = [
     meta: { title: DEFAULT_TITLE, description: DEFAULT_DESC }
   },
   {
+    // Entwurfsfassung der Landingpage (Umsetzung des Systementwurfs) –
+    // nur zur internen Ansicht, per noindex von der Indexierung ausgenommen.
+    path: '/entwurf',
+    name: 'landing-draft',
+    component: () => import('../views/View-Landing-Draft.vue'),
+    meta: {
+      title: 'Entwurf – matchmaker.hr',
+      description: DEFAULT_DESC,
+      noindex: true
+    }
+  },
+  {
+    path: '/entwurf/integration',
+    name: 'integration-draft',
+    component: () => import('../views/View-Integration-Draft.vue'),
+    meta: {
+      title: 'Integration – matchmaker.hr',
+      description: 'Bewerbersoftware, Postfach, Telefonie, Teams und Recherchequellen laufen in matchmaker an einer Oberfläche zusammen – angebunden statt ersetzt.',
+      noindex: true
+    }
+  },
+  {
+    path: '/entwurf/automatisierungen',
+    name: 'automation-draft',
+    component: () => import('../views/View-Automation-Draft.vue'),
+    meta: {
+      title: 'Automatisierungen – matchmaker.hr',
+      description: 'Wiederkehrende Schritte laufen ohne Zutun durch, fehlende Profilangaben werden erkannt und nachgefragt – Telefonie, Termine und Auswertung laufen auf Klick aus dem Vorgang.',
+      noindex: true
+    }
+  },
+  {
+    path: '/entwurf/agenten',
+    name: 'agents-draft',
+    component: () => import('../views/View-Agents-Draft.vue'),
+    meta: {
+      title: 'Multi-Agentensystem – matchmaker.hr',
+      description: 'Profiling, Market, Matching und Outreach Agent: vier spezialisierte KI-Agenten bereiten jeden Schritt des Vermittlungsprozesses vor – die Freigabe bleibt beim Berater.',
+      noindex: true
+    }
+  },
+  {
+    path: '/entwurf/daten',
+    name: 'data-draft',
+    component: () => import('../views/View-Data-Draft.vue'),
+    meta: {
+      title: 'Daten – matchmaker.hr',
+      description: 'Welche Daten matchmaker verarbeitet, woher sie stammen, was vor dem KI-Aufruf entfernt wird und welche DSGVO-Anforderungen technisch gelöst sind.',
+      noindex: true
+    }
+  },
+  {
+    path: '/entwurf/preise',
+    name: 'pricing-draft',
+    component: () => import('../views/View-Pricing-Draft.vue'),
+    meta: {
+      title: 'Preise – matchmaker.hr',
+      description: 'Preise von matchmaker.hr: Enterprise Lizenz gestaffelt nach Talent-Pool-Größe, zusätzliche Mitarbeiter-Lizenzen und Bring Your Own Key für die KI-Abrechnung.',
+      noindex: true
+    }
+  },
+  {
     path: '/imprint',
     name: 'imprint',
     component: () => import('../views/View-Imprint.vue'),
@@ -71,6 +133,22 @@ router.afterEach((to) => {
     document.head.appendChild(canonical)
   }
   canonical.setAttribute('href', 'https://matchmaker-hr.de' + to.path)
+
+  // robots-Tag nur setzen, wenn eine Route ausdrücklich noindex verlangt
+  // (Entwurfsseiten); auf allen anderen Routen wird er wieder entfernt.
+  const robots = document.querySelector('meta[name="robots"]')
+  if (to.meta && to.meta.noindex) {
+    if (robots) {
+      robots.setAttribute('content', 'noindex, nofollow')
+    } else {
+      const tag = document.createElement('meta')
+      tag.setAttribute('name', 'robots')
+      tag.setAttribute('content', 'noindex, nofollow')
+      document.head.appendChild(tag)
+    }
+  } else if (robots) {
+    robots.remove()
+  }
 })
 
 export default router

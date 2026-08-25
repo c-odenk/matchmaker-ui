@@ -1,0 +1,46 @@
+<template>
+  <div class="font-sans text-ink antialiased leading-[1.6] bg-white">
+    <TheHeaderDraft />
+    <main>
+      <DataHeadSection />
+      <DataSourcesSection />
+      <DataAnonymisationSection />
+      <DataComplianceSection />
+      <DataCtaSection />
+    </main>
+    <TheFooter />
+    <DemoModal />
+  </div>
+</template>
+
+<script>
+// ENTWURF der Unterseite „Daten" (/entwurf/daten).
+// Reihenfolge: erst der Weg der Daten, dann die Herkunft, dann was vor dem
+// KI-Aufruf entfernt wird, zuletzt die Regulatorik – gelöste und offene Punkte.
+import TheHeaderDraft from '@/components/landing-draft/sections/TheHeaderDraft.vue'
+import TheFooter from '@/components/landing/sections/TheFooter.vue'
+import DemoModal from '@/components/landing/sections/DemoModal.vue'
+
+import DataHeadSection from '@/components/landing-draft/data/DataHeadSection.vue'
+import DataSourcesSection from '@/components/landing-draft/data/DataSourcesSection.vue'
+import DataAnonymisationSection from '@/components/landing-draft/data/DataAnonymisationSection.vue'
+import DataComplianceSection from '@/components/landing-draft/data/DataComplianceSection.vue'
+import DataCtaSection from '@/components/landing-draft/data/DataCtaSection.vue'
+
+import { setupScrollReveal } from '@/composables/useScrollReveal'
+
+export default {
+  name: 'DataPageDraft',
+  components: {
+    TheHeaderDraft, TheFooter, DemoModal,
+    DataHeadSection, DataSourcesSection, DataAnonymisationSection,
+    DataComplianceSection, DataCtaSection
+  },
+  mounted() {
+    this._cleanupReveal = setupScrollReveal(this.$el)
+  },
+  beforeUnmount() {
+    if (this._cleanupReveal) this._cleanupReveal()
+  }
+}
+</script>

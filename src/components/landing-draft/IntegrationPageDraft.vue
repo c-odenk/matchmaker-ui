@@ -1,0 +1,53 @@
+<template>
+  <div class="font-sans text-ink antialiased leading-[1.6] bg-white">
+    <TheHeaderDraft />
+    <main>
+      <IntegrationHeadSection />
+      <IntegrationAtsSection />
+      <IntegrationMailSection />
+      <IntegrationPhoneSection />
+      <IntegrationTeamsSection />
+      <IntegrationSourcesSection />
+      <IntegrationCtaSection />
+    </main>
+    <TheFooter />
+    <DemoModal />
+  </div>
+</template>
+
+<script>
+// ENTWURF der Unterseite „Integration" (/entwurf/integration).
+// Reihenfolge: erst das führende System (ATS), dann die Kanäle, die der
+// Berater heute einzeln bedient (Mail, Telefon, Teams), zuletzt die Quellen,
+// die nur ausgelesen werden. Automatisierungen bleiben bewusst flach –
+// die gehören auf die Unterseite „Automatisierungen".
+import TheHeaderDraft from '@/components/landing-draft/sections/TheHeaderDraft.vue'
+import TheFooter from '@/components/landing/sections/TheFooter.vue'
+import DemoModal from '@/components/landing/sections/DemoModal.vue'
+
+import IntegrationHeadSection from '@/components/landing-draft/integration/IntegrationHeadSection.vue'
+import IntegrationAtsSection from '@/components/landing-draft/integration/IntegrationAtsSection.vue'
+import IntegrationMailSection from '@/components/landing-draft/integration/IntegrationMailSection.vue'
+import IntegrationPhoneSection from '@/components/landing-draft/integration/IntegrationPhoneSection.vue'
+import IntegrationTeamsSection from '@/components/landing-draft/integration/IntegrationTeamsSection.vue'
+import IntegrationSourcesSection from '@/components/landing-draft/integration/IntegrationSourcesSection.vue'
+import IntegrationCtaSection from '@/components/landing-draft/integration/IntegrationCtaSection.vue'
+
+import { setupScrollReveal } from '@/composables/useScrollReveal'
+
+export default {
+  name: 'IntegrationPageDraft',
+  components: {
+    TheHeaderDraft, TheFooter, DemoModal,
+    IntegrationHeadSection, IntegrationAtsSection, IntegrationMailSection,
+    IntegrationPhoneSection, IntegrationTeamsSection, IntegrationSourcesSection,
+    IntegrationCtaSection
+  },
+  mounted() {
+    this._cleanupReveal = setupScrollReveal(this.$el)
+  },
+  beforeUnmount() {
+    if (this._cleanupReveal) this._cleanupReveal()
+  }
+}
+</script>
