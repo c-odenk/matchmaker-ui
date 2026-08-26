@@ -16,7 +16,7 @@
 
       <div>
         <BrowserFrame url="app-matchmaker-hr.netlify.app/ki-assistent">
-          <div ref="liste" class="min-h-[392px] flex flex-col max-[560px]:min-h-[524px]">
+          <div ref="liste" class="min-h-[404px] flex flex-col max-[560px]:min-h-[524px]">
             <div class="text-[.72rem] font-bold tracking-[0.06em] uppercase text-muted mb-[11px]">Beispiele für Aufträge</div>
 
             <div class="flex flex-col gap-[9px]">
