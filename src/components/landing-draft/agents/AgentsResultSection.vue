@@ -1,6 +1,6 @@
 <template>
   <!-- Abschluss: was am Ende der Kette tatsächlich vorliegt -->
-  <section class="sec bg-surface">
+  <section class="sec bg-white">
     <div class="wrap">
       <div class="sec-head mx-auto max-w-[660px] text-center mb-10">
         <EyebrowBadge>Ergebnis</EyebrowBadge>
@@ -9,7 +9,7 @@
       </div>
 
       <div class="ben-grid grid gap-[18px] [grid-template-columns:repeat(4,1fr)] max-[880px]:grid-cols-2 max-[560px]:grid-cols-1">
-        <div v-for="r in results" :key="r.title" class="ben bg-white border border-line rounded-2xl p-6">
+        <div v-for="r in results" :key="r.title" class="ben bg-surface border border-line rounded-2xl p-6">
           <div class="w-[42px] h-[42px] rounded-xl bg-navy text-white flex items-center justify-center mb-4">
             <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" :d="r.icon"/></svg>
           </div>

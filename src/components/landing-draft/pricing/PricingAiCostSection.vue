@@ -2,7 +2,7 @@
   <!-- Zeigt je Schritt nur, OB KI-Kosten entstehen – nicht, wie gefiltert,
        sortiert oder recherchiert wird. Kein Schritt wird als kostenlos
        ausgewiesen, der es nicht ist. -->
-  <section class="sec bg-surface">
+  <section class="sec bg-white">
     <div class="wrap two grid [grid-template-columns:1fr_1.1fr] gap-[52px] items-center max-[880px]:grid-cols-1 max-[880px]:gap-[30px]">
       <div>
         <EyebrowBadge>KI-Kosten</EyebrowBadge>
@@ -15,7 +15,7 @@
         </p>
       </div>
 
-      <div class="bg-white border border-line rounded-2xl p-6">
+      <div class="bg-surface border border-line rounded-2xl p-6">
         <div class="text-[.64rem] font-bold tracking-[0.07em] uppercase text-muted">So läuft die Automatisierung</div>
         <p class="text-[.78rem] text-muted leading-[1.45] mt-2 mb-5">Das Multi-Agenten-System arbeitet die Schritte ab. Markiert ist, wo KI-Kosten entstehen.</p>
         <ol class="list-none flex flex-col">

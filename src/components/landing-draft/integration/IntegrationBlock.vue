@@ -1,7 +1,7 @@
 <template>
   <!-- Abstrakte Darstellung statt App-Screen: matchmaker als Bedienschicht oben,
        das angebundene System als Baustein darunter, dazwischen was fließt. -->
-  <div class="rounded-[18px] border border-line bg-white p-7 max-[560px]:p-5">
+  <div class="rounded-[18px] border border-line bg-surface p-7 max-[560px]:p-5">
     <!-- Bedienschicht -->
     <div class="rounded-[12px] bg-navy text-white px-5 py-4 flex items-center gap-3">
       <span class="w-[30px] h-[30px] shrink-0 rounded-lg bg-white/[0.12] flex items-center justify-center">
@@ -36,7 +36,7 @@
     </div>
 
     <!-- Der angebundene Baustein -->
-    <div class="rounded-[12px] border border-line bg-surface px-5 py-4">
+    <div class="rounded-[12px] border border-line bg-white px-5 py-4">
       <div class="flex items-center gap-3">
         <span class="w-[30px] h-[30px] shrink-0 rounded-lg bg-navy/[0.07] text-navy flex items-center justify-center">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" :d="icon"/></svg>
@@ -47,7 +47,7 @@
         </span>
       </div>
       <div v-if="chips.length" class="flex flex-wrap gap-[6px] mt-[13px]">
-        <span v-for="c in chips" :key="c" class="text-[.72rem] font-semibold text-body bg-white border border-line rounded-[6px] px-[8px] py-[2px]">{{ c }}</span>
+        <span v-for="c in chips" :key="c" class="text-[.72rem] font-semibold text-body bg-surface border border-line rounded-[6px] px-[8px] py-[2px]">{{ c }}</span>
       </div>
     </div>
 

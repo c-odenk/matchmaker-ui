@@ -1,12 +1,12 @@
 <template>
   <!-- 2 · Anonymisierung: gespiegelt – Baustein links, Text rechts -->
-  <section class="sec bg-surface">
+  <section class="sec bg-white">
     <div class="wrap two rev grid [grid-template-columns:1.1fr_1fr] gap-[52px] items-center max-[880px]:grid-cols-1 max-[880px]:gap-[30px]">
       <div>
-        <div class="rounded-[18px] border border-line bg-white p-7 max-[560px]:p-5">
+        <div class="rounded-[18px] border border-line bg-surface p-7 max-[560px]:p-5">
           <div class="text-[.64rem] font-bold tracking-[0.07em] uppercase text-muted mb-4">Vor dem KI-Aufruf</div>
 
-          <div class="rounded-[12px] border border-line bg-surface px-5 py-4">
+          <div class="rounded-[12px] border border-line bg-white px-5 py-4">
             <div class="text-[.88rem] font-bold text-ink mb-[13px]">Kandidatenprofil</div>
             <div class="flex flex-col gap-[10px]">
               <div v-for="f in fields" :key="f.label" class="flex items-center gap-[11px]">

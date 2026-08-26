@@ -2,7 +2,7 @@
   <!-- 3 · Die Befehle: Text links, Mockup rechts. Die Aufträge laufen nach
        und nach ein, jeder bekommt seinen Agenten zugeordnet – der letzte
        zeigt, wo die Grenze liegt. -->
-  <section class="sec bg-surface">
+  <section class="sec bg-white">
     <div class="wrap two grid [grid-template-columns:1fr_1.1fr] gap-[52px] items-center max-[880px]:grid-cols-1 max-[880px]:gap-[30px]">
       <div>
         <EyebrowBadge>Die Befehle</EyebrowBadge>

@@ -1,7 +1,7 @@
 <template>
   <!-- Bewusst flach gehalten: auf der Preisseite zählt, DASS alles enthalten ist.
        Der tatsächliche Umfang wird auf den Plattform-Seiten gezeigt. -->
-  <section class="sec bg-surface">
+  <section class="sec bg-white">
     <div class="wrap">
       <div class="sec-head mx-auto max-w-[660px] text-center mb-10">
         <EyebrowBadge>Leistungsumfang</EyebrowBadge>
@@ -9,7 +9,7 @@
         <p class="text-lead text-body">Alle angebundenen Systeme und das gesamte Multi-Agenten-System gehören zur Lizenz. Es gibt keine Gebühr je Integration. Und wenn Sie später Ihre Bewerbersoftware wechseln, ändert das an Ihrer Lizenz nichts.</p>
       </div>
 
-      <div class="scope border border-line rounded-[18px] overflow-hidden bg-white grid grid-cols-3 max-[880px]:grid-cols-1">
+      <div class="scope border border-line rounded-[18px] overflow-hidden bg-surface grid grid-cols-3 max-[880px]:grid-cols-1">
         <div
           v-for="(c, i) in facts" :key="c.title"
           class="ben px-7 py-7 max-[560px]:px-[22px]"
@@ -26,7 +26,7 @@
       </div>
 
       <!-- Klare Trennung: Lizenz vs. Rechenkosten -->
-      <div class="scope mt-[18px] border border-line rounded-2xl bg-white px-6 py-5 flex items-start gap-[14px] max-[560px]:flex-col">
+      <div class="scope mt-[18px] border border-line rounded-2xl bg-surface px-6 py-5 flex items-start gap-[14px] max-[560px]:flex-col">
         <div class="w-9 h-9 shrink-0 rounded-[10px] bg-navy/[0.06] text-navy flex items-center justify-center">
           <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
         </div>

@@ -1,6 +1,6 @@
 <template>
   <!-- 2 · Postfach: gespiegelt – Baustein links, Text rechts -->
-  <section class="sec bg-surface">
+  <section class="sec bg-white">
     <div class="wrap two rev grid [grid-template-columns:1.1fr_1fr] gap-[52px] items-center max-[880px]:grid-cols-1 max-[880px]:gap-[30px]">
       <div>
         <IntegrationBlock

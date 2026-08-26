@@ -1,6 +1,6 @@
 <template>
   <!-- 3 · Was früher fünf Programme brauchte, läuft hier auf Klick -->
-  <section class="sec bg-surface">
+  <section class="sec bg-white">
     <div class="wrap">
       <div class="sec-head mx-auto max-w-[660px] text-center mb-10">
         <EyebrowBadge>Auf Klick</EyebrowBadge>
@@ -12,7 +12,7 @@
       <div class="ben-grid bg-line border border-line rounded-[18px] overflow-hidden grid grid-cols-3 gap-px max-[880px]:grid-cols-2 max-[560px]:grid-cols-1">
         <div
           v-for="a in actions" :key="a.title"
-          class="ben bg-white flex items-start gap-[14px] px-6 py-5"
+          class="ben bg-surface flex items-start gap-[14px] px-6 py-5"
         >
           <div class="w-9 h-9 shrink-0 rounded-[10px] bg-navy text-white flex items-center justify-center">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" :d="a.icon"/></svg>
