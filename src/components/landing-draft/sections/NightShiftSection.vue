@@ -23,7 +23,7 @@
         </div>
       </div>
 
-      <p class="text-[.84rem] text-muted mt-4 max-w-[760px]">
+      <p class="text-[.85rem] text-muted mt-4 max-w-[760px]">
         Jede Vorstufe filtert, bevor die KI rechnet – Dubletten, Region, Seniorität und bereits Abgelehntes fallen ohne KI-Kosten heraus. So bleiben die Kosten pro Nacht kalkulierbar.
       </p>
 

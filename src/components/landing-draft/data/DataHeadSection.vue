@@ -1,7 +1,7 @@
 <template>
-  <section class="sec bg-white !pt-14 max-[880px]:!pt-10">
+  <section class="sec bg-white !pt-[88px] max-[880px]:!pt-[58px]">
     <div class="wrap">
-      <div class="sec-head mx-auto max-w-[680px] text-center mb-10">
+      <div class="sec-head mx-auto max-w-[680px] text-center mb-[88px] max-[880px]:mb-[58px]">
         <h1 class="text-hero text-ink mb-[14px]">Wo Ihre Daten liegen – <span class="text-blue">und wo nicht.</span></h1>
         <p class="text-lead text-body">
           Personalberatung arbeitet mit sensiblen Daten. Deshalb liegt der Weg offen: welche Station was speichert und was nur durchläuft.

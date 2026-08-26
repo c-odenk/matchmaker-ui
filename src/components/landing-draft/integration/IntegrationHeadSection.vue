@@ -1,7 +1,7 @@
 <template>
-  <section class="sec bg-white !pt-14 max-[880px]:!pt-10">
+  <section class="sec bg-white !pt-[88px] max-[880px]:!pt-[58px]">
     <div class="wrap">
-      <div class="sec-head mx-auto max-w-[680px] text-center mb-10">
+      <div class="sec-head mx-auto max-w-[680px] text-center mb-[88px] max-[880px]:mb-[58px]">
         <h1 class="text-hero text-ink mb-[14px]">Alle Systeme Ihrer Beratung – <span class="text-blue">an einer Oberfläche.</span></h1>
         <p class="text-lead text-body">
           Heute wird jedes System einzeln bedient. matchmaker legt sich als Bedienschicht darüber – angebunden statt ersetzt.
@@ -42,14 +42,14 @@
         </div>
 
         <!-- Verbindung zur Bausteinreihe (nur ab Tablet sichtbar) -->
-        <div class="relative h-8 max-[880px]:h-5">
-          <span class="absolute left-1/2 -translate-x-1/2 top-0 h-4 w-px bg-[#c2ccdb] max-[880px]:h-5"></span>
-          <span class="absolute left-[7%] right-[7%] top-4 h-px bg-[#c2ccdb] max-[880px]:hidden"></span>
+        <div class="relative h-8 max-[1150px]:h-5">
+          <span class="absolute left-1/2 -translate-x-1/2 top-0 h-4 w-px bg-[#c2ccdb] max-[1150px]:h-5"></span>
+          <span class="absolute left-[7%] right-[7%] top-4 h-px bg-[#c2ccdb] max-[1150px]:hidden"></span>
         </div>
 
-        <div class="grid gap-3 [grid-template-columns:repeat(7,1fr)] max-[880px]:grid-cols-4 max-[560px]:grid-cols-2">
+        <div class="grid gap-3 [grid-template-columns:repeat(7,1fr)] max-[1150px]:grid-cols-4 max-[560px]:grid-cols-2">
           <div v-for="s in systems" :key="s.label" class="relative">
-            <span class="absolute left-1/2 -translate-x-1/2 -top-4 h-4 w-px bg-[#c2ccdb] max-[880px]:hidden"></span>
+            <span class="absolute left-1/2 -translate-x-1/2 -top-4 h-4 w-px bg-[#c2ccdb] max-[1150px]:hidden"></span>
             <div class="h-full rounded-[12px] border border-line bg-white px-3 py-4 flex flex-col items-center text-center gap-[9px]">
               <span class="w-[34px] h-[34px] shrink-0 rounded-[10px] bg-navy/[0.07] text-navy flex items-center justify-center">
                 <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" :d="s.icon"/></svg>

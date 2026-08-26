@@ -3,9 +3,9 @@
        Die geteilte Komponente bleibt für die Live-Seite unberührt. -->
   <section class="sec bg-white">
     <div class="wrap">
-      <SectionHeading eyebrow="Aus der Praxis">
+      <SectionHeadingDraft eyebrow="Aus der Praxis">
         So verändert sich der <span class="text-blue">Arbeitstag.</span>
-      </SectionHeading>
+      </SectionHeadingDraft>
 
       <!-- Tablet-Band: horizontaler Scroller mit Snap & Peek auf die nächste Karte -->
       <div class="test-grid grid gap-[18px] [grid-template-columns:repeat(auto-fit,minmax(280px,1fr))] max-[560px]:grid-cols-1 min-[561px]:max-[880px]:flex min-[561px]:max-[880px]:overflow-x-auto min-[561px]:max-[880px]:snap-x min-[561px]:max-[880px]:snap-mandatory min-[561px]:max-[880px]:-mx-6 min-[561px]:max-[880px]:px-6 min-[561px]:max-[880px]:scroll-px-6 no-scrollbar">
@@ -26,11 +26,11 @@
 </template>
 
 <script>
-import SectionHeading from '@/components/ui/SectionHeading.vue'
+import SectionHeadingDraft from '@/components/landing-draft/ui/SectionHeadingDraft.vue'
 
 export default {
   name: 'TestimonialsSectionDraft',
-  components: { SectionHeading },
+  components: { SectionHeadingDraft },
   data() {
     return {
       // Avatar-Farben aus der CI-Palette (blau-soft, grün-soft, navy-soft) – dezenter Akzent je Karte

@@ -9,8 +9,8 @@
             <p class="text-white/[0.78] mt-3 max-w-[520px] text-[.95rem] max-[880px]:max-w-none">Wir gehen den Weg Ihrer Daten in 15 Minuten gemeinsam durch – Station für Station, mit allen Belegen.</p>
           </div>
           <div class="flex gap-3 flex-wrap max-[880px]:justify-center max-[560px]:flex-col max-[560px]:w-full">
-            <BaseButton variant="blue" class="max-[560px]:w-full" @click="openDemo">Demo vereinbaren</BaseButton>
-            <BaseButton variant="ghost-dark" to="/entwurf/integration" class="max-[560px]:w-full">Integration ansehen →</BaseButton>
+            <BaseButtonDraft variant="blue" class="max-[560px]:w-full" to="/entwurf/kontakt">Demo vereinbaren</BaseButtonDraft>
+            <BaseButtonDraft variant="ghost-dark" to="/entwurf/integration" class="max-[560px]:w-full">Integration ansehen →</BaseButtonDraft>
           </div>
         </div>
       </div>
@@ -19,14 +19,10 @@
 </template>
 
 <script>
-import BaseButton from '@/components/ui/BaseButton.vue'
-import { openDemoModal } from '@/composables/demoModal'
+import BaseButtonDraft from '@/components/landing-draft/ui/BaseButtonDraft.vue'
 
 export default {
   name: 'DataCtaSection',
-  components: { BaseButton },
-  methods: {
-    openDemo() { openDemoModal() }
-  }
+  components: { BaseButtonDraft }
 }
 </script>

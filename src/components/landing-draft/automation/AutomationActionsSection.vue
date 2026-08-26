@@ -3,8 +3,8 @@
   <section class="sec bg-surface">
     <div class="wrap">
       <div class="sec-head mx-auto max-w-[660px] text-center mb-10">
-        <div class="text-[.72rem] font-bold tracking-[0.09em] uppercase text-blue mb-3">Auf Klick</div>
-        <h2 class="text-section text-ink mb-[14px]">Ein Fenster statt <span class="text-blue">fünf Programmen.</span></h2>
+        <EyebrowBadge>Auf Klick</EyebrowBadge>
+        <h2 class="text-section text-ink mt-[18px] mb-[14px]">Ein Fenster statt <span class="text-blue">fünf Programmen.</span></h2>
         <p class="text-lead text-body">Handgriffe, die heute je ein eigenes System brauchen – in matchmaker ein Klick aus dem Vorgang heraus.</p>
       </div>
 
@@ -29,8 +29,11 @@
 </template>
 
 <script>
+import EyebrowBadge from '@/components/ui/EyebrowBadge.vue'
+
 export default {
   name: 'AutomationActionsSection',
+  components: { EyebrowBadge },
   data() {
     return {
       actions: [

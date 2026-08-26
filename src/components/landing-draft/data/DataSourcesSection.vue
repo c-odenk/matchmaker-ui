@@ -14,7 +14,7 @@
       <div class="rounded-[18px] border border-line bg-white p-7 max-[560px]:p-5">
         <div class="text-[.64rem] font-bold tracking-[0.07em] uppercase text-muted mb-4">Datenherkunft</div>
         <div class="flex flex-col gap-3">
-          <div v-for="s in sources" :key="s.title" class="flex items-start gap-[13px] rounded-[12px] border border-line bg-surface px-4 py-[13px]">
+          <div v-for="s in sources" :key="s.title" class="flex items-start gap-[13px] rounded-[12px] border border-line bg-surface px-4 py-[13px] max-[560px]:flex-wrap">
             <span class="w-[30px] h-[30px] shrink-0 rounded-lg bg-navy/[0.07] text-navy flex items-center justify-center">
               <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" :d="s.icon"/></svg>
             </span>
@@ -22,7 +22,7 @@
               <span class="block text-[.88rem] font-bold text-ink leading-tight">{{ s.title }}</span>
               <span class="block text-[.78rem] text-muted leading-[1.45] mt-[2px]">{{ s.text }}</span>
             </span>
-            <span class="text-[.72rem] font-semibold px-[9px] py-[3px] rounded-full shrink-0 whitespace-nowrap"
+            <span class="text-[.72rem] font-semibold px-[9px] py-[3px] rounded-full shrink-0 whitespace-nowrap max-[560px]:basis-full max-[560px]:ml-[43px] max-[560px]:mt-[5px] max-[560px]:w-fit"
                   :class="s.personal ? 'bg-navy/[0.06] text-navy' : 'bg-[#e7f8ee] text-[#15803d]'">{{ s.personal ? 'Personenbezogen' : 'Öffentlich' }}</span>
           </div>
         </div>

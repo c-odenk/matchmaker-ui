@@ -3,8 +3,8 @@
   <section class="sec bg-white">
     <div class="wrap">
       <div class="sec-head mx-auto max-w-[660px] text-center mb-10">
-        <div class="text-[.72rem] font-bold tracking-[0.09em] uppercase text-blue mb-3">Quellen</div>
-        <h2 class="text-section text-ink mb-[14px]">Recherche, die Sie <span class="text-blue">nicht mehr selbst öffnen.</span></h2>
+        <EyebrowBadge>Quellen</EyebrowBadge>
+        <h2 class="text-section text-ink mt-[18px] mb-[14px]">Recherche, die Sie <span class="text-blue">nicht mehr selbst öffnen.</span></h2>
         <p class="text-lead text-body">Angebunden liefern diese Quellen ihre Daten direkt in den Vorgang – Sie sehen das Ergebnis, nicht den Suchweg.</p>
       </div>
 
@@ -25,8 +25,11 @@
 </template>
 
 <script>
+import EyebrowBadge from '@/components/ui/EyebrowBadge.vue'
+
 export default {
   name: 'IntegrationSourcesSection',
+  components: { EyebrowBadge },
   data() {
     return {
       sources: [
@@ -38,12 +41,12 @@ export default {
         {
           title: 'Karriereseiten',
           icon: 'M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z',
-          text: 'Die Seiten Ihrer Zielfirmen – oft früher als die Portale.'
+          text: 'Die Karriereseiten Ihrer Zielfirmen – dort stehen offene Stellen oft früher als in den Portalen.'
         },
         {
           title: 'Handelsregister',
           icon: 'M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21',
-          text: 'Firmendaten, Geschäftsführung und Impressum – der richtige Ansprechpartner statt „info@".'
+          text: 'Firmendaten und Geschäftsführung – der richtige Ansprechpartner statt „info@".'
         },
         {
           title: 'Ihre Homepage',

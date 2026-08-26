@@ -9,7 +9,6 @@
       <PricingCtaSection />
     </main>
     <TheFooter />
-    <DemoModal />
   </div>
 </template>
 
@@ -19,7 +18,6 @@
 // Alle Sektionen laufen auf voller .wrap-Breite (Ausnahme: Zweispalter).
 import TheHeaderDraft from '@/components/landing-draft/sections/TheHeaderDraft.vue'
 import TheFooter from '@/components/landing/sections/TheFooter.vue'
-import DemoModal from '@/components/landing/sections/DemoModal.vue'
 
 import PricingPlansSection from '@/components/landing-draft/pricing/PricingPlansSection.vue'
 import PricingIncludedSection from '@/components/landing-draft/pricing/PricingIncludedSection.vue'
@@ -27,12 +25,12 @@ import PricingAiCostSection from '@/components/landing-draft/pricing/PricingAiCo
 import PricingFaqSection from '@/components/landing-draft/pricing/PricingFaqSection.vue'
 import PricingCtaSection from '@/components/landing-draft/pricing/PricingCtaSection.vue'
 
-import { setupScrollReveal } from '@/composables/useScrollReveal'
+import { setupScrollReveal } from '@/composables/useScrollRevealDraft'
 
 export default {
   name: 'PricingPageDraft',
   components: {
-    TheHeaderDraft, TheFooter, DemoModal,
+    TheHeaderDraft, TheFooter,
     PricingPlansSection, PricingIncludedSection,
     PricingAiCostSection, PricingFaqSection, PricingCtaSection
   },

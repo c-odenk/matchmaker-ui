@@ -1,7 +1,7 @@
 <template>
-  <section class="sec bg-white !pt-14 max-[880px]:!pt-10">
+  <section class="sec bg-white !pt-[88px] max-[880px]:!pt-[58px]">
     <div class="wrap">
-      <div class="sec-head mx-auto max-w-[680px] text-center mb-10">
+      <div class="sec-head mx-auto max-w-[680px] text-center mb-[88px] max-[880px]:mb-[58px]">
         <h1 class="text-hero text-ink mb-[14px]">Die Arbeit läuft vor. <span class="text-blue">Sie greifen ein, wo es zählt.</span></h1>
         <p class="text-lead text-body">
           Wiederkehrende Schritte laufen ohne Zutun durch. Was Erfahrung braucht, bleibt bei Ihnen – der Rest ist einen Klick entfernt.

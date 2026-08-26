@@ -9,8 +9,8 @@
             <p class="text-white/[0.78] mt-3 max-w-[520px] text-[.95rem] max-[880px]:max-w-none">Sobald die Systeme zusammenlaufen, übernimmt das Multi-Agenten-System die wiederkehrenden Schritte. Was dabei genau passiert, zeigt die Seite Automatisierungen.</p>
           </div>
           <div class="flex gap-3 flex-wrap max-[880px]:justify-center max-[560px]:flex-col max-[560px]:w-full">
-            <BaseButton variant="blue" :to="{ path: '/entwurf', hash: '#automatisierungen' }" class="max-[560px]:w-full">Automatisierungen ansehen →</BaseButton>
-            <BaseButton variant="ghost-dark" class="max-[560px]:w-full" @click="openDemo">Demo vereinbaren</BaseButton>
+            <BaseButtonDraft variant="blue" :to="{ path: '/entwurf', hash: '#automatisierungen' }" class="max-[560px]:w-full">Automatisierungen ansehen →</BaseButtonDraft>
+            <BaseButtonDraft variant="ghost-dark" class="max-[560px]:w-full" to="/entwurf/kontakt">Demo vereinbaren</BaseButtonDraft>
           </div>
         </div>
       </div>
@@ -19,14 +19,10 @@
 </template>
 
 <script>
-import BaseButton from '@/components/ui/BaseButton.vue'
-import { openDemoModal } from '@/composables/demoModal'
+import BaseButtonDraft from '@/components/landing-draft/ui/BaseButtonDraft.vue'
 
 export default {
   name: 'IntegrationCtaSection',
-  components: { BaseButton },
-  methods: {
-    openDemo() { openDemoModal() }
-  }
+  components: { BaseButtonDraft }
 }
 </script>

@@ -2,11 +2,10 @@
   <!-- Volle Wrap-Breite wie alle Sektionen -->
   <section class="sec bg-white" id="vergleich">
     <div class="wrap">
-      <div class="sec-head mx-auto max-w-[660px] text-center mb-10">
-        <div class="text-[.72rem] font-bold tracking-[0.09em] uppercase text-blue mb-3">Vorher · Nachher</div>
-        <h2 class="text-section text-ink mb-[14px]">Derselbe Tag, <span class="text-blue">anders verbracht.</span></h2>
-        <p class="text-lead text-body">Was heute Handarbeit ist, liegt morgen fertig vor.</p>
-      </div>
+      <SectionHeadingDraft eyebrow="Vorher · Nachher">
+        Derselbe Tag, <span class="text-blue">anders verbracht.</span>
+        <template #lead>Was heute Handarbeit ist, liegt morgen fertig vor.</template>
+      </SectionHeadingDraft>
 
       <div class="compare border border-line rounded-[18px] overflow-hidden grid grid-cols-2 max-[560px]:grid-cols-1">
         <div class="col a px-[30px] py-8 max-[560px]:px-[22px]">
@@ -31,8 +30,11 @@
 </template>
 
 <script>
+import SectionHeadingDraft from '@/components/landing-draft/ui/SectionHeadingDraft.vue'
+
 export default {
   name: 'HomeCompareSection',
+  components: { SectionHeadingDraft },
   data() {
     return {
       // Bewusst Zeile für Zeile gepaart: links der Handgriff, rechts sein Ersatz.

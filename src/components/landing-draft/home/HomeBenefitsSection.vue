@@ -2,11 +2,10 @@
   <!-- Vorteile zuerst: was der Berater davon hat, bevor es um Technik geht -->
   <section class="sec bg-white">
     <div class="wrap">
-      <div class="sec-head mx-auto max-w-[660px] text-center mb-10">
-        <div class="text-[.72rem] font-bold tracking-[0.09em] uppercase text-blue mb-3">Warum matchmaker</div>
-        <h2 class="text-section text-ink mb-[14px]">Vier Gründe, <span class="text-blue">nichts zu ersetzen.</span></h2>
-        <p class="text-lead text-body">Sie behalten Ihre Systeme, Ihre Daten und Ihre Entscheidungen. Was sich ändert, ist die Arbeit dazwischen.</p>
-      </div>
+      <SectionHeadingDraft eyebrow="Warum matchmaker">
+        Ein Ort für alles. <span class="text-blue">Sie behalten das letzte Wort.</span>
+        <template #lead>Was sich ändert, ist die Arbeit dazwischen.</template>
+      </SectionHeadingDraft>
 
       <div class="ben-grid grid gap-[18px] [grid-template-columns:repeat(4,1fr)] max-[880px]:grid-cols-2 max-[560px]:grid-cols-1">
         <div v-for="b in benefits" :key="b.title" class="ben bg-surface border border-line rounded-2xl p-6">
@@ -22,8 +21,11 @@
 </template>
 
 <script>
+import SectionHeadingDraft from '@/components/landing-draft/ui/SectionHeadingDraft.vue'
+
 export default {
   name: 'HomeBenefitsSection',
+  components: { SectionHeadingDraft },
   data() {
     return {
       benefits: [
@@ -44,7 +46,7 @@ export default {
         },
         {
           title: 'Freigabe bleibt bei Ihnen',
-          text: 'Nichts geht hinaus, bevor Sie es freigegeben haben.',
+          text: 'Nichts geht hinaus, bevor Sie es geprüft und freigegeben haben.',
           icon: 'M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z'
         }
       ]

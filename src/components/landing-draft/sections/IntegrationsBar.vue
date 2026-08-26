@@ -6,7 +6,7 @@
       <span class="text-p font-semibold text-muted w-full text-center mb-1 max-[560px]:mb-0">matchmaker automatisiert, was Sie bisher manuell bedienen</span>
 
       <span v-for="s in systems" :key="s.label"
-            class="inline-flex items-center gap-2 text-[.98rem] font-semibold text-[#5d6b80] tracking-[-0.01em] max-[560px]:text-[.86rem]">
+            class="inline-flex items-center gap-2 text-[.98rem] font-semibold text-body tracking-[-0.01em] max-[560px]:text-[.86rem]">
         <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7">
           <path stroke-linecap="round" stroke-linejoin="round" :d="s.icon"/>
         </svg>{{ s.label }}

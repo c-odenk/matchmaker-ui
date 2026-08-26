@@ -9,7 +9,6 @@
       <DataCtaSection />
     </main>
     <TheFooter />
-    <DemoModal />
   </div>
 </template>
 
@@ -19,7 +18,6 @@
 // KI-Aufruf entfernt wird, zuletzt die Regulatorik – gelöste und offene Punkte.
 import TheHeaderDraft from '@/components/landing-draft/sections/TheHeaderDraft.vue'
 import TheFooter from '@/components/landing/sections/TheFooter.vue'
-import DemoModal from '@/components/landing/sections/DemoModal.vue'
 
 import DataHeadSection from '@/components/landing-draft/data/DataHeadSection.vue'
 import DataSourcesSection from '@/components/landing-draft/data/DataSourcesSection.vue'
@@ -27,12 +25,12 @@ import DataAnonymisationSection from '@/components/landing-draft/data/DataAnonym
 import DataComplianceSection from '@/components/landing-draft/data/DataComplianceSection.vue'
 import DataCtaSection from '@/components/landing-draft/data/DataCtaSection.vue'
 
-import { setupScrollReveal } from '@/composables/useScrollReveal'
+import { setupScrollReveal } from '@/composables/useScrollRevealDraft'
 
 export default {
   name: 'DataPageDraft',
   components: {
-    TheHeaderDraft, TheFooter, DemoModal,
+    TheHeaderDraft, TheFooter,
     DataHeadSection, DataSourcesSection, DataAnonymisationSection,
     DataComplianceSection, DataCtaSection
   },

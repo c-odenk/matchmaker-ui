@@ -1,13 +1,13 @@
 <template>
-  <section class="sec bg-white !pt-14 max-[880px]:!pt-10">
+  <section class="sec bg-white !pt-[88px] max-[880px]:!pt-[58px]">
     <div class="wrap">
       <!-- Kopf -->
-      <div class="sec-head mx-auto max-w-[680px] text-center mb-10">
+      <div class="sec-head mx-auto max-w-[680px] text-center mb-[88px] max-[880px]:mb-[58px]">
         <h1 class="text-hero text-ink mb-[14px]">
           Effizientes Talentpool-Management – <span class="text-blue">zum fairen Preis.</span>
         </h1>
         <p class="text-lead text-body">
-          matchmaker setzt auf Ihre bestehenden Systeme auf – das Multi-Agenten-System ist vollständig enthalten, ohne Staffelung nach der Größe Ihres Talent-Pools.
+          matchmaker setzt auf Ihre bestehenden Systeme auf – das Multi-Agenten-System ist vollständig enthalten. Keine Staffelung und keine versteckten Margen.
         </p>
       </div>
 
@@ -25,7 +25,7 @@
           <div class="border-t border-line my-5 min-[700px]:max-[880px]:hidden"></div>
           <ul class="list-none flex flex-col gap-3 min-[700px]:max-[880px]:flex-1 min-[700px]:max-[880px]:border-l min-[700px]:max-[880px]:border-line min-[700px]:max-[880px]:pl-8">
             <li v-for="f in byokFeatures" :key="f" class="flex items-start gap-[10px] text-[.86rem] text-ink leading-[1.4]">
-              <span class="shrink-0 w-[18px] h-[18px] mt-[1px] rounded-full bg-navy/[0.07] text-navy flex items-center justify-center text-[10px]">✓</span>{{ f }}
+              <span class="shrink-0 w-[18px] h-[18px] mt-[1px] rounded-full bg-navy/[0.07] text-navy flex items-center justify-center text-[.64rem]">✓</span>{{ f }}
             </li>
           </ul>
         </div>
@@ -46,7 +46,7 @@
           <div class="text-[.64rem] font-bold tracking-[0.09em] uppercase text-white/60 mb-[13px]">Leistungen</div>
           <ul class="list-none flex flex-col gap-3">
             <li v-for="f in enterpriseFeatures" :key="f" class="flex items-start gap-[10px] text-[.86rem] text-white leading-[1.4]">
-              <span class="shrink-0 w-[18px] h-[18px] mt-[1px] rounded-full bg-green/25 text-[#7ee2a8] flex items-center justify-center text-[10px]">✓</span>{{ f }}
+              <span class="shrink-0 w-[18px] h-[18px] mt-[1px] rounded-full bg-green/25 text-[#7ee2a8] flex items-center justify-center text-[.64rem]">✓</span>{{ f }}
             </li>
           </ul>
           <a class="h-[44px] rounded-[9px] flex items-center justify-center gap-[7px] text-[.92rem] font-semibold transition-colors duration-[180ms] cursor-pointer bg-blue text-white mt-7 hover:bg-blue-hover" :href="loginUrl">Jetzt loslegen →</a>
@@ -65,7 +65,7 @@
           <div class="text-[.64rem] font-bold tracking-[0.09em] uppercase text-muted mb-[13px]">Leistungen</div>
           <ul class="list-none flex flex-col gap-3">
             <li v-for="f in extraFeatures" :key="f" class="flex items-start gap-[10px] text-[.86rem] text-ink leading-[1.4]">
-              <span class="shrink-0 w-[18px] h-[18px] mt-[1px] rounded-full bg-[#e7f8ee] text-[#15803d] flex items-center justify-center text-[10px]">✓</span>{{ f }}
+              <span class="shrink-0 w-[18px] h-[18px] mt-[1px] rounded-full bg-[#e7f8ee] text-[#15803d] flex items-center justify-center text-[.64rem]">✓</span>{{ f }}
             </li>
           </ul>
         </div>

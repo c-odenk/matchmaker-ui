@@ -5,11 +5,11 @@
       <AutomationHeadSection />
       <AutomationRunSection />
       <AutomationGapsSection />
+      <AutomationTranscriptSection />
       <AutomationActionsSection />
       <AutomationCtaSection />
     </main>
     <TheFooter />
-    <DemoModal />
   </div>
 </template>
 
@@ -19,21 +19,22 @@
 // und was der Berater zwischendurch mit einem Klick auslöst.
 import TheHeaderDraft from '@/components/landing-draft/sections/TheHeaderDraft.vue'
 import TheFooter from '@/components/landing/sections/TheFooter.vue'
-import DemoModal from '@/components/landing/sections/DemoModal.vue'
 
 import AutomationHeadSection from '@/components/landing-draft/automation/AutomationHeadSection.vue'
 import AutomationRunSection from '@/components/landing-draft/automation/AutomationRunSection.vue'
 import AutomationGapsSection from '@/components/landing-draft/automation/AutomationGapsSection.vue'
+import AutomationTranscriptSection from '@/components/landing-draft/automation/AutomationTranscriptSection.vue'
 import AutomationActionsSection from '@/components/landing-draft/automation/AutomationActionsSection.vue'
 import AutomationCtaSection from '@/components/landing-draft/automation/AutomationCtaSection.vue'
 
-import { setupScrollReveal } from '@/composables/useScrollReveal'
+import { setupScrollReveal } from '@/composables/useScrollRevealDraft'
 
 export default {
   name: 'AutomationPageDraft',
   components: {
-    TheHeaderDraft, TheFooter, DemoModal,
+    TheHeaderDraft, TheFooter,
     AutomationHeadSection, AutomationRunSection, AutomationGapsSection,
+    AutomationTranscriptSection,
     AutomationActionsSection, AutomationCtaSection
   },
   mounted() {

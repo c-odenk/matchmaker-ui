@@ -5,8 +5,8 @@
   <section class="sec bg-surface">
     <div class="wrap two grid [grid-template-columns:1fr_1.1fr] gap-[52px] items-center max-[880px]:grid-cols-1 max-[880px]:gap-[30px]">
       <div>
-        <div class="text-[.72rem] font-bold tracking-[0.09em] uppercase text-blue mb-3">KI-Kosten</div>
-        <h2 class="text-section text-ink mb-[14px]">Was kostet die KI – <span class="text-blue">und warum bleibt das kalkulierbar?</span></h2>
+        <EyebrowBadge>KI-Kosten</EyebrowBadge>
+        <h2 class="text-section text-ink mt-[18px] mb-[14px]">Was kostet die KI – <span class="text-blue">und warum bleibt das kalkulierbar?</span></h2>
         <p class="text-[.95rem] text-body leading-[1.65] max-w-[620px]">
           Die Rechenkosten der KI zahlen Sie direkt an Ihren KI-Anbieter – über Ihren eigenen API-Zugang, ohne Aufschlag. Was die Nutzung kostet, steht dort in Ihrer Abrechnung.
         </p>
@@ -38,8 +38,11 @@
 </template>
 
 <script>
+import EyebrowBadge from '@/components/ui/EyebrowBadge.vue'
+
 export default {
   name: 'PricingAiCostSection',
+  components: { EyebrowBadge },
   data() {
     return {
       stages: [

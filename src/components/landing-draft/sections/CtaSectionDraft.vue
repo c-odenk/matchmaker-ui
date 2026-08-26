@@ -11,8 +11,8 @@
             <p class="text-white/[0.78] mt-3 max-w-[520px] text-[.95rem] max-[880px]:max-w-none">matchmaker durchsucht nachts den Markt, recherchiert die suchende Firma und legt Ihnen das Anschreiben fertig vor. Lassen Sie es sich in 15 Minuten zeigen – oder starten Sie direkt.</p>
           </div>
           <div class="flex gap-3 flex-wrap max-[880px]:justify-center max-[560px]:flex-col max-[560px]:w-full">
-            <BaseButton variant="blue" :href="loginUrl" class="max-[560px]:w-full">Jetzt anmelden →</BaseButton>
-            <BaseButton variant="ghost-dark" class="max-[560px]:w-full" @click="openDemo">Demo vereinbaren</BaseButton>
+            <BaseButtonDraft variant="blue" :href="loginUrl" class="max-[560px]:w-full">Jetzt anmelden →</BaseButtonDraft>
+            <BaseButtonDraft variant="ghost-dark" class="max-[560px]:w-full" to="/entwurf/kontakt">Demo vereinbaren</BaseButtonDraft>
           </div>
         </div>
       </div>
@@ -21,17 +21,13 @@
 </template>
 
 <script>
-import BaseButton from '@/components/ui/BaseButton.vue'
-import { openDemoModal } from '@/composables/demoModal'
+import BaseButtonDraft from '@/components/landing-draft/ui/BaseButtonDraft.vue'
 
 export default {
   name: 'CtaSectionDraft',
-  components: { BaseButton },
+  components: { BaseButtonDraft },
   data() {
     return { loginUrl: process.env.VUE_APP_DASHBOARD_URL || '#' }
-  },
-  methods: {
-    openDemo() { openDemoModal() }
   }
 }
 </script>

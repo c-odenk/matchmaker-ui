@@ -9,7 +9,7 @@
           Wiederkehrende Schritte laufen ohne Zutun durch. Morgens liegt kein Zwischenstand vor, sondern ein fertiger Vorschlag.
         </p>
         <FeatureList :items="features" />
-        <router-link to="/entwurf/automatisierungen" class="inline-flex items-center gap-[7px] mt-[22px] text-[.92rem] font-semibold text-blue hover:text-blue-hover cursor-pointer">
+        <router-link to="/entwurf/automatisierungen" class="inline-flex items-center gap-[7px] mt-[22px] text-[.92rem] font-semibold text-blue hover:text-blue-hover cursor-pointer max-[880px]:py-[9px]">
           Alle Automatisierungen ansehen
           <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
         </router-link>

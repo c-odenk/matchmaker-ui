@@ -64,6 +64,26 @@ const routes = [
     }
   },
   {
+    path: '/entwurf/ki-assistent',
+    name: 'assistant-draft',
+    component: () => import('../views/View-Assistant-Draft.vue'),
+    meta: {
+      title: 'KI-Assistent (Beta) – matchmaker.hr',
+      description: 'Der KI-Assistent von matchmaker: der Kandidatenpool als Karte, Fragen an den Bestand in eigenen Worten und künftig Aufträge an die Agenten im Satz.',
+      noindex: true
+    }
+  },
+  {
+    path: '/entwurf/kontakt',
+    name: 'contact-draft',
+    component: () => import('../views/View-Contact-Draft.vue'),
+    meta: {
+      title: 'Demo buchen – matchmaker.hr',
+      description: 'Persönliche Einführung in matchmaker: 15 Minuten per Video-Call – Bestandsaufnahme, Live-Durchlauf, Anbindung an Ihre Systeme und offene Fit-Diskussion.',
+      noindex: true
+    }
+  },
+  {
     path: '/entwurf/preise',
     name: 'pricing-draft',
     component: () => import('../views/View-Pricing-Draft.vue'),

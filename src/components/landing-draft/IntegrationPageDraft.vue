@@ -11,7 +11,6 @@
       <IntegrationCtaSection />
     </main>
     <TheFooter />
-    <DemoModal />
   </div>
 </template>
 
@@ -23,7 +22,6 @@
 // die gehören auf die Unterseite „Automatisierungen".
 import TheHeaderDraft from '@/components/landing-draft/sections/TheHeaderDraft.vue'
 import TheFooter from '@/components/landing/sections/TheFooter.vue'
-import DemoModal from '@/components/landing/sections/DemoModal.vue'
 
 import IntegrationHeadSection from '@/components/landing-draft/integration/IntegrationHeadSection.vue'
 import IntegrationAtsSection from '@/components/landing-draft/integration/IntegrationAtsSection.vue'
@@ -33,12 +31,12 @@ import IntegrationTeamsSection from '@/components/landing-draft/integration/Inte
 import IntegrationSourcesSection from '@/components/landing-draft/integration/IntegrationSourcesSection.vue'
 import IntegrationCtaSection from '@/components/landing-draft/integration/IntegrationCtaSection.vue'
 
-import { setupScrollReveal } from '@/composables/useScrollReveal'
+import { setupScrollReveal } from '@/composables/useScrollRevealDraft'
 
 export default {
   name: 'IntegrationPageDraft',
   components: {
-    TheHeaderDraft, TheFooter, DemoModal,
+    TheHeaderDraft, TheFooter,
     IntegrationHeadSection, IntegrationAtsSection, IntegrationMailSection,
     IntegrationPhoneSection, IntegrationTeamsSection, IntegrationSourcesSection,
     IntegrationCtaSection

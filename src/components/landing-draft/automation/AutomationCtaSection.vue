@@ -9,8 +9,8 @@
             <p class="text-white/[0.78] mt-3 max-w-[520px] text-[.95rem] max-[880px]:max-w-none">15 Minuten durch Ihren Arbeitstag – wir zeigen, was davon künftig vorbereitet auf Sie wartet.</p>
           </div>
           <div class="flex gap-3 flex-wrap max-[880px]:justify-center max-[560px]:flex-col max-[560px]:w-full">
-            <BaseButton variant="blue" class="max-[560px]:w-full" @click="openDemo">Demo vereinbaren</BaseButton>
-            <BaseButton variant="ghost-dark" to="/entwurf/agenten" class="max-[560px]:w-full">Multi-Agentensystem →</BaseButton>
+            <BaseButtonDraft variant="blue" class="max-[560px]:w-full" to="/entwurf/kontakt">Demo vereinbaren</BaseButtonDraft>
+            <BaseButtonDraft variant="ghost-dark" to="/entwurf/agenten" class="max-[560px]:w-full">Multi-Agentensystem →</BaseButtonDraft>
           </div>
         </div>
       </div>
@@ -19,14 +19,10 @@
 </template>
 
 <script>
-import BaseButton from '@/components/ui/BaseButton.vue'
-import { openDemoModal } from '@/composables/demoModal'
+import BaseButtonDraft from '@/components/landing-draft/ui/BaseButtonDraft.vue'
 
 export default {
   name: 'AutomationCtaSection',
-  components: { BaseButton },
-  methods: {
-    openDemo() { openDemoModal() }
-  }
+  components: { BaseButtonDraft }
 }
 </script>

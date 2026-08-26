@@ -3,8 +3,8 @@
   <section class="sec bg-surface">
     <div class="wrap">
       <div class="sec-head mx-auto max-w-[660px] text-center mb-10">
-        <div class="text-[.72rem] font-bold tracking-[0.09em] uppercase text-blue mb-3">Ergebnis</div>
-        <h2 class="text-section text-ink mb-[14px]">Was morgens <span class="text-blue">auf dem Tisch liegt.</span></h2>
+        <EyebrowBadge>Ergebnis</EyebrowBadge>
+        <h2 class="text-section text-ink mt-[18px] mb-[14px]">Was morgens <span class="text-blue">auf dem Tisch liegt.</span></h2>
         <p class="text-lead text-body">Kein Zwischenstand, keine Liste zum Nacharbeiten – sondern Vorschläge, die nur noch geprüft und freigegeben werden wollen.</p>
       </div>
 
@@ -25,8 +25,11 @@
 </template>
 
 <script>
+import EyebrowBadge from '@/components/ui/EyebrowBadge.vue'
+
 export default {
   name: 'AgentsResultSection',
+  components: { EyebrowBadge },
   data() {
     return {
       results: [

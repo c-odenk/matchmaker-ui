@@ -47,7 +47,7 @@
         </span>
       </div>
       <div v-if="chips.length" class="flex flex-wrap gap-[6px] mt-[13px]">
-        <span v-for="c in chips" :key="c" class="text-[.72rem] font-semibold text-[#56657c] bg-white border border-line rounded-[6px] px-[8px] py-[2px]">{{ c }}</span>
+        <span v-for="c in chips" :key="c" class="text-[.72rem] font-semibold text-body bg-white border border-line rounded-[6px] px-[8px] py-[2px]">{{ c }}</span>
       </div>
     </div>
 

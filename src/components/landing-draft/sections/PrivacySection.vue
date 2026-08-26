@@ -12,7 +12,7 @@
       <div class="ben-grid max-w-[900px] mx-auto grid gap-[18px] [grid-template-columns:repeat(auto-fit,minmax(260px,1fr))] max-[560px]:grid-cols-1">
         <div v-for="p in solved" :key="p.title" class="ben bg-surface border border-line rounded-2xl p-6">
           <div class="flex items-center gap-[10px] mb-3">
-            <span class="w-[26px] h-[26px] shrink-0 rounded-full bg-[#e7f8ee] text-[#15803d] flex items-center justify-center text-[13px]">✓</span>
+            <span class="w-[26px] h-[26px] shrink-0 rounded-full bg-[#e7f8ee] text-[#15803d] flex items-center justify-center text-[.82rem]">✓</span>
             <span class="text-[.72rem] font-bold tracking-[0.06em] uppercase text-muted">{{ p.ref }}</span>
           </div>
           <h3 class="text-[1rem] font-bold tracking-[-0.01em] mb-2">{{ p.title }}</h3>

@@ -25,8 +25,8 @@
         </p>
 
         <div class="flex gap-3 mt-[30px] flex-wrap max-[880px]:justify-center max-[560px]:flex-col max-[560px]:items-stretch">
-          <BaseButton variant="blue" :href="loginUrl" class="max-[560px]:w-full">Jetzt anmelden →</BaseButton>
-          <BaseButton variant="ghost-dark" class="max-[560px]:w-full" @click="openDemo">Demo vereinbaren</BaseButton>
+          <BaseButtonDraft variant="blue" :href="loginUrl" class="max-[560px]:w-full">Jetzt anmelden →</BaseButtonDraft>
+          <BaseButtonDraft variant="ghost-dark" class="max-[560px]:w-full" to="/entwurf/kontakt">Demo vereinbaren</BaseButtonDraft>
         </div>
 
         <!-- Belegbare Trust-Punkte statt pauschaler Siegel -->
@@ -59,24 +59,20 @@
 </template>
 
 <script>
-import BaseButton from '@/components/ui/BaseButton.vue'
+import BaseButtonDraft from '@/components/landing-draft/ui/BaseButtonDraft.vue'
 import EyebrowBadge from '@/components/ui/EyebrowBadge.vue'
-import { openDemoModal } from '@/composables/demoModal'
 import heroImg from '@/assets/Hero-Consultant.jpg'
 import heroWebp from '@/assets/Hero-Consultant.webp'
 import heroAvif from '@/assets/Hero-Consultant.avif'
 
 export default {
   name: 'HeroSectionDraft',
-  components: { BaseButton, EyebrowBadge },
+  components: { BaseButtonDraft, EyebrowBadge },
   data() {
     return {
       loginUrl: process.env.VUE_APP_DASHBOARD_URL || '#',
       heroImg, heroWebp, heroAvif
     }
-  },
-  methods: {
-    openDemo() { openDemoModal() }
   }
 }
 </script>

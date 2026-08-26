@@ -21,14 +21,14 @@
           </div>
 
           <div class="mt-[14px] border border-line rounded-[10px] px-[13px] py-[11px]">
-            <div class="flex items-center gap-[7px] text-[.84rem] font-bold text-ink mb-[10px]">
+            <div class="flex items-center gap-[7px] text-[.85rem] font-bold text-ink mb-[10px]">
               <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" class="text-blue"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/></svg>
               Diese Angaben fehlen noch
             </div>
-            <div v-for="g in gaps" :key="g.label" class="flex items-center gap-[10px] py-[6px]">
-              <span class="w-[18px] h-[18px] shrink-0 rounded-full bg-[#eef2f7] text-muted flex items-center justify-center text-[10px]">?</span>
-              <span class="text-[.84rem] text-ink flex-1 min-w-0">{{ g.label }}</span>
-              <span class="text-[.72rem] text-muted whitespace-nowrap">{{ g.why }}</span>
+            <div v-for="g in gaps" :key="g.label" class="flex items-center gap-[10px] py-[6px] max-[560px]:flex-wrap">
+              <span class="w-[18px] h-[18px] shrink-0 rounded-full bg-[#eef2f7] text-muted flex items-center justify-center text-[.64rem]">?</span>
+              <span class="text-[.85rem] text-ink flex-1 min-w-0">{{ g.label }}</span>
+              <span class="text-[.72rem] text-muted whitespace-nowrap max-[560px]:basis-full max-[560px]:ml-[28px] max-[560px]:mt-[2px]">{{ g.why }}</span>
             </div>
           </div>
 

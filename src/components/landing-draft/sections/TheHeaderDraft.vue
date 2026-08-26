@@ -15,7 +15,7 @@
 
         <!-- Desktop-Navigation -->
         <nav class="flex items-center gap-[30px] text-[1.02rem] font-medium text-navy max-[880px]:hidden">
-          <a href="/entwurf#hero" @click.prevent="go('hero')" class="inline-flex items-center gap-[7px] cursor-pointer hover:text-blue">
+          <a href="/entwurf" @click.prevent="goHome" class="inline-flex items-center gap-[7px] cursor-pointer hover:text-blue">
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" :d="icons.home"/></svg>Home
           </a>
 
@@ -49,7 +49,10 @@
                     <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" :d="p.icon"/></svg>
                   </span>
                   <span class="min-w-0">
-                    <span class="block text-[.92rem] font-semibold text-ink leading-tight">{{ p.label }}</span>
+                    <span class="flex items-center gap-[7px]">
+                      <span class="text-[.92rem] font-semibold text-ink leading-tight">{{ p.label }}</span>
+                      <span v-if="p.badge" class="inline-flex items-center text-[.64rem] font-bold tracking-[0.06em] uppercase px-[7px] py-[2px] rounded-full bg-blue-soft text-blue shrink-0">{{ p.badge }}</span>
+                    </span>
                     <span class="block text-[.78rem] text-muted leading-[1.45] mt-[3px]">{{ p.hint }}</span>
                   </span>
                 </component>
@@ -63,10 +66,10 @@
         </nav>
 
         <div class="flex items-center gap-[14px] max-[880px]:hidden">
-          <button type="button" class="inline-flex items-center gap-[7px] font-sans text-[.95rem] font-medium text-[#334155] bg-transparent border-0 p-0 cursor-pointer hover:text-blue max-[959px]:hidden" @click="openDemo">
+          <router-link to="/entwurf/kontakt" @click="closeAll" class="inline-flex items-center gap-[7px] text-[.95rem] font-medium text-body cursor-pointer hover:text-blue max-[959px]:hidden">
             <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"/></svg>Demo vereinbaren
-          </button>
-          <BaseButton variant="primary" :href="loginUrl" class="min-w-[178px]">Anmelden →</BaseButton>
+          </router-link>
+          <BaseButtonDraft variant="primary" :href="loginUrl" class="!h-[40px] !px-[28px] !text-[.92rem] !rounded-[10px]">Anmelden →</BaseButtonDraft>
         </div>
 
         <!-- Mobile-Toggle -->
@@ -80,12 +83,12 @@
     <div class="mnav-wrap hidden max-[880px]:grid" :class="{ open: menuOpen }">
       <div class="min-h-0 overflow-hidden">
         <nav class="mnav-panel flex flex-col bg-white border-t border-line pt-3 px-6 pb-5">
-          <a href="/entwurf#hero" @click.prevent="go('hero')" class="py-[13px] px-2 text-[1.04rem] font-medium text-navy rounded-[9px] cursor-pointer">Home</a>
+          <a href="/entwurf" @click.prevent="goHome" class="py-[13px] px-2 text-[1.05rem] font-medium text-navy rounded-[9px] cursor-pointer">Home</a>
 
           <!-- Plattform: klappt die vier Unterpunkte auf -->
           <button
             type="button"
-            class="flex items-center justify-between gap-2 py-[13px] px-2 font-sans text-[1.04rem] font-medium text-navy bg-transparent border-0 rounded-[9px] cursor-pointer text-left"
+            class="flex items-center justify-between gap-2 py-[13px] px-2 font-sans text-[1.05rem] font-medium text-navy bg-transparent border-0 rounded-[9px] cursor-pointer text-left"
             :aria-expanded="mobilePlatformOpen ? 'true' : 'false'"
             @click="mobilePlatformOpen = !mobilePlatformOpen"
           >
@@ -105,17 +108,20 @@
                   <span class="w-[30px] h-[30px] shrink-0 rounded-[9px] bg-navy/[0.06] text-navy flex items-center justify-center">
                     <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" :d="p.icon"/></svg>
                   </span>
-                  <span class="text-[.96rem] font-medium text-navy">{{ p.label }}</span>
+                  <span class="flex items-center gap-[7px] min-w-0">
+                    <span class="text-[.96rem] font-medium text-navy">{{ p.label }}</span>
+                    <span v-if="p.badge" class="inline-flex items-center text-[.64rem] font-bold tracking-[0.06em] uppercase px-[7px] py-[2px] rounded-full bg-blue-soft text-blue shrink-0">{{ p.badge }}</span>
+                  </span>
                 </component>
               </div>
             </div>
           </div>
 
-          <router-link to="/entwurf/preise" @click="closeAll" class="py-[13px] px-2 text-[1.04rem] font-medium text-navy rounded-[9px] cursor-pointer">Preise</router-link>
+          <router-link to="/entwurf/preise" @click="closeAll" class="py-[13px] px-2 text-[1.05rem] font-medium text-navy rounded-[9px] cursor-pointer">Preise</router-link>
 
           <div class="flex flex-col gap-[10px] mt-[10px] pt-[14px] border-t border-line">
-            <BaseButton variant="ghost" class="w-full !h-12" @click="openDemo">Demo vereinbaren</BaseButton>
-            <BaseButton variant="primary" :href="loginUrl" class="w-full !h-12">Anmelden →</BaseButton>
+            <BaseButtonDraft variant="ghost" to="/entwurf/kontakt" class="w-full !h-12" @click="closeAll">Demo vereinbaren</BaseButtonDraft>
+            <BaseButtonDraft variant="primary" :href="loginUrl" class="w-full !h-12">Anmelden →</BaseButtonDraft>
           </div>
         </nav>
       </div>
@@ -124,12 +130,11 @@
 </template>
 
 <script>
-import BaseButton from '@/components/ui/BaseButton.vue'
-import { openDemoModal } from '@/composables/demoModal'
+import BaseButtonDraft from '@/components/landing-draft/ui/BaseButtonDraft.vue'
 
 export default {
   name: 'TheHeaderDraft',
-  components: { BaseButton },
+  components: { BaseButtonDraft },
   data() {
     return {
       loginUrl: process.env.VUE_APP_DASHBOARD_URL || '#',
@@ -147,7 +152,8 @@ export default {
         { to: '/entwurf/integration', label: 'Integration', hint: 'Aufgesetzt auf Ihre bestehenden Systeme – nichts wird ersetzt.', icon: 'M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244' },
         { to: '/entwurf/daten', label: 'Daten', hint: 'Wo sie liegen, was verarbeitet wird, was protokolliert bleibt.', icon: 'M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75' },
         { to: '/entwurf/agenten', label: 'Multi-Agentensystem', hint: 'Spezialisierte KI-Agenten, die jeden Schritt vorbereiten.', icon: 'M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 7.5l1.035-.259a3.375 3.375 0 002.456-2.455l.259-1.036.259 1.035a3.375 3.375 0 002.455 2.456L21.75 7.5l-1.035.259a3.375 3.375 0 00-2.456 2.455z' },
-        { to: '/entwurf/automatisierungen', label: 'Automatisierungen', hint: 'Was von allein läuft – und was auf Klick passiert.', icon: 'M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z' }
+        { to: '/entwurf/automatisierungen', label: 'Automatisierungen', hint: 'Was von allein läuft – und was auf Klick passiert.', icon: 'M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z' },
+        { to: '/entwurf/ki-assistent', label: 'KI-Assistent', badge: 'Beta', hint: 'Der Pool als Karte, dazu Fragen und Aufträge im Satz.', icon: 'M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456z' },
       ]
     }
   },
@@ -197,10 +203,6 @@ export default {
       }
       this.$router.push({ path: '/entwurf', hash: '#' + id })
     },
-    openDemo() {
-      this.closeAll()
-      openDemoModal()
-    }
   }
 }
 </script>

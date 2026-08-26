@@ -2,11 +2,10 @@
   <!-- Einstieg in die vier Plattform-Seiten – dort liegen die Details -->
   <section class="sec bg-surface">
     <div class="wrap">
-      <div class="sec-head mx-auto max-w-[660px] text-center mb-10">
-        <div class="text-[.72rem] font-bold tracking-[0.09em] uppercase text-blue mb-3">Die Plattform</div>
-        <h2 class="text-section text-ink mb-[14px]">Vier Bausteine, <span class="text-blue">ein System.</span></h2>
-        <p class="text-lead text-body">Was angebunden wird, wo die Daten liegen, wer die Arbeit macht und was davon automatisch läuft.</p>
-      </div>
+      <SectionHeadingDraft eyebrow="Die Plattform">
+        Vier Bausteine, <span class="text-blue">ein System.</span>
+        <template #lead>Was angebunden wird, wo die Daten liegen, wer die Arbeit macht und was davon automatisch läuft.</template>
+      </SectionHeadingDraft>
 
       <div class="ben-grid grid gap-[18px] [grid-template-columns:repeat(4,1fr)] max-[880px]:grid-cols-2 max-[560px]:grid-cols-1">
         <router-link
@@ -18,7 +17,7 @@
           </div>
           <h3 class="text-[1.02rem] font-bold tracking-[-0.01em] mb-2 text-ink">{{ c.title }}</h3>
           <p class="text-[.88rem] text-body flex-1">{{ c.text }}</p>
-          <span class="inline-flex items-center gap-[6px] mt-4 text-[.84rem] font-semibold text-blue">
+          <span class="inline-flex items-center gap-[6px] mt-4 text-[.85rem] font-semibold text-blue">
             Ansehen
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" class="transition-transform duration-150 group-hover:translate-x-[3px]"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
           </span>
@@ -29,8 +28,11 @@
 </template>
 
 <script>
+import SectionHeadingDraft from '@/components/landing-draft/ui/SectionHeadingDraft.vue'
+
 export default {
   name: 'HomePlatformSection',
+  components: { SectionHeadingDraft },
   data() {
     return {
       cards: [

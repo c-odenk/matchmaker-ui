@@ -10,7 +10,7 @@
             <div class="text-[.88rem] font-bold text-ink mb-[13px]">Kandidatenprofil</div>
             <div class="flex flex-col gap-[10px]">
               <div v-for="f in fields" :key="f.label" class="flex items-center gap-[11px]">
-                <span class="w-[18px] h-[18px] shrink-0 rounded-full flex items-center justify-center text-[10px]"
+                <span class="w-[18px] h-[18px] shrink-0 rounded-full flex items-center justify-center text-[.64rem]"
                       :class="f.strip ? 'bg-[#eef2f7] text-muted' : 'bg-[#e7f8ee] text-[#15803d]'">{{ f.strip ? '✕' : '✓' }}</span>
                 <span class="text-[.82rem] w-[124px] shrink-0 max-[560px]:w-[96px]" :class="f.strip ? 'text-muted' : 'text-body'">{{ f.label }}</span>
                 <span class="text-[.82rem] font-semibold min-w-0 truncate"

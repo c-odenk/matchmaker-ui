@@ -2,11 +2,11 @@
   <section class="sec bg-white">
     <div class="wrap">
       <div class="sec-head mx-auto max-w-[660px] text-center mb-10">
-        <div class="text-[.72rem] font-bold tracking-[0.09em] uppercase text-blue mb-3">FAQ</div>
-        <h2 class="text-section text-ink">Häufige Fragen <span class="text-blue">zum Preis</span></h2>
+        <EyebrowBadge>FAQ</EyebrowBadge>
+        <h2 class="text-section text-ink mt-[18px]">Häufige Fragen <span class="text-blue">zum Preis</span></h2>
       </div>
 
-      <div class="border border-line rounded-[18px] overflow-hidden bg-white">
+      <div class="scope border border-line rounded-[18px] overflow-hidden bg-white">
         <div v-for="(f, i) in faqs" :key="f.q" class="border-b border-line last:border-b-0">
           <button
             type="button"
@@ -31,8 +31,11 @@
 </template>
 
 <script>
+import EyebrowBadge from '@/components/ui/EyebrowBadge.vue'
+
 export default {
   name: 'PricingFaqSection',
+  components: { EyebrowBadge },
   data() {
     return {
       open: 0,
