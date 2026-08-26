@@ -2,7 +2,7 @@
   <!-- Die Freigabe ist keine Zutat, sondern der Bauplan: derselbe Satz, den
        das Produktversprechen trägt. Auf dieser Seite besonders wichtig, weil
        ein Chat sonst den Eindruck erweckt, er handle eigenständig. -->
-  <section class="sec bg-surface">
+  <section class="sec bg-white">
     <div class="wrap">
       <div class="sec-head mx-auto max-w-[660px] text-center mb-11">
         <EyebrowBadge>Freigabe</EyebrowBadge>
@@ -14,7 +14,7 @@
       </div>
 
       <div class="ben-grid grid gap-[18px] [grid-template-columns:repeat(3,1fr)] max-[880px]:grid-cols-1">
-        <div v-for="(s, i) in stufen" :key="s.title" class="ben relative rounded-2xl border border-line bg-white p-6">
+        <div v-for="(s, i) in stufen" :key="s.title" class="ben relative rounded-2xl border border-line bg-surface p-6">
           <span class="w-[34px] h-[34px] shrink-0 rounded-[10px] bg-navy text-white flex items-center justify-center text-[.78rem] font-bold tabular-nums mb-[14px]">
             {{ String(i + 1).padStart(2, '0') }}
           </span>
