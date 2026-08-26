@@ -13,7 +13,7 @@
 </template>
 
 <script>
-// ENTWURF der Unterseite „Daten" (/entwurf/daten).
+// Unterseite „Daten" (/daten).
 // Reihenfolge: erst der Weg der Daten, dann die Herkunft, dann was vor dem
 // KI-Aufruf entfernt wird, zuletzt die Regulatorik – gelöste und offene Punkte.
 import TheHeaderDraft from '@/components/landing-draft/sections/TheHeaderDraft.vue'

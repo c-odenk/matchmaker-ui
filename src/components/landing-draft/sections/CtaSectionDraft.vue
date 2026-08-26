@@ -12,7 +12,7 @@
           </div>
           <div class="flex gap-3 flex-wrap max-[880px]:justify-center max-[560px]:flex-col max-[560px]:w-full">
             <BaseButtonDraft variant="blue" :href="loginUrl" class="max-[560px]:w-full">Jetzt anmelden →</BaseButtonDraft>
-            <BaseButtonDraft variant="ghost-dark" class="max-[560px]:w-full" to="/entwurf/kontakt">Demo vereinbaren</BaseButtonDraft>
+            <BaseButtonDraft variant="ghost-dark" class="max-[560px]:w-full" to="/kontakt">Demo vereinbaren</BaseButtonDraft>
           </div>
         </div>
       </div>

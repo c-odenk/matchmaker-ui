@@ -17,7 +17,7 @@
 </template>
 
 <script>
-// ENTWURF der Unterseite „Multi-Agentensystem" (/entwurf/agenten).
+// Unterseite „Multi-Agentensystem" (/agenten).
 // Reihenfolge folgt der Kette: Profil → Markt → Bewertung → Ansprache,
 // danach was am Ende vorliegt. Wie die Agenten arbeiten, bleibt bewusst außen vor.
 import TheHeaderDraft from '@/components/landing-draft/sections/TheHeaderDraft.vue'

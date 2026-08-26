@@ -9,7 +9,7 @@
 </template>
 
 <script>
-// ENTWURFSFASSUNG der Kontaktseite. Sie ersetzt das bisherige Demo-Modal:
+// Kontaktseite. Sie ersetzt das frühere Demo-Modal:
 // alle „Demo vereinbaren"-Buttons führen hierher.
 import TheHeaderDraft from '@/components/landing-draft/sections/TheHeaderDraft.vue'
 import TheFooter from '@/components/landing/sections/TheFooter.vue'

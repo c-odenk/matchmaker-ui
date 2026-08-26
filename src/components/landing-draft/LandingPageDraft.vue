@@ -18,7 +18,7 @@
 </template>
 
 <script>
-// ENTWURFSFASSUNG der Startseite.
+// Startseite.
 // Nach der Auslagerung auf die Plattform-Unterseiten trägt sie nur noch die
 // Positionierung (Schicht über den bestehenden Systemen), die Vorteile und
 // den Einstieg in die Details.

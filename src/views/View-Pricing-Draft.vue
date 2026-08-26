@@ -3,7 +3,7 @@
 </template>
 
 <script>
-// Entwurf der Preisseite – erreichbar unter /entwurf/preise.
+// Preisseite – erreichbar unter /preise.
 import PricingPageDraft from '@/components/landing-draft/PricingPageDraft.vue'
 
 export default {

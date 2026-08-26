@@ -1,13 +1,20 @@
 # matchmaker.hr
 
-> KI-gestütztes Talentpool-Management für Personalberater: matchmaker.hr automatisiert die zeitintensiven Schritte im Vermittlungsprozess – Marktanalyse, Matching und Outreach –, während der Berater per Human-in-the-Loop jede Entscheidung selbst trifft. DSGVO-konform mit EU-Hosting.
+> matchmaker.hr legt sich als Automatisierungsschicht über die bestehenden Systeme einer Personalberatung – Bewerbersoftware, Postfach, Telefonie, Teams, Jobportale und Handelsregister bleiben, wo sie sind, und werden angebunden statt ersetzt. Was heute von Hand bedient wird, läuft automatisiert; Versand, Profiländerung und Statuswechsel gibt immer ein Mensch frei.
 
-matchmaker.hr arbeitet mit vier spezialisierten KI-Agenten, die dem Berater zuarbeiten: der Profiling Agent erstellt aus dem Suchauftrag ein strukturiertes Qualifikationsprofil, der Market Agent scannt kontinuierlich Jobboards und Unternehmenswebsites nach Vakanzen, der Matching Agent bewertet Kandidaten per semantischem Scoring mit nachvollziehbarer Begründung, und der Outreach Agent recherchiert Ansprechpartner und formuliert versandfertige Anschreiben. Die KI bereitet vor und schlägt vor – der Berater gibt jeden Schritt per Klick frei und entscheidet immer selbst.
+Vier spezialisierte KI-Agenten arbeiten dem Berater zu: der Profiling Agent erstellt aus dem Suchauftrag ein strukturiertes Qualifikationsprofil und erkennt fehlende Angaben, der Market Agent durchsucht laufend Jobportale, Karriereseiten und das Handelsregister nach Vakanzen und Ansprechpartnern, der Matching Agent bewertet Kandidaten mit nachvollziehbarer Begründung, und der Outreach Agent formuliert versandfertige Anschreiben. Ergänzend erschließt ein KI-Assistent (Beta) den Bestand als Karte und im Gespräch – für den Einzelfall, den der geplante Ablauf nicht abdeckt.
 
 ## Seiten
 
-- [Startseite](https://matchmaker-hr.de/): Produktüberblick, Funktionsweise der vier Agenten, Preise und Demo-Anfrage.
-- [Datenschutz](https://matchmaker-hr.de/privacy): Datenschutzerklärung – DSGVO-konform, Daten bleiben in der EU.
+- [Startseite](https://matchmaker-hr.de/): Positionierung, Vorteile, Vorher/Nachher, Produktblicke und Einstieg in die Plattformseiten.
+- [Integration](https://matchmaker-hr.de/integration): Welche Systeme angebunden werden – angebunden statt ersetzt, jedes einzeln austauschbar.
+- [Daten](https://matchmaker-hr.de/daten): Herkunft der Daten, Anonymisierung vor dem KI-Aufruf, Protokollierung und regulatorische Einordnung.
+- [Multi-Agentensystem](https://matchmaker-hr.de/agenten): Die vier Agenten, ihre Ergebnisse und die Freigabe durch den Berater.
+- [Automatisierungen](https://matchmaker-hr.de/automatisierungen): Was ohne Zutun durchläuft, wie Profillücken geschlossen und Gespräche ausgewertet werden.
+- [KI-Assistent](https://matchmaker-hr.de/ki-assistent): Beta – der Pool als Karte, Fragen an den Bestand und Aufträge an die Agenten im Satz.
+- [Preise](https://matchmaker-hr.de/preise): Ein Preis ohne Staffelung, zusätzliche Lizenzen, Bring Your Own Key für die KI-Kosten.
+- [Demo buchen](https://matchmaker-hr.de/kontakt): Terminanfrage für eine persönliche Einführung.
+- [Datenschutz](https://matchmaker-hr.de/privacy): Datenschutzerklärung.
 - [Impressum](https://matchmaker-hr.de/imprint): Anbieterkennzeichnung und rechtliche Angaben.
 - [AGB](https://matchmaker-hr.de/terms): Allgemeine Geschäftsbedingungen.
 

@@ -37,22 +37,22 @@ export default {
     return {
       cards: [
         {
-          title: 'Integration', to: '/entwurf/integration',
+          title: 'Integration', to: '/integration',
           text: 'Bewerbersoftware, Postfach, Telefonie und Termine – angebunden statt ersetzt.',
           icon: 'M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9'
         },
         {
-          title: 'Daten', to: '/entwurf/daten',
+          title: 'Daten', to: '/daten',
           text: 'Wo sie liegen, was nur durchläuft und was vorher entfernt wird.',
           icon: 'M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75'
         },
         {
-          title: 'Multi-Agentensystem', to: '/entwurf/agenten',
+          title: 'Multi-Agentensystem', to: '/agenten',
           text: 'Vier Agenten bereiten jeden Schritt vor – die Freigabe bleibt bei Ihnen.',
           icon: 'M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z'
         },
         {
-          title: 'Automatisierungen', to: '/entwurf/automatisierungen',
+          title: 'Automatisierungen', to: '/automatisierungen',
           text: 'Was ohne Zutun läuft und was ein Klick aus dem Vorgang auslöst.',
           icon: 'M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z'
         }

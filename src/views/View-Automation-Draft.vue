@@ -3,7 +3,7 @@
 </template>
 
 <script>
-// Entwurf der Unterseite „Automatisierungen" – erreichbar unter /entwurf/automatisierungen.
+// Unterseite „Automatisierungen" – erreichbar unter /automatisierungen.
 import AutomationPageDraft from '@/components/landing-draft/AutomationPageDraft.vue'
 
 export default {

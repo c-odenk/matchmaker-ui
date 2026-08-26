@@ -26,7 +26,7 @@
 
         <div class="flex gap-3 mt-[30px] flex-wrap max-[880px]:justify-center max-[560px]:flex-col max-[560px]:items-stretch">
           <BaseButtonDraft variant="blue" :href="loginUrl" class="max-[560px]:w-full">Jetzt anmelden →</BaseButtonDraft>
-          <BaseButtonDraft variant="ghost-dark" class="max-[560px]:w-full" to="/entwurf/kontakt">Demo vereinbaren</BaseButtonDraft>
+          <BaseButtonDraft variant="ghost-dark" class="max-[560px]:w-full" to="/kontakt">Demo vereinbaren</BaseButtonDraft>
         </div>
 
         <!-- Belegbare Trust-Punkte statt pauschaler Siegel -->

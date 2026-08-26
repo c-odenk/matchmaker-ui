@@ -13,7 +13,7 @@
 </template>
 
 <script>
-// ENTWURF der eigenständigen Preisseite (/entwurf/preise).
+// Eigenständige Preisseite (/preise).
 // Ein Preis für die Enterprise Lizenz, keine Staffelung nach Talent-Pool-Größe.
 // Alle Sektionen laufen auf voller .wrap-Breite (Ausnahme: Zweispalter).
 import TheHeaderDraft from '@/components/landing-draft/sections/TheHeaderDraft.vue'

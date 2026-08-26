@@ -1,6 +1,6 @@
 <template>
   <div class="font-sans text-ink antialiased leading-[1.6] bg-white">
-    <TheHeader />
+    <TheHeaderDraft />
     <main>
       <!-- Titel-Band (Navy + Glow, wie Hero/CTA) -->
       <section class="relative overflow-hidden bg-navy text-white pt-[46px] pb-10 max-[560px]:pt-[34px] max-[560px]:pb-7">
@@ -24,18 +24,16 @@
       </section>
     </main>
     <TheFooter />
-    <DemoModal />
   </div>
 </template>
 
 <script>
-import TheHeader from '@/components/landing/sections/TheHeader.vue'
+import TheHeaderDraft from '@/components/landing-draft/sections/TheHeaderDraft.vue'
 import TheFooter from '@/components/landing/sections/TheFooter.vue'
-import DemoModal from '@/components/landing/sections/DemoModal.vue'
 
 export default {
   name: 'LegalPage',
-  components: { TheHeader, TheFooter, DemoModal },
+  components: { TheHeaderDraft, TheFooter },
   props: {
     title: { type: String, required: true }
   }

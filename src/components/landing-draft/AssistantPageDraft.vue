@@ -15,7 +15,7 @@
 </template>
 
 <script>
-// ENTWURF der Unterseite „KI-Assistent" (/entwurf/ki-assistent).
+// Unterseite „KI-Assistent" (/ki-assistent).
 // Die Seite argumentiert nicht mit „Chat auf Daten" – das haben andere auch –,
 // sondern mit dem, was nur aus der Schichtposition folgt: Reichweite über
 // Systemgrenzen, Sehen und Anstoßen im selben Fenster, und die Freigabekette

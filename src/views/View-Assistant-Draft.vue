@@ -3,7 +3,7 @@
 </template>
 
 <script>
-// Entwurf der KI-Assistent-Seite – erreichbar unter /entwurf/ki-assistent.
+// KI-Assistent-Seite – erreichbar unter /ki-assistent.
 import AssistantPageDraft from '@/components/landing-draft/AssistantPageDraft.vue'
 
 export default {

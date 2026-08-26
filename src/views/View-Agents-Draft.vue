@@ -3,7 +3,7 @@
 </template>
 
 <script>
-// Entwurf der Unterseite „Multi-Agentensystem" – erreichbar unter /entwurf/agenten.
+// Unterseite „Multi-Agentensystem" – erreichbar unter /agenten.
 import AgentsPageDraft from '@/components/landing-draft/AgentsPageDraft.vue'
 
 export default {

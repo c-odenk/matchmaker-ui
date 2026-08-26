@@ -14,7 +14,7 @@
 </template>
 
 <script>
-// ENTWURF der Unterseite „Automatisierungen" (/entwurf/automatisierungen).
+// Unterseite „Automatisierungen" (/automatisierungen).
 // Reihenfolge: was ohne Zutun läuft, was daraus an Profilarbeit entsteht,
 // und was der Berater zwischendurch mit einem Klick auslöst.
 import TheHeaderDraft from '@/components/landing-draft/sections/TheHeaderDraft.vue'

@@ -26,7 +26,7 @@
 
         <div class="flex gap-3 mt-[38px] flex-wrap max-[1000px]:justify-center max-[560px]:flex-col max-[560px]:items-stretch">
           <BaseButtonDraft variant="blue" :href="loginUrl" class="!rounded-[12px] max-[560px]:w-full">Jetzt anmelden →</BaseButtonDraft>
-          <BaseButtonDraft variant="ghost-dark" class="!rounded-[12px] max-[560px]:w-full" to="/entwurf/kontakt">Demo vereinbaren</BaseButtonDraft>
+          <BaseButtonDraft variant="ghost-dark" class="!rounded-[12px] max-[560px]:w-full" to="/kontakt">Demo vereinbaren</BaseButtonDraft>
         </div>
       </div>
 

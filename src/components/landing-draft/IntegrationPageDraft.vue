@@ -15,7 +15,7 @@
 </template>
 
 <script>
-// ENTWURF der Unterseite „Integration" (/entwurf/integration).
+// Unterseite „Integration" (/integration).
 // Reihenfolge: erst das führende System (ATS), dann die Kanäle, die der
 // Berater heute einzeln bedient (Mail, Telefon, Teams), zuletzt die Quellen,
 // die nur ausgelesen werden. Automatisierungen bleiben bewusst flach –

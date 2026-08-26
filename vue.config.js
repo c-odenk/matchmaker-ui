@@ -12,7 +12,11 @@ module.exports = defineConfig({
       config.plugins.push(
         new PrerendererWebpackPlugin({
           staticDir: path.join(__dirname, 'dist'),
-          routes: ['/', '/imprint', '/privacy', '/terms'],
+          routes: [
+            '/', '/integration', '/daten', '/agenten', '/automatisierungen',
+            '/ki-assistent', '/preise', '/kontakt',
+            '/imprint', '/privacy', '/terms'
+          ],
           renderer: new PuppeteerRenderer({
             renderAfterDocumentEvent: 'render-event',
             headless: true,

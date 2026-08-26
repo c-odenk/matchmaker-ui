@@ -9,7 +9,7 @@
             <p class="text-white/[0.78] mt-3 max-w-[520px] text-[.95rem] max-[880px]:max-w-none">Ein Durchlauf, 15 Minuten – danach liegen Treffer, Ansprechpartner und Anschreiben vor Ihnen.</p>
           </div>
           <div class="flex gap-3 flex-wrap max-[880px]:justify-center max-[560px]:flex-col max-[560px]:w-full">
-            <BaseButtonDraft variant="blue" class="max-[560px]:w-full" to="/entwurf/kontakt">Demo vereinbaren</BaseButtonDraft>
+            <BaseButtonDraft variant="blue" class="max-[560px]:w-full" to="/kontakt">Demo vereinbaren</BaseButtonDraft>
             <BaseButtonDraft variant="ghost-dark" :href="loginUrl" class="max-[560px]:w-full">Jetzt anmelden →</BaseButtonDraft>
           </div>
         </div>

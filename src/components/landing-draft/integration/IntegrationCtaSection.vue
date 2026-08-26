@@ -9,8 +9,8 @@
             <p class="text-white/[0.78] mt-3 max-w-[520px] text-[.95rem] max-[880px]:max-w-none">Sobald die Systeme zusammenlaufen, übernimmt das Multi-Agenten-System die wiederkehrenden Schritte. Was dabei genau passiert, zeigt die Seite Automatisierungen.</p>
           </div>
           <div class="flex gap-3 flex-wrap max-[880px]:justify-center max-[560px]:flex-col max-[560px]:w-full">
-            <BaseButtonDraft variant="blue" :to="{ path: '/entwurf', hash: '#automatisierungen' }" class="max-[560px]:w-full">Automatisierungen ansehen →</BaseButtonDraft>
-            <BaseButtonDraft variant="ghost-dark" class="max-[560px]:w-full" to="/entwurf/kontakt">Demo vereinbaren</BaseButtonDraft>
+            <BaseButtonDraft variant="blue" :to="{ path: '/', hash: '#automatisierungen' }" class="max-[560px]:w-full">Automatisierungen ansehen →</BaseButtonDraft>
+            <BaseButtonDraft variant="ghost-dark" class="max-[560px]:w-full" to="/kontakt">Demo vereinbaren</BaseButtonDraft>
           </div>
         </div>
       </div>

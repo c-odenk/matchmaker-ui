@@ -6,7 +6,7 @@
     <div class="wrap">
       <div class="flex items-center justify-between gap-[18px] h-[74px] max-[880px]:h-16">
         <!-- Marke -->
-        <router-link to="/entwurf" @click="goHome" class="flex items-center gap-[10px] font-bold text-[1.08rem] tracking-[-0.02em] text-ink cursor-pointer shrink-0">
+        <router-link to="/" @click="goHome" class="flex items-center gap-[10px] font-bold text-[1.08rem] tracking-[-0.02em] text-ink cursor-pointer shrink-0">
           <span class="w-[30px] h-[30px] rounded-lg bg-navy flex items-center justify-center text-white">
             <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9.8 15.9L9 18.75l-.81-2.85a4.5 4.5 0 00-3.09-3.09L2.25 12l2.85-.81a4.5 4.5 0 003.09-3.09L9 5.25l.81 2.85a4.5 4.5 0 003.09 3.09L15.75 12l-2.85.81a4.5 4.5 0 00-3.09 3.09z"/></svg>
           </span>
@@ -15,7 +15,7 @@
 
         <!-- Desktop-Navigation -->
         <nav class="flex items-center gap-[30px] text-[1.02rem] font-medium text-navy max-[880px]:hidden">
-          <a href="/entwurf" @click.prevent="goHome" class="inline-flex items-center gap-[7px] cursor-pointer hover:text-blue">
+          <a href="/" @click.prevent="goHome" class="inline-flex items-center gap-[7px] cursor-pointer hover:text-blue">
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" :d="icons.home"/></svg>Home
           </a>
 
@@ -41,7 +41,7 @@
                 <component
                   :is="p.to ? 'router-link' : 'a'"
                   v-for="p in platform" :key="p.label"
-                  v-bind="p.to ? { to: p.to } : { href: '/entwurf#' + p.id }"
+                  v-bind="p.to ? { to: p.to } : { href: '/#' + p.id }"
                   @click="p.to ? closeAll() : goAnchor($event, p.id)"
                   class="flex items-start gap-[13px] px-[13px] py-[11px] rounded-xl cursor-pointer transition-colors duration-150 hover:bg-surface group"
                 >
@@ -60,13 +60,13 @@
             </div>
           </div>
 
-          <router-link to="/entwurf/preise" @click="closeAll" class="inline-flex items-center gap-[7px] cursor-pointer hover:text-blue" :class="{ 'text-blue': $route.path === '/entwurf/preise' }">
+          <router-link to="/preise" @click="closeAll" class="inline-flex items-center gap-[7px] cursor-pointer hover:text-blue" :class="{ 'text-blue': $route.path === '/preise' }">
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" :d="icons.price"/></svg>Preise
           </router-link>
         </nav>
 
         <div class="flex items-center gap-[14px] max-[880px]:hidden">
-          <router-link to="/entwurf/kontakt" @click="closeAll" class="inline-flex items-center gap-[7px] text-[.95rem] font-medium text-body cursor-pointer hover:text-blue max-[959px]:hidden">
+          <router-link to="/kontakt" @click="closeAll" class="inline-flex items-center gap-[7px] text-[.95rem] font-medium text-body cursor-pointer hover:text-blue max-[959px]:hidden">
             <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"/></svg>Demo vereinbaren
           </router-link>
           <BaseButtonDraft variant="primary" :href="loginUrl" class="!h-[40px] !px-[28px] !text-[.92rem] !rounded-[10px]">Anmelden →</BaseButtonDraft>
@@ -83,7 +83,7 @@
     <div class="mnav-wrap hidden max-[880px]:grid" :class="{ open: menuOpen }">
       <div class="min-h-0 overflow-hidden">
         <nav class="mnav-panel flex flex-col bg-white border-t border-line pt-3 px-6 pb-5">
-          <a href="/entwurf" @click.prevent="goHome" class="py-[13px] px-2 text-[1.05rem] font-medium text-navy rounded-[9px] cursor-pointer">Home</a>
+          <a href="/" @click.prevent="goHome" class="py-[13px] px-2 text-[1.05rem] font-medium text-navy rounded-[9px] cursor-pointer">Home</a>
 
           <!-- Plattform: klappt die vier Unterpunkte auf -->
           <button
@@ -101,7 +101,7 @@
                 <component
                   :is="p.to ? 'router-link' : 'a'"
                   v-for="p in platform" :key="p.label"
-                  v-bind="p.to ? { to: p.to } : { href: '/entwurf#' + p.id }"
+                  v-bind="p.to ? { to: p.to } : { href: '/#' + p.id }"
                   @click="p.to ? closeAll() : goAnchor($event, p.id)"
                   class="flex items-center gap-[11px] py-[11px] px-2 rounded-[9px] cursor-pointer"
                 >
@@ -117,10 +117,10 @@
             </div>
           </div>
 
-          <router-link to="/entwurf/preise" @click="closeAll" class="py-[13px] px-2 text-[1.05rem] font-medium text-navy rounded-[9px] cursor-pointer">Preise</router-link>
+          <router-link to="/preise" @click="closeAll" class="py-[13px] px-2 text-[1.05rem] font-medium text-navy rounded-[9px] cursor-pointer">Preise</router-link>
 
           <div class="flex flex-col gap-[10px] mt-[10px] pt-[14px] border-t border-line">
-            <BaseButtonDraft variant="ghost" to="/entwurf/kontakt" class="w-full !h-12" @click="closeAll">Demo vereinbaren</BaseButtonDraft>
+            <BaseButtonDraft variant="ghost" to="/kontakt" class="w-full !h-12" @click="closeAll">Demo vereinbaren</BaseButtonDraft>
             <BaseButtonDraft variant="primary" :href="loginUrl" class="w-full !h-12">Anmelden →</BaseButtonDraft>
           </div>
         </nav>
@@ -149,11 +149,11 @@ export default {
       // Die vier Bausteine der Plattform – in der Reihenfolge des Adapter-Gedankens:
       // erst anbinden, dann Daten, dann die Agenten, dann das, was daraus läuft.
       platform: [
-        { to: '/entwurf/integration', label: 'Integration', hint: 'Aufgesetzt auf Ihre bestehenden Systeme – nichts wird ersetzt.', icon: 'M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244' },
-        { to: '/entwurf/daten', label: 'Daten', hint: 'Wo sie liegen, was verarbeitet wird, was protokolliert bleibt.', icon: 'M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75' },
-        { to: '/entwurf/agenten', label: 'Multi-Agentensystem', hint: 'Spezialisierte KI-Agenten, die jeden Schritt vorbereiten.', icon: 'M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 7.5l1.035-.259a3.375 3.375 0 002.456-2.455l.259-1.036.259 1.035a3.375 3.375 0 002.455 2.456L21.75 7.5l-1.035.259a3.375 3.375 0 00-2.456 2.455z' },
-        { to: '/entwurf/automatisierungen', label: 'Automatisierungen', hint: 'Was von allein läuft – und was auf Klick passiert.', icon: 'M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z' },
-        { to: '/entwurf/ki-assistent', label: 'KI-Assistent', badge: 'Beta', hint: 'Der Pool als Karte, dazu Fragen und Aufträge im Satz.', icon: 'M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456z' },
+        { to: '/integration', label: 'Integration', hint: 'Aufgesetzt auf Ihre bestehenden Systeme – nichts wird ersetzt.', icon: 'M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244' },
+        { to: '/daten', label: 'Daten', hint: 'Wo sie liegen, was verarbeitet wird, was protokolliert bleibt.', icon: 'M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75' },
+        { to: '/agenten', label: 'Multi-Agentensystem', hint: 'Spezialisierte KI-Agenten, die jeden Schritt vorbereiten.', icon: 'M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 7.5l1.035-.259a3.375 3.375 0 002.456-2.455l.259-1.036.259 1.035a3.375 3.375 0 002.455 2.456L21.75 7.5l-1.035.259a3.375 3.375 0 00-2.456 2.455z' },
+        { to: '/automatisierungen', label: 'Automatisierungen', hint: 'Was von allein läuft – und was auf Klick passiert.', icon: 'M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z' },
+        { to: '/ki-assistent', label: 'KI-Assistent', badge: 'Beta', hint: 'Der Pool als Karte, dazu Fragen und Aufträge im Satz.', icon: 'M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456z' },
       ]
     }
   },
@@ -185,10 +185,10 @@ export default {
     },
     goHome() {
       this.closeAll()
-      if (this.$route.path === '/entwurf') {
+      if (this.$route.path === '/') {
         window.scrollTo({ top: 0, behavior: 'smooth' })
       } else {
-        this.$router.push('/entwurf')
+        this.$router.push('/')
       }
     },
     goAnchor(e, id) {
@@ -197,11 +197,11 @@ export default {
     },
     go(id) {
       this.closeAll()
-      if (this.$route.path === '/entwurf') {
+      if (this.$route.path === '/') {
         const el = document.getElementById(id)
         if (el) { el.scrollIntoView({ behavior: 'smooth' }); return }
       }
-      this.$router.push({ path: '/entwurf', hash: '#' + id })
+      this.$router.push({ path: '/', hash: '#' + id })
     },
   }
 }

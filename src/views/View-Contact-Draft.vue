@@ -3,7 +3,7 @@
 </template>
 
 <script>
-// Entwurf der Kontaktseite – erreichbar unter /entwurf/kontakt.
+// Kontaktseite – erreichbar unter /kontakt.
 import ContactPageDraft from '@/components/landing-draft/ContactPageDraft.vue'
 
 export default {

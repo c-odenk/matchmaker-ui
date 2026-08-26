@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import ViewLanding from '../views/View-Landing.vue'
+import ViewLanding from '../views/View-Landing-Draft.vue'
 
 const DEFAULT_TITLE = 'matchmaker.hr – KI-gestütztes Talentpool-Management für Personalberater'
-const DEFAULT_DESC = 'matchmaker.hr automatisiert die zeitintensiven Schritte im Vermittlungsprozess – Marktanalyse, Matching, Outreach. Human-in-the-Loop: Die KI bereitet vor, der Berater entscheidet. DSGVO-konform, EU-Hosting.'
+const DEFAULT_DESC = 'matchmaker.hr automatisiert die zeitintensiven Schritte im Vermittlungsprozess – Marktanalyse, Matching, Outreach. Human-in-the-Loop: Die KI bereitet vor, der Berater entscheidet und gibt frei.'
 
 const routes = [
   {
@@ -12,87 +12,71 @@ const routes = [
     meta: { title: DEFAULT_TITLE, description: DEFAULT_DESC }
   },
   {
-    // Entwurfsfassung der Landingpage (Umsetzung des Systementwurfs) –
-    // nur zur internen Ansicht, per noindex von der Indexierung ausgenommen.
-    path: '/entwurf',
-    name: 'landing-draft',
-    component: () => import('../views/View-Landing-Draft.vue'),
-    meta: {
-      title: 'Entwurf – matchmaker.hr',
-      description: DEFAULT_DESC,
-      noindex: true
-    }
-  },
-  {
-    path: '/entwurf/integration',
-    name: 'integration-draft',
+    path: '/integration',
+    name: 'integration',
     component: () => import('../views/View-Integration-Draft.vue'),
     meta: {
       title: 'Integration – matchmaker.hr',
-      description: 'Bewerbersoftware, Postfach, Telefonie, Teams und Recherchequellen laufen in matchmaker an einer Oberfläche zusammen – angebunden statt ersetzt.',
-      noindex: true
+      description: 'Bewerbersoftware, Postfach, Telefonie, Teams und Recherchequellen laufen in matchmaker an einer Oberfläche zusammen – angebunden statt ersetzt.'
     }
   },
   {
-    path: '/entwurf/automatisierungen',
-    name: 'automation-draft',
+    path: '/automatisierungen',
+    name: 'automation',
     component: () => import('../views/View-Automation-Draft.vue'),
     meta: {
       title: 'Automatisierungen – matchmaker.hr',
-      description: 'Wiederkehrende Schritte laufen ohne Zutun durch, fehlende Profilangaben werden erkannt und nachgefragt – Telefonie, Termine und Auswertung laufen auf Klick aus dem Vorgang.',
-      noindex: true
+      description: 'Wiederkehrende Schritte laufen ohne Zutun durch, fehlende Profilangaben werden erkannt und nachgefragt – Telefonie, Termine und Auswertung laufen auf Klick aus dem Vorgang.'
     }
   },
   {
-    path: '/entwurf/agenten',
-    name: 'agents-draft',
+    path: '/agenten',
+    name: 'agents',
     component: () => import('../views/View-Agents-Draft.vue'),
     meta: {
       title: 'Multi-Agentensystem – matchmaker.hr',
-      description: 'Profiling, Market, Matching und Outreach Agent: vier spezialisierte KI-Agenten bereiten jeden Schritt des Vermittlungsprozesses vor – die Freigabe bleibt beim Berater.',
-      noindex: true
+      description: 'Profiling, Market, Matching und Outreach Agent: vier spezialisierte KI-Agenten bereiten jeden Schritt des Vermittlungsprozesses vor – die Freigabe bleibt beim Berater.'
     }
   },
   {
-    path: '/entwurf/daten',
-    name: 'data-draft',
+    path: '/daten',
+    name: 'data',
     component: () => import('../views/View-Data-Draft.vue'),
     meta: {
       title: 'Daten – matchmaker.hr',
-      description: 'Welche Daten matchmaker verarbeitet, woher sie stammen, was vor dem KI-Aufruf entfernt wird und welche DSGVO-Anforderungen technisch gelöst sind.',
-      noindex: true
+      description: 'Welche Daten matchmaker verarbeitet, woher sie stammen, was vor dem KI-Aufruf entfernt wird und welche DSGVO-Anforderungen technisch gelöst sind.'
     }
   },
   {
-    path: '/entwurf/ki-assistent',
-    name: 'assistant-draft',
+    path: '/ki-assistent',
+    name: 'assistant',
     component: () => import('../views/View-Assistant-Draft.vue'),
     meta: {
       title: 'KI-Assistent (Beta) – matchmaker.hr',
-      description: 'Der KI-Assistent von matchmaker: der Kandidatenpool als Karte, Fragen an den Bestand in eigenen Worten und künftig Aufträge an die Agenten im Satz.',
-      noindex: true
+      description: 'Der KI-Assistent von matchmaker: der Kandidatenpool als Karte, Fragen an den Bestand in eigenen Worten und künftig Aufträge an die Agenten im Satz.'
     }
   },
   {
-    path: '/entwurf/kontakt',
-    name: 'contact-draft',
+    path: '/kontakt',
+    name: 'contact',
     component: () => import('../views/View-Contact-Draft.vue'),
     meta: {
       title: 'Demo buchen – matchmaker.hr',
-      description: 'Persönliche Einführung in matchmaker: 15 Minuten per Video-Call – Bestandsaufnahme, Live-Durchlauf, Anbindung an Ihre Systeme und offene Fit-Diskussion.',
-      noindex: true
+      description: 'Persönliche Einführung in matchmaker: 15 Minuten per Video-Call – Bestandsaufnahme, Live-Durchlauf, Anbindung an Ihre Systeme und offene Fit-Diskussion.'
     }
   },
   {
-    path: '/entwurf/preise',
-    name: 'pricing-draft',
+    path: '/preise',
+    name: 'pricing',
     component: () => import('../views/View-Pricing-Draft.vue'),
     meta: {
       title: 'Preise – matchmaker.hr',
-      description: 'Preise von matchmaker.hr: Enterprise Lizenz gestaffelt nach Talent-Pool-Größe, zusätzliche Mitarbeiter-Lizenzen und Bring Your Own Key für die KI-Abrechnung.',
-      noindex: true
+      description: 'Preise von matchmaker.hr: ein Preis ohne Staffelung, zusätzliche Mitarbeiter-Lizenzen und Bring Your Own Key als Abrechnungsoption für die KI-Kosten.'
     }
   },
+  // Die früheren Entwurfspfade zeigen auf die nun veröffentlichten Seiten.
+  { path: '/entwurf', redirect: '/' },
+  { path: '/entwurf/:rest(.*)', redirect: to => '/' + to.params.rest },
   {
     path: '/imprint',
     name: 'imprint',

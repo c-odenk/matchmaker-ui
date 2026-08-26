@@ -15,9 +15,11 @@
           <h3 class="text-white text-[.82rem] font-bold tracking-[0.04em] uppercase mb-4">Navigation</h3>
           <ul class="list-none flex flex-col gap-[11px] text-[.9rem]">
             <li><a href="/#hero" @click.prevent="go('hero')" class="hover:text-white">Start</a></li>
-            <li><a href="/#agenten" @click.prevent="go('agenten')" class="hover:text-white">Produkt</a></li>
-            <li><a href="/#preise" @click.prevent="go('preise')" class="hover:text-white">Preise</a></li>
-            <li><button type="button" class="bg-transparent border-0 p-0 m-0 font-sans text-[.9rem] font-normal text-inherit cursor-pointer text-left hover:text-white" @click="openDemo">Kontakt</button></li>
+            <li><router-link to="/agenten" class="hover:text-white">Multi-Agentensystem</router-link></li>
+            <li><router-link to="/integration" class="hover:text-white">Integration</router-link></li>
+            <li><router-link to="/ki-assistent" class="hover:text-white">KI-Assistent</router-link></li>
+            <li><router-link to="/preise" class="hover:text-white">Preise</router-link></li>
+            <li><router-link to="/kontakt" class="hover:text-white">Kontakt</router-link></li>
           </ul>
         </div>
 
@@ -46,7 +48,6 @@
 </template>
 
 <script>
-import { openDemoModal } from '@/composables/demoModal'
 import { legalInfo } from '@/config/legalInfo'
 
 export default {
@@ -61,8 +62,7 @@ export default {
         if (el) { el.scrollIntoView({ behavior: 'smooth' }); return }
       }
       this.$router.push({ path: '/', hash: '#' + id })
-    },
-    openDemo() { openDemoModal() }
+    }
   }
 }
 </script>

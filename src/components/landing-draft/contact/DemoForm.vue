@@ -109,7 +109,7 @@
       <p class="text-[.92rem] text-body mt-2 max-w-[380px] mx-auto leading-[1.6]">
         Ihre Anfrage ist eingegangen. Wir bestätigen Ihren Termin in Kürze per E-Mail.
       </p>
-      <router-link to="/entwurf" class="inline-flex items-center gap-[7px] mt-6 text-[.92rem] font-semibold text-blue hover:text-blue-hover max-[880px]:py-[9px]">
+      <router-link to="/" class="inline-flex items-center gap-[7px] mt-6 text-[.92rem] font-semibold text-blue hover:text-blue-hover max-[880px]:py-[9px]">
         Zurück zur Startseite
       </router-link>
     </div>
