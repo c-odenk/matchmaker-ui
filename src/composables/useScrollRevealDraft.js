@@ -11,7 +11,7 @@ const REVEAL_PLAN = [
   { sel: '.sec-head', type: 'reveal' },
   { sel: '.scope', type: 'reveal-scale' },
   { sel: '.sec-note', type: 'reveal' },
-  { sel: '.folge > *', type: 'reveal', stagger: 150 },
+  { sel: '.folge > *', type: 'reveal', stagger: 160, delay: 280 },
   { sel: '.steps .step', type: 'reveal', stagger: 90 },
   { sel: '.hil', type: 'reveal-scale' },
   { sel: '.pool-grid .pcard', type: 'reveal', stagger: 110 },
@@ -63,10 +63,11 @@ export function setupScrollReveal(rootEl) {
   const isMobile = window.matchMedia && window.matchMedia('(max-width: 560px)').matches
   const staggerFactor = isMobile ? 0.35 : 1
 
-  REVEAL_PLAN.forEach(({ sel, type, stagger }) => {
+  REVEAL_PLAN.forEach(({ sel, type, stagger, delay }) => {
     rootEl.querySelectorAll(sel).forEach((el, i) => {
       el.classList.add(type)
-      if (stagger) el.style.transitionDelay = (i * stagger * staggerFactor) + 'ms'
+      const versatz = (delay || 0) + (stagger ? i * stagger * staggerFactor : 0)
+      if (versatz) el.style.transitionDelay = versatz + 'ms'
       observer.observe(el)
     })
   })

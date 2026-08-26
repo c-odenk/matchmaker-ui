@@ -58,6 +58,18 @@
       ]
     }
     </script>
+    <script>
+      // Der Startzustand des Scroll-Reveals hängt an dieser Klasse. Sie wird
+      // gesetzt, bevor der Body gezeichnet wird – sonst zeigt das vorgerenderte
+      // HTML die Inhalte kurz an, bevor Vue sie für die Einblendung versteckt.
+      // Ohne JavaScript und beim Vorrendern bleibt sie aus: dann ist alles
+      // von vornherein sichtbar.
+      try {
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && !navigator.webdriver) {
+          document.documentElement.classList.add('reveal-an')
+        }
+      } catch (e) { /* im Zweifel sichtbar lassen */ }
+    </script>
   </head>
   <body>
     <noscript>
