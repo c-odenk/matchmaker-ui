@@ -11,6 +11,7 @@ const REVEAL_PLAN = [
   { sel: '.sec-head', type: 'reveal' },
   { sel: '.scope', type: 'reveal-scale' },
   { sel: '.sec-note', type: 'reveal' },
+  { sel: '.folge > *', type: 'reveal', stagger: 150 },
   { sel: '.steps .step', type: 'reveal', stagger: 90 },
   { sel: '.hil', type: 'reveal-scale' },
   { sel: '.pool-grid .pcard', type: 'reveal', stagger: 110 },
@@ -30,15 +31,28 @@ const REVEAL_PLAN = [
 // Gibt eine Aufräumfunktion zurück (für onBeforeUnmount / beforeUnmount).
 export function setupScrollReveal(rootEl) {
   const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches
-  if (!rootEl || reduceMotion || typeof IntersectionObserver === 'undefined') {
+  // Beim Vorrendern (Puppeteer) bleibt alles sichtbar: dort wird das DOM
+  // gespeichert, bevor die Einblendung durchgelaufen ist – das statische HTML
+  // zeigte sonst durchgehend transparente Inhalte.
+  const wirdVorgerendert = typeof navigator !== 'undefined' && navigator.webdriver
+  if (!rootEl || reduceMotion || wirdVorgerendert || typeof IntersectionObserver === 'undefined') {
     return () => {}
   }
 
   const observer = new IntersectionObserver((entries) => {
     for (const entry of entries) {
       if (entry.isIntersecting) {
-        entry.target.classList.add('in')
-        observer.unobserve(entry.target)
+        const el = entry.target
+        observer.unobserve(el)
+        // Erst im übernächsten Frame einblenden. Beim Seitenaufbau meldet der
+        // Observer alles, was schon im Bild liegt, sofort – würde die
+        // .in-Klasse im selben Schritt gesetzt, hätte der Browser den
+        // Ausgangszustand nie gezeichnet und überspränge die Bewegung. Genau
+        // das ließ die oberen Sektionen ohne sichtbare Animation erscheinen.
+        const zeigen = () => el.classList.add('in')
+        requestAnimationFrame(() => requestAnimationFrame(zeigen))
+        // Falls keine Frames laufen (Tab im Hintergrund), greift der Timer.
+        setTimeout(zeigen, 400)
       }
     }
   }, { threshold: 0.16, rootMargin: '0px 0px -7% 0px' })

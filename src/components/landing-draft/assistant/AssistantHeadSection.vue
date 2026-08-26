@@ -11,8 +11,8 @@
 
       <!-- Eine Oberfläche, in der beide Wege zusammenlaufen: erst das Ziel,
            darunter die zwei Wege, die dorthin führen. -->
-      <div class="rounded-[18px] border border-line bg-surface p-8 max-[560px]:p-5">
-        <div class="cta-band relative overflow-hidden rounded-[14px] bg-navy text-white border border-white/[0.08] shadow-price-feat px-7 py-6 max-[560px]:px-5 max-[560px]:py-5">
+      <div class="folge rounded-[18px] border border-line bg-surface p-8 max-[560px]:p-5">
+        <div class="relative overflow-hidden rounded-[14px] bg-navy text-white border border-white/[0.08] shadow-price-feat px-7 py-6 max-[560px]:px-5 max-[560px]:py-5">
           <div class="absolute top-[-120%] right-[-4%] w-[52%] h-[320%] bg-[radial-gradient(ellipse_at_center,rgba(41,118,214,.45),transparent_65%)] blur-[55px] pointer-events-none"></div>
           <div class="relative z-[2] flex items-center justify-between gap-4 flex-wrap">
             <div class="flex items-center gap-[14px] min-w-0">
@@ -39,8 +39,8 @@
           <span class="absolute left-1/2 -translate-x-1/2 top-[26px] -translate-y-1/2 w-[7px] h-[7px] rounded-full bg-blue ring-4 ring-blue/15 max-[880px]:top-1/2"></span>
         </div>
 
-        <div class="ben-grid grid items-stretch [grid-template-columns:1fr_1fr] gap-[18px] max-[880px]:grid-cols-1">
-          <div v-for="w in wege" :key="w.label" class="ben relative rounded-[12px] border border-line bg-white px-5 py-5 flex flex-col">
+        <div class="grid items-stretch [grid-template-columns:1fr_1fr] gap-[18px] max-[880px]:grid-cols-1">
+          <div v-for="w in wege" :key="w.label" class="relative rounded-[12px] border border-line bg-white px-5 py-5 flex flex-col">
             <div class="flex items-center gap-[10px] mb-3">
               <span class="w-[34px] h-[34px] shrink-0 rounded-[10px] bg-navy/[0.07] text-navy flex items-center justify-center">
                 <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" :d="w.icon"/></svg>
