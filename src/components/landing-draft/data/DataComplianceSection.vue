@@ -4,7 +4,7 @@
     <div class="wrap">
       <div class="sec-head mx-auto max-w-[660px] text-center mb-10">
         <EyebrowBadge>Regulatorik</EyebrowBadge>
-        <h2 class="text-section text-ink mt-[18px] mb-[14px]">Was die DSGVO verlangt, ist <span class="text-blue">im System gelöst.</span></h2>
+        <h2 class="text-section text-ink mt-[18px] mb-[14px]">Was die DSGVO verlangt, ist <span class="text-blue">in der Architektur verankert.</span></h2>
         <p class="text-lead text-body">Die Anforderungen sind fest in der Architektur verankert – an jedem einzelnen Punkt nachvollziehbar.</p>
       </div>
 

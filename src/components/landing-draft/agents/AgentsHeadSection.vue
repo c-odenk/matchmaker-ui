@@ -2,9 +2,10 @@
   <section class="sec bg-white !pt-[88px] max-[880px]:!pt-[58px]">
     <div class="wrap">
       <div class="sec-head mx-auto max-w-[680px] text-center mb-[88px] max-[880px]:mb-[58px]">
-        <h1 class="text-hero text-ink mb-[14px]">Vier Agenten arbeiten zu. <span class="text-blue">Sie entscheiden.</span></h1>
+        <h1 class="text-hero text-ink mb-[14px]">Vier Agenten bereiten vor. <span class="text-blue">Sie entscheiden.</span></h1>
         <p class="text-lead text-body">
-          Jeder Agent übernimmt einen Schritt und übergibt an den nächsten. Am Ende steht ein versandfertiger Vorschlag.
+          Eine durchgängige Kette vom Lebenslauf bis zum ersten Kontakt: Jeder Agent übernimmt einen Schritt
+          und übergibt an den nächsten. Am Ende steht ein versandfertiger Vorschlag.
         </p>
       </div>
 
@@ -56,7 +57,7 @@
               </span>
               <span>
                 <span class="block text-[1.18rem] font-bold tracking-[-0.01em] leading-tight">Der Berater gibt frei</span>
-                <span class="block text-[.85rem] text-white/[0.72] mt-[2px]">Nichts geht hinaus, bevor Sie es freigegeben haben</span>
+                <span class="block text-[.85rem] text-white/[0.72] mt-[2px]">Nichts wird versendet, bevor Sie es freigegeben haben</span>
               </span>
             </div>
             <span class="inline-flex items-center gap-[7px] text-[.72rem] font-semibold px-[11px] py-[4px] rounded-full bg-blue/25 border border-blue/[0.35] text-[#9cc6f2]">

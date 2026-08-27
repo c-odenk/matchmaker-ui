@@ -6,7 +6,7 @@
     <div class="wrap two grid [grid-template-columns:1fr_1.1fr] gap-[52px] items-center max-[880px]:grid-cols-1 max-[880px]:gap-[30px]">
       <div>
         <EyebrowBadge>Die Befehle</EyebrowBadge>
-        <h2 class="text-section text-ink mt-[18px] mb-[14px]">Dieselben Agenten, <span class="text-blue">nur auf Zuruf.</span></h2>
+        <h2 class="text-section text-ink mt-[18px] mb-[14px]">Dieselben Agenten – <span class="text-blue">gezielt beauftragt.</span></h2>
         <p class="text-[.95rem] text-body leading-[1.65] max-w-[620px]">
           Die Automatisierung läuft nach festem Ablauf. Über den Chat stoßen Sie dieselben
           Schritte gezielt an – für ein Profil, ein Mandat, jetzt.

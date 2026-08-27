@@ -2,7 +2,7 @@
   <section class="sec bg-white !pt-[88px] max-[880px]:!pt-[58px]">
     <div class="wrap">
       <div class="sec-head mx-auto max-w-[680px] text-center mb-[88px] max-[880px]:mb-[58px]">
-        <h1 class="text-hero text-ink mb-[14px]">Was nicht im Ablauf steht, <span class="text-blue">machen Sie hier.</span></h1>
+        <h1 class="text-hero text-ink mb-[14px]">Was nicht im Ablauf steht, <span class="text-blue">erledigen Sie hier.</span></h1>
         <p class="text-lead text-body">
           Die Automatisierung deckt den wiederkehrenden Weg. Der Anruf dazwischen, der Link
           per Mail, die Frage, die kein Filter beantwortet – dafür ist der Assistent da.

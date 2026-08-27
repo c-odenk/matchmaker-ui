@@ -4,7 +4,7 @@
     <div class="wrap">
       <div class="sec-head mx-auto max-w-[660px] text-center mb-10">
         <EyebrowBadge>Quellen</EyebrowBadge>
-        <h2 class="text-section text-ink mt-[18px] mb-[14px]">Recherche, die Sie <span class="text-blue">nicht mehr selbst öffnen.</span></h2>
+        <h2 class="text-section text-ink mt-[18px] mb-[14px]">Recherche, die <span class="text-blue">bereits erledigt ist.</span></h2>
         <p class="text-lead text-body">Angebunden liefern diese Quellen ihre Daten direkt in den Vorgang – Sie sehen das Ergebnis, nicht den Suchweg.</p>
       </div>
 
