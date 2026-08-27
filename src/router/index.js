@@ -77,6 +77,94 @@ const routes = [
   // Die früheren Entwurfspfade zeigen auf die nun veröffentlichten Seiten.
   { path: '/entwurf', redirect: '/' },
   { path: '/entwurf/:rest(.*)', redirect: to => '/' + to.params.rest },
+
+  // ---------------------------------------------------------------------
+  // Textfassung 2.0 – begehbare Zweitfassung zum Gegenlesen.
+  // Rein additiv: eigener Komponentenbaum unter components/landing-draft-v2,
+  // eigene Views, alle Routen auf noindex und nicht im Prerender.
+  // Vor einem Livegang: Pfade auf die Zielpfade umstellen, noindex entfernen,
+  // Pfade in die Prerender-Liste in vue.config.js aufnehmen.
+  // ---------------------------------------------------------------------
+  {
+    path: '/entwurf-v2',
+    name: 'landing-v2',
+    component: () => import('../views/View-Landing-V2.vue'),
+    meta: {
+      noindex: true,
+      title: 'matchmaker.hr – KI-Plattform für Personalberatung und Executive Search',
+      description: 'matchmaker.hr setzt auf Ihre bestehende Bewerbersoftware auf und automatisiert den Weg vom Kandidatenprofil zum versandfertigen Anschreiben. Versendet wird ausschließlich nach Freigabe durch den Berater.'
+    }
+  },
+  {
+    path: '/entwurf-v2/integration',
+    name: 'integration-v2',
+    component: () => import('../views/View-Integration-V2.vue'),
+    meta: {
+      noindex: true,
+      title: 'Integration – matchmaker.hr',
+      description: 'Bewerbersoftware, Postfach, Telefonie, Teams und Recherchequellen laufen in matchmaker an einer Oberfläche zusammen – angebunden statt ersetzt.'
+    }
+  },
+  {
+    path: '/entwurf-v2/automatisierungen',
+    name: 'automation-v2',
+    component: () => import('../views/View-Automation-V2.vue'),
+    meta: {
+      noindex: true,
+      title: 'Automatisierungen – matchmaker.hr',
+      description: 'Wiederkehrende Schritte laufen ohne manuellen Anstoß, fehlende Profilangaben werden erkannt und nachgefragt – Telefonie, Termine und Auswertung laufen auf Klick aus dem Kandidatenprofil.'
+    }
+  },
+  {
+    path: '/entwurf-v2/agenten',
+    name: 'agents-v2',
+    component: () => import('../views/View-Agents-V2.vue'),
+    meta: {
+      noindex: true,
+      title: 'Multi-Agentensystem – matchmaker.hr',
+      description: 'Profiling, Market, Matching und Outreach Agent: vier spezialisierte KI-Agenten bereiten jeden Schritt des Vermittlungsprozesses vor – die Freigabe bleibt beim Berater.'
+    }
+  },
+  {
+    path: '/entwurf-v2/daten',
+    name: 'data-v2',
+    component: () => import('../views/View-Data-V2.vue'),
+    meta: {
+      noindex: true,
+      title: 'Daten – matchmaker.hr',
+      description: 'Welche Daten matchmaker verarbeitet, woher sie stammen, was vor dem KI-Aufruf entfernt wird und welche DSGVO-Anforderungen in der Architektur verankert sind.'
+    }
+  },
+  {
+    path: '/entwurf-v2/ki-assistent',
+    name: 'assistant-v2',
+    component: () => import('../views/View-Assistant-V2.vue'),
+    meta: {
+      noindex: true,
+      title: 'KI-Assistent (Beta) – matchmaker.hr',
+      description: 'Der KI-Assistent von matchmaker: der Kandidatenpool als Karte, Fragen an den Bestand in eigenen Worten und künftig Aufträge an die Agenten im Satz.'
+    }
+  },
+  {
+    path: '/entwurf-v2/kontakt',
+    name: 'contact-v2',
+    component: () => import('../views/View-Contact-V2.vue'),
+    meta: {
+      noindex: true,
+      title: 'Demo buchen – matchmaker.hr',
+      description: 'Persönliche Einführung in matchmaker: 15 Minuten per Video-Call – Bestandsaufnahme, Live-Durchlauf, Anbindung an Ihre Systeme und offene Passungsdiskussion.'
+    }
+  },
+  {
+    path: '/entwurf-v2/preise',
+    name: 'pricing-v2',
+    component: () => import('../views/View-Pricing-V2.vue'),
+    meta: {
+      noindex: true,
+      title: 'Preise – matchmaker.hr',
+      description: 'Preise von matchmaker.hr: ein Preis ohne Staffelung, zusätzliche Mitarbeiter-Lizenzen und Bring Your Own Key als Abrechnungsoption für die KI-Kosten.'
+    }
+  },
   {
     path: '/imprint',
     name: 'imprint',
