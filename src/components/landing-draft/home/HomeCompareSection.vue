@@ -3,8 +3,8 @@
   <section class="sec bg-white" id="vergleich">
     <div class="wrap">
       <SectionHeadingDraft eyebrow="Vorher · Nachher">
-        Derselbe Tag, <span class="text-blue">anders verbracht.</span>
-        <template #lead>Was heute Handarbeit ist, liegt morgen fertig vor.</template>
+        Der Engpass liegt nicht im Netzwerk – <span class="text-blue">er liegt im Aufwand.</span>
+        <template #lead>Erfahrene Berater erkennen Passung. Was ihnen fehlt, ist nicht Urteilsvermögen, sondern Zeit.</template>
       </SectionHeadingDraft>
 
       <div class="compare border border-line rounded-[18px] overflow-hidden grid grid-cols-2 max-[560px]:grid-cols-1">

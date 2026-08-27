@@ -4,9 +4,9 @@
     <div class="wrap two grid [grid-template-columns:1fr_1.1fr] gap-[52px] items-center max-[880px]:grid-cols-1 max-[880px]:gap-[30px]">
       <div>
         <EyebrowBadge>Automatisierungen</EyebrowBadge>
-        <h2 class="text-section text-ink mt-[18px] mb-[14px]">Die Arbeit läuft vor, <span class="text-blue">Sie geben frei.</span></h2>
+        <h2 class="text-section text-ink mt-[18px] mb-[14px]">Der Durchlauf arbeitet vor. <span class="text-blue">Sie geben frei.</span></h2>
         <p class="text-[.95rem] text-body leading-[1.65] max-w-[620px]">
-          Wiederkehrende Schritte laufen ohne Zutun durch. Morgens liegt kein Zwischenstand vor, sondern ein fertiger Vorschlag.
+          Wiederkehrende Schritte laufen ohne manuellen Anstoß. Am Morgen liegt kein Zwischenstand vor, sondern ein vollständig vorbereiteter Vorschlag.
         </p>
         <FeatureList :items="features" />
         <router-link to="/automatisierungen" class="inline-flex items-center gap-[7px] mt-[22px] text-[.92rem] font-semibold text-blue hover:text-blue-hover cursor-pointer max-[880px]:py-[9px]">
