@@ -4,8 +4,8 @@
     <div class="wrap">
       <div class="sec-head mx-auto max-w-[660px] text-center mb-10">
         <EyebrowBadge>Ergebnis</EyebrowBadge>
-        <h2 class="text-section text-ink mt-[18px] mb-[14px]">Was morgens <span class="text-blue">auf dem Tisch liegt.</span></h2>
-        <p class="text-lead text-body">Kein Zwischenstand, keine Liste zum Nacharbeiten – sondern Vorschläge, die nur noch geprüft und freigegeben werden wollen.</p>
+        <h2 class="text-section text-ink mt-[18px] mb-[14px]">Was am nächsten Morgen <span class="text-blue">vorliegt.</span></h2>
+        <p class="text-lead text-body">Kein Zwischenstand, keine Liste zum Nacharbeiten – sondern Vorschläge, die nur noch geprüft und freigegeben werden müssen.</p>
       </div>
 
       <div class="ben-grid grid gap-[18px] [grid-template-columns:repeat(4,1fr)] max-[880px]:grid-cols-2 max-[560px]:grid-cols-1">

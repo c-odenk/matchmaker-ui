@@ -8,8 +8,8 @@
         <EyebrowBadge>Freigabe</EyebrowBadge>
         <h2 class="text-section text-ink mt-[18px] mb-[14px]">Vorschlag, Freigabe, <span class="text-blue">Protokoll.</span></h2>
         <p class="text-[1.05rem] font-normal leading-[1.5] text-muted mt-[10px]">
-          Der Assistent führt aus, entscheidet aber nicht. Nichts verlässt das Haus, bevor
-          Sie es freigegeben haben – auch nicht auf Zuruf.
+          Der Assistent führt aus, entscheidet aber nicht. Nichts wird versendet, bevor
+          Sie es freigegeben haben – auch nicht auf Anforderung aus dem Chat.
         </p>
       </div>
 

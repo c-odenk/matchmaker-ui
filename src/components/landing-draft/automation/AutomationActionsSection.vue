@@ -4,8 +4,8 @@
     <div class="wrap">
       <div class="sec-head mx-auto max-w-[660px] text-center mb-10">
         <EyebrowBadge>Auf Klick</EyebrowBadge>
-        <h2 class="text-section text-ink mt-[18px] mb-[14px]">Ein Fenster statt <span class="text-blue">fünf Programmen.</span></h2>
-        <p class="text-lead text-body">Handgriffe, die heute je ein eigenes System brauchen – in matchmaker ein Klick aus dem Vorgang heraus.</p>
+        <h2 class="text-section text-ink mt-[18px] mb-[14px]">Ein System statt <span class="text-blue">fünf Anwendungen.</span></h2>
+        <p class="text-lead text-body">Schritte, die heute jeweils ein eigenes System erfordern – in matchmaker ein Klick aus dem Kandidatenprofil heraus.</p>
       </div>
 
       <!-- Trennlinien über gap-px auf Linienfarbe: stimmt bei 3, 2 und 1 Spalte -->

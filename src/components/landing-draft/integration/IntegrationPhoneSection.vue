@@ -6,7 +6,7 @@
         <EyebrowBadge>Telefonie</EyebrowBadge>
         <h2 class="text-section text-ink mt-[18px] mb-[14px]">Anrufen, <span class="text-blue">ohne das Profil zu verlassen.</span></h2>
         <p class="text-[.95rem] text-body leading-[1.65] max-w-[620px]">
-          Der Anruf läuft über den Rechner, direkt aus dem Profil. Wer wann erreicht wurde, steht am Vorgang.
+          Der Anruf läuft direkt aus dem Kandidatenprofil, über den Browser. Wer wann erreicht wurde, ist am Profil dokumentiert.
         </p>
         <FeatureList :items="features" />
       </div>
