@@ -3,7 +3,7 @@
   <section class="sec bg-white">
     <div class="wrap">
       <SectionHeadingDraft eyebrow="Warum matchmaker">
-        Ein Ort für alles. <span class="text-blue">Sie behalten das letzte Wort.</span>
+        Ein Ort für alles. <span class="text-blue">Die Entscheidung bleibt bei Ihnen.</span>
         <template #lead>Was sich ändert, ist die Arbeit dazwischen.</template>
       </SectionHeadingDraft>
 

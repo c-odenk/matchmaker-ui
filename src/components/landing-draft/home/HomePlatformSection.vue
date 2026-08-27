@@ -3,7 +3,7 @@
   <section class="sec bg-surface">
     <div class="wrap">
       <SectionHeadingDraft eyebrow="Die Plattform">
-        Vier Bausteine, <span class="text-blue">ein System.</span>
+        Kontrolle ist kein Zusatz – <span class="text-blue">sie ist im System verankert.</span>
         <template #lead>Was angebunden wird, wo die Daten liegen, wer die Arbeit macht und was davon automatisch läuft.</template>
       </SectionHeadingDraft>
 
