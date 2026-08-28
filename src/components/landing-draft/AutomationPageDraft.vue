@@ -3,10 +3,20 @@
     <TheHeaderDraft />
     <main>
       <AutomationHeadSection />
+
+      <!-- Teil 1 · Was ohne Zutun läuft -->
       <AutomationRunSection />
       <AutomationGapsSection />
+
+      <!-- Teil 2 · Was der Berater aus dem Vorgang heraus auslöst -->
+      <AutomationChannelsSection />
+      <AutomationMailSection />
+      <AutomationPhoneSection />
+      <AutomationMeetingSection />
       <AutomationTranscriptSection />
-      <AutomationActionsSection />
+
+      <!-- Beides läuft auf denselben Verlauf zu -->
+      <AutomationTrailSection />
       <AutomationCtaSection />
     </main>
     <TheFooter />
@@ -15,16 +25,22 @@
 
 <script>
 // Unterseite „Automatisierungen" (/automatisierungen).
-// Reihenfolge: was ohne Zutun läuft, was daraus an Profilarbeit entsteht,
-// und was der Berater zwischendurch mit einem Klick auslöst.
+// Zwei Teile: der Durchlauf, der ohne Anstoß arbeitet – und die vier Kanäle,
+// die der Berater aus dem Vorgang heraus auslöst (E-Mail, Telefonie,
+// Teams-Termin, Gesprächsauswertung). Am Ende laufen beide im selben Verlauf
+// zusammen.
 import TheHeaderDraft from '@/components/landing-draft/sections/TheHeaderDraft.vue'
 import TheFooter from '@/components/landing/sections/TheFooter.vue'
 
 import AutomationHeadSection from '@/components/landing-draft/automation/AutomationHeadSection.vue'
 import AutomationRunSection from '@/components/landing-draft/automation/AutomationRunSection.vue'
 import AutomationGapsSection from '@/components/landing-draft/automation/AutomationGapsSection.vue'
+import AutomationChannelsSection from '@/components/landing-draft/automation/AutomationChannelsSection.vue'
+import AutomationMailSection from '@/components/landing-draft/automation/AutomationMailSection.vue'
+import AutomationPhoneSection from '@/components/landing-draft/automation/AutomationPhoneSection.vue'
+import AutomationMeetingSection from '@/components/landing-draft/automation/AutomationMeetingSection.vue'
 import AutomationTranscriptSection from '@/components/landing-draft/automation/AutomationTranscriptSection.vue'
-import AutomationActionsSection from '@/components/landing-draft/automation/AutomationActionsSection.vue'
+import AutomationTrailSection from '@/components/landing-draft/automation/AutomationTrailSection.vue'
 import AutomationCtaSection from '@/components/landing-draft/automation/AutomationCtaSection.vue'
 
 import { setupScrollReveal } from '@/composables/useScrollRevealDraft'
@@ -34,8 +50,9 @@ export default {
   components: {
     TheHeaderDraft, TheFooter,
     AutomationHeadSection, AutomationRunSection, AutomationGapsSection,
-    AutomationTranscriptSection,
-    AutomationActionsSection, AutomationCtaSection
+    AutomationChannelsSection, AutomationMailSection, AutomationPhoneSection,
+    AutomationMeetingSection, AutomationTranscriptSection,
+    AutomationTrailSection, AutomationCtaSection
   },
   mounted() {
     this._cleanupReveal = setupScrollReveal(this.$el)

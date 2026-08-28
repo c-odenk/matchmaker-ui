@@ -1,7 +1,10 @@
 <template>
   <!-- Produktblick auf das Anruffenster, wie es während eines Gesprächs über
        dem Profil steht. Alle Angaben sind Platzhalter. -->
-  <div class="w-full max-w-[560px] ml-auto rounded-[16px] border border-line bg-white overflow-hidden shadow-[0_20px_44px_-18px_rgba(15,23,42,.28)] max-[880px]:mx-auto">
+  <div
+    class="w-full max-w-[560px] rounded-[16px] border border-line bg-white overflow-hidden shadow-[0_20px_44px_-18px_rgba(15,23,42,.28)] max-[880px]:mx-auto"
+    :class="align === 'left' ? 'mr-auto' : 'ml-auto'"
+  >
     <!-- Gesprächsstatus -->
     <div class="flex items-center justify-between gap-3 px-5 py-[13px] border-b border-line">
       <span class="inline-flex items-center gap-[9px] text-[.82rem] font-semibold text-ink">
@@ -16,7 +19,7 @@
     <!-- Wer am Apparat ist -->
     <div class="px-5 pt-[15px] pb-[14px]">
       <div class="text-[1.08rem] font-bold tracking-[-0.01em] text-ink leading-tight">Max Mustermann</div>
-      <div class="text-[.82rem] text-body mt-[4px]">Head of Operations</div>
+      <div class="text-[.82rem] text-body mt-[4px]">Senior IT Projektleiter</div>
       <div class="text-[.82rem] text-muted mt-[2px] tabular-nums">+49 170 ••• ••42</div>
     </div>
 
@@ -45,7 +48,7 @@
     </div>
 
     <div class="px-5 py-[12px] border-t border-line text-[.78rem] text-muted">
-      Letzter Kontakt: Teams-Termin am 30.07.2026
+      Letzter Kontakt: Erstgespräch am 27.08.2026
     </div>
 
     <!-- Notiz läuft direkt in den Vorgang -->
@@ -72,18 +75,24 @@
 <script>
 export default {
   name: 'PhoneCallMockup',
+  // In der Zweispalte steht das Fenster mal rechts, mal links neben dem Text.
+  // Voreinstellung bleibt rechtsbündig – so, wie es Startseite und
+  // Integrationsseite bereits einsetzen.
+  props: {
+    align: { type: String, default: 'right' } // right | left
+  },
   data() {
     return {
       facts: [
-        { k: 'Verfügbarkeit', v: 'ab 01.10.' },
-        { k: 'Gehaltsrahmen', v: '160–200 k€ + Variable' },
-        { k: 'Erfahrung', v: '14 Jahre, davon 6 Führung' },
-        { k: 'Teamgröße', v: '18 FTE' }
+        { k: 'Verfügbarkeit', v: 'ab 01.11.' },
+        { k: 'Gehaltsrahmen', v: '95–110 k€' },
+        { k: 'Erfahrung', v: '12 Jahre, davon 6 Führung' },
+        { k: 'Teamgröße', v: '12 FTE' }
       ],
       highlights: [
-        'Aufbau DACH-Vertrieb von 3 auf 18 FTE',
-        'Enterprise-SaaS, Abschlüsse über 500 k€',
-        'Erfahrung in Restrukturierung'
+        'Cloud-Infrastruktur von 10 auf 200 Knoten skaliert',
+        'Budgetverantwortung 1,5 Mio. € p.a.',
+        'PMP und Certified Scrum Master'
       ],
       open: [
         'Reisebereitschaft ungeklärt',
