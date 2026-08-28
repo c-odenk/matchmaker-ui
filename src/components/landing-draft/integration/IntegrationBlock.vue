@@ -5,7 +5,7 @@
     <!-- Bedienschicht -->
     <div class="rounded-[12px] bg-navy text-white px-5 py-4 flex items-center gap-3">
       <span class="w-[30px] h-[30px] shrink-0 rounded-lg bg-white/[0.12] flex items-center justify-center">
-        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9.8 15.9L9 18.75l-.81-2.85a4.5 4.5 0 00-3.09-3.09L2.25 12l2.85-.81a4.5 4.5 0 003.09-3.09L9 5.25l.81 2.85a4.5 4.5 0 003.09 3.09L15.75 12l-2.85.81a4.5 4.5 0 00-3.09 3.09z"/></svg>
+        <span class="font-bold leading-none tracking-[-0.04em] text-[1.08rem] -mt-px">m</span>
       </span>
       <span class="min-w-0">
         <span class="block text-[.92rem] font-bold leading-tight">matchmaker</span>

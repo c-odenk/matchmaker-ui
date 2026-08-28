@@ -41,7 +41,7 @@
             <div class="flex items-center justify-between gap-3 px-5 py-[14px] flex-wrap max-[560px]:px-4">
               <div class="flex items-center gap-3">
                 <span class="w-[33px] h-[33px] shrink-0 rounded-xl bg-navy text-white flex items-center justify-center">
-                  <svg class="w-[17px] h-[17px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9.8 15.9L9 18.75l-.81-2.85a4.5 4.5 0 00-3.09-3.09L2.25 12l2.85-.81a4.5 4.5 0 003.09-3.09L9 5.25l.81 2.85a4.5 4.5 0 003.09 3.09L15.75 12l-2.85.81a4.5 4.5 0 00-3.09 3.09z"/></svg>
+                  <span class="font-bold leading-none tracking-[-0.04em] text-[1.18rem] -mt-px">m</span>
                 </span>
                 <span class="text-left">
                   <span class="block text-[.96rem] font-bold tracking-[-0.01em] leading-tight">matchmaker</span>

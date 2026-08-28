@@ -3,11 +3,7 @@
     <div class="wrap">
       <div class="foot-grid grid grid-cols-[1.6fr_1fr_1fr_1fr] gap-9 max-[880px]:grid-cols-2 max-[880px]:gap-7 max-[560px]:grid-cols-1 max-[560px]:gap-6">
         <div>
-          <div class="flex items-center gap-[10px] font-bold text-[1.08rem] tracking-[-0.02em] text-white mb-[14px]">
-            <span class="w-[30px] h-[30px] rounded-lg bg-white text-navy flex items-center justify-center">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9.8 15.9L9 18.75l-.81-2.85a4.5 4.5 0 00-3.09-3.09L2.25 12l2.85-.81a4.5 4.5 0 003.09-3.09L9 5.25l.81 2.85a4.5 4.5 0 003.09 3.09L15.75 12l-2.85.81a4.5 4.5 0 00-3.09 3.09z"/></svg>
-            </span>matchmaker.hr
-          </div>
+          <BrandMark dark class="mb-[14px]" />
           <p class="text-[.9rem] max-w-[270px]">Ihr Partner für effizientes Talentpool-Management.</p>
         </div>
 
@@ -49,9 +45,11 @@
 
 <script>
 import { legalInfo } from '@/config/legalInfo'
+import BrandMark from '@/components/ui/BrandMark.vue'
 
 export default {
   name: 'TheFooter',
+  components: { BrandMark },
   data() {
     return { year: new Date().getFullYear(), legalInfo }
   },
