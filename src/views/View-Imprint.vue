@@ -9,7 +9,7 @@
       {{ legalInfo.country }}
     </address>
     <p>
-      Vertreten durch den Geschäftsführer: {{ legalInfo.ceo }}
+      Vertreten durch: {{ legalInfo.ceo }}
     </p>
 
     <h2>Kontakt</h2>
@@ -17,18 +17,24 @@
       E-Mail: <a :href="`mailto:${legalInfo.email}`">{{ legalInfo.email }}</a>
     </p>
 
-    <h2>Registereintrag</h2>
-    <p>
-      Eintragung im Handelsregister.<br>
-      Registergericht: {{ legalInfo.registerCourt }}<br>
-      Registernummer: {{ legalInfo.registerNumber }}
-    </p>
+    <!-- Register und USt-ID nur ausgeben, wenn sie hinterlegt sind. Ein
+         Platzhalter an dieser Stelle ist schlechter als keine Angabe. -->
+    <template v-if="legalInfo.registerCourt && legalInfo.registerNumber">
+      <h2>Registereintrag</h2>
+      <p>
+        Eintragung im Handelsregister.<br>
+        Registergericht: {{ legalInfo.registerCourt }}<br>
+        Registernummer: {{ legalInfo.registerNumber }}
+      </p>
+    </template>
 
-    <h2>Umsatzsteuer-ID</h2>
-    <p>
-      Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz:<br>
-      {{ legalInfo.vatId }}
-    </p>
+    <template v-if="legalInfo.vatId">
+      <h2>Umsatzsteuer-ID</h2>
+      <p>
+        Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz:<br>
+        {{ legalInfo.vatId }}
+      </p>
+    </template>
 
     <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
     <p>

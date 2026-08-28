@@ -6,11 +6,10 @@
       <section class="relative overflow-hidden bg-navy text-white pt-[46px] pb-10 max-[560px]:pt-[34px] max-[560px]:pb-7">
         <span class="absolute top-[-70%] right-[-6%] w-[46%] h-[240%] bg-[radial-gradient(ellipse_at_center,rgba(41,118,214,.4),transparent_65%)] blur-[55px] pointer-events-none" aria-hidden="true"></span>
         <div class="wrap relative z-[1]">
-          <router-link to="/" class="inline-flex items-center gap-[7px] text-[.85rem] font-medium text-white/[0.66] mb-5 transition-colors hover:text-white max-[880px]:hidden">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"/></svg>
-            Zurück zur Startseite
-          </router-link>
-          <h1 class="text-legal-h1">{{ title }}</h1>
+          <!-- hyphens-auto trennt „Geschäftsbedingungen" auf schmalen Geräten;
+               break-words fängt den Fall ab, dass der Browser nicht trennt.
+               Ohne beides schneidet das overflow-hidden des Bands das Wort ab. -->
+          <h1 class="text-legal-h1 hyphens-auto break-words" lang="de">{{ title }}</h1>
         </div>
       </section>
 

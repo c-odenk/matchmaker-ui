@@ -9,7 +9,10 @@ export const legalInfo = {
   country: 'Deutschland',
   ceo: 'Christopher Odenkirchen',
   email: 'info@matchmaker-hr.de',
-  registerCourt: 'n.a.',
-  registerNumber: 'n.a.',
-  vatId: 'DE000000000'
+  // NOCH ZU FÜLLEN: Solange diese Felder leer sind, blendet das Impressum die
+  // jeweiligen Abschnitte aus. Ein Platzhalter wie 'n.a.' oder eine erfundene
+  // USt-ID darf dort nicht erscheinen – beides ist abmahnfähig.
+  registerCourt: '',
+  registerNumber: '',
+  vatId: ''
 }
