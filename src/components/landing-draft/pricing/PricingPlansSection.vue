@@ -44,9 +44,17 @@
           </div>
           <div class="border-t border-white/[0.13] my-5"></div>
           <div class="text-[.64rem] font-bold tracking-[0.09em] uppercase text-white/60 mb-[13px]">Leistungen</div>
+          <!-- Statt Häkchen je ein Symbol zur Leistung: Die Liste ist der Kern
+               der Kachel, die Symbole machen sie überfliegbar. -->
           <ul class="list-none flex flex-col gap-3">
-            <li v-for="f in enterpriseFeatures" :key="f" class="flex items-start gap-[10px] text-[.86rem] text-white leading-[1.4]">
-              <span class="shrink-0 w-[18px] h-[18px] mt-[1px] rounded-full bg-green/25 text-[#7ee2a8] flex items-center justify-center text-[.64rem]">✓</span>{{ f }}
+            <li v-for="f in enterpriseFeatures" :key="f.text" class="flex items-start gap-[10px] text-[.86rem] text-white leading-[1.4]">
+              <span class="shrink-0 w-5 h-5 mt-px rounded-full bg-green/25 text-[#7ee2a8] flex items-center justify-center">
+                <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.9">
+                  <g :transform="f.versatz ? `translate(${f.versatz} 0)` : undefined">
+                    <path stroke-linecap="round" stroke-linejoin="round" :d="f.icon" />
+                  </g>
+                </svg>
+              </span>{{ f.text }}
             </li>
           </ul>
           <a class="h-[44px] rounded-[9px] flex items-center justify-center gap-[7px] text-[.92rem] font-semibold transition-colors duration-[180ms] cursor-pointer bg-blue text-white mt-7 hover:bg-blue-hover" :href="loginUrl">Jetzt loslegen →</a>
@@ -81,13 +89,36 @@ export default {
   data() {
     return {
       loginUrl: process.env.VUE_APP_DASHBOARD_URL || '#',
+      // Symbole aus demselben Satz wie die Kopfnavigation, damit „Integrationen",
+      // „Multi-Agenten-System" und „Automatisierungen" dort wiedererkannt werden.
       enterpriseFeatures: [
-        '3 Mitarbeiter-Lizenzen',
-        'Hosting Ihrer Kandidatenprofile und Vakanzen',
-        'Integrationen vollständig enthalten',
-        'Multi-Agenten-System vollständig enthalten',
-        'Automatisierungen vollständig enthalten',
-        'Monatlich kündbar, keine Mindestlaufzeit'
+        {
+          text: '3 Mitarbeiter-Lizenzen',
+          icon: 'M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z'
+        },
+        {
+          text: 'Hosting Ihrer Kandidatenprofile und Vakanzen',
+          icon: 'M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75'
+        },
+        {
+          text: 'Integrationen vollständig enthalten',
+          icon: 'M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244'
+        },
+        {
+          // Der Funke sitzt im 24er-Raster links; 3 Einheiten nach rechts,
+          // damit er im Kreis mittig steht.
+          text: 'Multi-Agenten-System vollständig enthalten',
+          versatz: 3,
+          icon: 'M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z'
+        },
+        {
+          text: 'Automatisierungen vollständig enthalten',
+          icon: 'M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z'
+        },
+        {
+          text: 'Monatlich kündbar, keine Mindestlaufzeit',
+          icon: 'M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5'
+        }
       ],
       extraFeatures: [
         'Alle Leistungen der Enterprise Lizenz',
