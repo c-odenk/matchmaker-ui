@@ -20,7 +20,7 @@
   <!-- Ablauf und Formular -->
   <section class="sec bg-white">
     <div class="wrap two grid [grid-template-columns:1fr_1.05fr] gap-[52px] items-start max-[1000px]:grid-cols-1 max-[1000px]:gap-[34px]">
-      <div class="max-[1000px]:order-2">
+      <div class="two-text max-[1000px]:order-2">
         <EyebrowBadge>Ablauf</EyebrowBadge>
         <h2 class="text-section text-ink mt-[14px] mb-[24px]">Was Sie in der Demo <span class="text-blue">erwartet.</span></h2>
 

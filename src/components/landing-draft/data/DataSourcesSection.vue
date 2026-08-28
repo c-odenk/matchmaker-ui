@@ -2,7 +2,7 @@
   <!-- 1 · Woher die Daten stammen: Text links, Baustein rechts -->
   <section class="sec bg-white">
     <div class="wrap two grid [grid-template-columns:1fr_1.1fr] gap-[52px] items-center max-[880px]:grid-cols-1 max-[880px]:gap-[30px]">
-      <div>
+      <div class="two-text">
         <EyebrowBadge>Herkunft</EyebrowBadge>
         <h2 class="text-section text-ink mt-[18px] mb-[14px]">Klar benannte Quellen – <span class="text-blue">keine davon geheim.</span></h2>
         <p class="text-[.95rem] text-body leading-[1.65] max-w-[620px]">
@@ -22,7 +22,7 @@
               <span class="block text-[.88rem] font-bold text-ink leading-tight">{{ s.title }}</span>
               <span class="block text-[.78rem] text-muted leading-[1.45] mt-[2px]">{{ s.text }}</span>
             </span>
-            <span class="text-[.72rem] font-semibold px-[9px] py-[3px] rounded-full shrink-0 whitespace-nowrap max-[560px]:basis-full max-[560px]:ml-[43px] max-[560px]:mt-[5px] max-[560px]:w-fit"
+            <span class="text-[.72rem] font-semibold px-[9px] py-[3px] rounded-full shrink-0 whitespace-nowrap max-[560px]:basis-[calc(100%_-_43px)] max-[560px]:ml-[43px] max-[560px]:mt-[5px] max-[560px]:w-fit"
                   :class="s.personal ? 'bg-navy/[0.06] text-navy' : 'bg-[#e7f8ee] text-[#15803d]'">{{ s.personal ? 'Personenbezogen' : 'Öffentlich' }}</span>
           </div>
         </div>

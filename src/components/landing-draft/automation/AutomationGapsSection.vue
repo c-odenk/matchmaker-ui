@@ -28,7 +28,7 @@
             <div v-for="g in gaps" :key="g.label" class="flex items-center gap-[10px] py-[6px] max-[560px]:flex-wrap">
               <span class="w-[18px] h-[18px] shrink-0 rounded-full bg-[#eef2f7] text-muted flex items-center justify-center text-[.64rem]">?</span>
               <span class="text-[.85rem] text-ink flex-1 min-w-0">{{ g.label }}</span>
-              <span class="text-[.72rem] text-muted whitespace-nowrap max-[560px]:basis-full max-[560px]:ml-[28px] max-[560px]:mt-[2px]">{{ g.why }}</span>
+              <span class="text-[.72rem] text-muted whitespace-nowrap max-[560px]:basis-[calc(100%_-_28px)] max-[560px]:ml-[28px] max-[560px]:mt-[2px]">{{ g.why }}</span>
             </div>
           </div>
 
@@ -39,7 +39,7 @@
         </BrowserFrame>
       </div>
 
-      <div>
+      <div class="two-text">
         <EyebrowBadge>Vollständige Profile</EyebrowBadge>
         <h2 class="text-section text-ink mt-[18px] mb-[14px]">Was im Profil fehlt, <span class="text-blue">fällt sofort auf.</span></h2>
         <p class="text-[.95rem] text-body leading-[1.65] max-w-[620px]">

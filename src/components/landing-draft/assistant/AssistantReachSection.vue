@@ -25,7 +25,7 @@
                   <span class="block text-[.85rem] font-bold text-ink leading-tight">{{ s.system }}</span>
                   <span class="block text-[.76rem] text-muted leading-[1.4] mt-[2px]">{{ s.tat }}</span>
                 </span>
-                <span class="text-[.72rem] font-semibold text-blue whitespace-nowrap shrink-0 max-[560px]:basis-full max-[560px]:ml-[39px] max-[560px]:mt-[4px]">{{ s.agent }}</span>
+                <span class="text-[.72rem] font-semibold text-blue whitespace-nowrap shrink-0 max-[560px]:basis-[calc(100%_-_39px)] max-[560px]:ml-[39px] max-[560px]:mt-[4px]">{{ s.agent }}</span>
               </div>
             </div>
 
@@ -38,7 +38,7 @@
           </div>
         </BrowserFrame>
       </div>
-      <div class="max-[880px]:order-1">
+      <div class="two-text max-[880px]:order-1">
         <EyebrowBadge>Reichweite</EyebrowBadge>
         <h2 class="text-section text-ink mt-[18px] mb-[14px]">Ein Satz, <span class="text-blue">vier Systeme.</span></h2>
         <p class="text-[.95rem] text-body leading-[1.65] max-w-[620px]">

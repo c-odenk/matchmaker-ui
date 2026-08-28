@@ -4,7 +4,7 @@
   <section class="sec bg-white" id="profiling">
     <div class="wrap two grid [grid-template-columns:1fr_1.1fr] gap-[52px] items-center max-[880px]:grid-cols-1 max-[880px]:gap-[30px]">
       <!-- Text -->
-      <div class="min-w-0 max-[880px]:text-center max-[880px]:max-w-[620px] max-[880px]:mx-auto">
+      <div class="two-text min-w-0 max-[880px]:text-center max-[880px]:max-w-[620px] max-[880px]:mx-auto">
         <EyebrowBadge>Ihre Talente</EyebrowBadge>
         <h2 class="text-section text-ink mt-[18px] mb-[14px]">Aus jedem Lebenslauf wird ein <span class="text-blue">strukturiertes Profil.</span></h2>
         <p class="text-lead text-body">Der Profiling Agent liest die Daten aus und erstellt ein anonymisiertes Qualifikationsprofil – aus dem ATS oder hier angelegt.</p>

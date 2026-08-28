@@ -7,7 +7,7 @@
         <PhoneCallMockup class="!ml-0 !mr-auto max-[880px]:!mx-auto" />
       </div>
 
-      <div class="max-[880px]:order-1">
+      <div class="two-text max-[880px]:order-1">
         <EyebrowBadge>Telefonie</EyebrowBadge>
         <h2 class="text-section text-ink mt-[18px] mb-[14px]">Anrufen, <span class="text-blue">ohne das Profil zu verlassen.</span></h2>
         <p class="text-[.95rem] text-body leading-[1.65] max-w-[620px]">

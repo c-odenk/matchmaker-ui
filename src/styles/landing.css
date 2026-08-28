@@ -13,6 +13,21 @@
   .sec { padding-top: 2.5rem; padding-bottom: 2.5rem; }
 }
 
+/* === Gestapelte Zweispalter (bis 880px) ===
+   Sobald .two einspaltig läuft, gilt für jede Sektion dieselbe Reihenfolge:
+   erst Überschrift, Fließtext und Häkchenliste, dann die Abbildung. Ohne das
+   stand bei den gespiegelten Sektionen (.rev) das Mockup über der Überschrift.
+   Der Textblock wird dabei zentriert – auf dem schmalen Schirm wirkt der
+   Wechsel zwischen links- und mittigbündig unruhig. Ab 881px bleibt der
+   Zickzack zwischen den Sektionen unverändert. */
+@media (max-width: 880px) {
+  .two > .two-text { order: 1; text-align: center; }
+  .two > :not(.two-text) { order: 2; }
+  .two > .two-text > p,
+  .two > .two-text > h1,
+  .two > .two-text > h2 { margin-left: auto; margin-right: auto; }
+}
+
 /* Horizontale Karten-Scroller (Tablet): Scrollbar ausblenden, Wischen bleibt möglich */
 .no-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
 .no-scrollbar::-webkit-scrollbar { display: none; }

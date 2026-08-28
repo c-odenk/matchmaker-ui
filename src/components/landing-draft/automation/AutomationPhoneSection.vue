@@ -6,7 +6,7 @@
         <PhoneCallMockup align="left" />
       </div>
 
-      <div>
+      <div class="two-text">
         <EyebrowBadge>Telefonie</EyebrowBadge>
         <h2 class="text-section text-ink mt-[18px] mb-[14px]">Gewählt wird aus dem Profil, <span class="text-blue">gesprochen über den Rechner.</span></h2>
         <p class="text-[.95rem] text-body leading-[1.65] max-w-[620px]">

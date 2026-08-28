@@ -13,7 +13,7 @@
         />
       </div>
 
-      <div>
+      <div class="two-text">
         <EyebrowBadge>Microsoft Teams</EyebrowBadge>
         <h2 class="text-section text-ink mt-[18px] mb-[14px]">Termine anlegen – <span class="text-blue">und das Gespräch auswerten.</span></h2>
         <p class="text-[.95rem] text-body leading-[1.65] max-w-[620px]">

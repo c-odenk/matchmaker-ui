@@ -24,7 +24,10 @@
           matchmaker legt sich über Ihre bestehenden Systeme und automatisiert, was Sie heute manuell bedienen.
         </p>
 
-        <div class="flex gap-3 mt-[38px] flex-wrap max-[1000px]:justify-center max-[560px]:flex-col max-[560px]:items-stretch">
+        <!-- Auf dem Smartphone ausgeblendet: zwei volle Schaltflächen direkt unter
+             dem Fließtext wirkten dort gedrängt. Beide Wege bleiben über das
+             Menü im Kopf und die Abschluss-Sektion erreichbar. -->
+        <div class="flex gap-3 mt-[38px] flex-wrap max-[1000px]:justify-center max-[560px]:hidden">
           <BaseButtonDraft variant="blue" :href="loginUrl" class="!rounded-[12px] max-[560px]:w-full">Jetzt anmelden →</BaseButtonDraft>
           <BaseButtonDraft variant="ghost-dark" class="!rounded-[12px] max-[560px]:w-full" to="/kontakt">Demo vereinbaren</BaseButtonDraft>
         </div>

@@ -4,7 +4,7 @@
        zeigt, wo die Grenze liegt. -->
   <section class="sec bg-white">
     <div class="wrap two grid [grid-template-columns:1fr_1.1fr] gap-[52px] items-center max-[880px]:grid-cols-1 max-[880px]:gap-[30px]">
-      <div>
+      <div class="two-text">
         <EyebrowBadge>Die Befehle</EyebrowBadge>
         <h2 class="text-section text-ink mt-[18px] mb-[14px]">Dieselben Agenten – <span class="text-blue">gezielt beauftragt.</span></h2>
         <p class="text-[.95rem] text-body leading-[1.65] max-w-[620px]">

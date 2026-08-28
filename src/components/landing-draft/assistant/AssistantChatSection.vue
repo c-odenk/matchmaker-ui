@@ -46,7 +46,7 @@
                    class="treffer flex items-center gap-[10px] py-[5px] border-t border-line first:border-t-0 max-[560px]:flex-wrap">
                 <span class="w-[24px] h-[24px] shrink-0 rounded-full bg-navy text-white flex items-center justify-center text-[.64rem] font-bold">{{ t.kurz }}</span>
                 <span class="text-[.8rem] text-ink flex-1 min-w-0">{{ t.name }}</span>
-                <span class="text-[.72rem] text-muted whitespace-nowrap max-[560px]:basis-full max-[560px]:ml-[34px]">{{ t.grund }}</span>
+                <span class="text-[.72rem] text-muted whitespace-nowrap max-[560px]:basis-[calc(100%_-_34px)] max-[560px]:ml-[34px]">{{ t.grund }}</span>
               </div>
             </div>
 
@@ -65,7 +65,7 @@
         </BrowserFrame>
       </div>
 
-      <div class="max-[880px]:order-1">
+      <div class="two-text max-[880px]:order-1">
         <EyebrowBadge>Der Chat</EyebrowBadge>
         <h2 class="text-section text-ink mt-[18px] mb-[14px]">Fragen Sie in <span class="text-blue">eigenen Worten.</span></h2>
         <p class="text-[.95rem] text-body leading-[1.65] max-w-[620px]">

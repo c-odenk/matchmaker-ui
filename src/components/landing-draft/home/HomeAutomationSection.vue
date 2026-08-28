@@ -2,7 +2,7 @@
   <!-- Was ohne Zutun läuft – als Anriss, Details auf der Unterseite -->
   <section class="sec bg-white">
     <div class="wrap two grid [grid-template-columns:1fr_1.1fr] gap-[52px] items-center max-[880px]:grid-cols-1 max-[880px]:gap-[30px]">
-      <div>
+      <div class="two-text">
         <EyebrowBadge>Automatisierungen</EyebrowBadge>
         <h2 class="text-section text-ink mt-[18px] mb-[14px]">Der Durchlauf arbeitet vor. <span class="text-blue">Sie geben frei.</span></h2>
         <p class="text-[.95rem] text-body leading-[1.65] max-w-[620px]">

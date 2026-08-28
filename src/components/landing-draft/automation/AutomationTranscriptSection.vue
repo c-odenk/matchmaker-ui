@@ -16,7 +16,10 @@
             <span class="w-[30px] h-[30px] shrink-0 rounded-[8px] bg-[#eef2f7] text-body flex items-center justify-center">
               <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"/></svg>
             </span>
-            <span class="min-w-0 flex-1">
+            <!-- Ohne feste Basis teilt sich der Textblock die Zeile mit der
+                 Schaltfläche und fällt auf dem Smartphone auf 1px zusammen.
+                 41px = Symbolbreite (30) plus Abstand (11). -->
+            <span class="min-w-0 flex-1 max-[560px]:basis-[calc(100%_-_41px)]">
               <span class="block text-[.9rem] font-semibold text-ink leading-tight">Teams-Termin · 30 Min</span>
               <span class="block text-[.82rem] text-muted mt-[3px] leading-[1.45]">stattgefunden · Transkript verfügbar</span>
               <span class="block text-[.76rem] text-muted mt-[6px]">27.08.2026, 10:20 · Sie</span>
@@ -52,7 +55,7 @@
         </BrowserFrame>
       </div>
 
-      <div>
+      <div class="two-text">
         <EyebrowBadge>Gesprächsauswertung</EyebrowBadge>
         <h2 class="text-section text-ink mt-[18px] mb-[14px]">Was besprochen wurde, <span class="text-blue">steht danach im Profil.</span></h2>
         <p class="text-[.95rem] text-body leading-[1.65] max-w-[620px]">

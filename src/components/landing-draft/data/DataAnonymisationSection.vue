@@ -43,7 +43,7 @@
         </div>
       </div>
 
-      <div>
+      <div class="two-text">
         <EyebrowBadge>Anonymisierung</EyebrowBadge>
         <h2 class="text-section text-ink mt-[18px] mb-[14px]">Bewertet wird die <span class="text-blue">Qualifikation, nicht die Person.</span></h2>
         <p class="text-[.95rem] text-body leading-[1.65] max-w-[620px]">
