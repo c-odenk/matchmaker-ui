@@ -9,12 +9,12 @@
       </div>
 
       <!-- Drei Phasen: vorbereiten, entscheiden, eingreifen -->
-      <div class="scope rounded-[18px] border border-line bg-surface p-8 max-[560px]:p-5">
+      <div class="scope rounded-[11px] border border-line bg-surface p-8 max-[560px]:p-5">
         <div class="grid items-stretch [grid-template-columns:1fr_auto_1fr_auto_1fr] gap-0 max-[880px]:grid-cols-1">
           <template v-for="(p, i) in phases" :key="p.title">
-            <div class="rounded-[12px] border px-5 py-5 flex flex-col"
+            <div class="rounded-[8px] border px-5 py-5 flex flex-col"
                  :class="p.own ? 'bg-navy border-navy text-white shadow-price-feat' : 'bg-white border-line'">
-              <span class="w-[34px] h-[34px] shrink-0 rounded-[10px] flex items-center justify-center mb-3"
+              <span class="w-[34px] h-[34px] shrink-0 rounded-[7px] flex items-center justify-center mb-3"
                     :class="p.own ? 'bg-blue/25 border border-blue/[0.4] text-white' : 'bg-navy/[0.07] text-navy'">
                 <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" :d="p.icon"/></svg>
               </span>

@@ -8,7 +8,7 @@
         <template #lead>Nicht dem Fensterwechsel. Zwischen Bewerbersoftware, Jobportalen, Handelsregister und Postfach geht der Tag verloren – Zeit, die für Mandate fehlt.</template>
       </SectionHeading>
 
-      <div class="compare max-w-[840px] mx-auto border border-line rounded-[18px] overflow-hidden grid grid-cols-2 max-[560px]:grid-cols-1">
+      <div class="compare max-w-[840px] mx-auto border border-line rounded-[11px] overflow-hidden grid grid-cols-2 max-[560px]:grid-cols-1">
         <div class="col a px-[30px] py-8 max-[560px]:px-[22px]">
           <div class="text-[.78rem] font-bold tracking-[0.05em] uppercase mb-5 text-muted">Ohne matchmaker.hr</div>
           <ul class="list-none flex flex-col gap-[15px]">

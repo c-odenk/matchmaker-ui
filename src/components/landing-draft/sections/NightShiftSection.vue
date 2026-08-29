@@ -12,7 +12,7 @@
       <div class="steps grid gap-[18px] [grid-template-columns:repeat(3,1fr)] max-[880px]:grid-cols-2 max-[560px]:grid-cols-1">
         <div v-for="s in steps" :key="s.no" class="step relative bg-white border border-line rounded-2xl p-6">
           <div class="flex items-center gap-3 mb-[15px]">
-            <div class="w-9 h-9 rounded-[10px] bg-navy text-white flex items-center justify-center shrink-0">
+            <div class="w-9 h-9 rounded-[7px] bg-navy text-white flex items-center justify-center shrink-0">
               <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" :d="s.icon"/></svg>
             </div>
             <span class="text-[1.05rem] font-extrabold tracking-[-0.02em] text-[#cbd5e1]">{{ s.no }}</span>

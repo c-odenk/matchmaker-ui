@@ -10,13 +10,13 @@
       </div>
 
       <!-- Die Kette: vier Agenten, ein Ergebnis, eine Freigabe -->
-      <div class="scope rounded-[18px] border border-line bg-surface p-8 max-[560px]:p-5">
+      <div class="scope rounded-[11px] border border-line bg-surface p-8 max-[560px]:p-5">
         <div class="grid items-stretch [grid-template-columns:1fr_auto_1fr_auto_1fr_auto_1fr] gap-0 max-[880px]:grid-cols-2 max-[880px]:gap-[18px] max-[560px]:grid-cols-1">
           <template v-for="(a, i) in agents" :key="a.name">
-            <div class="relative rounded-[12px] border border-line bg-white px-5 py-5 flex flex-col">
+            <div class="relative rounded-[8px] border border-line bg-white px-5 py-5 flex flex-col">
               <span class="absolute left-1/2 -translate-x-1/2 -bottom-4 h-4 w-px bg-[#c2ccdb] max-[880px]:hidden"></span>
               <div class="flex items-center gap-[10px] mb-3">
-                <span class="w-[34px] h-[34px] shrink-0 rounded-[10px] bg-navy text-white flex items-center justify-center">
+                <span class="w-[34px] h-[34px] shrink-0 rounded-[7px] bg-navy text-white flex items-center justify-center">
                   <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" :d="a.icon"/></svg>
                 </span>
                 <span class="text-[1.05rem] font-extrabold tracking-[-0.02em] text-[#cbd5e1]">{{ a.no }}</span>
@@ -48,7 +48,7 @@
         </div>
 
         <!-- Der Mensch am Ende der Kette -->
-        <div class="relative overflow-hidden rounded-[14px] bg-navy text-white border border-white/[0.08] shadow-price-feat px-7 py-6 max-[560px]:px-5 max-[560px]:py-5">
+        <div class="relative overflow-hidden rounded-[9px] bg-navy text-white border border-white/[0.08] shadow-price-feat px-7 py-6 max-[560px]:px-5 max-[560px]:py-5">
           <div class="absolute top-[-120%] right-[-4%] w-[52%] h-[320%] bg-[radial-gradient(ellipse_at_center,rgba(41,118,214,.45),transparent_65%)] blur-[55px] pointer-events-none"></div>
           <div class="relative z-[2] flex items-center justify-between gap-4 flex-wrap">
             <div class="flex items-center gap-[14px]">

@@ -170,7 +170,7 @@ export default {
 <style scoped>
 .waitlist-card { animation: waitlistFadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both; }
 @keyframes waitlistFadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-.waitlist-input { width: 100%; border-radius: 12px; padding: 10px 14px; font-size: 14px; color: #000; background-color: #f9fafb; border: 1px solid #e5e7eb; outline: none; transition: all 0.2s ease; }
+.waitlist-input { width: 100%; border-radius: 8px; padding: 10px 14px; font-size: 14px; color: #000; background-color: #f9fafb; border: 1px solid #e5e7eb; outline: none; transition: all 0.2s ease; }
 .waitlist-input:focus { border-color: #0047FF; background-color: #fff; box-shadow: 0 0 0 4px rgba(0, 71, 255, 0.1); }
 .waitlist-btn:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(0, 71, 255, 0.25); filter: brightness(1.05); }
 .waitlist-btn:active:not(:disabled) { transform: translateY(0); }

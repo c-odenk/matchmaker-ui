@@ -6,7 +6,7 @@
       <div class="max-[880px]:order-2">
         <BrowserFrame url="app-matchmaker-hr.netlify.app/ki-assistent">
           <div ref="reach" class="min-h-[408px] max-[560px]:min-h-[614px]">
-            <div class="rounded-[10px] bg-blue text-white px-[13px] py-[11px] text-[.8rem] leading-[1.45]">
+            <div class="rounded-[7px] bg-blue text-white px-[13px] py-[11px] text-[.8rem] leading-[1.45]">
               „Such passende Stellen bei der Deutschen Bank für Max Mustermann, recherchier
               den Ansprechpartner und entwirf das Anschreiben."
             </div>
@@ -17,8 +17,8 @@
 
             <div class="flex flex-col gap-[7px]">
               <div v-for="(s, i) in schritte" :key="s.system" v-show="i < sichtbar"
-                   class="schritt flex items-center gap-[11px] rounded-[10px] border border-line bg-white px-[13px] py-[10px] max-[560px]:flex-wrap">
-                <span class="w-[28px] h-[28px] shrink-0 rounded-[8px] bg-navy/[0.07] text-navy flex items-center justify-center">
+                   class="schritt flex items-center gap-[11px] rounded-[7px] border border-line bg-white px-[13px] py-[10px] max-[560px]:flex-wrap">
+                <span class="w-[28px] h-[28px] shrink-0 rounded-[5px] bg-navy/[0.07] text-navy flex items-center justify-center">
                   <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" :d="s.icon"/></svg>
                 </span>
                 <span class="min-w-0 flex-1">
@@ -29,7 +29,7 @@
               </div>
             </div>
 
-            <div class="mt-[13px] rounded-[10px] border border-line bg-surface px-[13px] py-[10px] flex items-center gap-[10px] max-[560px]:flex-wrap">
+            <div class="mt-[13px] rounded-[7px] border border-line bg-surface px-[13px] py-[10px] flex items-center gap-[10px] max-[560px]:flex-wrap">
               <span class="w-[24px] h-[24px] shrink-0 rounded-full bg-blue-soft text-blue flex items-center justify-center">
                 <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.6"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
               </span>

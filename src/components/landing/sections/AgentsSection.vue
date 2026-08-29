@@ -8,7 +8,7 @@
 
       <div class="steps grid gap-[18px] [grid-template-columns:repeat(auto-fit,minmax(235px,1fr))] max-[880px]:grid-cols-2 max-[560px]:grid-cols-1">
         <div v-for="s in steps" :key="s.agent" class="step relative bg-white border border-line rounded-2xl p-6">
-          <div class="w-9 h-9 rounded-[10px] bg-navy text-white flex items-center justify-center font-bold mb-[15px]">
+          <div class="w-9 h-9 rounded-[7px] bg-navy text-white flex items-center justify-center font-bold mb-[15px]">
             <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" :d="s.icon"/></svg>
           </div>
           <div class="text-[.72rem] font-bold tracking-[0.04em] uppercase text-blue mb-[5px]">{{ s.agent }}</div>

@@ -12,8 +12,8 @@
       <!-- Der Vorgang als Schicht, darunter die vier Kanäle, die daran hängen.
            Gleiche Bildsprache wie Hero und Integrationsseite: oben die eigene
            Ebene, darunter das Angebundene, dazwischen die Zuleitung. -->
-      <div class="scope rounded-[18px] border border-line bg-surface p-8 max-[560px]:p-5">
-        <div class="rounded-[12px] bg-navy border border-navy text-white shadow-price-feat px-6 py-5 flex items-center justify-between gap-6 max-[560px]:flex-col max-[560px]:items-start max-[560px]:gap-[14px]">
+      <div class="scope rounded-[11px] border border-line bg-surface p-8 max-[560px]:p-5">
+        <div class="rounded-[8px] bg-navy border border-navy text-white shadow-price-feat px-6 py-5 flex items-center justify-between gap-6 max-[560px]:flex-col max-[560px]:items-start max-[560px]:gap-[14px]">
           <div class="min-w-0">
             <div class="text-[.96rem] font-bold leading-tight text-white">Der Vorgang</div>
             <div class="text-[.82rem] text-white/[0.72] mt-[6px] leading-[1.5]">Kandidat, Mandat und Verlauf an einer Stelle.</div>
@@ -32,8 +32,8 @@
         </div>
 
         <div class="grid grid-cols-4 gap-[14px] max-[880px]:grid-cols-2 max-[880px]:mt-[22px] max-[560px]:grid-cols-1">
-          <div v-for="k in kanaele" :key="k.title" class="rounded-[12px] border border-line bg-white px-5 py-5 flex flex-col">
-            <span class="w-[34px] h-[34px] shrink-0 rounded-[10px] bg-navy/[0.07] text-navy flex items-center justify-center mb-3">
+          <div v-for="k in kanaele" :key="k.title" class="rounded-[8px] border border-line bg-white px-5 py-5 flex flex-col">
+            <span class="w-[34px] h-[34px] shrink-0 rounded-[7px] bg-navy/[0.07] text-navy flex items-center justify-center mb-3">
               <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" :d="k.icon"/></svg>
             </span>
             <div class="text-[.96rem] font-bold leading-tight text-ink">{{ k.title }}</div>

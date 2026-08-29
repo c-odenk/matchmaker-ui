@@ -198,7 +198,7 @@ export default {
 @keyframes registerFadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 
 .register-input {
-  width: 100%; border-radius: 12px; padding: 10px 14px; font-size: 14px; color: #000;
+  width: 100%; border-radius: 8px; padding: 10px 14px; font-size: 14px; color: #000;
   background-color: #f9fafb; border: 1px solid #e5e7eb; outline: none; transition: all 0.2s ease;
 }
 .register-input:focus {

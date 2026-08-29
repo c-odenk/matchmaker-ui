@@ -1,5 +1,5 @@
 <template>
-  <div class="rounded-[18px] border border-line bg-white p-7 shadow-[0_18px_44px_-22px_rgba(15,23,42,.25)] max-[560px]:p-5">
+  <div class="rounded-[11px] border border-line bg-white p-7 shadow-[0_18px_44px_-22px_rgba(15,23,42,.25)] max-[560px]:p-5">
     <form v-if="!submitted" @submit.prevent="handleSubmit">
       <div class="grid grid-cols-2 gap-[14px] max-[560px]:grid-cols-1">
         <div class="df-field">
@@ -259,7 +259,7 @@ export default {
 .df-field label { display: block; font-size: .82rem; font-weight: 600; color: #0f172a; margin-bottom: 6px; }
 .df-opt { font-weight: 500; color: #7c8aa0; }
 .df-input {
-  width: 100%; height: 44px; padding: 0 13px; border: 1px solid #e7ebf1; border-radius: 10px;
+  width: 100%; height: 44px; padding: 0 13px; border: 1px solid #e7ebf1; border-radius: 7px;
   background: #fff; font: inherit; font-size: .92rem; color: #0f172a; transition: border-color .15s, box-shadow .15s;
 }
 .df-input::placeholder { color: #a3aec0; }
@@ -272,20 +272,20 @@ export default {
 /* Kalender */
 .df-datepicker {
   position: absolute; z-index: 20; top: calc(100% + 6px); left: 0; width: 288px; max-width: 100%;
-  background: #fff; border: 1px solid #e7ebf1; border-radius: 14px; padding: 12px;
+  background: #fff; border: 1px solid #e7ebf1; border-radius: 9px; padding: 12px;
   box-shadow: 0 18px 40px rgba(15, 23, 42, .16);
 }
 .df-dp-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 9px; }
 .df-dp-month { font-size: .88rem; font-weight: 700; color: #0f172a; }
 .df-dp-nav {
   width: 28px; height: 28px; display: flex; align-items: center; justify-content: center;
-  border: 1px solid #e7ebf1; border-radius: 8px; background: #fff; color: #475569; cursor: pointer;
+  border: 1px solid #e7ebf1; border-radius: 5px; background: #fff; color: #475569; cursor: pointer;
 }
 .df-dp-nav:disabled { opacity: .4; cursor: not-allowed; }
 .df-dp-weekdays, .df-dp-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; }
 .df-dp-weekdays span { text-align: center; font-size: .64rem; font-weight: 700; color: #7c8aa0; padding-bottom: 4px; }
 .df-dp-day {
-  height: 32px; border: none; border-radius: 8px; background: transparent;
+  height: 32px; border: none; border-radius: 5px; background: transparent;
   font: inherit; font-size: .8rem; color: #0f172a; cursor: pointer;
 }
 .df-dp-day:hover:not(:disabled) { background: #eaf2fc; }
@@ -299,7 +299,7 @@ export default {
 /* Absenden */
 .df-submit {
   width: 100%; height: 48px; display: inline-flex; align-items: center; justify-content: center;
-  border: none; border-radius: 10px; background: #2976d6; color: #fff;
+  border: none; border-radius: 7px; background: #2976d6; color: #fff;
   font: inherit; font-size: .95rem; font-weight: 700; cursor: pointer; transition: background .18s;
 }
 .df-submit:hover:not(:disabled) { background: #2065bd; }

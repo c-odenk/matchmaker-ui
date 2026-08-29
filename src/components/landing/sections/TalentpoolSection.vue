@@ -16,7 +16,7 @@
               <div class="text-[.78rem] text-muted">{{ c.role }}</div>
             </div>
           </div>
-          <div v-for="m in shownMatches(c)" :key="m.title" class="flex items-center gap-[9px] mt-[14px] p-[11px] border border-line rounded-[10px]">
+          <div v-for="m in shownMatches(c)" :key="m.title" class="flex items-center gap-[9px] mt-[14px] p-[11px] border border-line rounded-[7px]">
             <span class="text-blue font-bold">→</span>
             <div>
               <div class="text-[.84rem] font-semibold leading-[1.25]">{{ m.title }}</div>

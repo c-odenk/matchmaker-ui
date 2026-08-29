@@ -25,7 +25,7 @@
         </div>
 
         <!-- Mobile-Toggle -->
-        <button class="hidden max-[880px]:inline-flex w-[42px] h-[42px] items-center justify-center border border-line rounded-[10px] bg-white cursor-pointer shrink-0" :aria-expanded="menuOpen ? 'true' : 'false'" aria-label="Menü" @click="menuOpen = !menuOpen">
+        <button class="hidden max-[880px]:inline-flex w-[42px] h-[42px] items-center justify-center border border-line rounded-[7px] bg-white cursor-pointer shrink-0" :aria-expanded="menuOpen ? 'true' : 'false'" aria-label="Menü" @click="menuOpen = !menuOpen">
           <span class="nav-burger" :class="{ x: menuOpen }"><i></i><i></i><i></i></span>
         </button>
       </div>
@@ -35,7 +35,7 @@
     <div class="mnav-wrap hidden max-[880px]:grid" :class="{ open: menuOpen }">
       <div class="min-h-0 overflow-hidden">
         <nav class="mnav-panel flex flex-col bg-white border-t border-line pt-3 px-6 pb-5">
-          <a v-for="l in links" :key="l.id" :href="'/#' + l.id" @click.prevent="go(l.id)" class="py-[13px] px-2 text-[1.04rem] font-medium text-navy rounded-[9px] cursor-pointer">{{ l.label }}</a>
+          <a v-for="l in links" :key="l.id" :href="'/#' + l.id" @click.prevent="go(l.id)" class="py-[13px] px-2 text-[1.04rem] font-medium text-navy rounded-[6px] cursor-pointer">{{ l.label }}</a>
           <div class="flex flex-col gap-[10px] mt-[10px] pt-[14px] border-t border-line">
             <BaseButton variant="ghost" class="w-full !h-12" @click="openDemo">Demo vereinbaren</BaseButton>
             <BaseButton variant="primary" :href="loginUrl" class="w-full !h-12">Anmelden →</BaseButton>

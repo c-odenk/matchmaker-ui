@@ -21,10 +21,10 @@
 
             <div class="flex flex-col gap-[9px]">
               <div v-for="(b, i) in befehle" :key="b.text" v-show="i < sichtbar"
-                   class="auftrag rounded-[10px] border px-[13px] py-[11px]"
+                   class="auftrag rounded-[7px] border px-[13px] py-[11px]"
                    :class="b.abgelehnt ? 'border-line bg-surface' : 'border-line bg-white'">
                 <div class="flex items-start gap-[10px]">
-                  <span class="w-[24px] h-[24px] shrink-0 rounded-[7px] flex items-center justify-center"
+                  <span class="w-[24px] h-[24px] shrink-0 rounded-[5px] flex items-center justify-center"
                         :class="b.abgelehnt ? 'bg-[#eef2f7] text-muted' : 'bg-navy/[0.07] text-navy'">
                     <svg v-if="b.abgelehnt" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
                     <svg v-else viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3"/></svg>

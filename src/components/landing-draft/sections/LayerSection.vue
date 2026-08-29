@@ -9,7 +9,7 @@
         <template #lead>Zwei Systeme, klar getrennte Aufgaben. Die Bewerbersoftware verwaltet zuverlässig, was hereinkommt, und hält die Personalakte rechtssicher. matchmaker geht nach draußen – und bringt Aufträge herein.</template>
       </SectionHeading>
 
-      <div class="compare max-w-[840px] mx-auto border border-line rounded-[18px] overflow-hidden grid grid-cols-2 max-[560px]:grid-cols-1">
+      <div class="compare max-w-[840px] mx-auto border border-line rounded-[11px] overflow-hidden grid grid-cols-2 max-[560px]:grid-cols-1">
         <div class="col a px-[30px] py-8 max-[560px]:px-[22px]">
           <div class="text-[.78rem] font-bold tracking-[0.05em] uppercase text-muted">Ihre Bewerbersoftware</div>
           <div class="text-[.95rem] font-bold text-ink mt-1 mb-5">Die führende Datenquelle</div>
@@ -33,7 +33,7 @@
       </div>
 
       <!-- Die zwei Übergaben – als schmales Band unter dem Panel -->
-      <div class="max-w-[840px] mx-auto mt-[18px] border border-line rounded-[18px] grid grid-cols-3 divide-x divide-line max-[560px]:grid-cols-1 max-[560px]:divide-x-0 max-[560px]:divide-y">
+      <div class="max-w-[840px] mx-auto mt-[18px] border border-line rounded-[11px] grid grid-cols-3 divide-x divide-line max-[560px]:grid-cols-1 max-[560px]:divide-x-0 max-[560px]:divide-y">
         <div v-for="h in handovers" :key="h.when" class="px-6 py-5">
           <div class="text-[.72rem] font-bold tracking-[0.07em] uppercase text-blue mb-[6px]">{{ h.when }}</div>
           <div class="text-[.9rem] font-semibold text-ink leading-snug">{{ h.title }}</div>

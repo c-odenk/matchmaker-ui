@@ -163,7 +163,7 @@ export default {
 
 .login-input {
   width: 100%;
-  border-radius: 12px;
+  border-radius: 8px;
   padding: 10px 14px;
   font-size: 14px;
   color: #000;

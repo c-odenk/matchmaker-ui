@@ -39,7 +39,7 @@
 
       <div class="hero-visual relative max-[880px]:hidden">
         <div class="relative w-full max-w-[440px] ml-auto">
-          <div class="relative w-full rounded-[22px] overflow-hidden aspect-[4/4.4] shadow-hero-photo border border-white/10">
+          <div class="relative w-full rounded-[13px] overflow-hidden aspect-[4/4.4] shadow-hero-photo border border-white/10">
             <picture>
               <source :srcset="heroAvif" type="image/avif" />
               <source :srcset="heroWebp" type="image/webp" />

@@ -26,8 +26,8 @@
 
         <ol class="list-none flex flex-col gap-[14px]">
           <li v-for="(s, i) in steps" :key="s.title"
-              class="flex items-start gap-[15px] rounded-[14px] border border-line bg-white px-[19px] py-[17px]">
-            <span class="w-[34px] h-[34px] shrink-0 rounded-[10px] bg-navy text-white flex items-center justify-center text-[.78rem] font-bold tabular-nums">
+              class="flex items-start gap-[15px] rounded-[9px] border border-line bg-white px-[19px] py-[17px]">
+            <span class="w-[34px] h-[34px] shrink-0 rounded-[7px] bg-navy text-white flex items-center justify-center text-[.78rem] font-bold tabular-nums">
               {{ String(i + 1).padStart(2, '0') }}
             </span>
             <span class="min-w-0">

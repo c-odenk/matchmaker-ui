@@ -10,7 +10,7 @@
       <div class="stats-grid relative z-[2] grid gap-4 [grid-template-columns:repeat(auto-fit,minmax(220px,1fr))] max-[560px]:grid-cols-1 min-[561px]:max-[880px]:grid-cols-3">
         <div v-for="s in stats" :key="s.label" class="scard bg-white/[0.04] border border-white/10 rounded-2xl px-[26px] py-7 min-[561px]:max-[880px]:px-4 min-[561px]:max-[880px]:text-center">
           <div class="flex items-center gap-3 mb-3 min-[561px]:max-[880px]:flex-col min-[561px]:max-[880px]:gap-[10px]">
-            <div class="w-10 h-10 rounded-[11px] bg-blue/20 border border-blue/[0.32] flex items-center justify-center text-white shrink-0 min-[561px]:max-[880px]:w-9 min-[561px]:max-[880px]:h-9" v-html="s.icon"></div>
+            <div class="w-10 h-10 rounded-[7px] bg-blue/20 border border-blue/[0.32] flex items-center justify-center text-white shrink-0 min-[561px]:max-[880px]:w-9 min-[561px]:max-[880px]:h-9" v-html="s.icon"></div>
             <div class="text-[1.8rem] font-extrabold tracking-[-0.02em] leading-none shrink-0 min-[561px]:max-[880px]:text-[1.45rem]">{{ s.value }}</div>
             <div class="font-semibold text-[.9rem] leading-tight min-[561px]:max-[880px]:text-[.8rem]">{{ s.label }}</div>
           </div>

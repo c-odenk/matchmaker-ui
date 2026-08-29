@@ -8,12 +8,12 @@
         <p class="text-lead text-body">Anruf, Termin und Auswertung starten im Vorgang – und was dabei herauskommt, steht danach dort.</p>
       </div>
 
-      <div class="scope rounded-[18px] border border-line bg-surface p-8 max-[560px]:p-5">
-        <div class="rounded-[12px] border border-line bg-white px-[18px] py-[16px] max-[560px]:px-[13px]">
+      <div class="scope rounded-[11px] border border-line bg-surface p-8 max-[560px]:p-5">
+        <div class="rounded-[8px] border border-line bg-white px-[18px] py-[16px] max-[560px]:px-[13px]">
           <!-- Was sich vom Profil aus starten lässt -->
           <div class="flex items-center gap-[10px] flex-wrap pb-[15px] border-b border-line">
             <span v-for="a in aktionen" :key="a.label"
-                  class="h-[36px] inline-flex items-center gap-[8px] px-[14px] rounded-[9px] text-[.82rem] font-semibold shrink-0"
+                  class="h-[36px] inline-flex items-center gap-[8px] px-[14px] rounded-[6px] text-[.82rem] font-semibold shrink-0"
                   :class="[a.primaer ? 'bg-navy text-white' : 'border border-line text-ink', a.rechts ? 'ml-auto max-[880px]:ml-0' : '']">
               <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" :d="a.icon"/></svg>
               {{ a.label }}
@@ -29,8 +29,8 @@
           <!-- Einträge laufen gestaffelt ein (.folge, siehe useScrollRevealDraft) -->
           <div class="folge flex flex-col gap-[10px]">
             <div v-for="g in gespraeche" :key="g.titel"
-                 class="border border-line rounded-[10px] px-[13px] py-[11px] flex items-start gap-[11px]">
-              <span class="w-[30px] h-[30px] shrink-0 rounded-[8px] bg-[#eef2f7] text-body flex items-center justify-center">
+                 class="border border-line rounded-[7px] px-[13px] py-[11px] flex items-start gap-[11px]">
+              <span class="w-[30px] h-[30px] shrink-0 rounded-[5px] bg-[#eef2f7] text-body flex items-center justify-center">
                 <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" :d="g.icon"/></svg>
               </span>
               <span class="min-w-0 flex-1">

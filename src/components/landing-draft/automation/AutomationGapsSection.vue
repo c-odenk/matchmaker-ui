@@ -20,7 +20,7 @@
             <div class="h-full rounded-full bg-blue" style="width: 78%"></div>
           </div>
 
-          <div class="mt-[14px] border border-line rounded-[10px] px-[13px] py-[11px]">
+          <div class="mt-[14px] border border-line rounded-[7px] px-[13px] py-[11px]">
             <div class="flex items-center gap-[7px] text-[.85rem] font-bold text-ink mb-[10px]">
               <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" class="text-blue"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/></svg>
               Diese Angaben fehlen noch
@@ -34,7 +34,7 @@
 
           <div class="flex items-center justify-between gap-3 mt-[14px] flex-wrap">
             <span class="text-[.76rem] text-muted">Entwurf an den Kandidaten – Versand nach Freigabe.</span>
-            <span class="h-[34px] inline-flex items-center px-[13px] rounded-[8px] text-[.76rem] font-semibold bg-blue text-white shrink-0">Nachfrage erstellen</span>
+            <span class="h-[34px] inline-flex items-center px-[13px] rounded-[5px] text-[.76rem] font-semibold bg-blue text-white shrink-0">Nachfrage erstellen</span>
           </div>
         </BrowserFrame>
       </div>

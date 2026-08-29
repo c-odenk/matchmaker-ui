@@ -58,15 +58,15 @@ export default {
 </script>
 
 <style scoped>
-.src-pill { display: inline-block; font-size: .66rem; font-weight: 600; color: #56657c; background: #eef2f7; border: 1px solid #e7ebf1; border-radius: 6px; padding: 1px 7px; margin-left: 4px; vertical-align: middle; }
+.src-pill { display: inline-block; font-size: .66rem; font-weight: 600; color: #56657c; background: #eef2f7; border: 1px solid #e7ebf1; border-radius: 4px; padding: 1px 7px; margin-left: 4px; vertical-align: middle; }
 .msg-lbl { font-size: .68rem; font-weight: 600; color: #7c8aa0; margin-bottom: 4px; }
 .msg-val { font-size: .81rem; font-weight: 600; color: #0f172a; line-height: 1.35; }
-.msg-field { margin-top: 14px; border: 1.5px solid #ea580c; border-radius: 10px; padding: 10px 13px; background: #fff; }
-.msg-input { font-size: .8rem; color: #0f172a; background: #f6f8fc; border: 1px solid #e7ebf1; border-radius: 9px; padding: 9px 12px; margin-top: 4px; }
-.msg-body { font-size: .78rem; color: #475569; background: #f6f8fc; border: 1px solid #e7ebf1; border-radius: 9px; padding: 11px 13px; margin-top: 4px; line-height: 1.55; }
+.msg-field { margin-top: 14px; border: 1.5px solid #ea580c; border-radius: 7px; padding: 10px 13px; background: #fff; }
+.msg-input { font-size: .8rem; color: #0f172a; background: #f6f8fc; border: 1px solid #e7ebf1; border-radius: 6px; padding: 9px 12px; margin-top: 4px; }
+.msg-body { font-size: .78rem; color: #475569; background: #f6f8fc; border: 1px solid #e7ebf1; border-radius: 6px; padding: 11px 13px; margin-top: 4px; line-height: 1.55; }
 .msg-body-short { display: none; }
 .msg-foot { display: flex; justify-content: flex-end; gap: 8px; margin-top: 16px; }
-.msg-btn { height: 34px; display: inline-flex; align-items: center; padding: 0 13px; border-radius: 8px; font-size: .76rem; font-weight: 600; border: 1px solid #e7ebf1; background: #fff; color: #0f172a; }
+.msg-btn { height: 34px; display: inline-flex; align-items: center; padding: 0 13px; border-radius: 5px; font-size: .76rem; font-weight: 600; border: 1px solid #e7ebf1; background: #fff; color: #0f172a; }
 .msg-btn-primary { background: #ea580c; color: #fff; border-color: #ea580c; }
 @media (max-width: 560px) {
   .msg-body-full { display: none; }

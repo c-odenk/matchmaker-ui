@@ -3,10 +3,10 @@
   <section class="sec bg-white">
     <div class="wrap two rev grid [grid-template-columns:1.1fr_1fr] gap-[52px] items-center max-[880px]:grid-cols-1 max-[880px]:gap-[30px]">
       <div>
-        <div class="rounded-[18px] border border-line bg-surface p-7 max-[560px]:p-5">
+        <div class="rounded-[11px] border border-line bg-surface p-7 max-[560px]:p-5">
           <div class="text-[.64rem] font-bold tracking-[0.07em] uppercase text-muted mb-4">Vor dem KI-Aufruf</div>
 
-          <div class="rounded-[12px] border border-line bg-white px-5 py-4">
+          <div class="rounded-[8px] border border-line bg-white px-5 py-4">
             <div class="text-[.88rem] font-bold text-ink mb-[13px]">Kandidatenprofil</div>
             <div class="flex flex-col gap-[10px]">
               <div v-for="f in fields" :key="f.label" class="flex items-center gap-[11px]">
@@ -24,10 +24,10 @@
             <span class="absolute left-1/2 -translate-x-1/2 bottom-[-5px] text-blue">
               <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
             </span>
-            <span class="relative z-[2] bg-white border border-line rounded-[10px] px-[11px] py-[6px] text-[.76rem] text-body text-center leading-[1.3]">Ohne Klarnamen</span>
+            <span class="relative z-[2] bg-white border border-line rounded-[7px] px-[11px] py-[6px] text-[.76rem] text-body text-center leading-[1.3]">Ohne Klarnamen</span>
           </div>
 
-          <div class="rounded-[12px] bg-navy text-white px-5 py-4">
+          <div class="rounded-[8px] bg-navy text-white px-5 py-4">
             <div class="flex items-center gap-3">
               <span class="w-[30px] h-[30px] shrink-0 rounded-lg bg-blue/25 border border-blue/[0.4] flex items-center justify-center">
                 <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/></svg>

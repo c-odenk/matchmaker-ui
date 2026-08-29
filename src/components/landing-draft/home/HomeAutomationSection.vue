@@ -15,7 +15,7 @@
         </router-link>
       </div>
 
-      <div class="rounded-[18px] border border-line bg-surface p-7 max-[560px]:p-5">
+      <div class="rounded-[11px] border border-line bg-surface p-7 max-[560px]:p-5">
         <div class="text-[.64rem] font-bold tracking-[0.07em] uppercase text-muted mb-5">So läuft die Automatisierung</div>
         <ol class="list-none flex flex-col">
           <li v-for="(s, i) in steps" :key="s" class="flex items-start gap-[13px] pb-[15px] last:pb-0">

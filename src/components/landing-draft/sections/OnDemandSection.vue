@@ -8,14 +8,14 @@
         <template #lead>Telefonie, Termine, Gesprächsauswertung und Exposés laufen aus dem Kandidatenprofil heraus. Kein Wechsel zwischen Bewerbersoftware, Telefonanlage und Postfach.</template>
       </SectionHeading>
 
-      <div class="ben-grid max-w-[900px] mx-auto bg-white border border-line rounded-[18px] overflow-hidden grid grid-cols-2 max-[560px]:grid-cols-1">
+      <div class="ben-grid max-w-[900px] mx-auto bg-white border border-line rounded-[11px] overflow-hidden grid grid-cols-2 max-[560px]:grid-cols-1">
         <div v-for="(a, i) in actions" :key="a.title"
              class="ben flex items-start gap-[14px] px-6 py-5 border-line"
              :class="[
                i % 2 === 0 && i !== actions.length - 1 ? 'border-r max-[560px]:border-r-0' : '',
                i < actions.length - 2 ? 'border-b' : (i < actions.length - 1 ? 'max-[560px]:border-b' : '')
              ]">
-          <div class="w-9 h-9 shrink-0 rounded-[10px] flex items-center justify-center"
+          <div class="w-9 h-9 shrink-0 rounded-[7px] flex items-center justify-center"
                :class="a.status ? 'bg-navy/[0.06] text-navy' : 'bg-navy text-white'">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" :d="a.icon"/></svg>
           </div>

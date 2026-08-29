@@ -15,7 +15,7 @@
 
       <div class="ben-grid grid gap-[18px] [grid-template-columns:repeat(3,1fr)] max-[880px]:grid-cols-1">
         <div v-for="(s, i) in stufen" :key="s.title" class="ben relative rounded-2xl border border-line bg-surface p-6">
-          <span class="w-[34px] h-[34px] shrink-0 rounded-[10px] bg-navy text-white flex items-center justify-center text-[.78rem] font-bold tabular-nums mb-[14px]">
+          <span class="w-[34px] h-[34px] shrink-0 rounded-[7px] bg-navy text-white flex items-center justify-center text-[.78rem] font-bold tabular-nums mb-[14px]">
             {{ String(i + 1).padStart(2, '0') }}
           </span>
           <h3 class="text-[1.02rem] font-bold tracking-[-0.01em] text-ink mb-2">{{ s.title }}</h3>

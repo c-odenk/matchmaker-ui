@@ -35,7 +35,7 @@
 
       <div class="hero-visual relative max-[880px]:hidden">
         <div class="relative w-full max-w-[440px] ml-auto">
-          <div class="relative w-full rounded-[22px] overflow-hidden aspect-[4/4.4] shadow-hero-photo border border-white/10">
+          <div class="relative w-full rounded-[13px] overflow-hidden aspect-[4/4.4] shadow-hero-photo border border-white/10">
             <picture>
               <source :srcset="heroAvif" type="image/avif" />
               <source :srcset="heroWebp" type="image/webp" />
@@ -102,8 +102,8 @@ export default {
 <style scoped>
 /* Schwebende Badges – aktuell ausgeblendet; Positionen für spätere Reaktivierung erhalten. */
 .hero-badges { display: none; }
-.hero-badge { position: absolute; z-index: 3; display: flex; align-items: center; gap: 7px; background: #fff; border: 1px solid #e7ebf1; border-radius: 11px; padding: 5px 9px; box-shadow: 0 16px 34px rgba(8, 15, 30, .20); font-size: .72rem; font-weight: 600; color: #0f172a; white-space: nowrap; }
-.hero-badge .hb-ic { width: 25px; height: 25px; flex-shrink: 0; border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+.hero-badge { position: absolute; z-index: 3; display: flex; align-items: center; gap: 7px; background: #fff; border: 1px solid #e7ebf1; border-radius: 7px; padding: 5px 9px; box-shadow: 0 16px 34px rgba(8, 15, 30, .20); font-size: .72rem; font-weight: 600; color: #0f172a; white-space: nowrap; }
+.hero-badge .hb-ic { width: 25px; height: 25px; flex-shrink: 0; border-radius: 5px; display: flex; align-items: center; justify-content: center; }
 .hb-ic-green { background: #e7f8ee; color: #15803d; }
 .hb-ic-blue { background: #eaf2fc; color: #2976d6; }
 .hb-ic-navy { background: rgba(23, 43, 77, .08); color: #172b4d; }

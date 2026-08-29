@@ -8,7 +8,7 @@
          als Bediensymbol; der Buchstabe bleibt in jeder Größe scharf und
          bindet Bild- und Wortmarke typografisch zusammen. -->
     <span
-      class="shrink-0 flex items-center justify-center rounded-[10px] font-bold leading-none tracking-[-0.04em]"
+      class="shrink-0 flex items-center justify-center rounded-[7px] font-bold leading-none tracking-[-0.04em]"
       :class="[
         dark ? 'bg-white text-navy' : 'bg-navy text-white',
         gross ? 'w-8 h-8 text-[1.18rem]' : 'w-[30px] h-[30px] text-[1.08rem]'

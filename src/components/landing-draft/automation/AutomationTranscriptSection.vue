@@ -12,8 +12,8 @@
           </div>
 
           <!-- Der stattgefundene Termin, aus dem das Transkript stammt -->
-          <div class="mt-[13px] border border-line rounded-[10px] px-[13px] py-[11px] flex items-start gap-[11px] max-[560px]:flex-wrap">
-            <span class="w-[30px] h-[30px] shrink-0 rounded-[8px] bg-[#eef2f7] text-body flex items-center justify-center">
+          <div class="mt-[13px] border border-line rounded-[7px] px-[13px] py-[11px] flex items-start gap-[11px] max-[560px]:flex-wrap">
+            <span class="w-[30px] h-[30px] shrink-0 rounded-[5px] bg-[#eef2f7] text-body flex items-center justify-center">
               <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"/></svg>
             </span>
             <!-- Ohne feste Basis teilt sich der Textblock die Zeile mit der
@@ -24,14 +24,14 @@
               <span class="block text-[.82rem] text-muted mt-[3px] leading-[1.45]">stattgefunden · Transkript verfügbar</span>
               <span class="block text-[.76rem] text-muted mt-[6px]">27.08.2026, 10:20 · Sie</span>
             </span>
-            <span class="h-[32px] inline-flex items-center gap-[7px] px-[12px] rounded-[8px] text-[.76rem] font-semibold border border-line text-ink shrink-0 max-[560px]:ml-[41px]">
+            <span class="h-[32px] inline-flex items-center gap-[7px] px-[12px] rounded-[5px] text-[.76rem] font-semibold border border-line text-ink shrink-0 max-[560px]:ml-[41px]">
               <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8" class="text-blue"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/></svg>
               Transkript auswerten
             </span>
           </div>
 
           <!-- Was die Auswertung vorschlägt -->
-          <div class="mt-[13px] border border-line rounded-[10px] px-[13px] py-[11px]">
+          <div class="mt-[13px] border border-line rounded-[7px] px-[13px] py-[11px]">
             <div class="flex items-center justify-between gap-3 mb-[10px]">
               <span class="flex items-center gap-[7px] text-[.85rem] font-bold text-ink">
                 <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" class="text-blue"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/></svg>
@@ -50,7 +50,7 @@
 
           <div class="flex items-center justify-between gap-3 mt-[14px] flex-wrap">
             <span class="text-[.76rem] text-muted">Das Profil ändert sich erst nach Freigabe.</span>
-            <span class="h-[34px] inline-flex items-center px-[13px] rounded-[8px] text-[.76rem] font-semibold bg-blue text-white shrink-0">Ins Profil übernehmen</span>
+            <span class="h-[34px] inline-flex items-center px-[13px] rounded-[5px] text-[.76rem] font-semibold bg-blue text-white shrink-0">Ins Profil übernehmen</span>
           </div>
         </BrowserFrame>
       </div>

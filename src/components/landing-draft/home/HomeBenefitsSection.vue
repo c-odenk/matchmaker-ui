@@ -12,12 +12,12 @@
         <template #lead>Was sich ändert, ist die Arbeit dazwischen.</template>
       </SectionHeadingDraft>
 
-      <div class="scope rounded-[18px] border border-line bg-surface p-8 max-[560px]:p-5">
+      <div class="scope rounded-[11px] border border-line bg-surface p-8 max-[560px]:p-5">
         <!-- auto-rows-fr: im 2x2-Raster wären die beiden Zeilen sonst
              unterschiedlich hoch, weil die Fließtexte verschieden umbrechen. -->
         <div class="grid grid-cols-4 auto-rows-fr gap-[14px] max-[880px]:grid-cols-2 max-[560px]:grid-cols-1">
-          <div v-for="b in benefits" :key="b.title" class="rounded-[12px] border border-line bg-white px-5 py-5 flex flex-col">
-            <span class="w-[34px] h-[34px] shrink-0 rounded-[10px] bg-navy text-white flex items-center justify-center mb-3">
+          <div v-for="b in benefits" :key="b.title" class="rounded-[8px] border border-line bg-white px-5 py-5 flex flex-col">
+            <span class="w-[34px] h-[34px] shrink-0 rounded-[7px] bg-navy text-white flex items-center justify-center mb-3">
               <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" :d="b.icon"/></svg>
             </span>
             <div class="text-[.96rem] font-bold leading-tight text-ink">{{ b.title }}</div>

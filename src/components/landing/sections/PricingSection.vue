@@ -9,7 +9,7 @@
       <div class="price-grid grid grid-cols-1 gap-5 items-stretch max-w-[460px] mx-auto min-[700px]:grid-cols-2 min-[700px]:max-w-none min-[700px]:mx-0 min-[881px]:grid-cols-3">
 
         <!-- Bring Your Own Key (im Tablet-Band: volle Breite unten, horizontal geteilt) -->
-        <div class="pcardx flex flex-col rounded-[18px] px-7 py-[30px] bg-white border border-line shadow-price min-[700px]:order-3 min-[700px]:col-span-2 min-[881px]:order-none min-[881px]:col-span-1 min-[700px]:max-[880px]:flex-row min-[700px]:max-[880px]:items-center min-[700px]:max-[880px]:gap-8">
+        <div class="pcardx flex flex-col rounded-[11px] px-7 py-[30px] bg-white border border-line shadow-price min-[700px]:order-3 min-[700px]:col-span-2 min-[881px]:order-none min-[881px]:col-span-1 min-[700px]:max-[880px]:flex-row min-[700px]:max-[880px]:items-center min-[700px]:max-[880px]:gap-8">
           <div class="min-[700px]:max-[880px]:flex-1">
             <div class="text-[1.18rem] font-bold">Bring Your Own Key</div>
             <div class="text-[.85rem] text-body mt-[7px] leading-[1.5] min-h-[48px]">Direkte Abrechnung über den eigenen API-Account, ohne weitere Aufschläge.</div>
@@ -22,7 +22,7 @@
         </div>
 
         <!-- Enterprise (Feature-Karte) -->
-        <div class="pcardx flex flex-col rounded-[18px] px-7 py-[30px] relative bg-navy border border-navy text-white shadow-price-feat min-[700px]:order-1 min-[881px]:order-none">
+        <div class="pcardx flex flex-col rounded-[11px] px-7 py-[30px] relative bg-navy border border-navy text-white shadow-price-feat min-[700px]:order-1 min-[881px]:order-none">
           <div class="text-[1.18rem] font-bold">Enterprise Lizenz</div>
           <div class="text-[.85rem] text-white/[0.72] mt-[7px] leading-[1.5] min-h-[48px]">Für Personalberater, die ihren gesamten Recruiting-Prozess automatisieren wollen.</div>
           <div class="flex items-baseline flex-wrap gap-x-[6px] mt-[18px]"><b class="text-[1.9rem] font-extrabold tracking-[-0.02em] whitespace-nowrap">{{ selectedPrice }}</b><span class="text-[.82rem] text-white/[0.72]">/ Monat</span></div>
@@ -34,7 +34,7 @@
           <div class="border-t border-white/[0.13] my-5"></div>
           <div class="text-[.64rem] font-bold tracking-[0.09em] uppercase text-white/60 mb-[13px]">Talent-Pool Größe</div>
           <div class="relative">
-            <select class="w-full h-[42px] pl-[14px] pr-[38px] rounded-[10px] border border-white/[0.22] bg-white/[0.06] text-white text-[.86rem] font-medium cursor-pointer appearance-none focus:outline-none focus:border-blue hover:border-white/40 [&>option]:text-navy" v-model="selectedPrice" aria-label="Talent-Pool Größe">
+            <select class="w-full h-[42px] pl-[14px] pr-[38px] rounded-[7px] border border-white/[0.22] bg-white/[0.06] text-white text-[.86rem] font-medium cursor-pointer appearance-none focus:outline-none focus:border-blue hover:border-white/40 [&>option]:text-navy" v-model="selectedPrice" aria-label="Talent-Pool Größe">
               <option value="129,00 €">Bis zu 50 Talente</option>
               <option value="159,00 €">50 – 100 Talente</option>
               <option value="199,00 €">100 – 250 Talente</option>
@@ -42,11 +42,11 @@
             </select>
             <svg class="absolute right-[13px] top-1/2 -translate-y-1/2 pointer-events-none text-white/70" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
           </div>
-          <a class="h-[44px] rounded-[9px] flex items-center justify-center gap-[7px] text-[.92rem] font-semibold transition-colors duration-[180ms] cursor-pointer bg-blue text-white mt-5 hover:bg-blue-hover" :href="loginUrl">Jetzt loslegen →</a>
+          <a class="h-[44px] rounded-[6px] flex items-center justify-center gap-[7px] text-[.92rem] font-semibold transition-colors duration-[180ms] cursor-pointer bg-blue text-white mt-5 hover:bg-blue-hover" :href="loginUrl">Jetzt loslegen →</a>
         </div>
 
         <!-- Zusätzliche Mitarbeiter -->
-        <div class="pcardx flex flex-col rounded-[18px] px-7 py-[30px] bg-white border border-line shadow-price min-[700px]:order-2 min-[881px]:order-none">
+        <div class="pcardx flex flex-col rounded-[11px] px-7 py-[30px] bg-white border border-line shadow-price min-[700px]:order-2 min-[881px]:order-none">
           <div class="text-[1.18rem] font-bold">Zusätzliche Mitarbeiter</div>
           <div class="text-[.85rem] text-body mt-[7px] leading-[1.5] min-h-[48px]">Für wachsende Teams – alle Leistungen der Enterprise Lizenz, skalierbar je Mitarbeiter.</div>
           <div class="flex items-baseline flex-wrap gap-x-[6px] mt-[18px]"><b class="text-[1.9rem] font-extrabold tracking-[-0.02em] whitespace-nowrap">19,99 €</b><span class="text-[.82rem] text-muted">/ Lizenz &amp; Monat</span></div>

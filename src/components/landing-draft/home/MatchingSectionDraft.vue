@@ -62,8 +62,8 @@ export default {
 </script>
 
 <style scoped>
-.src-pill { display: inline-block; font-size: .66rem; font-weight: 600; color: #56657c; background: #eef2f7; border: 1px solid #e7ebf1; border-radius: 6px; padding: 1px 7px; margin-left: 4px; vertical-align: middle; }
-.kibox { margin-top: 16px; display: grid; grid-template-columns: auto 1fr; column-gap: 18px; row-gap: 8px; align-items: start; background: #f0faf4; border: 1px solid #cdeed9; border-radius: 14px; padding: 18px 20px; }
+.src-pill { display: inline-block; font-size: .66rem; font-weight: 600; color: #56657c; background: #eef2f7; border: 1px solid #e7ebf1; border-radius: 4px; padding: 1px 7px; margin-left: 4px; vertical-align: middle; }
+.kibox { margin-top: 16px; display: grid; grid-template-columns: auto 1fr; column-gap: 18px; row-gap: 8px; align-items: start; background: #f0faf4; border: 1px solid #cdeed9; border-radius: 9px; padding: 18px 20px; }
 .kiscore { width: 78px; text-align: center; grid-column: 1; grid-row: 1 / span 2; }
 .kinum { width: 62px; height: 62px; border-radius: 50%; border: 3px solid #16a34a; color: #16a34a; display: flex; align-items: center; justify-content: center; font-size: 1.35rem; font-weight: 800; margin: 0 auto; }
 .kilbl { font-size: .58rem; text-transform: uppercase; letter-spacing: .05em; color: #15803d; font-weight: 700; margin-top: 7px; }

@@ -1,9 +1,9 @@
 <template>
   <!-- Abstrakte Darstellung statt App-Screen: matchmaker als Bedienschicht oben,
        das angebundene System als Baustein darunter, dazwischen was fließt. -->
-  <div class="rounded-[18px] border border-line bg-surface p-7 max-[560px]:p-5">
+  <div class="rounded-[11px] border border-line bg-surface p-7 max-[560px]:p-5">
     <!-- Bedienschicht -->
-    <div class="rounded-[12px] bg-navy text-white px-5 py-4 flex items-center gap-3">
+    <div class="rounded-[8px] bg-navy text-white px-5 py-4 flex items-center gap-3">
       <span class="w-[30px] h-[30px] shrink-0 rounded-lg bg-white/[0.12] flex items-center justify-center">
         <span class="font-bold leading-none tracking-[-0.04em] text-[1.08rem] -mt-px">m</span>
       </span>
@@ -31,12 +31,12 @@
             <path stroke-linecap="round" stroke-linejoin="round" :d="f.dir === 'up' ? 'M4.5 15.75l7.5-7.5 7.5 7.5' : 'M19.5 8.25l-7.5 7.5-7.5-7.5'"/>
           </svg>
         </span>
-        <span class="relative z-[2] bg-white border border-line rounded-[10px] px-[11px] py-[6px] text-[.76rem] text-body text-center leading-[1.3]">{{ f.label }}</span>
+        <span class="relative z-[2] bg-white border border-line rounded-[7px] px-[11px] py-[6px] text-[.76rem] text-body text-center leading-[1.3]">{{ f.label }}</span>
       </div>
     </div>
 
     <!-- Der angebundene Baustein -->
-    <div class="rounded-[12px] border border-line bg-white px-5 py-4">
+    <div class="rounded-[8px] border border-line bg-white px-5 py-4">
       <div class="flex items-center gap-3">
         <span class="w-[30px] h-[30px] shrink-0 rounded-lg bg-navy/[0.07] text-navy flex items-center justify-center">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" :d="icon"/></svg>
@@ -47,7 +47,7 @@
         </span>
       </div>
       <div v-if="chips.length" class="flex flex-wrap gap-[6px] mt-[13px]">
-        <span v-for="c in chips" :key="c" class="text-[.72rem] font-semibold text-body bg-surface border border-line rounded-[6px] px-[8px] py-[2px]">{{ c }}</span>
+        <span v-for="c in chips" :key="c" class="text-[.72rem] font-semibold text-body bg-surface border border-line rounded-[4px] px-[8px] py-[2px]">{{ c }}</span>
       </div>
     </div>
 

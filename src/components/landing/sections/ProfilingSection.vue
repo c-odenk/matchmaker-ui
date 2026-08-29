@@ -11,12 +11,12 @@
 
       <!-- Animiertes Browserfenster: der Profiling-Workflow Schritt für Schritt -->
       <div class="relative min-w-0 max-[880px]:w-full max-[880px]:max-w-[620px] max-[880px]:mx-auto">
-        <div class="relative rounded-[14px] overflow-hidden shadow-browser border border-line">
+        <div class="relative rounded-[9px] overflow-hidden shadow-browser border border-line">
           <div class="flex items-center gap-[7px] px-4 py-[11px] bg-navy-2">
             <i class="w-[11px] h-[11px] rounded-full bg-[#ff5f57]"></i>
             <i class="w-[11px] h-[11px] rounded-full bg-[#febc2e]"></i>
             <i class="w-[11px] h-[11px] rounded-full bg-[#28c840]"></i>
-            <span class="ml-3 text-[.72rem] text-white/40 bg-white/[0.06] px-3 py-1 rounded-[6px] min-w-0 overflow-hidden text-ellipsis whitespace-nowrap">{{ url }}</span>
+            <span class="ml-3 text-[.72rem] text-white/40 bg-white/[0.06] px-3 py-1 rounded-[4px] min-w-0 overflow-hidden text-ellipsis whitespace-nowrap">{{ url }}</span>
           </div>
           <div class="pf-stage bg-white text-ink px-[22px] py-5" :class="{ 'pf-no-clip': reduce }" ref="stage">
             <transition name="pf" mode="out-in" @after-enter="onStepShown">
@@ -250,24 +250,24 @@ export default {
 .pf-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
 .pf-title { font-weight: 800; font-size: 1.05rem; letter-spacing: -.01em; }
 .pf-sub { font-size: .72rem; color: #7c8aa0; margin-top: 2px; }
-.pf-addbtn { flex-shrink: 0; background: #172b4d; color: #fff; font-size: .72rem; font-weight: 600; padding: 9px 13px; border-radius: 8px; }
-.pf-empty { flex: 1; margin-top: 16px; border: 1px solid #e7ebf1; border-radius: 12px; padding: 30px 18px; text-align: center; background: #f6f8fc; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.pf-addbtn { flex-shrink: 0; background: #172b4d; color: #fff; font-size: .72rem; font-weight: 600; padding: 9px 13px; border-radius: 5px; }
+.pf-empty { flex: 1; margin-top: 16px; border: 1px solid #e7ebf1; border-radius: 8px; padding: 30px 18px; text-align: center; background: #f6f8fc; display: flex; flex-direction: column; align-items: center; justify-content: center; }
 .pf-empty-ic { width: 46px; height: 46px; border-radius: 50%; background: #e9eef6; color: #172b4d; display: flex; align-items: center; justify-content: center; }
 .pf-empty-t { font-weight: 700; font-size: .9rem; margin-top: 12px; }
 .pf-empty-d { font-size: .74rem; color: #7c8aa0; margin-top: 5px; max-width: 280px; }
 
-.pf-modal { border: 1px solid #e7ebf1; border-radius: 14px; padding: 18px; background: #fff; box-shadow: 0 12px 32px rgba(23, 43, 77, .08); }
+.pf-modal { border: 1px solid #e7ebf1; border-radius: 9px; padding: 18px; background: #fff; box-shadow: 0 12px 32px rgba(23, 43, 77, .08); }
 .pf-modal-head { display: flex; align-items: center; justify-content: space-between; }
 .pf-modal-t { font-weight: 800; font-size: .92rem; }
 .pf-x { color: #7c8aa0; font-size: 1.05rem; line-height: 1; }
 .pf-modal-d { font-size: .74rem; color: #7c8aa0; margin-top: 8px; line-height: 1.5; }
-.pf-drop { margin-top: 14px; border: 2px dashed #c4d0e0; border-radius: 12px; padding: 26px 16px; text-align: center; background: #f6f8fc; }
+.pf-drop { margin-top: 14px; border: 2px dashed #c4d0e0; border-radius: 8px; padding: 26px 16px; text-align: center; background: #f6f8fc; }
 .pf-drop-ic { width: 48px; height: 48px; border-radius: 50%; background: #e9eef6; color: #172b4d; display: flex; align-items: center; justify-content: center; margin: 0 auto; }
 .pf-drop-t { font-weight: 700; font-size: .88rem; margin-top: 10px; }
 .pf-drop-d { font-size: .72rem; color: #7c8aa0; margin-top: 3px; }
 .pf-tags { display: flex; gap: 8px; justify-content: center; margin-top: 13px; }
-.pf-tags span { font-size: .64rem; font-weight: 700; color: #56657c; background: #eef2f7; border: 1px solid #e7ebf1; border-radius: 6px; padding: 3px 9px; }
-.pf-analyze { margin-top: 16px; border: 1px solid #e7ebf1; border-radius: 12px; padding: 38px 18px; text-align: center; background: #f6f8fc; }
+.pf-tags span { font-size: .64rem; font-weight: 700; color: #56657c; background: #eef2f7; border: 1px solid #e7ebf1; border-radius: 4px; padding: 3px 9px; }
+.pf-analyze { margin-top: 16px; border: 1px solid #e7ebf1; border-radius: 8px; padding: 38px 18px; text-align: center; background: #f6f8fc; }
 .pf-spinner { width: 44px; height: 44px; border-radius: 50%; border: 3px solid #dbe3ef; border-top-color: #2976d6; margin: 0 auto; animation: pf-spin .8s linear infinite; }
 @keyframes pf-spin { to { transform: rotate(360deg); } }
 .pf-analyze-t { font-weight: 700; font-size: .9rem; margin-top: 18px; }
@@ -282,7 +282,7 @@ export default {
 .pf-badge { font-size: .62rem; font-weight: 700; color: #15803d; background: #e7f8ee; border: 1px solid #bfe6cd; border-radius: 999px; padding: 2px 9px; }
 .pf-pro-role { font-size: .74rem; color: #7c8aa0; margin-top: 3px; }
 .pf-chips { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 14px; }
-.pf-chips span { font-size: .7rem; font-weight: 600; color: #172b4d; background: #f6f8fc; border: 1px solid #e7ebf1; border-radius: 7px; padding: 4px 10px; }
+.pf-chips span { font-size: .7rem; font-weight: 600; color: #172b4d; background: #f6f8fc; border: 1px solid #e7ebf1; border-radius: 5px; padding: 4px 10px; }
 .pf-chips.sm span { font-size: .66rem; padding: 3px 8px; }
 .pf-sec-h { display: flex; align-items: center; gap: 8px; font-weight: 800; font-size: .84rem; color: #172b4d; margin-top: 16px; padding-top: 14px; border-top: 1px solid #e7ebf1; }
 .pf-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 18px; margin-top: 14px; }
@@ -297,10 +297,10 @@ export default {
 .pf-list li::before { content: ""; position: absolute; left: 0; top: 7px; width: 4px; height: 4px; border-radius: 50%; background: #2976d6; }
 .pf-list-orange li::before { background: #ea580c; }
 .pf-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 9px; margin-top: 14px; }
-.pf-stat { border: 1px solid #e7ebf1; border-radius: 10px; padding: 10px 12px; }
+.pf-stat { border: 1px solid #e7ebf1; border-radius: 7px; padding: 10px 12px; }
 .pf-stat-l { font-size: .62rem; color: #7c8aa0; }
 .pf-stat-v { font-size: .86rem; font-weight: 800; margin-top: 3px; }
-.pf-criteria { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 16px; padding: 12px 14px; border: 1px solid #e7ebf1; border-radius: 10px; background: #f6f8fc; font-weight: 700; font-size: .8rem; color: #172b4d; }
+.pf-criteria { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 16px; padding: 12px 14px; border: 1px solid #e7ebf1; border-radius: 7px; background: #f6f8fc; font-weight: 700; font-size: .8rem; color: #172b4d; }
 .pf-crit-badge { flex-shrink: 0; font-size: .6rem; font-weight: 700; color: #2976d6; background: #eaf2fc; border-radius: 999px; padding: 3px 10px; }
 
 .pf-progress { display: flex; justify-content: center; gap: 7px; margin-top: 18px; }

@@ -22,24 +22,24 @@
             <!-- Vorschläge, solange nichts gefragt wurde -->
             <div v-if="phase === 'ruhe' || phase === 'tippen'" class="flex flex-col gap-[7px] mt-[11px]">
               <span v-for="q in questions" :key="q"
-                    class="border border-line rounded-[9px] px-[11px] py-[8px] text-[.76rem] text-ink leading-[1.35]">{{ q }}</span>
+                    class="border border-line rounded-[6px] px-[11px] py-[8px] text-[.76rem] text-ink leading-[1.35]">{{ q }}</span>
             </div>
 
             <!-- Die gestellte Frage -->
             <div v-if="phase !== 'ruhe' && phase !== 'tippen'" class="flex justify-end mt-[11px]">
-              <span class="max-w-[85%] rounded-[10px] rounded-br-[3px] bg-blue text-white px-[11px] py-[8px] text-[.76rem] leading-[1.35]">{{ frage }}</span>
+              <span class="max-w-[85%] rounded-[7px] rounded-br-[3px] bg-blue text-white px-[11px] py-[8px] text-[.76rem] leading-[1.35]">{{ frage }}</span>
             </div>
 
             <!-- Denkpause -->
             <div v-if="phase === 'denken'" class="flex items-center gap-[7px] mt-[11px]">
               <span class="w-[24px] h-[24px] shrink-0 rounded-lg bg-navy text-white flex items-center justify-center text-[.64rem] font-bold">KI</span>
-              <span class="inline-flex items-center gap-[4px] border border-line rounded-[9px] px-[11px] py-[9px]">
+              <span class="inline-flex items-center gap-[4px] border border-line rounded-[6px] px-[11px] py-[9px]">
                 <i v-for="n in 3" :key="n" class="denkpunkt" :style="{ animationDelay: (n - 1) * 160 + 'ms' }"></i>
               </span>
             </div>
 
             <!-- Antwort -->
-            <div v-if="phase === 'antwort'" class="mt-[11px] rounded-[10px] border border-line bg-surface px-[12px] py-[11px]">
+            <div v-if="phase === 'antwort'" class="mt-[11px] rounded-[7px] border border-line bg-surface px-[12px] py-[11px]">
               <div class="text-[.72rem] font-bold tracking-[0.06em] uppercase text-muted mb-[8px]">Antwort</div>
               <div v-for="(t, i) in treffer" :key="t.name"
                    v-show="i < sichtbareTreffer"
@@ -51,7 +51,7 @@
             </div>
 
             <!-- Eingabezeile: tippt die Frage -->
-            <div class="mt-auto pt-[12px] border border-line rounded-[10px] bg-surface px-[11px] py-[9px] flex items-center gap-2 !border-t !mt-[12px]">
+            <div class="mt-auto pt-[12px] border border-line rounded-[7px] bg-surface px-[11px] py-[9px] flex items-center gap-2 !border-t !mt-[12px]">
               <span class="text-[.76rem] flex-1 min-w-0 truncate" :class="getippt ? 'text-ink' : 'text-muted'">
                 {{ getippt || 'Fragen Sie etwas oder hängen Sie eine Stellenbeschreibung an…'
                 }}<i v-if="phase === 'tippen'" class="cursor"></i>

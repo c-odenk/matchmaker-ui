@@ -11,10 +11,10 @@
         <FeatureList :items="features" />
       </div>
 
-      <div class="rounded-[18px] border border-line bg-white p-7 max-[560px]:p-5">
+      <div class="rounded-[11px] border border-line bg-white p-7 max-[560px]:p-5">
         <div class="text-[.64rem] font-bold tracking-[0.07em] uppercase text-muted mb-4">Datenherkunft</div>
         <div class="flex flex-col gap-3">
-          <div v-for="s in sources" :key="s.title" class="flex items-start gap-[13px] rounded-[12px] border border-line bg-surface px-4 py-[13px] max-[560px]:flex-wrap">
+          <div v-for="s in sources" :key="s.title" class="flex items-start gap-[13px] rounded-[8px] border border-line bg-surface px-4 py-[13px] max-[560px]:flex-wrap">
             <span class="w-[30px] h-[30px] shrink-0 rounded-lg bg-navy/[0.07] text-navy flex items-center justify-center">
               <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" :d="s.icon"/></svg>
             </span>

@@ -4,7 +4,7 @@
     :href="tag === 'a' ? href : undefined"
     :to="tag === 'router-link' ? to : undefined"
     :type="tag === 'button' ? 'button' : undefined"
-    class="inline-flex items-center justify-center gap-2 h-[46px] px-[22px] rounded-[9px] text-[.97rem] font-semibold font-sans cursor-pointer transition-colors duration-[180ms]"
+    class="inline-flex items-center justify-center gap-2 h-[46px] px-[22px] rounded-[6px] text-[.97rem] font-semibold font-sans cursor-pointer transition-colors duration-[180ms]"
     :class="variantClass"
   >
     <slot />

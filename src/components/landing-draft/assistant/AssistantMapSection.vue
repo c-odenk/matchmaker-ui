@@ -32,7 +32,7 @@
               </span>
             </div>
 
-            <div class="relative rounded-[10px] border border-line overflow-hidden aspect-[16/9] bg-white">
+            <div class="relative rounded-[7px] border border-line overflow-hidden aspect-[16/9] bg-white">
               <div class="absolute inset-0" style="background-image: radial-gradient(#e7ebf1 1px, transparent 1px); background-size: 14px 14px;"></div>
               <div v-for="b in boxen" :key="b.box"
                    class="absolute rounded-full border border-dashed border-[#cddcf0] bg-blue/[0.05]" :style="b.box"></div>
@@ -51,7 +51,7 @@
                 <span class="w-[6px] h-[6px] rounded-full bg-blue shrink-0"></span>5 ausgewählt
               </span>
               <span class="text-[.76rem] text-ink flex-1 min-w-0 max-[560px]:basis-full">„Für die Auswahl den Market Agent starten."</span>
-              <span class="h-[28px] inline-flex items-center px-[11px] rounded-[8px] text-[.72rem] font-semibold bg-blue text-white shrink-0">Ausführen</span>
+              <span class="h-[28px] inline-flex items-center px-[11px] rounded-[5px] text-[.72rem] font-semibold bg-blue text-white shrink-0">Ausführen</span>
             </div>
           </div>
         </BrowserFrame>

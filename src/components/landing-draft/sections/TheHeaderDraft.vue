@@ -42,7 +42,7 @@
                   @click="p.to ? closeAll() : goAnchor($event, p.id)"
                   class="flex items-start gap-[13px] px-[13px] py-[11px] rounded-xl cursor-pointer transition-colors duration-150 hover:bg-surface group"
                 >
-                  <span class="w-[34px] h-[34px] shrink-0 rounded-[10px] bg-navy/[0.06] text-navy flex items-center justify-center transition-colors duration-150 group-hover:bg-navy group-hover:text-white">
+                  <span class="w-[34px] h-[34px] shrink-0 rounded-[7px] bg-navy/[0.06] text-navy flex items-center justify-center transition-colors duration-150 group-hover:bg-navy group-hover:text-white">
                     <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" :d="p.icon"/></svg>
                   </span>
                   <span class="min-w-0">
@@ -66,11 +66,11 @@
           <router-link to="/kontakt" @click="closeAll" class="inline-flex items-center gap-[7px] text-[.95rem] font-medium text-body cursor-pointer hover:text-blue max-[959px]:hidden">
             <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"/></svg>Demo vereinbaren
           </router-link>
-          <BaseButtonDraft variant="primary" :href="loginUrl" class="!h-[40px] !px-[28px] !text-[.92rem] !rounded-[10px]">Anmelden →</BaseButtonDraft>
+          <BaseButtonDraft variant="primary" :href="loginUrl" class="!h-[40px] !px-[28px] !text-[.92rem] !rounded-[7px]">Anmelden →</BaseButtonDraft>
         </div>
 
         <!-- Mobile-Toggle -->
-        <button class="hidden max-[880px]:inline-flex w-[42px] h-[42px] items-center justify-center border border-line rounded-[10px] bg-white cursor-pointer shrink-0" :aria-expanded="menuOpen ? 'true' : 'false'" aria-label="Menü" @click="toggleMobile">
+        <button class="hidden max-[880px]:inline-flex w-[42px] h-[42px] items-center justify-center border border-line rounded-[7px] bg-white cursor-pointer shrink-0" :aria-expanded="menuOpen ? 'true' : 'false'" aria-label="Menü" @click="toggleMobile">
           <span class="nav-burger" :class="{ x: menuOpen }"><i></i><i></i><i></i></span>
         </button>
       </div>
@@ -80,12 +80,12 @@
     <div class="mnav-wrap hidden max-[880px]:grid" :class="{ open: menuOpen }">
       <div class="min-h-0 overflow-hidden">
         <nav class="mnav-panel flex flex-col bg-white border-t border-line pt-3 px-6 pb-5">
-          <a href="/" @click.prevent="goHome" class="py-[13px] px-2 text-[1.05rem] font-medium text-navy rounded-[9px] cursor-pointer">Home</a>
+          <a href="/" @click.prevent="goHome" class="py-[13px] px-2 text-[1.05rem] font-medium text-navy rounded-[6px] cursor-pointer">Home</a>
 
           <!-- Plattform: klappt die vier Unterpunkte auf -->
           <button
             type="button"
-            class="flex items-center justify-between gap-2 py-[13px] px-2 font-sans text-[1.05rem] font-medium text-navy bg-transparent border-0 rounded-[9px] cursor-pointer text-left"
+            class="flex items-center justify-between gap-2 py-[13px] px-2 font-sans text-[1.05rem] font-medium text-navy bg-transparent border-0 rounded-[6px] cursor-pointer text-left"
             :aria-expanded="mobilePlatformOpen ? 'true' : 'false'"
             @click="mobilePlatformOpen = !mobilePlatformOpen"
           >
@@ -100,9 +100,9 @@
                   v-for="p in platform" :key="p.label"
                   v-bind="p.to ? { to: p.to } : { href: '/#' + p.id }"
                   @click="p.to ? closeAll() : goAnchor($event, p.id)"
-                  class="flex items-center gap-[11px] py-[11px] px-2 rounded-[9px] cursor-pointer"
+                  class="flex items-center gap-[11px] py-[11px] px-2 rounded-[6px] cursor-pointer"
                 >
-                  <span class="w-[30px] h-[30px] shrink-0 rounded-[9px] bg-navy/[0.06] text-navy flex items-center justify-center">
+                  <span class="w-[30px] h-[30px] shrink-0 rounded-[6px] bg-navy/[0.06] text-navy flex items-center justify-center">
                     <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" :d="p.icon"/></svg>
                   </span>
                   <span class="flex items-center gap-[7px] min-w-0">
@@ -114,7 +114,7 @@
             </div>
           </div>
 
-          <router-link to="/preise" @click="closeAll" class="py-[13px] px-2 text-[1.05rem] font-medium text-navy rounded-[9px] cursor-pointer">Preise</router-link>
+          <router-link to="/preise" @click="closeAll" class="py-[13px] px-2 text-[1.05rem] font-medium text-navy rounded-[6px] cursor-pointer">Preise</router-link>
 
           <div class="flex flex-col gap-[10px] mt-[10px] pt-[14px] border-t border-line">
             <BaseButtonDraft variant="ghost" to="/kontakt" class="w-full !h-12" @click="closeAll">Demo vereinbaren</BaseButtonDraft>

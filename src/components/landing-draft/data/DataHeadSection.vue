@@ -9,14 +9,14 @@
       </div>
 
       <!-- Der Weg der Daten: drei Stationen, eine davon nur auf Zeit -->
-      <div class="scope rounded-[18px] border border-line bg-surface p-8 max-[560px]:p-5">
+      <div class="scope rounded-[11px] border border-line bg-surface p-8 max-[560px]:p-5">
         <div class="text-[.64rem] font-bold tracking-[0.07em] uppercase text-muted mb-5">Der Weg der Daten</div>
 
         <div class="grid items-stretch [grid-template-columns:1fr_auto_1fr_auto_1fr] gap-0 max-[880px]:grid-cols-1">
           <template v-for="(st, i) in stations" :key="st.title">
-            <div class="rounded-[12px] border px-5 py-5 flex flex-col"
+            <div class="rounded-[8px] border px-5 py-5 flex flex-col"
                  :class="st.own ? 'bg-navy border-navy text-white shadow-price-feat' : 'bg-white border-line'">
-              <span class="w-[34px] h-[34px] shrink-0 rounded-[10px] flex items-center justify-center mb-3"
+              <span class="w-[34px] h-[34px] shrink-0 rounded-[7px] flex items-center justify-center mb-3"
                     :class="st.own ? 'bg-blue/25 border border-blue/[0.4] text-white' : 'bg-navy/[0.07] text-navy'">
                 <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" :d="st.icon"/></svg>
               </span>
@@ -39,8 +39,8 @@
         </div>
 
         <!-- Was künftig möglich wird -->
-        <div class="mt-[18px] rounded-[12px] border border-dashed border-[#c2ccdb] bg-white px-5 py-5 flex items-start gap-[14px] max-[560px]:flex-col">
-          <span class="w-[34px] h-[34px] shrink-0 rounded-[10px] bg-navy/[0.07] text-navy flex items-center justify-center">
+        <div class="mt-[18px] rounded-[8px] border border-dashed border-[#c2ccdb] bg-white px-5 py-5 flex items-start gap-[14px] max-[560px]:flex-col">
+          <span class="w-[34px] h-[34px] shrink-0 rounded-[7px] bg-navy/[0.07] text-navy flex items-center justify-center">
             <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 17.25v-.228a4.5 4.5 0 00-.12-1.03l-2.268-9.64a3.375 3.375 0 00-3.285-2.602H7.923a3.375 3.375 0 00-3.285 2.602l-2.268 9.64a4.5 4.5 0 00-.12 1.03v.228m19.5 0a3 3 0 01-3 3H5.25a3 3 0 01-3-3m19.5 0a3 3 0 00-3-3H15.9a.75.75 0 00-.7.5 2.25 2.25 0 01-2.1 1.45h-2.2a2.25 2.25 0 01-2.1-1.45.75.75 0 00-.7-.5H5.25a3 3 0 00-3 3"/></svg>
           </span>
           <div>

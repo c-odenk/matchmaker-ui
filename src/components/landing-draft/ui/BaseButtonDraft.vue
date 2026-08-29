@@ -2,7 +2,7 @@
   <component
     :is="tag"
     v-bind="tagAttrs"
-    class="inline-flex items-center justify-center gap-2 h-[46px] px-[22px] rounded-[9px] text-[.96rem] font-semibold font-sans cursor-pointer transition-colors duration-[180ms]"
+    class="inline-flex items-center justify-center gap-2 h-[46px] px-[22px] rounded-[6px] text-[.96rem] font-semibold font-sans cursor-pointer transition-colors duration-[180ms]"
     :class="variantClass"
   >
     <slot />

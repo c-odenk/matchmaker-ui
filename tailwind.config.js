@@ -76,18 +76,23 @@ module.exports = {
         'pf-modal':    '0 12px 32px rgba(23,43,77,.08)',
         'mobile-nav':  '0 24px 40px rgba(23,43,77,.10)',
       },
+      // ── Eckenradien ─────────────────────────────────────────────────────
+      // Reduzierte Skala (29.08.2026): rund 60 % der vorherigen Werte, damit
+      // Kacheln, Panels, Buttons und Screenshot-Rahmen ruhiger wirken.
+      // Kommentar = vorheriger Wert. 'full' bleibt: Punkte, Avatare, Pillen
+      // und der Score-Kreis sollen rund bleiben.
       borderRadius: {
         'none':   '0',
-        'sm':     '0.375rem',
-        'md':     '0.5rem',
-        'lg':     '0.625rem',
-        'xl':     '0.75rem',
-        '2xl':    '1rem',
-        '3xl':    '1.5rem',
+        'sm':     '0.25rem',    //  4px (vorher  6px)
+        'md':     '0.3125rem',  //  5px (vorher  8px)
+        'lg':     '0.4375rem',  //  7px (vorher 10px)
+        'xl':     '0.5rem',     //  8px (vorher 12px)
+        '2xl':    '0.625rem',   // 10px (vorher 16px)
+        '3xl':    '0.875rem',   // 14px (vorher 24px)
         'full':   '9999px',
-        'button': '0.5rem',
-        'card':   '0.625rem',
-        'input':  '0.5rem',
+        'button': '0.3125rem',  //  5px (vorher  8px)
+        'card':   '0.4375rem',  //  7px (vorher 10px)
+        'input':  '0.3125rem',  //  5px (vorher  8px)
       },
     },
   },

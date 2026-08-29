@@ -28,8 +28,8 @@
              dem Fließtext wirkten dort gedrängt. Beide Wege bleiben über das
              Menü im Kopf und die Abschluss-Sektion erreichbar. -->
         <div class="flex gap-3 mt-[38px] flex-wrap max-[1000px]:justify-center max-[560px]:hidden">
-          <BaseButtonDraft variant="blue" :href="loginUrl" class="!rounded-[12px] max-[560px]:w-full">Jetzt anmelden →</BaseButtonDraft>
-          <BaseButtonDraft variant="ghost-dark" class="!rounded-[12px] max-[560px]:w-full" to="/kontakt">Demo vereinbaren</BaseButtonDraft>
+          <BaseButtonDraft variant="blue" :href="loginUrl" class="!rounded-[8px] max-[560px]:w-full">Jetzt anmelden →</BaseButtonDraft>
+          <BaseButtonDraft variant="ghost-dark" class="!rounded-[8px] max-[560px]:w-full" to="/kontakt">Demo vereinbaren</BaseButtonDraft>
         </div>
       </div>
 
@@ -40,7 +40,7 @@
         <div class="relative w-full max-w-[460px] ml-auto max-[1000px]:mx-auto">
           <!-- Bedienschicht: einziges deckendes Element, deshalb zusätzlich ein
                weicher Schein statt nur Schlagschatten -->
-          <div class="relative z-[2] rounded-[16px] bg-white text-ink overflow-hidden shadow-[0_34px_70px_-18px_rgba(4,10,24,.75),0_0_0_5px_rgba(41,118,214,.16)] ring-1 ring-white/40">
+          <div class="relative z-[2] rounded-[10px] bg-white text-ink overflow-hidden shadow-[0_34px_70px_-18px_rgba(4,10,24,.75),0_0_0_5px_rgba(41,118,214,.16)] ring-1 ring-white/40">
             <div class="flex items-center justify-between gap-3 px-5 py-[14px] flex-wrap max-[560px]:px-4">
               <div class="flex items-center gap-3">
                 <span class="w-[33px] h-[33px] shrink-0 rounded-xl bg-navy text-white flex items-center justify-center">
@@ -80,12 +80,12 @@
           </div>
 
           <!-- Angebundene Systeme -->
-          <div class="rounded-[16px] border border-white/[0.16] bg-white/[0.06] p-[15px] max-[560px]:p-[13px]">
+          <div class="rounded-[10px] border border-white/[0.16] bg-white/[0.06] p-[15px] max-[560px]:p-[13px]">
             <div class="text-[.64rem] font-bold tracking-[0.09em] uppercase text-white/55 mb-[12px] text-center">Ihre bestehenden Systeme</div>
             <div class="system-grid grid grid-cols-3 gap-[8px] max-[560px]:grid-cols-2 max-[560px]:gap-[7px]">
               <div v-for="s in systems" :key="s.label"
-                   class="rounded-[11px] border border-white/[0.16] bg-white/[0.09] px-[6px] py-[10px] flex flex-col items-center gap-[7px] text-center max-[560px]:flex-row max-[560px]:text-left max-[560px]:px-[10px] max-[560px]:py-[9px] max-[560px]:gap-[8px]">
-                <span class="w-[25px] h-[25px] shrink-0 rounded-[8px] bg-white/[0.12] flex items-center justify-center max-[560px]:w-[26px] max-[560px]:h-[26px]">
+                   class="rounded-[7px] border border-white/[0.16] bg-white/[0.09] px-[6px] py-[10px] flex flex-col items-center gap-[7px] text-center max-[560px]:flex-row max-[560px]:text-left max-[560px]:px-[10px] max-[560px]:py-[9px] max-[560px]:gap-[8px]">
+                <span class="w-[25px] h-[25px] shrink-0 rounded-[5px] bg-white/[0.12] flex items-center justify-center max-[560px]:w-[26px] max-[560px]:h-[26px]">
                   <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" class="text-[#9cc6f2]"><path stroke-linecap="round" stroke-linejoin="round" :d="s.icon"/></svg>
                 </span>
                 <span class="text-[.72rem] max-[560px]:text-[.64rem] font-semibold text-white/[0.9] leading-tight min-w-0 [hyphens:auto] break-words">{{ s.label }}</span>

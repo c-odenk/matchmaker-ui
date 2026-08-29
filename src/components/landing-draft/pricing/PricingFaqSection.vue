@@ -6,7 +6,7 @@
         <h2 class="text-section text-ink mt-[18px]">Häufige Fragen <span class="text-blue">zum Preis</span></h2>
       </div>
 
-      <div class="scope border border-line rounded-[18px] overflow-hidden bg-white">
+      <div class="scope border border-line rounded-[11px] overflow-hidden bg-white">
         <div v-for="(f, i) in faqs" :key="f.q" class="border-b border-line last:border-b-0">
           <button
             type="button"

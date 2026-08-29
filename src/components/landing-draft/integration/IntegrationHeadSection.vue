@@ -9,11 +9,11 @@
       </div>
 
       <!-- Schichtbild: eine Bedienoberfläche über austauschbaren Bausteinen -->
-      <div class="scope rounded-[18px] border border-line bg-surface p-8 max-[560px]:p-5">
+      <div class="scope rounded-[11px] border border-line bg-surface p-8 max-[560px]:p-5">
         <!-- Die Bedienschicht trägt bewusst mehr Gewicht als die Bausteine darunter:
              Glow und Schatten wie auf den Navy-Flächen der Landingpage, dazu die
              Arbeitsschritte, die auf dieser Ebene zusammenlaufen. -->
-        <div class="relative overflow-hidden rounded-[14px] bg-navy text-white border border-white/[0.08] shadow-price-feat px-7 py-6 max-[560px]:px-5 max-[560px]:py-5">
+        <div class="relative overflow-hidden rounded-[9px] bg-navy text-white border border-white/[0.08] shadow-price-feat px-7 py-6 max-[560px]:px-5 max-[560px]:py-5">
           <div class="absolute top-[-120%] right-[-4%] w-[52%] h-[320%] bg-[radial-gradient(ellipse_at_center,rgba(41,118,214,.45),transparent_65%)] blur-[55px] pointer-events-none"></div>
           <div class="absolute bottom-[-150%] left-[-6%] w-[44%] h-[340%] bg-[radial-gradient(ellipse_at_center,rgba(41,118,214,.22),transparent_70%)] blur-[60px] pointer-events-none"></div>
 
@@ -50,8 +50,8 @@
         <div class="grid gap-3 [grid-template-columns:repeat(7,1fr)] max-[1150px]:grid-cols-4 max-[560px]:grid-cols-2">
           <div v-for="s in systems" :key="s.label" class="relative">
             <span class="absolute left-1/2 -translate-x-1/2 -top-4 h-4 w-px bg-[#c2ccdb] max-[1150px]:hidden"></span>
-            <div class="h-full rounded-[12px] border border-line bg-white px-3 py-4 flex flex-col items-center text-center gap-[9px]">
-              <span class="w-[34px] h-[34px] shrink-0 rounded-[10px] bg-navy/[0.07] text-navy flex items-center justify-center">
+            <div class="h-full rounded-[8px] border border-line bg-white px-3 py-4 flex flex-col items-center text-center gap-[9px]">
+              <span class="w-[34px] h-[34px] shrink-0 rounded-[7px] bg-navy/[0.07] text-navy flex items-center justify-center">
                 <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" :d="s.icon"/></svg>
               </span>
               <span class="text-[.8rem] font-semibold text-ink leading-[1.3]">{{ s.label }}</span>
