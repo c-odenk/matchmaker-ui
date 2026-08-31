@@ -4,7 +4,7 @@
     <div class="wrap two grid [grid-template-columns:1fr_1.1fr] gap-[52px] items-center max-[880px]:grid-cols-1 max-[880px]:gap-[30px]">
       <div class="two-text">
         <EyebrowBadge>Herkunft</EyebrowBadge>
-        <h2 class="text-section text-ink mt-[18px] mb-[14px]">Klar benannte Quellen – <span class="text-blue">keine davon geheim.</span></h2>
+        <h2 class="text-section text-ink mt-[7px] mb-[14px]">Klar benannte Quellen – <span class="text-blue">keine davon geheim.</span></h2>
         <p class="text-[.95rem] text-body leading-[1.65] max-w-[620px]">
           Kandidatendaten kommen aus Ihrer Bewerbersoftware oder von Ihnen. Alles Weitere aus öffentlichen Quellen und Ihren eigenen Gesprächen.
         </p>

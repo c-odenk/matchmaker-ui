@@ -15,7 +15,7 @@
 
       <div class="two-text">
         <EyebrowBadge>E-Mail</EyebrowBadge>
-        <h2 class="text-section text-ink mt-[18px] mb-[14px]">Versand aus <span class="text-blue">Ihrem eigenen Postfach.</span></h2>
+        <h2 class="text-section text-ink mt-[7px] mb-[14px]">Versand aus <span class="text-blue">Ihrem eigenen Postfach.</span></h2>
         <p class="text-[.95rem] text-body leading-[1.65] max-w-[620px]">
           Die Nachricht entsteht im Vorgang, versendet wird über Ihr Konto. Antworten laufen wie gewohnt bei Ihnen auf.
         </p>

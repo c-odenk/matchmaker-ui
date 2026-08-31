@@ -4,7 +4,7 @@
     <div class="wrap two grid [grid-template-columns:1fr_1.1fr] gap-[52px] items-center max-[880px]:grid-cols-1 max-[880px]:gap-[30px]">
       <div class="two-text">
         <EyebrowBadge>E-Mail</EyebrowBadge>
-        <h2 class="text-section text-ink mt-[18px] mb-[14px]">Der Entwurf liegt im Vorgang. <span class="text-blue">Gesendet wird aus Ihrem Postfach.</span></h2>
+        <h2 class="text-section text-ink mt-[7px] mb-[14px]">Der Entwurf liegt im Vorgang. <span class="text-blue">Gesendet wird aus Ihrem Postfach.</span></h2>
         <p class="text-[.95rem] text-body leading-[1.65] max-w-[620px]">
           Die Nachricht entsteht dort, wo der Kandidat steht. Beim Empfänger kommt Ihre Adresse an.
         </p>

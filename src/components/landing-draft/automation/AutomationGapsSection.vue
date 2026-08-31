@@ -41,7 +41,7 @@
 
       <div class="two-text">
         <EyebrowBadge>Vollständige Profile</EyebrowBadge>
-        <h2 class="text-section text-ink mt-[18px] mb-[14px]">Was im Profil fehlt, <span class="text-blue">fällt sofort auf.</span></h2>
+        <h2 class="text-section text-ink mt-[7px] mb-[14px]">Was im Profil fehlt, <span class="text-blue">fällt sofort auf.</span></h2>
         <p class="text-[.95rem] text-body leading-[1.65] max-w-[620px]">
           Der Profiling Agent erkennt fehlende Angaben und formuliert die Nachfrage. Versendet wird nach Ihrer Freigabe.
         </p>

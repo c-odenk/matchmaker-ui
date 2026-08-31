@@ -1,7 +1,7 @@
 <template>
   <div class="sec-head mx-auto max-w-[660px] mb-10" :class="{ 'text-center': center }">
     <EyebrowBadge v-if="eyebrow">{{ eyebrow }}</EyebrowBadge>
-    <h2 class="text-section text-ink mt-[18px] mb-[14px]"><slot /></h2>
+    <h2 class="text-section text-ink mt-[7px] mb-[14px]"><slot /></h2>
     <p v-if="$slots.lead" class="text-lead text-body"><slot name="lead" /></p>
   </div>
 </template>

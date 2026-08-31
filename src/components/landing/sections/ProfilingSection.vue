@@ -4,7 +4,7 @@
       <!-- Text -->
       <div class="min-w-0 max-[880px]:text-center max-[880px]:max-w-[620px] max-[880px]:mx-auto">
         <EyebrowBadge>Ihre Talente</EyebrowBadge>
-        <h2 class="text-section text-ink mt-[18px] mb-[14px]">Aus jedem Lebenslauf wird ein <span class="text-blue">strukturiertes Profil.</span></h2>
+        <h2 class="text-section text-ink mt-[7px] mb-[14px]">Aus jedem Lebenslauf wird ein <span class="text-blue">strukturiertes Profil.</span></h2>
         <p class="text-lead text-body">Lebenslauf hochladen – der Profiling Agent liest die Daten automatisch aus und erstellt daraus ein präzises, anonymisiertes Qualifikationsprofil.</p>
         <FeatureList :items="features" />
       </div>

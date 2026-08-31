@@ -40,7 +40,7 @@
       </div>
       <div class="two-text max-[880px]:order-1">
         <EyebrowBadge>Reichweite</EyebrowBadge>
-        <h2 class="text-section text-ink mt-[18px] mb-[14px]">Ein Satz, <span class="text-blue">vier Systeme.</span></h2>
+        <h2 class="text-section text-ink mt-[7px] mb-[14px]">Ein Satz, <span class="text-blue">vier Systeme.</span></h2>
         <p class="text-[.95rem] text-body leading-[1.65] max-w-[620px]">
           Ein Assistent in der Bewerbersoftware bedient die Bewerbersoftware. Dieser liegt
           über allen angebundenen Systemen – und arbeitet quer darüber.

@@ -4,7 +4,7 @@
     <div class="wrap">
       <div class="sec-head mx-auto max-w-[660px] text-center mb-10">
         <EyebrowBadge>Am Kandidaten</EyebrowBadge>
-        <h2 class="text-section text-ink mt-[18px] mb-[14px]">Ausgelöst am Profil, <span class="text-blue">dokumentiert am Profil.</span></h2>
+        <h2 class="text-section text-ink mt-[7px] mb-[14px]">Ausgelöst am Profil, <span class="text-blue">dokumentiert am Profil.</span></h2>
         <p class="text-lead text-body">Anruf, Termin und Auswertung starten im Vorgang – und was dabei herauskommt, steht danach dort.</p>
       </div>
 

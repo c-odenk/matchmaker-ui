@@ -8,7 +8,7 @@
 
     <div class="wrap relative z-[2] grid [grid-template-columns:1.5fr_1fr] gap-12 items-center pt-[140px] px-6 pb-[150px] max-[1000px]:grid-cols-1 max-[1000px]:gap-10 max-[1000px]:pt-20 max-[1000px]:pb-24">
       <div class="hero-left relative max-[1000px]:text-center">
-        <EyebrowBadge dark class="!px-[22.4px]">KI-gestütztes Talentpool-Management</EyebrowBadge>
+        <EyebrowBadge dark wide pill>KI-gestütztes Talentpool-Management</EyebrowBadge>
 
         <div class="flex items-center gap-[6px] mt-[13px] max-[1000px]:justify-center">
           <span class="text-[#fbbf24] text-[.92rem] tracking-[1px]">★★★★★</span>

@@ -3,7 +3,7 @@
     <div class="wrap">
       <div class="sec-head mx-auto max-w-[660px] text-center mb-10">
         <EyebrowBadge>FAQ</EyebrowBadge>
-        <h2 class="text-section text-ink mt-[18px]">Häufige Fragen <span class="text-blue">zum Preis</span></h2>
+        <h2 class="text-section text-ink mt-[7px]">Häufige Fragen <span class="text-blue">zum Preis</span></h2>
       </div>
 
       <div class="scope border border-line rounded-[11px] overflow-hidden bg-white">
