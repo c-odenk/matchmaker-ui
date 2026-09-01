@@ -8,7 +8,7 @@ export const legalInfo = {
   city: 'Bad Neuenahr-Ahrweiler',
   country: 'Deutschland',
   ceo: 'Christopher Odenkirchen',
-  email: 'info@matchmaker-hr.de',
+  email: 'christopher.odenkirchen@gmail.com',
   // NOCH ZU FÜLLEN: Solange diese Felder leer sind, blendet das Impressum die
   // jeweiligen Abschnitte aus. Ein Platzhalter wie 'n.a.' oder eine erfundene
   // USt-ID darf dort nicht erscheinen – beides ist abmahnfähig.
