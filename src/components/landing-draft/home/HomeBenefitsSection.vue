@@ -8,7 +8,7 @@
   <section class="sec bg-white">
     <div class="wrap">
       <SectionHeadingDraft eyebrow="Warum matchmaker">
-        Ein Ort für alles. <span class="text-blue">Die Entscheidung bleibt bei Ihnen.</span>
+        Ein Ort für alles. <span class="text-blue">Die Entscheidung bleibt beim Berater.</span>
         <template #lead>Was sich ändert, ist die Arbeit dazwischen.</template>
       </SectionHeadingDraft>
 
@@ -51,7 +51,7 @@ export default {
         {
           title: 'Kein Lock-in',
           text: 'Jedes angebundene System bleibt einzeln ersetzbar.',
-          fuss: 'Auch Ihr ATS',
+          fuss: 'Auch die Bewerbersoftware',
           icon: 'M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99'
         },
         {
@@ -61,8 +61,8 @@ export default {
           icon: 'M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z'
         },
         {
-          title: 'Ihre Freigabe',
-          text: 'Nichts geht hinaus, bevor Sie es geprüft haben.',
+          title: 'Freigabe vorab',
+          text: 'Nichts geht hinaus, bevor es geprüft ist.',
           fuss: 'Human-in-the-Loop',
           icon: 'M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z'
         }

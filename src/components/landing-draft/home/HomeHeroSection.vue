@@ -17,11 +17,11 @@
 
         <h1 class="text-section !leading-[1.2] mt-[16px]">
           Recruiting-Automatisierung, <br>
-          die <span class="text-[#5fa0ea]">Ihrem Urteil</span> vertraut.
+          die <span class="text-[#5fa0ea]">dem Urteil des Beraters</span> vertraut.
         </h1>
 
         <p class="text-lead text-white/[0.82] max-w-[590px] mt-[20px] max-[1000px]:mx-auto">
-          matchmaker legt sich über Ihre bestehenden Systeme und automatisiert, was Sie heute manuell bedienen.
+          matchmaker legt sich über die bestehenden Systeme und automatisiert, was heute von Hand bedient wird.
         </p>
 
         <!-- Auf dem Smartphone ausgeblendet: zwei volle Schaltflächen direkt unter
@@ -48,7 +48,7 @@
                 </span>
                 <span class="text-left">
                   <span class="block text-[.96rem] font-bold tracking-[-0.01em] leading-tight">matchmaker</span>
-                  <span class="block text-[.72rem] text-muted">Ihre neue Oberfläche</span>
+                  <span class="block text-[.72rem] text-muted">Die neue Oberfläche</span>
                 </span>
               </div>
               <span class="inline-flex items-center gap-[7px] text-[.64rem] font-semibold px-[10px] py-[3px] rounded-full bg-blue-soft text-blue">
@@ -81,7 +81,7 @@
 
           <!-- Angebundene Systeme -->
           <div class="rounded-[10px] border border-white/[0.16] bg-white/[0.06] p-[15px] max-[560px]:p-[13px]">
-            <div class="text-[.64rem] font-bold tracking-[0.09em] uppercase text-white/55 mb-[12px] text-center">Ihre bestehenden Systeme</div>
+            <div class="text-[.64rem] font-bold tracking-[0.09em] uppercase text-white/55 mb-[12px] text-center">Bestehende Systeme</div>
             <div class="system-grid grid grid-cols-3 gap-[8px] max-[560px]:grid-cols-2 max-[560px]:gap-[7px]">
               <div v-for="s in systems" :key="s.label"
                    class="rounded-[7px] border border-white/[0.16] bg-white/[0.09] px-[6px] py-[10px] flex flex-col items-center gap-[7px] text-center max-[560px]:flex-row max-[560px]:text-left max-[560px]:px-[10px] max-[560px]:py-[9px] max-[560px]:gap-[8px]">
