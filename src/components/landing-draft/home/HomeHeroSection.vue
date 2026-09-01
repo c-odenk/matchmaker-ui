@@ -17,7 +17,7 @@
 
         <h1 class="text-section !leading-[1.2] mt-[16px]">
           Recruiting-Automatisierung, <br>
-          die <span class="text-[#5fa0ea]">dem Urteil des Beraters</span> vertraut.
+          die <span class="text-[#5fa0ea]">Ihrem Urteil</span> vertraut.
         </h1>
 
         <p class="text-lead text-white/[0.82] max-w-[590px] mt-[20px] max-[1000px]:mx-auto">
