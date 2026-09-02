@@ -8,7 +8,7 @@
 
       <div class="two-text">
         <EyebrowBadge>Telefonie</EyebrowBadge>
-        <h2 class="text-section text-ink mt-[7px] mb-[14px]">Gewählt wird aus dem Profil, <span class="text-blue">gesprochen über den Rechner.</span></h2>
+        <h2 class="text-section !text-[clamp(1.25rem,0.98rem+0.9vw,1.5625rem)] text-ink mt-[5px] mb-[14px]">Gewählt wird aus dem Profil, <span class="text-blue">gesprochen über den Rechner.</span></h2>
         <p class="text-[.95rem] text-body leading-[1.65] max-w-[620px]">
           Eckdaten und offene Punkte stehen während des Gesprächs daneben. Nichts muss nachgeschlagen werden.
         </p>

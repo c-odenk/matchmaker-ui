@@ -15,7 +15,7 @@
 
       <div class="two-text">
         <EyebrowBadge>Microsoft Teams</EyebrowBadge>
-        <h2 class="text-section text-ink mt-[7px] mb-[14px]">Termine anlegen – <span class="text-blue">und das Gespräch auswerten.</span></h2>
+        <h2 class="text-section !text-[clamp(1.25rem,0.98rem+0.9vw,1.5625rem)] text-ink mt-[5px] mb-[14px]">Termine anlegen – <span class="text-blue">und das Gespräch auswerten.</span></h2>
         <p class="text-[.95rem] text-body leading-[1.65] max-w-[620px]">
           Termine entstehen aus dem Vorgang heraus. Aus dem Transkript werden Profilvorschläge – übernommen wird nur, was Sie bestätigen.
         </p>

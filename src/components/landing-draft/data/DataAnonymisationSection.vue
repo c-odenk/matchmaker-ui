@@ -45,7 +45,7 @@
 
       <div class="two-text">
         <EyebrowBadge>Anonymisierung</EyebrowBadge>
-        <h2 class="text-section text-ink mt-[7px] mb-[14px]">Bewertet wird die <span class="text-blue">Qualifikation, nicht die Person.</span></h2>
+        <h2 class="text-section !text-[clamp(1.25rem,0.98rem+0.9vw,1.5625rem)] text-ink mt-[5px] mb-[14px]">Bewertet wird die <span class="text-blue">Qualifikation, nicht die Person.</span></h2>
         <p class="text-[.95rem] text-body leading-[1.65] max-w-[620px]">
           Name, Kontaktdaten und Arbeitgeber werden entfernt, bevor ein Profil verarbeitet wird. Wer dahintersteht, weiß nur matchmaker.
         </p>

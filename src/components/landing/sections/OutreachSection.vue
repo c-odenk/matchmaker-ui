@@ -29,7 +29,7 @@
 
       <div class="two-text min-w-0 max-[880px]:order-1 max-[880px]:text-center max-[880px]:max-w-[620px] max-[880px]:mx-auto">
         <EyebrowBadge>Kontaktaufnahme</EyebrowBadge>
-        <h2 class="text-section text-ink mt-[7px] mb-[14px]">Das Anschreiben? <span class="text-blue">Schon formuliert.</span></h2>
+        <h2 class="text-section !text-[clamp(1.25rem,0.98rem+0.9vw,1.5625rem)] text-ink mt-[5px] mb-[14px]">Das Anschreiben? <span class="text-blue">Schon formuliert.</span></h2>
         <p class="text-lead text-body">Der Outreach Agent recherchiert den passenden Ansprechpartner, wählt den Kanal und formuliert eine individuelle Nachricht – versandfertig als Entwurf. Sie prüfen, passen bei Bedarf an und geben frei.</p>
         <FeatureList :items="features" />
       </div>

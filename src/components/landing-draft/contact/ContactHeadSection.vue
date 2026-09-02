@@ -3,7 +3,7 @@
     <div class="wrap">
       <div class="sec-head mx-auto max-w-[660px] text-center">
         <EyebrowBadge>Demo buchen</EyebrowBadge>
-        <h1 class="text-section text-ink mt-[7px]">Ihre persönliche <span class="text-blue">matchmaker-Einführung.</span></h1>
+        <h1 class="text-section !text-[clamp(1.25rem,0.98rem+0.9vw,1.5625rem)] text-ink mt-[5px]">Ihre persönliche <span class="text-blue">matchmaker-Einführung.</span></h1>
         <p class="text-[1.05rem] font-normal leading-[1.5] text-muted mt-[10px]">
           15 Minuten, live mit unserem Team. Wir sehen uns Ihren heutigen Ablauf an, zeigen
           matchmaker in der Praxis und besprechen die Anbindung an Ihre Systeme.
@@ -22,7 +22,7 @@
     <div class="wrap two grid [grid-template-columns:1fr_1.05fr] gap-[52px] items-start max-[1000px]:grid-cols-1 max-[1000px]:gap-[34px]">
       <div class="two-text max-[1000px]:order-2">
         <EyebrowBadge>Ablauf</EyebrowBadge>
-        <h2 class="text-section text-ink mt-[6px] mb-[24px]">Was Sie in der Demo <span class="text-blue">erwartet.</span></h2>
+        <h2 class="text-section !text-[clamp(1.25rem,0.98rem+0.9vw,1.5625rem)] text-ink mt-[5px] mb-[24px]">Was Sie in der Demo <span class="text-blue">erwartet.</span></h2>
 
         <ol class="list-none flex flex-col gap-[14px]">
           <li v-for="(s, i) in steps" :key="s.title"

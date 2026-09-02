@@ -5,7 +5,7 @@
     <div class="wrap two grid [grid-template-columns:1fr_1.1fr] gap-[52px] items-center max-[880px]:grid-cols-1 max-[880px]:gap-[30px]">
       <div class="two-text min-w-0 max-[880px]:text-center max-[880px]:max-w-[620px] max-[880px]:mx-auto">
         <EyebrowBadge>KI-Begründung</EyebrowBadge>
-        <h2 class="text-section text-ink mt-[7px] mb-[14px]">Die KI bereitet vor. <span class="text-blue">Der Berater entscheidet.</span></h2>
+        <h2 class="text-section !text-[clamp(1.25rem,0.98rem+0.9vw,1.5625rem)] text-ink mt-[5px] mb-[14px]">Die KI bereitet vor. <span class="text-blue">Der Berater entscheidet.</span></h2>
         <p class="text-lead text-body">Alle Agenten arbeiten im Hintergrund und legen versandfertige Vorschläge vor. Nichts geht raus, bevor es freigegeben ist.</p>
         <FeatureList :items="features" />
       </div>

@@ -5,7 +5,7 @@
     <div class="wrap">
       <div class="sec-head mx-auto max-w-[660px] text-center mb-10">
         <EyebrowBadge>Aus dem Vorgang</EyebrowBadge>
-        <h2 class="text-section text-ink mt-[7px] mb-[14px]">Ein System statt <span class="text-blue">fünf Anwendungen.</span></h2>
+        <h2 class="text-section !text-[clamp(1.25rem,0.98rem+0.9vw,1.5625rem)] text-ink mt-[5px] mb-[14px]">Ein System statt <span class="text-blue">fünf Anwendungen.</span></h2>
         <p class="text-lead text-body">Nachricht, Anruf, Termin und Auswertung laufen dort, wo der Kandidat steht – ohne Programmwechsel.</p>
       </div>
 

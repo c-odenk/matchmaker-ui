@@ -67,7 +67,7 @@
 
       <div class="two-text max-[880px]:order-1">
         <EyebrowBadge>Der Chat</EyebrowBadge>
-        <h2 class="text-section text-ink mt-[7px] mb-[14px]">Fragen Sie in <span class="text-blue">eigenen Worten.</span></h2>
+        <h2 class="text-section !text-[clamp(1.25rem,0.98rem+0.9vw,1.5625rem)] text-ink mt-[5px] mb-[14px]">Fragen Sie in <span class="text-blue">eigenen Worten.</span></h2>
         <p class="text-[.95rem] text-body leading-[1.65] max-w-[620px]">
           Wer passt zu diesem Mandat, wer kommt aus der Region, für wen fehlt noch eine
           Stelle – gefragt wird im Satz, nicht in Filtermasken.

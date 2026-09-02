@@ -6,7 +6,7 @@
     <div class="wrap">
       <div class="sec-head mx-auto max-w-[660px] text-center mb-11">
         <EyebrowBadge>Freigabe</EyebrowBadge>
-        <h2 class="text-section text-ink mt-[7px] mb-[14px]">Vorschlag, Freigabe, <span class="text-blue">Protokoll.</span></h2>
+        <h2 class="text-section !text-[clamp(1.25rem,0.98rem+0.9vw,1.5625rem)] text-ink mt-[5px] mb-[14px]">Vorschlag, Freigabe, <span class="text-blue">Protokoll.</span></h2>
         <p class="text-[1.05rem] font-normal leading-[1.5] text-muted mt-[10px]">
           Der Assistent führt aus, entscheidet aber nicht. Nichts wird versendet, bevor
           Sie es freigegeben haben – auch nicht auf Anforderung aus dem Chat.

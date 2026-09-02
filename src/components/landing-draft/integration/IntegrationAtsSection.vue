@@ -4,7 +4,7 @@
     <div class="wrap two grid [grid-template-columns:1fr_1.1fr] gap-[52px] items-center max-[880px]:grid-cols-1 max-[880px]:gap-[30px]">
       <div class="two-text">
         <EyebrowBadge>Bewerbersoftware</EyebrowBadge>
-        <h2 class="text-section text-ink mt-[7px] mb-[14px]">Ihre Bewerbersoftware bleibt die <span class="text-blue">führende Datenquelle.</span></h2>
+        <h2 class="text-section !text-[clamp(1.25rem,0.98rem+0.9vw,1.5625rem)] text-ink mt-[5px] mb-[14px]">Ihre Bewerbersoftware bleibt die <span class="text-blue">führende Datenquelle.</span></h2>
         <p class="text-[.95rem] text-body leading-[1.65] max-w-[620px]">
           Stammdaten, Dokumente und Löschfristen bleiben in Ihrem ATS. matchmaker übernimmt den Datensatz, arbeitet damit nach außen und schreibt die Ergebnisse zurück.
         </p>
