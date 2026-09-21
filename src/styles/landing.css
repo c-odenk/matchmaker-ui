@@ -28,6 +28,18 @@
   .two > .two-text > h2 { margin-left: auto; margin-right: auto; }
 }
 
+/* === Kein Querbalken durch die Einblend-Bewegung ===
+   Die Reveal-Zustände schieben Elemente bis zu 44px nach links bzw. rechts.
+   Zwischen rund 600px und 1280px steht der Inhalt fast randbündig – der
+   versetzte Startzustand ragte dort aus dem Sichtfeld und erzeugte einen
+   horizontalen Scrollbalken. `clip` schneidet nur waagerecht ab; es legt
+   keinen eigenen Scroll-Container an, senkrechtes Scrollen bleibt also
+   unverändert. Bewusst auf `main` und nicht auf `html`: dort würde die
+   Regel den klebenden Kopf lösen – `overflow-x: hidden` scheidet ohnehin
+   aus, weil es aus `main` einen eigenen Scroll-Container machen würde.
+   Browser ohne `clip` (Safari < 16) verhalten sich wie bisher. */
+main { overflow-x: clip; }
+
 /* Horizontale Karten-Scroller (Tablet): Scrollbar ausblenden, Wischen bleibt möglich */
 .no-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
 .no-scrollbar::-webkit-scrollbar { display: none; }
