@@ -8,11 +8,12 @@
       </div>
 
       <div class="two-text max-[880px]:order-1">
-        <EyebrowBadge>Telefonie</EyebrowBadge>
+        <EyebrowBadge>Telefonieren</EyebrowBadge>
         <h2 class="text-section !text-[clamp(1.25rem,0.98rem+0.9vw,1.5625rem)] text-ink mt-[5px] mb-[14px]">Anrufen, <span class="text-blue">ohne das Profil zu verlassen.</span></h2>
         <p class="text-[.95rem] text-body leading-[1.65] max-w-[620px]">
           Der Anruf läuft über den Rechner, direkt aus dem Profil. Wer wann erreicht wurde, steht am Vorgang.
         </p>
+        <ProviderRow :items="providers" />
         <FeatureList :items="features" />
       </div>
     </div>
@@ -23,12 +24,15 @@
 import EyebrowBadge from '@/components/ui/EyebrowBadge.vue'
 import FeatureList from '@/components/ui/FeatureList.vue'
 import PhoneCallMockup from '@/components/landing-draft/integration/PhoneCallMockup.vue'
+import ProviderRow from '@/components/ui/ProviderRow.vue'
+import { PHONE_PROVIDERS } from '@/config/channels'
 
 export default {
   name: 'HomePhoneSection',
-  components: { EyebrowBadge, FeatureList, PhoneCallMockup },
+  components: { EyebrowBadge, FeatureList, PhoneCallMockup, ProviderRow },
   data() {
     return {
+      providers: PHONE_PROVIDERS,
       features: [
         'Anruf direkt aus dem Profil, über den Rechner',
         'Eckdaten und offene Punkte stehen währenddessen daneben',

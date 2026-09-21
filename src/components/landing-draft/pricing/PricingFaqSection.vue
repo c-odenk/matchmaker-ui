@@ -49,6 +49,10 @@ export default {
           a: 'Nein. Alle angebundenen Systeme sind in der Enterprise Lizenz enthalten – Bewerbersoftware, Teams, Telefonie, Mailkonto, Jobportale, Handelsregister und Ihre Homepage. Es gibt keine Gebühr je Integration.'
         },
         {
+          q: 'Kostet der WhatsApp-Kanal zusätzlich?',
+          a: 'Die Anbindung nicht, die Nutzung schon – aber nicht bei uns. WhatsApp ist der einzige Kanal, für den Gebühren anfallen: Meta berechnet je Konversation und je Gesprächsminute, direkt an Sie. matchmaker rechnet daran nichts ab und schlägt nichts auf. E-Mail, LinkedIn und Xing verursachen keine solchen Kosten. Voraussetzung ist ein eigenes Meta-Business-Konto, das Sie einmalig einrichten.'
+        },
+        {
           q: 'Muss ich meine Bewerbersoftware ersetzen?',
           a: 'Nein. matchmaker setzt auf Ihre bestehende Bewerbersoftware auf – sie bleibt die rechtlich führende Datenquelle. Ein späterer Wechsel kostet nur eine neue Anbindung, nicht Ihre Arbeitsweise.'
         },

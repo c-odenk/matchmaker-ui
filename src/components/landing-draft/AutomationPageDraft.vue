@@ -10,6 +10,7 @@
 
       <!-- Teil 2 · Was der Berater aus dem Vorgang heraus auslöst -->
       <AutomationChannelsSection />
+      <AutomationOutreachSection />
       <AutomationMailSection />
       <AutomationPhoneSection />
       <AutomationMeetingSection />
@@ -25,9 +26,10 @@
 
 <script>
 // Unterseite „Automatisierungen" (/automatisierungen).
-// Zwei Teile: der Durchlauf, der ohne Anstoß arbeitet – und die vier Kanäle,
-// die der Berater aus dem Vorgang heraus auslöst (E-Mail, Telefonie,
-// Teams-Termin, Gesprächsauswertung). Am Ende laufen beide im selben Verlauf
+// Zwei Teile: der Durchlauf, der ohne Anstoß arbeitet – und das, was der
+// Berater aus dem Vorgang heraus auslöst (Nachricht, Telefonie, Teams-Termin,
+// Gesprächsauswertung). Die Nachricht selbst kennt vier Versandkanäle, siehe
+// AutomationOutreachSection. Am Ende laufen beide Teile im selben Verlauf
 // zusammen.
 import TheHeaderDraft from '@/components/landing-draft/sections/TheHeaderDraft.vue'
 import TheFooter from '@/components/landing/sections/TheFooter.vue'
@@ -37,6 +39,7 @@ import AutomationRunSection from '@/components/landing-draft/automation/Automati
 import AutomationGapsSection from '@/components/landing-draft/automation/AutomationGapsSection.vue'
 import AutomationChannelsSection from '@/components/landing-draft/automation/AutomationChannelsSection.vue'
 import AutomationMailSection from '@/components/landing-draft/automation/AutomationMailSection.vue'
+import AutomationOutreachSection from '@/components/landing-draft/automation/AutomationOutreachSection.vue'
 import AutomationPhoneSection from '@/components/landing-draft/automation/AutomationPhoneSection.vue'
 import AutomationMeetingSection from '@/components/landing-draft/automation/AutomationMeetingSection.vue'
 import AutomationTranscriptSection from '@/components/landing-draft/automation/AutomationTranscriptSection.vue'
@@ -50,7 +53,8 @@ export default {
   components: {
     TheHeaderDraft, TheFooter,
     AutomationHeadSection, AutomationRunSection, AutomationGapsSection,
-    AutomationChannelsSection, AutomationMailSection, AutomationPhoneSection,
+    AutomationChannelsSection, AutomationMailSection, AutomationOutreachSection,
+    AutomationPhoneSection,
     AutomationMeetingSection, AutomationTranscriptSection,
     AutomationTrailSection, AutomationCtaSection
   },

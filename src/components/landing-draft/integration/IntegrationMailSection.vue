@@ -14,11 +14,12 @@
       </div>
 
       <div class="two-text">
-        <EyebrowBadge>E-Mail</EyebrowBadge>
+        <EyebrowBadge>Nachrichten</EyebrowBadge>
         <h2 class="text-section !text-[clamp(1.25rem,0.98rem+0.9vw,1.5625rem)] text-ink mt-[5px] mb-[14px]">Versand aus <span class="text-blue">Ihrem eigenen Postfach.</span></h2>
         <p class="text-[.95rem] text-body leading-[1.65] max-w-[620px]">
           Die Nachricht entsteht im Vorgang, versendet wird über Ihr Konto. Antworten laufen wie gewohnt bei Ihnen auf.
         </p>
+        <ProviderRow :items="channels" />
         <FeatureList :items="features" />
       </div>
     </div>
@@ -29,12 +30,15 @@
 import EyebrowBadge from '@/components/ui/EyebrowBadge.vue'
 import FeatureList from '@/components/ui/FeatureList.vue'
 import IntegrationBlock from '@/components/landing-draft/integration/IntegrationBlock.vue'
+import ProviderRow from '@/components/ui/ProviderRow.vue'
+import { OUTREACH_CHANNELS } from '@/config/channels'
 
 export default {
   name: 'IntegrationMailSection',
-  components: { EyebrowBadge, FeatureList, IntegrationBlock },
+  components: { EyebrowBadge, FeatureList, IntegrationBlock, ProviderRow },
   data() {
     return {
+      channels: OUTREACH_CHANNELS,
       features: [
         'Eigenes Mailkonto, eigener Absender',
         'Entwurf entsteht im Vorgang – gesendet wird erst nach Ihrer Freigabe',

@@ -33,7 +33,7 @@
         <div>
           <div class="text-[.95rem] font-bold text-ink mb-1">Was die Lizenz abdeckt – und was nicht</div>
           <p class="text-[.88rem] text-body leading-[1.6]">
-            Die Lizenz deckt Anbindungen, Agenten und Hosting ab. Nicht enthalten sind die Rechenkosten der KI: die zahlen Sie nutzungsabhängig und ohne Aufschlag direkt an Ihren eigenen KI-Anbieter.
+            Die Lizenz deckt Anbindungen, Agenten und Hosting ab. Nicht enthalten sind die Rechenkosten der KI: die zahlen Sie nutzungsabhängig und ohne Aufschlag direkt an Ihren eigenen KI-Anbieter. Dasselbe gilt für WhatsApp – Meta berechnet Konversationen und Gesprächsminuten direkt an Sie, wir schlagen nichts auf.
           </p>
         </div>
       </div>
@@ -53,7 +53,7 @@ export default {
         {
           title: 'Alle Anbindungen',
           icon: 'M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9',
-          text: 'Bewerbersoftware, Microsoft Teams, Telefonie, Mailkonto, Jobportale, Handelsregister und Ihre Homepage.'
+          text: 'Bewerbersoftware, Microsoft Teams, Telefonie über Twilio, sipgate oder WhatsApp Business, Mailkonto, Jobportale, Handelsregister und Ihre Homepage.'
         },
         {
           title: 'Alle Agenten',

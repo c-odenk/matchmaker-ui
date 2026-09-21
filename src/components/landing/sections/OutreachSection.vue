@@ -31,6 +31,7 @@
         <EyebrowBadge>Kontaktaufnahme</EyebrowBadge>
         <h2 class="text-section !text-[clamp(1.25rem,0.98rem+0.9vw,1.5625rem)] text-ink mt-[5px] mb-[14px]">Das Anschreiben? <span class="text-blue">Schon formuliert.</span></h2>
         <p class="text-lead text-body">Der Outreach Agent recherchiert den passenden Ansprechpartner, wählt den Kanal und formuliert eine individuelle Nachricht – versandfertig als Entwurf. Sie prüfen, passen bei Bedarf an und geben frei.</p>
+        <ProviderRow :items="channels" />
         <FeatureList :items="features" />
       </div>
     </div>
@@ -41,15 +42,19 @@
 import EyebrowBadge from '@/components/ui/EyebrowBadge.vue'
 import FeatureList from '@/components/ui/FeatureList.vue'
 import BrowserFrame from '@/components/ui/BrowserFrame.vue'
+import ProviderRow from '@/components/ui/ProviderRow.vue'
+import { OUTREACH_CHANNELS } from '@/config/channels'
 
 export default {
   name: 'OutreachSection',
-  components: { EyebrowBadge, FeatureList, BrowserFrame },
+  components: { EyebrowBadge, FeatureList, BrowserFrame, ProviderRow },
   data() {
     return {
+      channels: OUTREACH_CHANNELS,
       features: [
         'Ansprechpartner und Kanal automatisch ermittelt',
         'Individuell formulierter Betreff und Text je Kontakt',
+        'Länge passend zum Kanal – die E-Mail darf ausholen, die WhatsApp-Nachricht nicht',
         'Versand erst nach Ihrer Freigabe – „Als versandbereit markieren"'
       ]
     }

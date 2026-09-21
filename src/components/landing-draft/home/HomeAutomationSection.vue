@@ -8,6 +8,7 @@
         <p class="text-[.95rem] text-body leading-[1.65] max-w-[620px]">
           Wiederkehrende Schritte laufen ohne manuellen Anstoß. Am Morgen liegt kein Zwischenstand vor, sondern ein vollständig vorbereiteter Vorschlag.
         </p>
+        <ProviderRow :items="channels" />
         <FeatureList :items="features" />
         <router-link to="/automatisierungen" class="inline-flex items-center gap-[7px] mt-[22px] text-[.92rem] font-semibold text-blue hover:text-blue-hover cursor-pointer max-[880px]:py-[9px]">
           Alle Automatisierungen ansehen
@@ -34,12 +35,15 @@
 <script>
 import EyebrowBadge from '@/components/ui/EyebrowBadge.vue'
 import FeatureList from '@/components/ui/FeatureList.vue'
+import ProviderRow from '@/components/ui/ProviderRow.vue'
+import { OUTREACH_CHANNELS } from '@/config/channels'
 
 export default {
   name: 'HomeAutomationSection',
-  components: { EyebrowBadge, FeatureList },
+  components: { EyebrowBadge, FeatureList, ProviderRow },
   data() {
     return {
+      channels: OUTREACH_CHANNELS,
       features: [
         'Läuft ohne Anstoß, für jeden aktiven Kandidaten',
         'Fehlende Profilangaben werden erkannt und nachgefragt',

@@ -3,11 +3,15 @@
   <section class="sec bg-white">
     <div class="wrap two grid [grid-template-columns:1fr_1.1fr] gap-[52px] items-center max-[880px]:grid-cols-1 max-[880px]:gap-[30px]">
       <div class="two-text">
-        <EyebrowBadge>Telefonie</EyebrowBadge>
+        <EyebrowBadge>Telefonieren</EyebrowBadge>
         <h2 class="text-section !text-[clamp(1.25rem,0.98rem+0.9vw,1.5625rem)] text-ink mt-[5px] mb-[14px]">Anrufen, <span class="text-blue">ohne das Profil zu verlassen.</span></h2>
         <p class="text-[.95rem] text-body leading-[1.65] max-w-[620px]">
           Der Anruf läuft direkt aus dem Kandidatenprofil, über den Browser. Wer wann erreicht wurde, ist am Profil dokumentiert.
         </p>
+        <p class="text-[.95rem] text-body leading-[1.65] max-w-[620px] mt-4">
+          Welcher Anbieter die Verbindung herstellt, entscheiden Sie – und der Wechsel ist jederzeit möglich: Hinterlegte Zugangsdaten bleiben erhalten, und am Gespräch bleibt dokumentiert, worüber es damals lief.
+        </p>
+        <ProviderRow :items="providers" />
         <FeatureList :items="features" />
       </div>
 
@@ -29,12 +33,15 @@
 import EyebrowBadge from '@/components/ui/EyebrowBadge.vue'
 import FeatureList from '@/components/ui/FeatureList.vue'
 import IntegrationBlock from '@/components/landing-draft/integration/IntegrationBlock.vue'
+import ProviderRow from '@/components/ui/ProviderRow.vue'
+import { PHONE_PROVIDERS } from '@/config/channels'
 
 export default {
   name: 'IntegrationPhoneSection',
-  components: { EyebrowBadge, FeatureList, IntegrationBlock },
+  components: { EyebrowBadge, FeatureList, IntegrationBlock, ProviderRow },
   data() {
     return {
+      providers: PHONE_PROVIDERS,
       features: [
         'Anruf direkt aus dem Profil, über den Rechner',
         'Erreichbarkeit und Kontaktstatus stehen am Vorgang',

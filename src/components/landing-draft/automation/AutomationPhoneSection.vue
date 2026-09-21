@@ -7,11 +7,12 @@
       </div>
 
       <div class="two-text">
-        <EyebrowBadge>Telefonie</EyebrowBadge>
+        <EyebrowBadge>Telefonieren</EyebrowBadge>
         <h2 class="text-section !text-[clamp(1.25rem,0.98rem+0.9vw,1.5625rem)] text-ink mt-[5px] mb-[14px]">Gewählt wird aus dem Profil, <span class="text-blue">gesprochen über den Rechner.</span></h2>
         <p class="text-[.95rem] text-body leading-[1.65] max-w-[620px]">
           Eckdaten und offene Punkte stehen während des Gesprächs daneben. Nichts muss nachgeschlagen werden.
         </p>
+        <ProviderRow :items="providers" />
         <FeatureList :items="features" />
       </div>
     </div>
@@ -22,12 +23,15 @@
 import EyebrowBadge from '@/components/ui/EyebrowBadge.vue'
 import FeatureList from '@/components/ui/FeatureList.vue'
 import PhoneCallMockup from '@/components/landing-draft/integration/PhoneCallMockup.vue'
+import ProviderRow from '@/components/ui/ProviderRow.vue'
+import { PHONE_PROVIDERS } from '@/config/channels'
 
 export default {
   name: 'AutomationPhoneSection',
-  components: { EyebrowBadge, FeatureList, PhoneCallMockup },
+  components: { EyebrowBadge, FeatureList, PhoneCallMockup, ProviderRow },
   data() {
     return {
+      providers: PHONE_PROVIDERS,
       features: [
         'Anruf direkt aus dem Profil, ohne eigene Telefonanlage',
         'Notiz, Erreichbarkeit und Kontaktstatus landen am Vorgang',

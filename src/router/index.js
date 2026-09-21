@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import ViewLanding from '../views/View-Landing-Draft.vue'
 
 const DEFAULT_TITLE = 'matchmaker.hr – KI-gestütztes Talentpool-Management für Personalberater'
-const DEFAULT_DESC = 'matchmaker.hr automatisiert die zeitintensiven Schritte im Vermittlungsprozess – Marktanalyse, Matching, Outreach. Human-in-the-Loop: Die KI bereitet vor, der Berater entscheidet und gibt frei.'
+const DEFAULT_DESC = 'matchmaker.hr automatisiert die zeitintensiven Schritte im Vermittlungsprozess – Marktanalyse, Matching, Outreach über E-Mail, LinkedIn, Xing und WhatsApp. Human-in-the-Loop: Die KI bereitet vor, der Berater entscheidet und gibt frei.'
 
 const routes = [
   {
@@ -17,7 +17,7 @@ const routes = [
     component: () => import('../views/View-Integration-Draft.vue'),
     meta: {
       title: 'Integration – matchmaker.hr',
-      description: 'Bewerbersoftware, Postfach, Telefonie, Teams und Recherchequellen laufen in matchmaker an einer Oberfläche zusammen – angebunden statt ersetzt.'
+      description: 'Bewerbersoftware, Postfach, Telefonie über Twilio, sipgate oder WhatsApp Business, Teams und Recherchequellen laufen in matchmaker an einer Oberfläche zusammen – angebunden statt ersetzt.'
     }
   },
   {
@@ -26,7 +26,7 @@ const routes = [
     component: () => import('../views/View-Automation-Draft.vue'),
     meta: {
       title: 'Automatisierungen – matchmaker.hr',
-      description: 'Wiederkehrende Schritte laufen ohne Zutun durch, fehlende Profilangaben werden erkannt und nachgefragt – Telefonie, Termine und Auswertung laufen auf Klick aus dem Vorgang.'
+      description: 'Wiederkehrende Schritte laufen ohne Zutun durch, fehlende Profilangaben werden erkannt und nachgefragt – Nachrichten über E-Mail, LinkedIn, Xing und WhatsApp, Telefonie, Termine und Auswertung laufen auf Klick aus dem Vorgang.'
     }
   },
   {
@@ -35,7 +35,7 @@ const routes = [
     component: () => import('../views/View-Agents-Draft.vue'),
     meta: {
       title: 'Multi-Agentensystem – matchmaker.hr',
-      description: 'Profiling, Market, Matching und Outreach Agent: vier spezialisierte KI-Agenten bereiten jeden Schritt des Vermittlungsprozesses vor – die Freigabe bleibt beim Berater.'
+      description: 'Profiling, Market, Matching und Outreach Agent: vier spezialisierte KI-Agenten bereiten jeden Schritt des Vermittlungsprozesses vor – bis zum versandfertigen Anschreiben für E-Mail, LinkedIn, Xing oder WhatsApp. Die Freigabe bleibt beim Berater.'
     }
   },
   {
