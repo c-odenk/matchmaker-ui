@@ -43,7 +43,6 @@
             <span class="text-[.82rem] text-white/[0.72]">/ Monat</span>
           </div>
           <div class="border-t border-white/[0.13] my-5"></div>
-          <div class="text-[.64rem] font-bold tracking-[0.09em] uppercase text-white/60 mb-[13px]">Leistungen</div>
           <!-- Statt Häkchen je ein Symbol zur Leistung: Die Liste ist der Kern
                der Kachel, die Symbole machen sie überfliegbar. -->
           <ul class="list-none flex flex-col gap-3">
@@ -70,7 +69,6 @@
             <span class="text-[.82rem] text-muted">/ Lizenz &amp; Monat</span>
           </div>
           <div class="border-t border-line my-5"></div>
-          <div class="text-[.64rem] font-bold tracking-[0.09em] uppercase text-muted mb-[13px]">Leistungen</div>
           <ul class="list-none flex flex-col gap-3">
             <li v-for="f in extraFeatures" :key="f" class="flex items-start gap-[10px] text-[.86rem] text-ink leading-[1.4]">
               <span class="shrink-0 w-[18px] h-[18px] mt-[1px] rounded-full bg-[#e7f8ee] text-[#15803d] flex items-center justify-center text-[.64rem]">✓</span>{{ f }}
