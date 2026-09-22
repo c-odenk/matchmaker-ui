@@ -35,19 +35,26 @@
       </div>
     </div>
 
-    <!-- Der angebundene Baustein -->
-    <div class="rounded-[8px] border border-line bg-white px-5 py-4">
-      <div class="flex items-center gap-3">
-        <span class="w-[30px] h-[30px] shrink-0 rounded-lg bg-navy/[0.07] text-navy flex items-center justify-center">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" :d="icon"/></svg>
-        </span>
-        <span class="min-w-0">
-          <span class="block text-[.92rem] font-bold text-ink leading-tight">{{ label }}</span>
-          <span class="block text-[.72rem] text-muted">{{ sub }}</span>
-        </span>
-      </div>
-      <div v-if="chips.length" class="flex flex-wrap gap-[6px] mt-[13px]">
-        <span v-for="c in chips" :key="c" class="text-[.72rem] font-semibold text-body bg-surface border border-line rounded-[4px] px-[8px] py-[2px]">{{ c }}</span>
+    <!-- Der angebundene Baustein.
+         Merkmale stehen rechts neben dem Namen, sobald der Baustein breit
+         genug dafür ist; darunter rutschen sie in eine eigene Zeile. Das
+         entscheidet eine Container-Abfrage und nicht die Fensterbreite: Der
+         Baustein steht mal in einer schmalen Spalte, mal über die volle
+         Breite – die Fensterbreite sagt darüber nichts aus. -->
+    <div class="baustein rounded-[8px] border border-line bg-white px-5 py-4">
+      <div class="kopf flex flex-wrap items-center justify-between gap-x-5 gap-y-[13px]">
+        <div class="flex items-center gap-3 min-w-0">
+          <span class="w-[30px] h-[30px] shrink-0 rounded-lg bg-navy/[0.07] text-navy flex items-center justify-center">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" :d="icon"/></svg>
+          </span>
+          <span class="min-w-0">
+            <span class="block text-[.92rem] font-bold text-ink leading-tight">{{ label }}</span>
+            <span class="block text-[.72rem] text-muted">{{ sub }}</span>
+          </span>
+        </div>
+        <div v-if="chips.length" class="merkmale shrink-0 basis-full flex flex-wrap gap-[6px]">
+          <span v-for="c in chips" :key="c" class="text-[.72rem] font-semibold text-body bg-surface border border-line rounded-[4px] px-[8px] py-[2px]">{{ c }}</span>
+        </div>
       </div>
     </div>
 
@@ -68,3 +75,21 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+/* Der Baustein misst sich selbst: Wie breit er ist, hängt von der Spalte ab,
+   in der er steht – nicht vom Fenster. Ein Baustein in der schmalen Spalte
+   und derselbe über die volle Breite brauchen verschiedene Anordnungen, die
+   Fensterbreite sagt darüber nichts aus. Deshalb eine Container-Abfrage.
+
+   Grundzustand ist die eigene Zeile für die Merkmale; erst ab der Schwelle
+   rücken sie neben den Namen, und wird es dort eng, bricht zuerst die
+   Beschreibung unter dem Namen um. Die Richtung ist mit Absicht so herum:
+   Browser ohne Container-Queries (Safari vor 16) sehen den Grundzustand –
+   also genau das Bild von vorher, statt eines gequetschten Namens. */
+.baustein { container-type: inline-size; }
+@container (min-width: 470px) {
+  .kopf { flex-wrap: nowrap; }
+  .merkmale { flex-basis: auto; }
+}
+</style>
