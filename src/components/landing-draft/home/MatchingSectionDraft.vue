@@ -7,6 +7,7 @@
         <EyebrowBadge>KI-Begründung</EyebrowBadge>
         <h2 class="text-section !text-[clamp(1.25rem,0.98rem+0.9vw,1.5625rem)] text-ink mt-[5px] mb-[14px]">Die KI bereitet vor. <span class="text-blue">Der Berater entscheidet.</span></h2>
         <p class="text-lead text-body">Alle Agenten arbeiten im Hintergrund und legen versandfertige Vorschläge vor. Nichts geht raus, bevor es freigegeben ist.</p>
+        <ProviderRow :items="channels" />
         <FeatureList :items="features" />
       </div>
 
@@ -44,13 +45,16 @@
 import EyebrowBadge from '@/components/ui/EyebrowBadge.vue'
 import FeatureList from '@/components/ui/FeatureList.vue'
 import BrowserFrame from '@/components/ui/BrowserFrame.vue'
+import ProviderRow from '@/components/ui/ProviderRow.vue'
+import { OUTREACH_CHANNELS } from '@/config/channels'
 
 export default {
   name: 'MatchingSectionDraft',
-  components: { EyebrowBadge, FeatureList, BrowserFrame },
+  components: { EyebrowBadge, FeatureList, BrowserFrame, ProviderRow },
   data() {
     return {
       kiExpanded: false,
+      channels: OUTREACH_CHANNELS,
       features: [
         'Pro Kandidat automatisch gefundene Vakanzen mit Match-Score',
         'Nachvollziehbare KI-Begründung zu jedem Treffer',
