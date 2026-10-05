@@ -153,7 +153,7 @@
     <h2>8. KI-gestützte Verarbeitung</h2>
     <p>
       Für die Bewertung von Profilen, die Marktanalyse und die Erstellung von Textentwürfen
-      nutzt die Plattform ein KI-Sprachmodell. Die Aufrufe erfolgen über die
+      nutzt die Plattform ein KI-Sprachmodell. Standardmäßig erfolgen die Aufrufe über die
       <strong>Claude&nbsp;API der Anthropic&nbsp;PBC, San Francisco, USA</strong>. Damit findet
       insoweit eine Übermittlung in ein Drittland statt. Grundlage sind die mit Anthropic
       geschlossenen Standardvertragsklauseln der EU-Kommission nach Art.&nbsp;46 Abs.&nbsp;2
@@ -161,8 +161,13 @@
     </p>
     <p>
       Wahlweise kann der Kunde den Aufruf über seinen eigenen API-Schlüssel abwickeln
-      („Bring&nbsp;Your&nbsp;Own&nbsp;Key"). Das Vertragsverhältnis mit dem KI-Anbieter besteht
-      dann unmittelbar zwischen dem Kunden und dem Anbieter.
+      („Bring&nbsp;Your&nbsp;Own&nbsp;Key"). Hinterlegt werden kann ein Schlüssel für die
+      <strong>Claude&nbsp;API der Anthropic&nbsp;PBC</strong> oder für die
+      <strong>API von OpenAI</strong> (OpenAI,&nbsp;L.L.C., San Francisco, USA, bzw. deren
+      europäische Gesellschaft OpenAI Ireland&nbsp;Ltd., Dublin, Irland). Das
+      Vertragsverhältnis mit dem gewählten KI-Anbieter besteht dann unmittelbar zwischen dem
+      Kunden und dem Anbieter; nach diesem Vertrag richten sich auch die Garantien für eine
+      etwaige Übermittlung in ein Drittland.
     </p>
     <p>
       Für diese Verarbeitung gilt:
@@ -211,6 +216,11 @@
     <p>
       Mit allen eingesetzten Dienstleistern bestehen Auftragsverarbeitungsverträge nach
       Art.&nbsp;28 DSGVO, bei Drittlandbezug ergänzt um Standardvertragsklauseln.
+    </p>
+    <p>
+      Nutzt der Kunde Bring&nbsp;Your&nbsp;Own&nbsp;Key, ruft die Plattform den von ihm gewählten
+      KI-Anbieter – Anthropic oder OpenAI – mit dem Schlüssel des Kunden auf. Grundlage ist
+      dann der Vertrag zwischen dem Kunden und dem Anbieter (siehe Abschnitt&nbsp;8).
     </p>
 
     <h2>10. Speicherdauer</h2>

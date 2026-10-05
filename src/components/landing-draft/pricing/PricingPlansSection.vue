@@ -17,7 +17,16 @@
         <!-- Bring Your Own Key: Abrechnungsoption, kein eigener Tarif -->
         <div class="pcardx flex flex-col rounded-[11px] px-7 py-[30px] bg-white border border-line shadow-price order-3 min-[700px]:order-3 min-[700px]:col-span-2 min-[881px]:order-1 min-[881px]:col-span-1 min-[700px]:max-[880px]:flex-row min-[700px]:max-[880px]:items-center min-[700px]:max-[880px]:gap-8">
           <div class="min-[700px]:max-[880px]:flex-1">
-            <div class="flex items-center h-[24px] mb-[10px]"><span class="text-[.64rem] font-bold tracking-[0.09em] uppercase text-muted">Abrechnung der KI</span></div>
+            <!-- Wo die Enterprise-Kachel ihr Badge trägt, stehen hier die beiden
+                 wählbaren KI-Anbieter – gleiche Pillenform, einfarbig in Navy. -->
+            <div class="flex items-center justify-between gap-3 h-[24px] mb-[10px]">
+              <span class="text-[.64rem] font-bold tracking-[0.09em] uppercase text-muted">Abrechnung der KI</span>
+              <span class="inline-flex items-center gap-[10px] h-[24px] px-[10px] rounded-full bg-navy/[0.06] text-navy">
+                <span v-for="p in aiProviders" :key="p.name" role="img" :aria-label="p.label" :title="p.label" class="inline-flex">
+                  <ProviderMark :name="p.name" :size="13" />
+                </span>
+              </span>
+            </div>
             <div class="text-[1.18rem] font-bold">Bring Your Own Key</div>
             <div class="text-[.85rem] text-body mt-[7px] leading-[1.5] min-h-[48px]">Direkte Abrechnung über den eigenen API-Account, ohne weitere Aufschläge.</div>
             <div class="flex items-baseline flex-wrap gap-x-[6px] mt-[18px]"><b class="text-[1.9rem] font-extrabold tracking-[-0.02em] whitespace-nowrap leading-none">Kostenlos</b></div>
@@ -82,8 +91,11 @@
 </template>
 
 <script>
+import ProviderMark from '@/components/ui/ProviderMark.vue'
+
 export default {
   name: 'PricingPlansSection',
+  components: { ProviderMark },
   data() {
     return {
       loginUrl: process.env.VUE_APP_DASHBOARD_URL || '#',
@@ -123,8 +135,14 @@ export default {
         'Skalierbar je zusätzlicher Mitarbeiter',
         'Monatlich kündbar, keine Mindestlaufzeit'
       ],
+      // Für Bring Your Own Key hinterlegt der Kunde wahlweise einen Schlüssel
+      // von Anthropic oder OpenAI.
+      aiProviders: [
+        { name: 'anthropic', label: 'Anthropic' },
+        { name: 'openai', label: 'OpenAI' }
+      ],
       byokFeatures: [
-        'Eigener KI-API-Schlüssel erforderlich',
+        'Eigener API-Schlüssel von Anthropic oder OpenAI',
         'Direkte Abrechnung beim Anbieter',
         'Keine versteckten Aufschläge oder Margen',
         'Volle Transparenz über die eigene Nutzung'
