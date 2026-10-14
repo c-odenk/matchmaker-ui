@@ -4,8 +4,8 @@
     <h2>§ 1 Geltungsbereich</h2>
     <p>
       Diese Allgemeinen Geschäftsbedingungen gelten für alle Verträge zwischen
-      {{ legalInfo.company }}, {{ legalInfo.street }}, {{ legalInfo.zip }} {{ legalInfo.city }}
-      (nachfolgend „Anbieter") und ihren Kunden über die Nutzung der Software-Plattform
+      {{ legalInfo.anbieter }}, {{ legalInfo.street }}, {{ legalInfo.zip }} {{ legalInfo.city }}
+      (nachfolgend „Anbieter") und seinen Kunden über die Nutzung der Software-Plattform
       matchmaker.hr.
     </p>
     <p>
@@ -24,7 +24,7 @@
     <p>Der Leistungsumfang umfasst insbesondere:</p>
     <ul>
       <li><strong>Multi-Agenten-System</strong> aus vier aufeinander aufbauenden Schritten:
-        Profiling Agent (Auslesen von Lebensläufen, Erstellung anonymisierter
+        Profiling Agent (Auslesen von Lebensläufen, Erstellung strukturierter
         Qualifikationsprofile, Erkennen fehlender Angaben), Market Agent (fortlaufende
         Identifikation offener Stellen aus öffentlich zugänglichen Quellen), Matching Agent
         (semantische Bewertung der Passung mit nachvollziehbarer Begründung) und Outreach Agent
@@ -75,9 +75,10 @@
         Mitarbeiter-Lizenzen, des Hostings und des vollständigen Multi-Agenten-Systems.</li>
       <li><strong>Zusätzliche Mitarbeiter-Lizenzen:</strong> Erweiterung der Enterprise Lizenz
         je zusätzlicher Lizenz und Monat.</li>
-      <li><strong>Bring Your Own Key:</strong> Abrechnungsoption, bei der die Nutzung der
-        KI-Funktionen über den eigenen API-Schlüssel des Kunden erfolgt. Die Abrechnung der
-        KI-Nutzung erfolgt dann unmittelbar zwischen dem Kunden und dem KI-Anbieter; der
+      <li><strong>Bring Your Own Key:</strong> Die KI-Funktionen laufen über den eigenen
+        API-Schlüssel des Kunden bei Anthropic oder OpenAI; ohne hinterlegten Schlüssel stehen
+        sie nicht zur Verfügung. Die Abrechnung der KI-Nutzung erfolgt unmittelbar zwischen dem
+        Kunden und dem KI-Anbieter; der
         Anbieter erhebt hierauf keine Aufschläge und übernimmt keine Verantwortung für die
         Konditionen des Drittanbieters. Ein kostenloser Funktionsumfang ist damit nicht
         verbunden.</li>
@@ -145,12 +146,18 @@
     </p>
     <p>
       Speicherung und Hosting erfolgen ausschließlich auf Servern innerhalb der Europäischen
-      Union. Für die Auswertung durch das KI-Sprachmodell werden Daten an die Claude&nbsp;API
-      der Anthropic&nbsp;PBC, USA, übermittelt; dabei werden Name, Kontaktdaten und Arbeitgeber
-      zuvor entfernt. Grundlage der Übermittlung sind Standardvertragsklauseln nach
-      Art.&nbsp;46 Abs.&nbsp;2 lit.&nbsp;c DSGVO. Die übermittelten Inhalte werden nicht zum
-      Training von KI-Modellen verwendet. Einzelheiten regeln die Datenschutzerklärung und der
-      Auftragsverarbeitungsvertrag.
+      Union. Für die KI-Funktionen ruft die Plattform den vom Kunden gewählten KI-Anbieter
+      (Anthropic oder OpenAI) mit dem Schlüssel des Kunden auf; das Vertragsverhältnis über
+      die KI-Nutzung einschließlich der Garantien für eine Übermittlung in ein Drittland besteht
+      unmittelbar zwischen dem Kunden und dem KI-Anbieter. Für Matching, Anschreiben und Exposé
+      werden Name, Kontaktdaten und Arbeitgeber zuvor entfernt. Einzelheiten – auch zu den
+      Ausnahmen beim Auslesen von Lebensläufen und bei Gesprächstranskripten – regeln die
+      Datenschutzerklärung und der Auftragsverarbeitungsvertrag.
+    </p>
+    <p>
+      Führend für Löschfristen ist die angebundene Bewerbersoftware des Kunden: Wird dort ein
+      Kandidat gelöscht, löscht die Plattform das zugehörige Profil samt verknüpfter Daten beim
+      nächsten Abgleich.
     </p>
 
     <h2>§ 11 Haftung</h2>

@@ -47,7 +47,7 @@
         <EyebrowBadge>Anonymisierung</EyebrowBadge>
         <h2 class="text-section !text-[clamp(1.25rem,0.98rem+0.9vw,1.5625rem)] text-ink mt-[5px] mb-[14px]">Bewertet wird die <span class="text-blue">Qualifikation, nicht die Person.</span></h2>
         <p class="text-[.95rem] text-body leading-[1.65] max-w-[620px]">
-          Name, Kontaktdaten und Arbeitgeber werden entfernt, bevor ein Profil verarbeitet wird. Wer dahintersteht, weiß nur matchmaker.
+          Name, Kontaktdaten und Arbeitgeber werden entfernt, bevor ein Profil bewertet wird. Wer dahintersteht, weiß nur matchmaker. Einzige Ausnahme ist das Auslesen eines hochgeladenen Lebenslaufs: Dafür sieht die KI das Dokument einmal vollständig.
         </p>
         <FeatureList :items="features" />
       </div>
@@ -65,7 +65,7 @@ export default {
   data() {
     return {
       features: [
-        'Name, Kontakt und Arbeitgeber werden vor dem KI-Aufruf entfernt',
+        'Name, Kontakt und Arbeitgeber werden vor der Bewertung entfernt',
         'Das Exposé an die suchende Firma geht ebenfalls anonym hinaus',
         'Die Zuordnung zum Klarnamen passiert nur in matchmaker'
       ],

@@ -3,7 +3,7 @@
 
     <h2>1. Verantwortlicher</h2>
     <address>
-      {{ legalInfo.company }}<br>
+      {{ legalInfo.anbieter }}<br>
       {{ legalInfo.street }}<br>
       {{ legalInfo.zip }} {{ legalInfo.city }}<br>
       E-Mail: <a :href="`mailto:${legalInfo.email}`">{{ legalInfo.email }}</a>
@@ -85,8 +85,15 @@
       Kandidatendaten stammen entweder aus der angebundenen Bewerbersoftware des Kunden oder
       werden von ihm in der Plattform angelegt. Verarbeitet werden insbesondere Lebenslauf-
       und Qualifikationsdaten, Kontaktdaten, Angaben zu Verfügbarkeit und Gehaltsrahmen sowie
-      der Stand der Vermittlung. Aus dem Lebenslauf erstellt die Plattform ein strukturiertes,
-      anonymisiertes Qualifikationsprofil.
+      der Stand der Vermittlung. Aus dem Lebenslauf erstellt die Plattform ein strukturiertes
+      Qualifikationsprofil.
+    </p>
+    <p>
+      Für dieses Auslesen übergibt die Plattform den Lebenslauf einmal vollständig an das
+      KI-Sprachmodell (Abschnitt&nbsp;8) – sonst ließen sich Name und Kontaktdaten nicht in das
+      Profil übernehmen. Angaben wie Geburtsdatum, Alter, Familienstand, Staatsangehörigkeit,
+      Religion oder Gesundheit werden nicht in das Profil übernommen. Das hochgeladene
+      Originaldokument speichert die Plattform nicht.
     </p>
 
     <h3>6.2 Daten aus öffentlich zugänglichen Quellen</h3>
@@ -137,6 +144,13 @@
       Vorschlag bestätigt.
     </p>
     <p>
+      Vor der Auswertung ersetzt die Plattform die Namen der Gesprächsteilnehmer durch ihre
+      Rolle – etwa „Kandidat“, „Berater“ oder „Ansprechpartner“ – und entfernt E-Mail-Adressen,
+      Telefonnummern und Links. Das gilt für Transkripte aus Microsoft&nbsp;Teams und für
+      hochgeladene Transkripte im Text-, VTT- oder Word-Format. Transkripte im PDF-Format
+      lassen sich nicht schwärzen und werden unverändert übergeben.
+    </p>
+    <p>
       Auf die Transkription wird bereits in der Termineinladung und zu Beginn des Termins
       hingewiesen. Für die Rechtsgrundlage der Transkription und für die Information der
       Gesprächsteilnehmer ist der Kunde als Verantwortlicher zuständig.
@@ -153,36 +167,47 @@
     <h2>8. KI-gestützte Verarbeitung</h2>
     <p>
       Für die Bewertung von Profilen, die Marktanalyse und die Erstellung von Textentwürfen
-      nutzt die Plattform ein KI-Sprachmodell. Standardmäßig erfolgen die Aufrufe über die
-      <strong>Claude&nbsp;API der Anthropic&nbsp;PBC, San Francisco, USA</strong>. Damit findet
-      insoweit eine Übermittlung in ein Drittland statt. Grundlage sind die mit Anthropic
-      geschlossenen Standardvertragsklauseln der EU-Kommission nach Art.&nbsp;46 Abs.&nbsp;2
-      lit.&nbsp;c DSGVO nebst ergänzenden Schutzmaßnahmen.
+      nutzt die Plattform ein KI-Sprachmodell. Die Aufrufe erfolgen ausschließlich über den
+      API-Schlüssel, den der Kunde selbst hinterlegt („Bring&nbsp;Your&nbsp;Own&nbsp;Key“).
+      Hinterlegt werden kann ein Schlüssel für die
+      <strong>Claude&nbsp;API der Anthropic&nbsp;PBC, San Francisco, USA</strong>, oder für die
+      <strong>API von OpenAI</strong> (OpenAI,&nbsp;L.L.C., San Francisco, USA, bzw. deren
+      europäische Gesellschaft OpenAI Ireland&nbsp;Ltd., Dublin, Irland). Ohne hinterlegten
+      Schlüssel findet keine KI-Verarbeitung statt; ein Rückgriff auf einen Zugang von
+      matchmaker.hr ist nicht vorgesehen.
     </p>
     <p>
-      Wahlweise kann der Kunde den Aufruf über seinen eigenen API-Schlüssel abwickeln
-      („Bring&nbsp;Your&nbsp;Own&nbsp;Key"). Hinterlegt werden kann ein Schlüssel für die
-      <strong>Claude&nbsp;API der Anthropic&nbsp;PBC</strong> oder für die
-      <strong>API von OpenAI</strong> (OpenAI,&nbsp;L.L.C., San Francisco, USA, bzw. deren
-      europäische Gesellschaft OpenAI Ireland&nbsp;Ltd., Dublin, Irland). Das
-      Vertragsverhältnis mit dem gewählten KI-Anbieter besteht dann unmittelbar zwischen dem
-      Kunden und dem Anbieter; nach diesem Vertrag richten sich auch die Garantien für eine
-      etwaige Übermittlung in ein Drittland.
+      Das Vertragsverhältnis mit dem gewählten KI-Anbieter besteht unmittelbar zwischen dem
+      Kunden und dem Anbieter. Nach diesem Vertrag richten sich auch die Garantien für die
+      Übermittlung in ein Drittland, die mit dem Aufruf verbunden sein kann.
     </p>
     <p>
       Für diese Verarbeitung gilt:
     </p>
     <ul>
       <li>
-        <strong>Übermittlung ohne Klarnamen.</strong> Name, Kontaktdaten und Arbeitgeber werden
-        entfernt, bevor ein Profil an das Sprachmodell übergeben wird. Übermittelt wird die
-        Qualifikation, nicht die Person; die Zuordnung zum Klarnamen erfolgt ausschließlich
-        innerhalb von matchmaker.hr.
+        <strong>Bewertung ohne Klarnamen.</strong> Für Matching, Anschreiben und Exposé werden
+        Name, Kontaktdaten und Arbeitgeber entfernt, bevor ein Profil an das Sprachmodell
+        übergeben wird. Angaben wie Geburtsdatum, Familienstand oder Staatsangehörigkeit
+        werden ebenfalls entfernt. Übermittelt wird die Qualifikation, nicht die Person; die
+        Zuordnung zum Klarnamen erfolgt ausschließlich innerhalb von matchmaker.hr.
       </li>
       <li>
-        <strong>Keine Nutzung zum Training.</strong> Übermittelte Inhalte werden vom KI-Anbieter
-        nicht zum Training seiner Modelle verwendet. Eine vorübergehende Speicherung zur
-        Missbrauchserkennung beim Anbieter bleibt davon unberührt.
+        <strong>Assistent mit Kürzeln.</strong> Im KI-Assistenten ersetzt die Plattform die
+        Namen von Kandidaten durch Kürzel, bevor eine Anfrage an das Sprachmodell geht, und
+        löst sie erst in der Antwort wieder auf.
+      </li>
+      <li>
+        <strong>Ausnahmen.</strong> Beim Auslesen eines Lebenslaufs sieht das Sprachmodell das
+        Dokument vollständig (Abschnitt&nbsp;6.1). Gesprächstranskripte werden vor der
+        Auswertung geschwärzt, Transkripte im PDF-Format jedoch unverändert übergeben
+        (Abschnitt&nbsp;6.5).
+      </li>
+      <li>
+        <strong>Keine Nutzung zum Training.</strong> Nach den API-Bedingungen von Anthropic und
+        OpenAI werden über die API übermittelte Inhalte nicht zum Training der Modelle verwendet;
+        maßgeblich ist der Vertrag des Kunden mit dem Anbieter. Eine vorübergehende Speicherung
+        zur Missbrauchserkennung beim Anbieter bleibt davon unberührt.
       </li>
       <li>
         <strong>Keine Speicherung des Modells.</strong> Die Daten werden nur für die Dauer des
@@ -196,8 +221,9 @@
         Entscheidung im Sinne des Art.&nbsp;22 DSGVO findet nicht statt.
       </li>
       <li>
-        <strong>Nachvollziehbarkeit.</strong> Bewertung, Begründung und Zeitpunkt werden
-        protokolliert und bleiben nachvollziehbar.
+        <strong>Nachvollziehbarkeit.</strong> Bewertung, Begründung, Zeitpunkt sowie Modell-
+        und Prompt-Version werden protokolliert. Zu jeder gespeicherten Bewertung lässt sich ein
+        Bericht erzeugen, der die Urteile je Kriterium mit ihren Belegen zeigt.
       </li>
     </ul>
 
@@ -210,7 +236,6 @@
     </p>
     <ul>
       <li>Hosting und Datenbankbetrieb – Serverstandort Europäische Union</li>
-      <li>Anthropic&nbsp;PBC, USA – Aufruf des KI-Sprachmodells (siehe Abschnitt 8)</li>
       <li>Zahlungsdienstleister – Abwicklung der Lizenzgebühren</li>
     </ul>
     <p>
@@ -218,9 +243,9 @@
       Art.&nbsp;28 DSGVO, bei Drittlandbezug ergänzt um Standardvertragsklauseln.
     </p>
     <p>
-      Nutzt der Kunde Bring&nbsp;Your&nbsp;Own&nbsp;Key, ruft die Plattform den von ihm gewählten
-      KI-Anbieter – Anthropic oder OpenAI – mit dem Schlüssel des Kunden auf. Grundlage ist
-      dann der Vertrag zwischen dem Kunden und dem Anbieter (siehe Abschnitt&nbsp;8).
+      Den KI-Anbieter – Anthropic oder OpenAI – ruft die Plattform mit dem Schlüssel des
+      Kunden auf. Grundlage ist der Vertrag zwischen dem Kunden und dem Anbieter
+      (siehe Abschnitt&nbsp;8).
     </p>
 
     <h2>10. Speicherdauer</h2>
@@ -229,8 +254,18 @@
       erforderlich ist oder gesetzliche Aufbewahrungspflichten (handels- und steuerrechtliche
       Fristen von 6 bzw. 10 Jahren) bestehen. Für Daten, die wir im Auftrag eines Kunden
       verarbeiten, gelten dessen Löschfristen; die Personalakte und die dortigen Fristen bleiben
-      in der Bewerbersoftware des Kunden. Nach Vertragsende stellen wir die Daten für 30 Tage
-      zum Export bereit und löschen sie anschließend.
+      in der Bewerbersoftware des Kunden.
+    </p>
+    <p>
+      Führend ist dabei die angebundene Bewerbersoftware: Wird ein Kandidat dort gelöscht,
+      löscht die Plattform das Profil beim nächsten Abgleich automatisch – samt Bewertungen,
+      Nachrichten, Gesprächsnotizen und Protokollen. Der Kunde kann ein Profil außerdem
+      jederzeit selbst vollständig löschen und eine Auskunft über alle dazu gespeicherten Daten
+      erzeugen. Zurück bleibt nur ein Löschnachweis ohne Namen und Profildaten.
+    </p>
+    <p>
+      Nach Vertragsende stellen wir die Daten für 30 Tage zum Export bereit und löschen sie
+      anschließend.
     </p>
 
     <h2>11. Ihre Rechte</h2>

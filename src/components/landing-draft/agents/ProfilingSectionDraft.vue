@@ -7,7 +7,7 @@
       <div class="two-text min-w-0 max-[880px]:text-center max-[880px]:max-w-[620px] max-[880px]:mx-auto">
         <EyebrowBadge>Ihre Talente</EyebrowBadge>
         <h2 class="text-section !text-[clamp(1.25rem,0.98rem+0.9vw,1.5625rem)] text-ink mt-[5px] mb-[14px]">Aus jedem Lebenslauf wird ein <span class="text-blue">strukturiertes Profil.</span></h2>
-        <p class="text-lead text-body">Der Profiling Agent liest die Daten aus und erstellt ein anonymisiertes Qualifikationsprofil – aus dem ATS oder hier angelegt.</p>
+        <p class="text-lead text-body">Der Profiling Agent liest die Daten aus und erstellt ein strukturiertes Qualifikationsprofil – aus dem ATS oder hier angelegt.</p>
         <FeatureList :items="features" />
       </div>
 
@@ -180,7 +180,7 @@ export default {
       features: [
         'Profile aus der Bewerbersoftware – oder direkt aus PDF, DOC und DOCX',
         'Hier angelegte Kandidaten und Mandate gehen zurück ins ATS',
-        'Strukturiertes, anonymisiertes Qualifikationsprofil in Sekunden',
+        'Strukturiertes Qualifikationsprofil in Sekunden',
         'Suchkriterien für Market- und Matching-Agent entstehen automatisch'
       ],
       labels: ['Kandidat hinzufügen', 'Lebenslauf auswählen', 'KI extrahiert die Daten', 'Profil erstellt']

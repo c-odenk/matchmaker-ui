@@ -28,8 +28,8 @@
         <div>
           <div class="text-[.95rem] font-bold text-ink mb-1">Wo die Daten heute liegen</div>
           <p class="text-[.88rem] text-body leading-[1.6]">
-            Stammdaten und Originaldokumente bleiben in Ihrer Bewerbersoftware. Für die matchmaker-Datenbank ist der <b class="font-semibold text-ink">Serverstandort wählbar</b>.
-            Die KI-Verarbeitung läuft derzeit über einen Dienst, der <b class="font-semibold text-ink">außerhalb der EU rechnet</b> – ausschließlich ohne Klarnamen und nur für die Dauer des Aufrufs.
+            Stammdaten und Originaldokumente bleiben in Ihrer Bewerbersoftware. Die matchmaker-Datenbank liegt <b class="font-semibold text-ink">in der EU</b>; was in der Bewerbersoftware gelöscht wird, löscht matchmaker beim nächsten Abgleich mit.
+            Die KI-Verarbeitung läuft derzeit über einen Dienst, der <b class="font-semibold text-ink">außerhalb der EU rechnet</b> – beim Matching und bei Anschreiben ohne Klarnamen, im Assistenten mit Kürzeln und nur für die Dauer des Aufrufs. Einzig das Auslesen eines hochgeladenen Lebenslaufs sieht das ganze Dokument.
             Ein lokales Modell im eigenen Haus ist vorgesehen; damit verlassen Kandidatendaten das Haus nicht mehr.
           </p>
         </div>
@@ -49,7 +49,7 @@ export default {
       solved: [
         { ref: 'Art. 22 DSGVO', title: 'Keine automatische Entscheidung', text: 'Versand, Profiländerung und Statuswechsel gibt immer ein Mensch frei.' },
         { ref: 'Art. 5 DSGVO', title: 'Bewertung ohne Klarnamen', text: 'Name, Kontakt und Arbeitgeber werden vor dem KI-Aufruf entfernt.' },
-        { ref: 'Rechenschaft', title: 'Jeder Schritt protokolliert', text: 'Bewertung, Begründung und Zeitpunkt bleiben dauerhaft nachvollziehbar.' },
+        { ref: 'Rechenschaft', title: 'Jeder Schritt protokolliert', text: 'Bewertung, Begründung und Zeitpunkt bleiben nachvollziehbar – bis das Profil gelöscht wird.' },
         { ref: '§ 201 StGB', title: 'Keine Gesprächsaufzeichnung', text: 'Telefonate laufen ohne Mitschnitt – technisch gar nicht vorgesehen.' },
         { ref: 'Vertraglich', title: 'Keine Nutzung zum Training', text: 'Übermittelte Daten fließen nicht in fremde Modelle ein.' }
       ]
