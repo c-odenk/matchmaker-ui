@@ -2,14 +2,24 @@
   <LegalPage title="Impressum">
 
     <h2>Angaben gemäß § 5 DDG</h2>
-    <address>
-      {{ legalInfo.company }}<br>
+    <!-- Einzelunternehmen: der Inhaber ist der Anbieter, matchmaker.hr
+         nur die Geschäftsbezeichnung. Bei einer Gesellschaft stehen
+         Firma samt Rechtsform und die vertretungsberechtigte Person. -->
+    <address v-if="legalInfo.rechtsform === 'gesellschaft'">
+      {{ legalInfo.firma }}<br>
       {{ legalInfo.street }}<br>
       {{ legalInfo.zip }} {{ legalInfo.city }}<br>
       {{ legalInfo.country }}
     </address>
-    <p>
-      Vertreten durch: {{ legalInfo.ceo }}
+    <address v-else>
+      {{ legalInfo.inhaber }}<br>
+      {{ legalInfo.geschaeftsbezeichnung }}<br>
+      {{ legalInfo.street }}<br>
+      {{ legalInfo.zip }} {{ legalInfo.city }}<br>
+      {{ legalInfo.country }}
+    </address>
+    <p v-if="legalInfo.vertreter">
+      Vertreten durch: {{ legalInfo.vertreter }}
     </p>
 
     <h2>Kontakt</h2>
@@ -38,17 +48,15 @@
 
     <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
     <p>
-      {{ legalInfo.ceo }}<br>
+      {{ legalInfo.inhaltlichVerantwortlich }}<br>
       {{ legalInfo.street }}<br>
       {{ legalInfo.zip }} {{ legalInfo.city }}
     </p>
 
-    <h2>EU-Streitschlichtung</h2>
-    <p>
-      Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:
-      <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer">https://ec.europa.eu/consumers/odr/</a>.
-      Unsere E-Mail-Adresse finden Sie oben im Impressum.
-    </p>
+    <!-- Kein Abschnitt „EU-Streitschlichtung“ mehr: Die OS-Plattform der
+         EU-Kommission wurde am 20.07.2025 eingestellt, die Hinweispflicht
+         ist entfallen. Ein Link auf die abgeschaltete Plattform wäre
+         eine veraltete Angabe. -->
 
     <h2>Verbraucherstreitbeilegung</h2>
     <p>
