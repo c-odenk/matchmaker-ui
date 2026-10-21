@@ -5,10 +5,20 @@
   command = "npx puppeteer browsers install chrome && npm run build"
   publish = "dist"
 
+# Kein SPA-Fallback (/* -> /index.html 200): Jede öffentliche Seite liegt
+# vorgerendert als eigene Datei vor. Unbekannte Adressen bekommen so die
+# vorgerenderte 404.html mit echtem Status 404 statt der Startseite mit 200.
+
+# Frühere Entwurfspfade zeigen dauerhaft auf die veröffentlichten Seiten.
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+  from = "/entwurf"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/entwurf/*"
+  to = "/:splat"
+  status = 301
 
 # Lang-Cache für gehashte Build-Assets (Dateinamen enthalten Content-Hash)
 [[headers]]
@@ -30,6 +40,13 @@
   for = "/fonts/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+# Alte Redesign-Vorschau: bleibt erreichbar, soll aber nicht in den Index –
+# sie dupliziert Inhalte der Startseite mit veralteten Angaben.
+[[headers]]
+  for = "/landing-preview.html"
+  [headers.values]
+    X-Robots-Tag = "noindex"
 
 # Sicherheits-Header (HSTS, Clickjacking, MIME-Sniffing, Referrer)
 [[headers]]
