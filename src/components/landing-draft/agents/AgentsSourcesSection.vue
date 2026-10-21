@@ -1,23 +1,29 @@
 <template>
-  <!-- 5 · Quellen, die nicht bedient, sondern ausgelesen werden -->
+  <!-- Woher die Kette ihre Treffer zieht. Steht direkt hinter der Übersicht
+       der vier Agenten: erst die Arbeitsgrundlage, dann die Schritte.
+       Zwei Spalten statt vier – und die Kachel waagerecht: Auf halber
+       Seitenbreite stünde ein gestapeltes Symbol allein über zwei Zeilen
+       Text und ließe die rechte Hälfte leer. -->
   <section class="sec bg-white">
     <div class="wrap">
       <div class="sec-head mx-auto max-w-[660px] text-center mb-10">
         <EyebrowBadge>Quellen</EyebrowBadge>
         <h2 class="text-section !text-[clamp(1.25rem,0.98rem+0.9vw,1.5625rem)] text-ink mt-[5px] mb-[14px]">Recherche, die <span class="text-blue">bereits erledigt ist.</span></h2>
-        <p class="text-lead text-body">Angebunden liefern diese Quellen ihre Daten direkt in den Vorgang – Sie sehen das Ergebnis, nicht den Suchweg.</p>
+        <p class="text-lead text-body">Der Market Agent liest diese Quellen laufend aus und legt den Treffer in den Vorgang – Sie sehen das Ergebnis, nicht den Suchweg.</p>
       </div>
 
-      <div class="ben-grid grid gap-[18px] [grid-template-columns:repeat(4,1fr)] max-[880px]:grid-cols-2 max-[560px]:grid-cols-1">
-        <div v-for="s in sources" :key="s.title" class="ben bg-surface border border-line rounded-2xl p-6">
-          <div class="w-[42px] h-[42px] rounded-xl bg-navy text-white flex items-center justify-center mb-4">
+      <div class="ben-grid grid gap-[18px] grid-cols-2 max-[700px]:grid-cols-1">
+        <div v-for="s in sources" :key="s.title" class="ben bg-surface border border-line rounded-2xl p-6 flex items-start gap-[18px] max-[560px]:gap-[14px]">
+          <span class="w-[42px] h-[42px] shrink-0 rounded-xl bg-navy text-white flex items-center justify-center">
             <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" :d="s.icon"/></svg>
+          </span>
+          <div class="min-w-0">
+            <div class="flex items-center gap-2 flex-wrap mb-[6px]">
+              <h3 class="text-[1.02rem] font-bold tracking-[-0.01em] leading-tight">{{ s.title }}</h3>
+              <span v-if="s.status" class="inline-flex items-center text-[.64rem] font-bold tracking-[0.06em] uppercase px-[7px] py-[2px] rounded-full bg-blue-soft text-blue">{{ s.status }}</span>
+            </div>
+            <p class="text-[.88rem] text-body leading-[1.55]">{{ s.text }}</p>
           </div>
-          <div class="flex items-center gap-2 flex-wrap mb-2">
-            <h3 class="text-[1.02rem] font-bold tracking-[-0.01em]">{{ s.title }}</h3>
-            <span v-if="s.status" class="inline-flex items-center text-[.64rem] font-bold tracking-[0.06em] uppercase px-[7px] py-[2px] rounded-full bg-blue-soft text-blue">{{ s.status }}</span>
-          </div>
-          <p class="text-[.88rem] text-body">{{ s.text }}</p>
         </div>
       </div>
     </div>
@@ -28,7 +34,7 @@
 import EyebrowBadge from '@/components/ui/EyebrowBadge.vue'
 
 export default {
-  name: 'IntegrationSourcesSection',
+  name: 'AgentsSourcesSection',
   components: { EyebrowBadge },
   data() {
     return {

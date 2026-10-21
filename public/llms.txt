@@ -9,7 +9,7 @@ Vier spezialisierte KI-Agenten arbeiten dem Berater zu: der Profiling Agent erst
 - [Startseite](https://matchmaker-hr.de/): Positionierung, Vorteile, Vorher/Nachher, Produktblicke und Einstieg in die Plattformseiten.
 - [Integration](https://matchmaker-hr.de/integration): Welche Systeme angebunden werden – angebunden statt ersetzt, jedes einzeln austauschbar.
 - [Daten](https://matchmaker-hr.de/daten): Herkunft der Daten, Anonymisierung vor dem KI-Aufruf, Protokollierung und regulatorische Einordnung.
-- [Multi-Agentensystem](https://matchmaker-hr.de/agenten): Die vier Agenten, ihre Ergebnisse und die Freigabe durch den Berater.
+- [Multi-Agentensystem](https://matchmaker-hr.de/agenten): Die vier Agenten, die Quellen, aus denen der Market Agent liest, ihre Ergebnisse und die Freigabe durch den Berater.
 - [Automatisierungen](https://matchmaker-hr.de/automatisierungen): Was ohne Zutun durchläuft, über welche Kanäle Nachrichten hinausgehen, wie Profillücken geschlossen und Gespräche ausgewertet werden.
 - [KI-Assistent](https://matchmaker-hr.de/ki-assistent): Beta – der Pool als Karte, Fragen an den Bestand und Aufträge an die Agenten im Satz.
 - [Preise](https://matchmaker-hr.de/preise): Ein Preis ohne Staffelung, zusätzliche Lizenzen, Bring Your Own Key für die KI-Kosten.

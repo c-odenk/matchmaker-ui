@@ -7,7 +7,6 @@
       <IntegrationMailSection />
       <IntegrationPhoneSection />
       <IntegrationTeamsSection />
-      <IntegrationSourcesSection />
       <IntegrationCtaSection />
     </main>
     <TheFooter />
@@ -17,8 +16,9 @@
 <script>
 // Unterseite „Integration" (/integration).
 // Reihenfolge: erst das führende System (ATS), dann die Kanäle, die der
-// Berater heute einzeln bedient (Mail, Telefon, Teams), zuletzt die Quellen,
-// die nur ausgelesen werden. Automatisierungen bleiben bewusst flach –
+// Berater heute einzeln bedient (Mail, Telefon, Teams). Die Recherchequellen
+// stehen bei den Agenten, weil sie deren Arbeitsgrundlage sind, nicht etwas,
+// das der Berater bedient. Automatisierungen bleiben bewusst flach –
 // die gehören auf die Unterseite „Automatisierungen".
 import TheHeaderDraft from '@/components/landing-draft/sections/TheHeaderDraft.vue'
 import TheFooter from '@/components/landing/sections/TheFooter.vue'
@@ -28,7 +28,6 @@ import IntegrationAtsSection from '@/components/landing-draft/integration/Integr
 import IntegrationMailSection from '@/components/landing-draft/integration/IntegrationMailSection.vue'
 import IntegrationPhoneSection from '@/components/landing-draft/integration/IntegrationPhoneSection.vue'
 import IntegrationTeamsSection from '@/components/landing-draft/integration/IntegrationTeamsSection.vue'
-import IntegrationSourcesSection from '@/components/landing-draft/integration/IntegrationSourcesSection.vue'
 import IntegrationCtaSection from '@/components/landing-draft/integration/IntegrationCtaSection.vue'
 
 import { setupScrollReveal } from '@/composables/useScrollRevealDraft'
@@ -38,8 +37,7 @@ export default {
   components: {
     TheHeaderDraft, TheFooter,
     IntegrationHeadSection, IntegrationAtsSection, IntegrationMailSection,
-    IntegrationPhoneSection, IntegrationTeamsSection, IntegrationSourcesSection,
-    IntegrationCtaSection
+    IntegrationPhoneSection, IntegrationTeamsSection, IntegrationCtaSection
   },
   mounted() {
     this._cleanupReveal = setupScrollReveal(this.$el)
