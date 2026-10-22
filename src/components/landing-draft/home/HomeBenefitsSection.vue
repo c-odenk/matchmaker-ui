@@ -1,15 +1,16 @@
 <template>
-  <!-- Vorteile zuerst: was der Berater davon hat, bevor es um Technik geht.
+  <!-- Vorteile direkt nach dem Vorher · Nachher: erst der Aufwand, dann was
+       der Berater davon hat, bevor es um Technik geht.
        Bildsprache wie die Kanalübersicht auf /automatisierungen: die Gruppe
        steht in einer grauen Fläche, die Karten darin sind weiß. Bewusst ohne
-       Navy-Kopf und Zuleitungen – die zeigt der Hero direkt darüber schon.
+       Navy-Kopf und Zuleitungen – die zeigt der Hero schon.
        Die Icon-Kachel ist hier voll in Navy gesetzt: Der Abschnitt hat sonst
        keine Farbfläche, das Navy trägt den Akzent. -->
   <section class="sec bg-white">
     <div class="wrap">
       <SectionHeadingDraft eyebrow="Warum matchmaker">
         Ein Ort für alles. <span class="text-blue">Die Entscheidung bleibt beim Berater.</span>
-        <template #lead>Was sich ändert, ist die Arbeit dazwischen.</template>
+        <template #lead>Was sich ändert, ist die Arbeit dazwischen. Recherche, Entwürfe und den Wechsel zwischen Programmen übernimmt matchmaker – Urteil und Freigabe bleiben bei Ihnen.</template>
       </SectionHeadingDraft>
 
       <div class="scope rounded-[11px] border border-line bg-surface p-8 max-[560px]:p-5">

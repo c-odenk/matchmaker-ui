@@ -48,7 +48,7 @@
           <div class="text-[1.18rem] font-bold">Enterprise Lizenz</div>
           <div class="text-[.85rem] text-white/[0.72] mt-[7px] leading-[1.5] min-h-[48px]">Für Personalberater, die ihren gesamten Recruiting-Prozess automatisieren wollen.</div>
           <div class="flex items-baseline flex-wrap gap-x-[6px] mt-[18px]">
-            <b class="text-[1.9rem] font-extrabold tracking-[-0.02em] whitespace-nowrap leading-none">129,00 €</b>
+            <b class="text-[1.9rem] font-extrabold tracking-[-0.02em] whitespace-nowrap leading-none">98,00 €</b>
             <span class="text-[.82rem] text-white/[0.72]">/ Monat</span>
           </div>
           <div class="border-t border-white/[0.13] my-5"></div>
@@ -103,7 +103,7 @@ export default {
       // „Multi-Agenten-System" und „Automatisierungen" dort wiedererkannt werden.
       enterpriseFeatures: [
         {
-          text: '3 Mitarbeiter-Lizenzen',
+          text: '2 Mitarbeiter-Lizenzen',
           icon: 'M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z'
         },
         {

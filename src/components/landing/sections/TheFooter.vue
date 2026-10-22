@@ -1,21 +1,30 @@
 <template>
   <footer class="bg-navy text-white/[0.66] pt-[62px] pb-[34px]">
     <div class="wrap">
-      <div class="foot-grid grid grid-cols-[1.6fr_1fr_1fr_1fr] gap-9 max-[880px]:grid-cols-2 max-[880px]:gap-7 max-[560px]:grid-cols-1 max-[560px]:gap-6">
+      <div class="foot-grid grid grid-cols-[1.3fr_1fr_0.8fr_0.8fr_1.4fr] gap-9 max-[1180px]:grid-cols-3 max-[880px]:grid-cols-2 max-[880px]:gap-7 max-[560px]:grid-cols-1 max-[560px]:gap-6">
         <div>
           <BrandMark dark class="mb-[14px]" />
           <p class="text-[.9rem] max-w-[270px]">Ihr Partner für effizientes Talentpool-Management.</p>
         </div>
 
         <div>
-          <h3 class="text-white text-[.82rem] font-bold tracking-[0.04em] uppercase mb-4">Navigation</h3>
+          <h3 class="text-white text-[.82rem] font-bold tracking-[0.04em] uppercase mb-4">Plattform</h3>
           <ul class="list-none flex flex-col gap-[11px] text-[.9rem]">
             <li><a href="/#hero" @click.prevent="go('hero')" class="hover:text-white">Start</a></li>
             <li><router-link to="/agenten" class="hover:text-white">Multi-Agentensystem</router-link></li>
+            <li><router-link to="/automatisierungen" class="hover:text-white">Automatisierungen</router-link></li>
             <li><router-link to="/integration" class="hover:text-white">Integration</router-link></li>
+            <li><router-link to="/daten" class="hover:text-white">Daten</router-link></li>
             <li><router-link to="/ki-assistent" class="hover:text-white">KI-Assistent</router-link></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-white text-[.82rem] font-bold tracking-[0.04em] uppercase mb-4">Für Sie</h3>
+          <ul class="list-none flex flex-col gap-[11px] text-[.9rem]">
+            <li><router-link to="/ratgeber" class="hover:text-white">Ratgeber</router-link></li>
             <li><router-link to="/preise" class="hover:text-white">Preise</router-link></li>
-            <li><router-link to="/kontakt" class="hover:text-white">Kontakt</router-link></li>
+            <li><router-link to="/kontakt" class="hover:text-white">Demo buchen</router-link></li>
           </ul>
         </div>
 

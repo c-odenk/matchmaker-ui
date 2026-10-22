@@ -3,12 +3,14 @@
     <TheHeaderDraft />
     <main>
       <HomeHeroSection />
-      <HomeBenefitsSection />
       <HomeCompareSection />
+      <HomeBenefitsSection />
       <HomeAutomationSection />
-      <!-- Ein Produktblick als Beleg – die Tiefe liegt auf den Unterseiten -->
+      <!-- Produktblicke als Beleg: Matching, Telefon, Anschreiben – die Tiefe
+           liegt auf den Unterseiten -->
       <MatchingSectionDraft />
       <HomePhoneSection />
+      <HomeOutreachSection />
       <HomePlatformSection />
       <TestimonialsSectionDraft />
       <HomeCtaSection />
@@ -32,6 +34,7 @@ import HomeBenefitsSection from '@/components/landing-draft/home/HomeBenefitsSec
 import HomeAutomationSection from '@/components/landing-draft/home/HomeAutomationSection.vue'
 import HomePlatformSection from '@/components/landing-draft/home/HomePlatformSection.vue'
 import HomeCompareSection from '@/components/landing-draft/home/HomeCompareSection.vue'
+import HomeOutreachSection from '@/components/landing-draft/home/HomeOutreachSection.vue'
 import HomePhoneSection from '@/components/landing-draft/home/HomePhoneSection.vue'
 import HomeCtaSection from '@/components/landing-draft/home/HomeCtaSection.vue'
 
@@ -42,7 +45,7 @@ export default {
   components: {
     TheHeaderDraft, MatchingSectionDraft, TestimonialsSectionDraft, TheFooter,
     HomeHeroSection, HomeBenefitsSection, HomeAutomationSection,
-    HomePlatformSection, HomeCompareSection, HomePhoneSection, HomeCtaSection
+    HomePlatformSection, HomeCompareSection, HomePhoneSection, HomeOutreachSection, HomeCtaSection
   },
   mounted() {
     this._cleanupReveal = setupScrollReveal(this.$el)

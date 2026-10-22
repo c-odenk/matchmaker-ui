@@ -21,3 +21,15 @@ Vier spezialisierte KI-Agenten arbeiten dem Berater zu: der Profiling Agent erst
 ## Kontakt
 
 - [E-Mail an matchmaker.hr](mailto:christopher.odenkirchen@gmail.com): christopher.odenkirchen@gmail.com
+
+## Ratgeber
+
+- [Ratgeber-Übersicht](https://matchmaker-hr.de/ratgeber): Alle Beiträge und Begriffe.
+- [EU AI Act im Recruiting](https://matchmaker-hr.de/ratgeber/eu-ai-act-recruiting): Hochrisiko-Einstufung, Pflichten für Anbieter und Betreiber, Fristen.
+- [Kaltakquise in der Personalvermittlung](https://matchmaker-hr.de/ratgeber/kaltakquise-personalvermittlung): E-Mail, Telefon, LinkedIn und Xing nach § 7 UWG, Umgang mit Kandidatenprofilen.
+- [KI in der Personalberatung](https://matchmaker-hr.de/ratgeber/ki-in-der-personalberatung): Was KI vorbereitet, was beim Berater bleibt, Auswahlkriterien für Werkzeuge.
+- [Kandidatenprofil-Vorlage](https://matchmaker-hr.de/ratgeber/kandidatenprofil-vorlage): Aufbau und Vorlage für ein anonymisiertes Kurzprofil.
+- [MPC-Methode](https://matchmaker-hr.de/ratgeber/mpc-methode): Most Placeable Candidate – Ablauf und rechtliche Grenzen in Deutschland.
+- [Provision in der Personalvermittlung](https://matchmaker-hr.de/ratgeber/provision-personalvermittlung): Übliche Höhe, Modelle, Probezeit, Vermittlungsgutschein.
+- [Personalvermittlung gründen](https://matchmaker-hr.de/ratgeber/personalvermittlung-gruenden): Abgrenzung, Formalien, Datenschutz, Verträge, erste Kunden.
+- [Human in the Loop](https://matchmaker-hr.de/glossar/human-in-the-loop), [Talentpool](https://matchmaker-hr.de/glossar/talentpool), [Active Sourcing](https://matchmaker-hr.de/glossar/active-sourcing): Begriffe erklärt.

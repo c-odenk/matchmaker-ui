@@ -56,7 +56,7 @@ Prerender-Liste in `vue.config.js`.
   Mensch frei – diese Zusage darf keine Sektion unterlaufen.
 - Auf den Kundenseiten wird **nicht** erklärt, *wie* gefiltert, sortiert oder
   in welcher Modellreihenfolge gerechnet wird (Wettbewerbsschutz).
-- Preise: ein Preis, keine Staffelung. Enterprise 129,00 €/Monat,
+- Preise: ein Preis, keine Staffelung. Enterprise 98,00 €/Monat (2 Mitarbeiter inkl.),
   zusätzliche Mitarbeiter 19,99 €/Lizenz, Bring Your Own Key als
   Abrechnungsoption (kein Gratis-Tarif).
 

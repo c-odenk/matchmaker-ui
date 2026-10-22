@@ -12,7 +12,7 @@
     :class="dark ? 'text-white/[0.92]' : 'text-navy'"
   >
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"
-         class="shrink-0 w-[1.22em] h-[1.22em]" :class="dark ? 'text-[#5fa0ea]' : 'text-blue'">
+         class="shrink-0 w-[1.22em] h-[1.22em]" :class="dark ? 'text-[#5fa0ea]' : (rot ? 'text-[#dc2626]' : 'text-blue')">
       <path v-for="(d, i) in symbol" :key="i" stroke-linecap="round" stroke-linejoin="round" :d="d" />
     </svg>
     <slot />
@@ -85,12 +85,15 @@ const SYMBOLE = {
   'Ablauf': P.liste,
   'Am Kandidaten': P.person,
   'Anonymisierung': P.augeAus,
+  'Anschreiben': P.flieger,
   'Auf Klick, jederzeit': P.klick,
   'Aus dem Vorgang': P.ordner,
   'Aus der Praxis': P.sprechblase,
+  'Auskunft und Löschung': P.schloss,
   'Automatisierungen': P.bolt,
   'Bewerbersoftware': P.datenbank,
   'Datenschutz': P.schloss,
+  'Datenschutz bei KI im Recruiting': P.schloss,
   'Demo buchen': P.kalender,
   'Der Aufbau': P.schichten,
   'Der Chat': P.chat,
@@ -102,13 +105,17 @@ const SYMBOLE = {
   'Die Plattform': P.raster,
   'E-Mail': P.brief,
   'Ergebnis': P.haken,
+  'EU AI Act': P.waage,
   'FAQ': P.frage,
+  'Fehler 404': P.frage,
   'Freigabe': P.daumen,
   'Gesprächsauswertung': P.balken,
+  'Glossar': P.buch,
   'Herkunft': P.globus,
   'Ihre Talente': P.personen,
   'KI-Begründung': P.buch,
   'KI-Kosten': P.scheine,
+  'KI-Matching': P.balken,
   'Kontaktaufnahme': P.flieger,
   'Leistungsumfang': P.rasterPlus,
   'Manuell vs. matchmaker.hr': P.tausch,
@@ -116,9 +123,11 @@ const SYMBOLE = {
   'Nachrichten': P.sprechblase,
   'Preise': P.etikett,
   'Quellen': P.lupe,
+  'Ratgeber': P.buch,
   'Regulatorik': P.waage,
   'Reichweite': P.signal,
   'So arbeitet matchmaker.hr': P.regler,
+  'So läuft es': P.liste,
   'Telefonie': P.hoerer,
   'Telefonieren': P.hoerer,
   'Termine': P.uhr,
@@ -126,12 +135,15 @@ const SYMBOLE = {
   'Vollständige Profile': P.ausweis,
   'Vorher · Nachher': P.tausch,
   'Warum matchmaker': P.sparkles,
-  'Warum matchmaker.hr': P.sparkles
+  'Warum matchmaker.hr': P.sparkles,
+  'Was heute Zeit kostet': P.uhr
 }
 
 export default {
   name: 'EyebrowBadge',
   props: {
+    // Rotes Symbol für Abschnitte, die ein Problem benennen (Pain Points).
+    rot: { type: Boolean, default: false },
     dark: { type: Boolean, default: false },
     pill: { type: Boolean, default: false },
     wide: { type: Boolean, default: false }

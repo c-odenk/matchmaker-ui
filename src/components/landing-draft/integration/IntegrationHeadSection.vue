@@ -4,7 +4,7 @@
       <div class="sec-head mx-auto max-w-[680px] text-center mb-[88px] max-[880px]:mb-[58px]">
         <h1 class="text-hero text-ink mb-[14px]">Alle Systeme Ihrer Beratung – <span class="text-blue">an einer Oberfläche.</span></h1>
         <p class="text-lead text-body">
-          Heute wird jedes System einzeln bedient. matchmaker legt sich als Bedienschicht darüber – angebunden statt ersetzt.
+          Heute wird jedes System einzeln bedient. matchmaker legt sich als Bedienschicht darüber – Ihre Bewerbersoftware oder Ihr Recruiting-CRM bleibt, angebunden statt ersetzt.
         </p>
       </div>
 

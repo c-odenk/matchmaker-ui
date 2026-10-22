@@ -2,7 +2,8 @@
   <section class="sec bg-white !pt-[88px] max-[880px]:!pt-[58px]">
     <div class="wrap">
       <div class="sec-head mx-auto max-w-[680px] text-center mb-[88px] max-[880px]:mb-[58px]">
-        <h1 class="text-hero text-ink mb-[14px]">Wo Ihre Daten liegen – <span class="text-blue">und wo nicht.</span></h1>
+        <EyebrowBadge>Datenschutz bei KI im Recruiting</EyebrowBadge>
+        <h1 class="text-hero text-ink mt-[8px] mb-[14px]">Wo Ihre Daten liegen – <span class="text-blue">und wo nicht.</span></h1>
         <p class="text-lead text-body">
           Personalberatung arbeitet mit sensiblen Daten. Deshalb liegt der Weg offen: welche Station was speichert und was nur durchläuft.
         </p>
@@ -59,8 +60,11 @@
 </template>
 
 <script>
+import EyebrowBadge from '@/components/ui/EyebrowBadge.vue'
+
 export default {
   name: 'DataHeadSection',
+  components: { EyebrowBadge },
   data() {
     return {
       stations: [

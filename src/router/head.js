@@ -6,7 +6,7 @@
 
 import { SITE_URL, SITE_NAME, byPath } from '@/config/pages'
 import { legalInfo } from '@/config/legalInfo'
-import { pricingFaq } from '@/config/pricingFaq'
+import { faqsByPath } from '@/config/faqs'
 
 const ORG_ID = `${SITE_URL}/#organization`
 const WEBSITE_ID = `${SITE_URL}/#website`
@@ -103,11 +103,11 @@ function siteGraph() {
       offers: {
         '@type': 'Offer',
         url: `${SITE_URL}/preise`,
-        price: '129.00',
+        price: '98.00',
         priceCurrency: 'EUR',
         priceSpecification: {
           '@type': 'UnitPriceSpecification',
-          price: '129.00',
+          price: '98.00',
           priceCurrency: 'EUR',
           unitText: 'MONTH'
         }
@@ -116,12 +116,22 @@ function siteGraph() {
   ]
 }
 
+// Ratgeber und Glossar hängen unter /ratgeber; alle anderen Seiten direkt
+// unter der Startseite.
+function breadcrumbItems(page, url) {
+  const items = [{ name: 'Startseite', item: `${SITE_URL}/` }]
+  if (page.section) items.push({ name: byPath['/ratgeber'].name, item: `${SITE_URL}/ratgeber` })
+  items.push({ name: page.name, item: url })
+  return items.map((it, i) => ({ '@type': 'ListItem', position: i + 1, ...it }))
+}
+
 function pageGraph(page, url) {
   const nodes = []
   const isHome = page.path === '/'
+  const image = `${SITE_URL}/og/${page.ogImage || 'start'}.png`
 
   nodes.push({
-    '@type': 'WebPage',
+    '@type': page.path === '/ratgeber' ? 'CollectionPage' : 'WebPage',
     '@id': `${url}#webpage`,
     url,
     name: page.title,
@@ -136,18 +146,34 @@ function pageGraph(page, url) {
     nodes.push({
       '@type': 'BreadcrumbList',
       '@id': `${url}#breadcrumb`,
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Startseite', item: `${SITE_URL}/` },
-        { '@type': 'ListItem', position: 2, name: page.name, item: url }
-      ]
+      itemListElement: breadcrumbItems(page, url)
     })
   }
 
-  if (page.path === '/preise') {
+  // Ratgeber und Glossar: Artikel mit Autor und Datum – ein Signal dafür,
+  // wer hinter dem Inhalt steht und wie aktuell er ist.
+  if (page.section) {
+    nodes.push({
+      '@type': 'Article',
+      '@id': `${url}#article`,
+      headline: page.ogHeadline || page.name,
+      description: page.description,
+      image,
+      inLanguage: 'de-DE',
+      datePublished: page.published,
+      dateModified: page.lastmod,
+      author: { '@type': 'Person', name: legalInfo.inhaber, url: `${SITE_URL}/imprint` },
+      publisher: { '@id': ORG_ID },
+      mainEntityOfPage: { '@id': `${url}#webpage` }
+    })
+  }
+
+  const faq = faqsByPath[page.path]
+  if (faq) {
     nodes.push({
       '@type': 'FAQPage',
       '@id': `${url}#faq`,
-      mainEntity: pricingFaq.map(f => ({
+      mainEntity: faq.map(f => ({
         '@type': 'Question',
         name: f.q,
         acceptedAnswer: { '@type': 'Answer', text: f.a }

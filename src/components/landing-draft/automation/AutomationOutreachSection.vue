@@ -42,7 +42,7 @@
         <div>
           <div class="text-[.95rem] font-bold text-ink mb-1">Gleich bleibt, was zählt</div>
           <p class="text-[.88rem] text-body leading-[1.6]">
-            Auf jedem Kanal gilt dasselbe: Der Kandidat bleibt anonym, erfunden wird nichts, und hinaus geht erst, was Sie freigegeben haben. Nur WhatsApp setzt ein eigenes Meta-Business-Konto voraus und wird von Meta je Konversation abgerechnet – direkt an Sie, ohne Aufschlag von uns.
+            Auf jedem Kanal gilt dasselbe: Der Kandidat bleibt anonym, erfunden wird nichts, und hinaus geht erst, was Sie freigegeben haben. Nur WhatsApp setzt ein eigenes Meta-Business-Konto voraus und wird von Meta je Konversation abgerechnet – direkt an Sie, ohne Aufschlag von uns. Die erste Nachricht geht dort über eine von Meta freigegebene Vorlage; freien Text erlaubt Meta erst, wenn der Empfänger geantwortet hat.
           </p>
         </div>
       </div>

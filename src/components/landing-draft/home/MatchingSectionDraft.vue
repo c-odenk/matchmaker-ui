@@ -1,13 +1,13 @@
 <template>
-  <!-- ENTWURFSKOPIE des Produktblicks – identisch zur Live-Fassung, nur mit dem
-       Eyebrow des Entwurfs. Die geteilte Komponente bleibt unberührt. -->
+  <!-- Produktblick Matching: links der Text zum Market und Matching Agent,
+       rechts deren Ergebnis – eine gefundene Vakanz mit Score und Begründung.
+       Das Anschreiben des Outreach Agent zeigt HomeOutreachSection. -->
   <section class="sec bg-white">
     <div class="wrap two grid [grid-template-columns:1fr_1.1fr] gap-[52px] items-center max-[880px]:grid-cols-1 max-[880px]:gap-[30px]">
       <div class="two-text min-w-0 max-[880px]:text-center max-[880px]:max-w-[620px] max-[880px]:mx-auto">
-        <EyebrowBadge>KI-Begründung</EyebrowBadge>
-        <h2 class="text-section !text-[clamp(1.25rem,0.98rem+0.9vw,1.5625rem)] text-ink mt-[5px] mb-[14px]">Die KI bereitet vor. <span class="text-blue">Der Berater entscheidet.</span></h2>
-        <p class="text-lead text-body">Alle Agenten arbeiten im Hintergrund und legen versandfertige Vorschläge vor. Nichts geht raus, bevor es freigegeben ist.</p>
-        <ProviderRow :items="channels" />
+        <EyebrowBadge>KI-Matching</EyebrowBadge>
+        <h2 class="text-section !text-[clamp(1.25rem,0.98rem+0.9vw,1.5625rem)] text-ink mt-[5px] mb-[14px]">Jeder Treffer mit Score. <span class="text-blue">Und mit Begründung.</span></h2>
+        <p class="text-lead text-body">Der Market Agent findet offene Stellen, die zum Kandidaten passen könnten. Der Matching Agent bewertet jede davon mit einem Score und begründet sein Urteil Kriterium für Kriterium.</p>
         <FeatureList :items="features" />
       </div>
 
@@ -45,20 +45,17 @@
 import EyebrowBadge from '@/components/ui/EyebrowBadge.vue'
 import FeatureList from '@/components/ui/FeatureList.vue'
 import BrowserFrame from '@/components/ui/BrowserFrame.vue'
-import ProviderRow from '@/components/ui/ProviderRow.vue'
-import { OUTREACH_CHANNELS } from '@/config/channels'
 
 export default {
   name: 'MatchingSectionDraft',
-  components: { EyebrowBadge, FeatureList, BrowserFrame, ProviderRow },
+  components: { EyebrowBadge, FeatureList, BrowserFrame },
   data() {
     return {
       kiExpanded: false,
-      channels: OUTREACH_CHANNELS,
       features: [
         'Pro Kandidat automatisch gefundene Vakanzen mit Match-Score',
-        'Nachvollziehbare KI-Begründung zu jedem Treffer',
-        'Die Nachricht geht erst nach der Freigabe raus'
+        'Begründung zu jedem Treffer – Abweichungen wie Standort oder Gehalt inklusive',
+        'Ihre Rückmeldung zur Bewertung verbessert die nächsten Ergebnisse'
       ]
     }
   }

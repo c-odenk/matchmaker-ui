@@ -4,8 +4,9 @@
       <div class="sec-head mx-auto max-w-[680px] text-center mb-[88px] max-[880px]:mb-[58px]">
         <h1 class="text-hero text-ink mb-[14px]">Vier Agenten bereiten vor. <span class="text-blue">Sie entscheiden.</span></h1>
         <p class="text-lead text-body">
-          Eine durchgängige Kette vom Lebenslauf bis zum ersten Kontakt: Jeder Agent übernimmt einen Schritt
-          und übergibt an den nächsten. Am Ende steht ein versandfertiger Vorschlag.
+          Ein Multi-Agentensystem teilt die Arbeit auf spezialisierte KI-Agenten auf: Vom Lebenslauf bis zum
+          ersten Kontakt übernimmt jeder einen Schritt und übergibt an den nächsten. Am Ende steht ein
+          versandfertiger Vorschlag.
         </p>
       </div>
 
