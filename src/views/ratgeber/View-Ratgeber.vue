@@ -7,7 +7,7 @@
           <div class="sec-head mx-auto max-w-[680px] text-center mb-12">
             <h1 class="text-hero text-ink mb-[14px]">Ratgeber für <span class="text-blue">Personalberater und Personalvermittler.</span></h1>
             <p class="text-lead text-body">
-              Akquise, Recht, KI im Recruiting, Provision und Gründung – sachlich erklärt, mit Quellen und Stand.
+              KI im Recruiting und die Regeln, die dafür gelten – sachlich erklärt, mit Quellen und Stand.
             </p>
           </div>
 
@@ -23,18 +23,20 @@
               </li>
             </ul>
 
-            <div class="text-[.64rem] font-bold tracking-[0.07em] uppercase text-muted mt-12 mb-3">Begriffe</div>
-            <ul class="list-none border border-line rounded-[11px] overflow-hidden bg-white">
-              <li v-for="g in glossar" :key="g.path" class="border-b border-line last:border-b-0">
-                <router-link :to="g.path" class="flex items-center justify-between gap-4 px-6 py-[15px] transition-colors duration-150 hover:bg-surface max-[560px]:px-[18px]">
-                  <span class="min-w-0">
-                    <span class="block text-[.96rem] font-semibold text-ink">{{ g.name }}</span>
-                    <span class="block text-[.86rem] text-body leading-[1.55] mt-[2px]">{{ g.teaser }}</span>
-                  </span>
-                  <span class="text-blue shrink-0" aria-hidden="true">→</span>
-                </router-link>
-              </li>
-            </ul>
+            <template v-if="glossar.length">
+              <div class="text-[.64rem] font-bold tracking-[0.07em] uppercase text-muted mt-12 mb-3">Begriffe</div>
+              <ul class="list-none border border-line rounded-[11px] overflow-hidden bg-white">
+                <li v-for="g in glossar" :key="g.path" class="border-b border-line last:border-b-0">
+                  <router-link :to="g.path" class="flex items-center justify-between gap-4 px-6 py-[15px] transition-colors duration-150 hover:bg-surface max-[560px]:px-[18px]">
+                    <span class="min-w-0">
+                      <span class="block text-[.96rem] font-semibold text-ink">{{ g.name }}</span>
+                      <span class="block text-[.86rem] text-body leading-[1.55] mt-[2px]">{{ g.teaser }}</span>
+                    </span>
+                    <span class="text-blue shrink-0" aria-hidden="true">→</span>
+                  </router-link>
+                </li>
+              </ul>
+            </template>
           </div>
         </div>
       </section>

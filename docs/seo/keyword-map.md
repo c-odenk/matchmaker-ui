@@ -3,6 +3,7 @@
 Stand: 21.10.2026 · Grundlage für Texte auf bestehenden Seiten, neue Seiten und Ratgeber.
 
 > **Stand 21.10.2026, nach Durchsicht durch den Inhaber:** Die Seiten `/akquise` und `/personalvermittlung` sowie der Absatz „Für wen“ auf der Startseite wurden verworfen und entfernt. Begriffe, die dort zugeordnet waren, laufen vorerst über `/agenten` und die Ratgeber-Beiträge.
+> **Stand 23.10.2026:** Vom Ratgeber bleiben nur „EU AI Act im Recruiting“ und „KI in der Personalberatung“. Kaltakquise, Kandidatenprofil-Vorlage, MPC-Methode, Provision, Gründung und die drei Glossar-Einträge wurden vom Inhaber als zu generisch verworfen und entfernt; die alten Adressen leiten auf `/ratgeber` um.
 
 ## Methode und Grenzen
 

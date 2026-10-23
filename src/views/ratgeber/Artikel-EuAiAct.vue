@@ -3,7 +3,7 @@
     path="/ratgeber/eu-ai-act-recruiting"
     heading="EU AI Act im Recruiting: Was Personalberatungen jetzt wissen müssen"
     lead="Die europäische KI-Verordnung stuft KI im Recruiting als Hochrisiko ein. Was das für Anbieter und für Personalberatungen bedeutet, welche Pflichten gelten und welche Fristen nach aktuellem Stand laufen."
-    :related="['/daten', '/ratgeber/ki-in-der-personalberatung', '/glossar/human-in-the-loop']"
+    :related="['/daten', '/ratgeber/ki-in-der-personalberatung', '/agenten']"
     rechtshinweis
     cta-title="Sehen Sie, wie eine Bewertung in matchmaker zustande kommt."
     cta-text="Begründung, Bericht, Protokoll und Freigabe – in 15 Minuten an einem Beispiel gezeigt."

@@ -3,7 +3,7 @@
     path="/ratgeber/ki-in-der-personalberatung"
     heading="KI in der Personalberatung: Was sie vorbereitet, was Sie entscheiden"
     lead="KI kann in der Personalberatung viel Handarbeit abnehmen – aber nicht jede Aufgabe eignet sich. Welche Schritte sich heute verlässlich vorbereiten lassen, wo die Grenzen liegen und woran Sie ein brauchbares Werkzeug erkennen."
-    :related="['/agenten', '/ratgeber/eu-ai-act-recruiting', '/glossar/human-in-the-loop']"
+    :related="['/agenten', '/ratgeber/eu-ai-act-recruiting', '/daten']"
     cta-to="/agenten"
     cta-label="Die Agenten ansehen →"
   >

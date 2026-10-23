@@ -20,6 +20,38 @@
   to = "/:splat"
   status = 301
 
+# Entfernte Ratgeber- und Glossarseiten (23.10.2026) zeigen dauerhaft auf
+# die Ratgeber-Übersicht, damit bereits gefundene Links nicht ins Leere laufen.
+[[redirects]]
+  from = "/ratgeber/kaltakquise-personalvermittlung"
+  to = "/ratgeber"
+  status = 301
+
+[[redirects]]
+  from = "/ratgeber/kandidatenprofil-vorlage"
+  to = "/ratgeber"
+  status = 301
+
+[[redirects]]
+  from = "/ratgeber/mpc-methode"
+  to = "/ratgeber"
+  status = 301
+
+[[redirects]]
+  from = "/ratgeber/provision-personalvermittlung"
+  to = "/ratgeber"
+  status = 301
+
+[[redirects]]
+  from = "/ratgeber/personalvermittlung-gruenden"
+  to = "/ratgeber"
+  status = 301
+
+[[redirects]]
+  from = "/glossar/*"
+  to = "/ratgeber"
+  status = 301
+
 # Lang-Cache für gehashte Build-Assets (Dateinamen enthalten Content-Hash)
 [[headers]]
   for = "/js/*"
