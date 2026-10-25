@@ -6,7 +6,7 @@
     <!-- Feines Raster als Textur, nach unten ausgeblendet -->
     <div class="hero-grid absolute inset-0 pointer-events-none"></div>
 
-    <div class="wrap relative z-[2] grid [grid-template-columns:1.5fr_1fr] gap-12 items-center pt-[140px] px-6 pb-[150px] max-[1000px]:grid-cols-1 max-[1000px]:gap-10 max-[1000px]:pt-20 max-[1000px]:pb-24">
+    <div class="wrap relative z-[2] grid [grid-template-columns:1.2fr_1fr] gap-14 items-center pt-[140px] px-6 pb-[150px] max-[1000px]:grid-cols-1 max-[1000px]:gap-10 max-[1000px]:pt-20 max-[1000px]:pb-24">
       <div class="hero-left relative max-[1000px]:text-center">
         <EyebrowBadge dark wide pill>Recruiting-Software für Personalberater</EyebrowBadge>
 
@@ -37,11 +37,11 @@
       <div class="hero-visual relative">
         <div class="absolute -inset-x-10 -inset-y-12 bg-[radial-gradient(ellipse_at_center,rgba(41,118,214,.38),transparent_70%)] blur-[55px] pointer-events-none"></div>
 
-        <div class="relative w-full max-w-[460px] ml-auto max-[1000px]:mx-auto">
+        <div class="relative w-full max-w-[560px] ml-auto max-[1000px]:mx-auto">
           <!-- Bedienschicht: einziges deckendes Element, deshalb zusätzlich ein
                weicher Schein statt nur Schlagschatten -->
           <div class="relative z-[2] rounded-[10px] bg-white text-ink overflow-hidden shadow-[0_34px_70px_-18px_rgba(4,10,24,.75),0_0_0_5px_rgba(41,118,214,.16)] ring-1 ring-white/40">
-            <div class="flex items-center justify-between gap-3 px-5 py-[14px] flex-wrap max-[560px]:px-4">
+            <div class="flex items-center justify-between gap-3 px-6 py-[14px] flex-wrap max-[560px]:px-4">
               <div class="flex items-center gap-3">
                 <span class="w-[33px] h-[33px] shrink-0 rounded-xl bg-navy text-white flex items-center justify-center">
                   <span class="font-bold leading-none tracking-[-0.04em] text-[1.18rem] -mt-px">m</span>
@@ -80,11 +80,11 @@
           </div>
 
           <!-- Angebundene Systeme -->
-          <div class="rounded-[10px] border border-white/[0.16] bg-white/[0.06] p-[15px] max-[560px]:p-[13px]">
+          <div class="rounded-[10px] border border-white/[0.16] bg-white/[0.06] px-[18px] py-[15px] max-[560px]:p-[13px]">
             <div class="text-[.64rem] font-bold tracking-[0.09em] uppercase text-white/55 mb-[12px] text-center">Bestehende Systeme</div>
-            <div class="system-grid grid grid-cols-3 gap-[8px] max-[560px]:grid-cols-2 max-[560px]:gap-[7px]">
+            <div class="system-grid grid grid-cols-3 gap-x-[10px] gap-y-[8px] max-[560px]:grid-cols-2 max-[560px]:gap-[7px]">
               <div v-for="s in systems" :key="s.label"
-                   class="rounded-[7px] border border-white/[0.16] bg-white/[0.09] px-[6px] py-[10px] flex flex-col items-center gap-[7px] text-center max-[560px]:flex-row max-[560px]:text-left max-[560px]:px-[10px] max-[560px]:py-[9px] max-[560px]:gap-[8px]">
+                   class="rounded-[7px] border border-white/[0.16] bg-white/[0.09] px-[8px] py-[10px] flex flex-col items-center gap-[7px] text-center max-[560px]:flex-row max-[560px]:text-left max-[560px]:px-[10px] max-[560px]:py-[9px] max-[560px]:gap-[8px]">
                 <span class="w-[25px] h-[25px] shrink-0 rounded-[5px] bg-white/[0.12] flex items-center justify-center max-[560px]:w-[26px] max-[560px]:h-[26px]">
                   <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" class="text-[#9cc6f2]"><path stroke-linecap="round" stroke-linejoin="round" :d="s.icon"/></svg>
                 </span>
