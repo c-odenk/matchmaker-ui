@@ -35,6 +35,7 @@ export default {
       results: [
         {
           title: 'Anonymer Talentpool',
+          status: 'Geplant',
           text: 'Freigegebene Profile erscheinen anonym auf Ihrer eigenen Homepage.',
           icon: 'M12 21a9 9 0 100-18 9 9 0 000 18zm0 0a8.949 8.949 0 004.951-1.488A3.987 3.987 0 0013 16h-2a3.987 3.987 0 00-3.951 3.512A8.949 8.949 0 0012 21zM3 12h18'
         },

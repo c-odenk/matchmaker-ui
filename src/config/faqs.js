@@ -33,7 +33,7 @@ export const pricingFaq = [
 export const dataFaq = [
   {
     q: 'Wo werden die Daten gespeichert?',
-    a: 'Dauerhaft speichert matchmaker nur in einer eigenen Datenbank auf Servern in der EU. Die Personalakte mit Originaldokumenten und Löschfristen bleibt in Ihrer Bewerbersoftware. Der KI-Dienst verarbeitet Daten nur für die Dauer des jeweiligen Aufrufs.'
+    a: 'Dauerhaft speichert matchmaker nur in einer eigenen Datenbank auf Servern in der EU. Die Personalakte mit Originaldokumenten und Löschfristen bleibt in Ihrer Bewerbersoftware. Der KI-Anbieter speichert Anfragen nach seinen API-Bedingungen nur vorübergehend – je nach Modell und Verarbeitungsweg bis zu 30 Tage – und nutzt sie nicht zum Training.'
   },
   {
     q: 'Sieht die KI die Namen der Kandidaten?',

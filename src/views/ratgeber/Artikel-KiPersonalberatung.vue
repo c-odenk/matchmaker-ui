@@ -75,8 +75,8 @@
       <ul>
         <li>Jede Bewertung hat eine nachvollziehbare Begründung.</li>
         <li>Nichts geht ohne Freigabe hinaus.</li>
-        <li>Namen und Kontaktdaten werden vor dem KI-Aufruf entfernt.</li>
-        <li>Daten liegen in der EU und werden nicht zum Training genutzt.</li>
+        <li>Für die Bewertung werden Namen und Kontaktdaten vor dem KI-Aufruf entfernt, und Ausnahmen sind offen benannt.</li>
+        <li>Sie wissen, wo die Daten liegen, wie lange der KI-Anbieter sie vorhält und dass sie nicht zum Training genutzt werden.</li>
         <li>Das Werkzeug setzt auf Ihre Bewerbersoftware auf, statt eine zweite Insel zu bilden.</li>
         <li>KI-Kosten sind transparent und begrenzt.</li>
         <li>Jeder Schritt wird protokolliert; Auskunft und Löschung sind auf Knopfdruck möglich.</li>

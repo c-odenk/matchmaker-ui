@@ -206,13 +206,14 @@
       <li>
         <strong>Keine Nutzung zum Training.</strong> Nach den API-Bedingungen von Anthropic und
         OpenAI werden über die API übermittelte Inhalte nicht zum Training der Modelle verwendet;
-        maßgeblich ist der Vertrag des Kunden mit dem Anbieter. Eine vorübergehende Speicherung
-        zur Missbrauchserkennung beim Anbieter bleibt davon unberührt.
+        maßgeblich ist der Vertrag des Kunden mit dem Anbieter.
       </li>
       <li>
-        <strong>Keine Speicherung des Modells.</strong> Die Daten werden nur für die Dauer des
-        jeweiligen Aufrufs verarbeitet; eine dauerhafte Speicherung findet nur in der
-        EU-Datenbank von matchmaker.hr statt.
+        <strong>Vorübergehende Speicherung beim Anbieter.</strong> Nach seinen API-Bedingungen
+        kann der KI-Anbieter Anfragen und Antworten vorübergehend speichern – je nach Modell und
+        Verarbeitungsweg (etwa bei der gesammelten nächtlichen Bewertung) bis zu 30&nbsp;Tage,
+        bei einem Verdacht auf Missbrauch auch länger. Eine dauerhafte Speicherung durch
+        matchmaker.hr findet nur in der EU-Datenbank von matchmaker.hr statt.
       </li>
       <li>
         <strong>Keine automatisierte Entscheidung.</strong> Bewertungen, Vorschläge und Entwürfe
@@ -229,18 +230,28 @@
 
     <h2>9. Hosting und Empfänger von Daten</h2>
     <p>
-      Die Plattform und ihre Datenbank werden bei einem Hosting-Anbieter mit Serverstandort in
-      der Europäischen Union betrieben. Eine Übermittlung personenbezogener Daten an weitere
+      Anwendungsserver und Datenbank der Plattform laufen bei Hosting-Anbietern mit
+      Serverstandort in der Europäischen Union. Website und Web-App werden über ein weltweites
+      Auslieferungsnetz bereitgestellt. Eine Übermittlung personenbezogener Daten an weitere
       Empfänger findet nur statt, soweit dies zur Vertragserfüllung erforderlich ist oder eine
       gesetzliche Verpflichtung besteht. Eingesetzt werden derzeit:
     </p>
     <ul>
-      <li>Hosting und Datenbankbetrieb – Serverstandort Europäische Union</li>
+      <li>Anwendungsserver – Render Services,&nbsp;Inc., USA; Serverstandort Europäische Union,
+        vorgeschaltet das Netz der Cloudflare,&nbsp;Inc., USA</li>
+      <li>Datenbank – MongoDB Atlas der MongoDB,&nbsp;Inc., USA; Serverstandort Europäische Union</li>
+      <li>Auslieferung von Website und Web-App – Netlify,&nbsp;Inc., USA (weltweites
+        Auslieferungsnetz)</li>
+      <li>Systemnachrichten wie Passwort-Zurücksetzen und Demo-Anfragen – Brevo (Sendinblue&nbsp;SAS,
+        Paris, Frankreich)</li>
       <li>Zahlungsdienstleister – Abwicklung der Lizenzgebühren</li>
     </ul>
     <p>
       Mit allen eingesetzten Dienstleistern bestehen Auftragsverarbeitungsverträge nach
-      Art.&nbsp;28 DSGVO, bei Drittlandbezug ergänzt um Standardvertragsklauseln.
+      Art.&nbsp;28 DSGVO. Die genannten Anbieter mit Sitz in den USA unterliegen auch bei einem
+      Serverstandort in der EU dem dortigen Recht; die Übermittlung stützt sich auf den
+      Angemessenheitsbeschluss zum EU-US Data Privacy Framework oder auf
+      Standardvertragsklauseln.
     </p>
     <p>
       Den KI-Anbieter – Anthropic oder OpenAI – ruft die Plattform mit dem Schlüssel des
@@ -258,8 +269,10 @@
     </p>
     <p>
       Führend ist dabei die angebundene Bewerbersoftware: Wird ein Kandidat dort gelöscht,
-      löscht die Plattform das Profil beim nächsten Abgleich automatisch – samt Bewertungen,
-      Nachrichten, Gesprächsnotizen und Protokollen. Der Kunde kann ein Profil außerdem
+      erkennt die Plattform das beim regelmäßigen Abgleich und löscht das Profil automatisch
+      samt Bewertungen, Nachrichten, Gesprächsnotizen und Protokollen. Sind es ungewöhnlich
+      viele Löschungen auf einmal, bestätigt sie vorher ein Administrator des Kunden. Der Kunde
+      kann ein Profil außerdem
       jederzeit selbst vollständig löschen und eine Auskunft über alle dazu gespeicherten Daten
       erzeugen. Zurück bleibt nur ein Löschnachweis ohne Namen und Profildaten.
     </p>
