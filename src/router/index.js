@@ -89,6 +89,12 @@ const routes = [
     component: () => import('../views/View-Terms.vue'),
     meta: seo('/terms')
   },
+  {
+    path: '/avv',
+    name: 'avv',
+    component: () => import('../views/View-Avv.vue'),
+    meta: seo('/avv')
+  },
   // Alles andere: 404-Seite. Vorgerendert als /404.html, die Netlify mit
   // Status 404 ausliefert; hier fängt sie auch Navigationen im Browser ab.
   {

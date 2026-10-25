@@ -34,6 +34,7 @@
             <li><router-link to="/privacy" class="hover:text-white">Datenschutz</router-link></li>
             <li><router-link to="/imprint" class="hover:text-white">Impressum</router-link></li>
             <li><router-link to="/terms" class="hover:text-white">AGB</router-link></li>
+            <li><router-link to="/avv" class="hover:text-white">AVV</router-link></li>
           </ul>
         </div>
 

@@ -168,6 +168,15 @@ const pages = [
     lastmod: '2026-10-21',
     changefreq: 'yearly',
     priority: '0.3'
+  },
+  {
+    path: '/avv',
+    name: 'AVV',
+    title: 'Auftragsverarbeitungsvertrag – matchmaker.hr',
+    description: 'Auftragsverarbeitungsvertrag nach Art. 28 DSGVO für Kunden von matchmaker.hr: Weisungen, technische und organisatorische Maßnahmen, Unterauftragsverarbeiter, Löschung.',
+    lastmod: '2026-10-25',
+    changefreq: 'yearly',
+    priority: '0.3'
   }
 ]
 
