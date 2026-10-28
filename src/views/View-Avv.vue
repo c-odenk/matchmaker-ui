@@ -2,7 +2,7 @@
   <LegalPage title="Auftragsverarbeitungsvertrag">
 
     <!--
-      ENTWURF (Stand 25.10.2026) – aus dem Code von matchmaker-api abgeleitet,
+      ENTWURF (Stand 28.10.2026) – aus dem Code von matchmaker-api abgeleitet,
       vor der Veröffentlichung anwaltlich prüfen lassen.
       Die Fassung muss mit `avv.version` in matchmaker-api/src/config/rechtstexte.js
       übereinstimmen. Jede inhaltliche Änderung: Datum hier UND dort anheben –
@@ -226,7 +226,7 @@
            Vor Veröffentlichung einschränken oder hier offenlegen (Listenpunkt 13). -->
       <li>Mandantentrennung: Jeder Kundendatensatz ist einem Kunden zugeordnet; Abfragen aus der Plattform sind auf diesen Kunden beschränkt.</li>
       <li>Zugangsdaten zu Drittsystemen (KI-Schlüssel, Bewerbersoftware, Mailkonto, LinkedIn, Xing, Microsoft) verschlüsselt (AES-256) gespeichert und nie in Antworten der Schnittstelle ausgegeben.</li>
-      <li>Bei der Bewertung von Passung, beim Anschreiben und im Exposé werden Name, Kontaktdaten und Arbeitgeber der Kandidaten vorher entfernt; geschützte Merkmale und Namen Dritter in Transkripten werden geschwärzt. Ausnahmen: das Auslesen eines Lebenslaufs und Transkripte im PDF-Format.</li>
+      <li>Bei der Bewertung von Passung, beim Anschreiben und im Exposé werden Name, Kontaktdaten und Arbeitgeber der Kandidaten vorher entfernt; Gesprächstranskripte in jedem Format (aus PDFs wird dafür der Text ausgelesen) werden vor der Auswertung geschwärzt, Namen durch Rollen ersetzt; gescannte PDFs ohne Textebene werden nicht angenommen. Ausnahme: das Auslesen eines Lebenslaufs.</li>
       <li>Zugriff auf Teams-Daten beschränkt auf die hinterlegten Berater; Empfehlung einer Zugriffsrichtlinie im Microsoft-Mandanten des Kunden.</li>
     </ul>
 
@@ -284,7 +284,7 @@ export default {
     return {
       legalInfo,
       // Muss zu avv.version in matchmaker-api/src/config/rechtstexte.js passen.
-      fassung: '25.10.2026',
+      fassung: '28.10.2026',
       unterauftraege: [
         {
           name: 'Render Services, Inc., San Francisco (USA)',
