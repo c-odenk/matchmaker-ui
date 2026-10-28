@@ -147,7 +147,7 @@ const pages = [
     name: 'Datenschutz',
     title: 'Datenschutzerklärung – matchmaker.hr',
     description: 'Datenschutzerklärung von matchmaker.hr: welche Daten beim Besuch der Website, bei Demo-Anfragen und in der Plattform verarbeitet werden und wo sie liegen.',
-    lastmod: '2026-10-21',
+    lastmod: '2026-10-28',
     changefreq: 'yearly',
     priority: '0.3'
   },
@@ -165,7 +165,7 @@ const pages = [
     name: 'AGB',
     title: 'Allgemeine Geschäftsbedingungen – matchmaker.hr',
     description: 'Allgemeine Geschäftsbedingungen von matchmaker.hr: Vertragsgegenstand, Freigabe durch den Kunden, Lizenzmodell, Verfügbarkeit, Haftung und Kündigung.',
-    lastmod: '2026-10-21',
+    lastmod: '2026-10-28',
     changefreq: 'yearly',
     priority: '0.3'
   }

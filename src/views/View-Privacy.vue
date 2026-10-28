@@ -147,8 +147,8 @@
       Vor der Auswertung ersetzt die Plattform die Namen der Gesprächsteilnehmer durch ihre
       Rolle – etwa „Kandidat“, „Berater“ oder „Ansprechpartner“ – und entfernt E-Mail-Adressen,
       Telefonnummern und Links. Das gilt für Transkripte aus Microsoft&nbsp;Teams und für
-      hochgeladene Transkripte im Text-, VTT- oder Word-Format. Transkripte im PDF-Format
-      lassen sich nicht schwärzen und werden unverändert übergeben.
+      hochgeladene Transkripte im Text-, VTT-, Word- oder PDF-Format. Aus einem PDF liest die
+      Plattform dafür zunächst den Text aus; gescannte PDFs ohne Textebene nimmt sie nicht an.
     </p>
     <p>
       Auf die Transkription wird bereits in der Termineinladung und zu Beginn des Termins
@@ -198,10 +198,9 @@
         löst sie erst in der Antwort wieder auf.
       </li>
       <li>
-        <strong>Ausnahmen.</strong> Beim Auslesen eines Lebenslaufs sieht das Sprachmodell das
+        <strong>Ausnahme.</strong> Beim Auslesen eines Lebenslaufs sieht das Sprachmodell das
         Dokument vollständig (Abschnitt&nbsp;6.1). Gesprächstranskripte werden vor der
-        Auswertung geschwärzt, Transkripte im PDF-Format jedoch unverändert übergeben
-        (Abschnitt&nbsp;6.5).
+        Auswertung immer geschwärzt, unabhängig vom Dateiformat (Abschnitt&nbsp;6.5).
       </li>
       <li>
         <strong>Keine Nutzung zum Training.</strong> Nach den API-Bedingungen von Anthropic und

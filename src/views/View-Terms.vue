@@ -150,9 +150,9 @@
       (Anthropic oder OpenAI) mit dem Schlüssel des Kunden auf; das Vertragsverhältnis über
       die KI-Nutzung einschließlich der Garantien für eine Übermittlung in ein Drittland besteht
       unmittelbar zwischen dem Kunden und dem KI-Anbieter. Für Matching, Anschreiben und Exposé
-      werden Name, Kontaktdaten und Arbeitgeber zuvor entfernt. Einzelheiten – auch zu den
-      Ausnahmen beim Auslesen von Lebensläufen und bei Gesprächstranskripten – regeln die
-      Datenschutzerklärung und der Auftragsverarbeitungsvertrag.
+      werden Name, Kontaktdaten und Arbeitgeber zuvor entfernt; Gesprächstranskripte werden vor
+      der Auswertung geschwärzt. Einzelheiten – auch zur Ausnahme beim Auslesen von
+      Lebensläufen – regeln die Datenschutzerklärung und der Auftragsverarbeitungsvertrag.
     </p>
     <p>
       Führend für Löschfristen ist die angebundene Bewerbersoftware des Kunden: Wird dort ein

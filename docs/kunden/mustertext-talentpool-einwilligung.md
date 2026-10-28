@@ -75,7 +75,7 @@ Sie können Ihre Einwilligung jederzeit widerrufen. Die bis dahin erfolgte Verar
 
 | Zusage im Text | Umsetzung in matchmaker.hr |
 |---|---|
-| Bewertung ohne Name, Kontakt, Arbeitgeber | Schwärzung vor dem KI-Aufruf. Ausnahmen: Auslesen des Lebenslaufs und Transkripte im PDF-Format |
+| Bewertung ohne Name, Kontakt, Arbeitgeber | Schwärzung vor dem KI-Aufruf, auch bei Gesprächstranskripten in jedem Format. Ausnahme: Auslesen des Lebenslaufs |
 | Berater entscheidet | Kein Versand ohne Freigabe per Klick |
 | Aktueller Arbeitgeber gesperrt | Automatisch aus Bewerbersoftware (Bullhorn, Recruit CRM) und Lebenslauf (`edb40f5`). Bei Profilen aus dem Formular trägt ihn der Berater von Hand ein |
 | Weitere Sperrfirmen | Sperrliste je Kandidat in der App |
