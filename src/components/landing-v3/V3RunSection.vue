@@ -6,8 +6,8 @@
   <section class="sec bg-white" id="durchlauf">
     <div class="wrap">
       <SectionHeadingDraft eyebrow="Der Durchlauf">
-        Ein Kandidat, eine Nacht. <span class="text-blue">Schritt für Schritt.</span>
-        <template #lead>Was matchmaker an einem Profil aus Ihrem Bestand vorbereitet – und wo Sie übernehmen.</template>
+        Vom Kandidatenprofil <span class="text-blue">zur versandfertigen Ansprache.</span>
+        <template #lead>Vier spezialisierte Workflows bereiten jeden Schritt vor. Geprüft und freigegeben wird durch den Berater.</template>
       </SectionHeadingDraft>
 
         <div class="flex flex-col gap-[96px] max-[880px]:gap-[64px]">
@@ -92,7 +92,7 @@ export default {
           features: [
             'Der richtige Ansprechpartner statt „info@"',
             'Anonymisiertes Profil auf Wunsch als PDF',
-            'Versand aus Ihrem eigenen Postfach'
+            'Versand über das eigene Postfach der Beratung'
           ],
           mockup: 'FirmenNachrichtMockup',
           mockupProps: { empfaenger: 'Christian Weber' }
@@ -100,15 +100,15 @@ export default {
         {
           nummer: '7',
           urteil: true,
-          agent: 'Sie',
-          titel: 'Ab hier zählt',
-          titelBlau: 'Ihr Urteil.',
-          text: 'Sie prüfen, passen an und geben frei. Anruf und Teams-Termin starten direkt aus dem Vorgang.',
+          agent: 'Berater',
+          titel: 'Die Entscheidung',
+          titelBlau: 'bleibt beim Berater.',
+          text: 'Entwürfe werden geprüft, angepasst und freigegeben. Anruf und Teams-Termin starten direkt aus dem Vorgang.',
           bleibt: h(7),
           features: [
-            'Nichts geht hinaus, bevor Sie es freigegeben haben',
+            'Kein Versand ohne ausdrückliche Freigabe',
             'Anruf aus dem Profil, über den Rechner – ohne Mitschnitt',
-            'Teams-Transkript wird zum Profilvorschlag – nach Ihrer Bestätigung'
+            'Teams-Transkript wird zum Profilvorschlag – nach Bestätigung'
           ],
           mockup: 'PhoneCallMockup',
           mockupProps: { align: 'left' }

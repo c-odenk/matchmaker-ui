@@ -52,7 +52,7 @@ export const HANDGRIFFE = [
   {
     titel: 'Prüfen und entscheiden',
     kurz: 'Prüfen und entscheiden',
-    wo: 'Wen stellen Sie wem vor?',
+    wo: 'Wer wird wem vorgestellt?',
     urteil: true
   }
 ]

@@ -17,7 +17,7 @@
     <!-- Bezug zur Ausgangslage -->
     <!-- Eine Zeile: Auszeichnung links, Handgriffe dahinter -->
     <div class="mt-[24px] pt-[16px] border-t border-line flex flex-nowrap items-baseline gap-x-[12px] max-[1100px]:flex-wrap max-[1100px]:gap-y-[6px] max-[880px]:max-w-[540px] max-[880px]:mx-auto max-[880px]:justify-center">
-      <span class="text-[.64rem] font-bold tracking-[0.07em] uppercase text-muted whitespace-nowrap">{{ s.ersetzt ? 'Statt von Hand' : 'Bleibt bei Ihnen' }}</span>
+      <span class="text-[.64rem] font-bold tracking-[0.07em] uppercase text-muted whitespace-nowrap">{{ s.ersetzt ? 'Statt von Hand' : 'Bleibt beim Berater' }}</span>
       <template v-if="s.ersetzt">
         <span v-for="e in s.ersetzt" :key="e" class="text-[.8rem] text-muted line-through decoration-[#dc2626]/60 whitespace-nowrap">{{ e }}</span>
       </template>

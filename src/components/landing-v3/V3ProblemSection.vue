@@ -7,12 +7,12 @@
   <section class="sec bg-white" id="ausgangslage">
     <div class="wrap">
       <div class="sec-head mx-auto max-w-[700px] text-center mb-11">
-        <EyebrowBadge rot>Was heute Zeit kostet</EyebrowBadge>
+        <EyebrowBadge rot>Die Ausgangslage</EyebrowBadge>
         <h2 class="text-section !text-[clamp(1.25rem,0.98rem+0.9vw,1.5625rem)] text-ink mt-[5px]">
-          Der Bestand ist da. <span class="text-[#dc2626] min-[561px]:whitespace-nowrap">Die Zeit, ihn zu vermitteln, nicht.</span>
+          Der Talentpool wächst. <span class="text-[#dc2626] min-[561px]:whitespace-nowrap">Die Vermittlungskapazität nicht.</span>
         </h2>
         <p class="text-[1.05rem] leading-[1.5] text-muted mt-[10px]">
-          Vor jeder Vorstellung stehen Recherche, Abgleich und Anschreiben. Ihre Erfahrung zählt erst ganz am Ende.
+          Recherche, Abgleich und Ansprache binden Beratungszeit, bevor die eigentliche Beratungsleistung beginnt.
         </p>
       </div>
 
@@ -88,9 +88,9 @@ export default {
   data() {
     return {
       folgen: [
-        { szene: 'bestand', titel: 'Profile bleiben liegen', text: 'Für die Suche fehlt die Zeit – also wartet der Bestand.' },
-        { szene: 'zeit', titel: 'Stellen fallen zu spät auf', text: 'Wenn sie gesehen werden, haben andere schon angerufen.' },
-        { szene: 'fenster', titel: 'Beratung wird zur Recherche', text: 'Die Zeit geht in Portale und Postfach statt ins Gespräch.' }
+        { szene: 'bestand', titel: 'Profile bleiben ungenutzt', text: 'Ohne systematische Marktsuche bleibt der Bestand unter seinem Potenzial.' },
+        { szene: 'zeit', titel: 'Vakanzen werden zu spät erkannt', text: 'Bis eine Stelle auffällt, hat der Wettbewerb oft schon Kontakt aufgenommen.' },
+        { szene: 'fenster', titel: 'Beratungszeit fließt in Recherche', text: 'Portale, Postfach und Bewerbersoftware statt Gespräch mit Kandidat und Kunde.' }
       ],
       // Platzhalter wie auf /agenten
       kandidaten: [
@@ -101,7 +101,7 @@ export default {
       zeitstrahl: [
         { tag: 'Mo', text: 'Stelle geht online', farbe: 'bg-blue' },
         { tag: 'Di', text: 'Wettbewerber ruft an', farbe: 'bg-[#b6c2d3]' },
-        { tag: 'Do', text: 'Sie entdecken die Anzeige', farbe: 'bg-[#dc2626]', wichtig: true }
+        { tag: 'Do', text: 'Anzeige wird entdeckt', farbe: 'bg-[#dc2626]', wichtig: true }
       ],
       fenster: ['Bewerbersoftware', 'Jobportal', 'Handelsregister', 'Postfach']
     }

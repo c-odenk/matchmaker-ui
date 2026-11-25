@@ -93,6 +93,7 @@ const SYMBOLE = {
   'Automatisierungen': P.bolt,
   'Bewerbersoftware': P.datenbank,
   'Datenschutz': P.schloss,
+  'Die Ausgangslage': P.uhr,
   'Datenschutz bei KI im Recruiting': P.schloss,
   'Demo buchen': P.kalender,
   'Der Aufbau': P.schichten,

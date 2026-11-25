@@ -30,7 +30,7 @@ export default {
         { wert: '4', titel: 'KI-Agenten', text: 'vom Profil bis zum Anschreiben' },
         { wert: '6', titel: 'Schritte je Kandidat', text: 'jede Nacht, ohne Anstoß' },
         { wert: '1', titel: 'Oberfläche', text: 'statt fünf Programmen' },
-        { wert: '0', titel: 'Nachrichten', text: 'ohne Ihre Freigabe' }
+        { wert: '0', titel: 'Nachrichten', text: 'ohne Freigabe' }
       ]
     }
   }

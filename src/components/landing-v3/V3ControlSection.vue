@@ -10,8 +10,8 @@
 
     <div class="wrap relative z-[2]">
       <SectionHeadingDraft eyebrow="Datenschutz" dark>
-        Automatisiert heißt nicht <span class="text-[#5fa0ea]">unkontrolliert.</span>
-        <template #lead>Was Personalberatung an Sorgfalt verlangt, ist in der Architektur festgelegt – nicht in einer Einstellung.</template>
+        Datenschutz und Kontrolle <span class="text-[#5fa0ea]">als Teil der Architektur.</span>
+        <template #lead>Anforderungen aus DSGVO und EU AI Act sind technisch verankert.</template>
       </SectionHeadingDraft>
 
       <div class="ben-grid grid grid-cols-4 gap-[14px] max-[1000px]:grid-cols-2 max-[560px]:grid-cols-1">
@@ -33,7 +33,7 @@
           </li>
         </ul>
         <router-link to="/daten" class="inline-flex items-center gap-[7px] max-[880px]:py-[10px] text-[.92rem] font-semibold text-[#7db8f0] hover:text-white transition-colors">
-          Den Weg Ihrer Daten ansehen
+          Datenfluss im Detail
           <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
         </router-link>
       </div>
@@ -51,7 +51,7 @@ export default {
     return {
       punkte: [
         {
-          titel: 'Ihre Bewerbersoftware bleibt führend',
+          titel: 'Bewerbersoftware bleibt führend',
           text: 'Stammdaten, Dokumente und Löschfristen bleiben, wo sie sind.',
           grundlage: 'Kein Lock-in',
           icon: 'M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75'

@@ -11,8 +11,8 @@
   <section class="sec bg-surface" id="ansatz">
     <div class="wrap">
       <SectionHeadingDraft eyebrow="Vorher · Nachher">
-        Die Vorarbeit macht matchmaker. <span class="text-blue whitespace-nowrap">Das Urteil Sie.</span>
-        <template #lead>Nachts, auf Ihren bestehenden Systemen. Morgens prüfen Sie und geben frei.</template>
+        Automatisierte Vorarbeit. <span class="text-blue whitespace-nowrap">Menschliche Entscheidung.</span>
+        <template #lead>Recherche, Matching und Ansprache laufen über Nacht auf der bestehenden Systemlandschaft. Die Freigabe bleibt beim Berater.</template>
       </SectionHeadingDraft>
 
       <ol class="ben-grid list-none grid grid-cols-4 gap-[14px] max-[1000px]:grid-cols-2 max-[560px]:grid-cols-1">
@@ -90,9 +90,9 @@ export default {
         {
           titel: 'Entscheidung',
           urteil: true,
-          heute: 'Bekommt die Zeit, die vom Tag übrig bleibt',
-          mit: 'Bekommt Ihre volle Aufmerksamkeit',
-          wer: 'Sie – Human-in-the-Loop'
+          heute: 'Erhält die Zeit, die nach der Recherche bleibt',
+          mit: 'Erhält die volle Aufmerksamkeit des Beraters',
+          wer: 'Berater – Human-in-the-Loop'
         }
       ]
     }
