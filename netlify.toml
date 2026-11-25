@@ -20,6 +20,12 @@
   to = "/:splat"
   status = 301
 
+# Entwurf 3 der Startseite ist seit 26.11.2026 die Startseite.
+[[redirects]]
+  from = "/entwurf-v3"
+  to = "/"
+  status = 301
+
 # Entfernte Ratgeber- und Glossarseiten (23.10.2026) zeigen dauerhaft auf
 # die Ratgeber-Übersicht, damit bereits gefundene Links nicht ins Leere laufen.
 [[redirects]]

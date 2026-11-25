@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import ViewLanding from '../views/View-Landing-Draft.vue'
+import ViewLanding from '../views/View-Landing-V3.vue'
 import { byPath, notFound } from '@/config/pages'
 import { applyHead } from './head'
 
@@ -68,6 +68,8 @@ const routes = [
     meta: seo('/ratgeber')
   },
   ...Object.entries(artikel).map(([path, component]) => ({ path, component, meta: seo(path) })),
+  // Entwurf 3 der Startseite ist seit 26.11.2026 die Startseite.
+  { path: '/entwurf-v3', redirect: '/' },
   // Die früheren Entwurfspfade zeigen auf die nun veröffentlichten Seiten.
   { path: '/entwurf', redirect: '/' },
   { path: '/entwurf/:rest(.*)', redirect: to => '/' + to.params.rest },
